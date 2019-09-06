@@ -16,7 +16,7 @@ namespace TP_PAV_3K02
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new suscriptores());
+            Application.Run(new NuevoSuscriptor());
         }
     }
 }

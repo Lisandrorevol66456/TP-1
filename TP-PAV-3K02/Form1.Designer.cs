@@ -1,6 +1,6 @@
 ﻿namespace TP_PAV_3K02
 {
-    partial class suscriptores
+    partial class NuevoSuscriptor
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,7 +30,6 @@
         {
             this.lblsuscriptores = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblCodigoPostal = new System.Windows.Forms.Label();
             this.lblCalle = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
             this.lblNroDoc = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
-            this.cmbCodigoPostal = new System.Windows.Forms.ComboBox();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblPais = new System.Windows.Forms.Label();
@@ -78,16 +76,6 @@
             this.lblNombre.Size = new System.Drawing.Size(63, 16);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre :";
-            // 
-            // lblCodigoPostal
-            // 
-            this.lblCodigoPostal.AutoSize = true;
-            this.lblCodigoPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoPostal.Location = new System.Drawing.Point(56, 246);
-            this.lblCodigoPostal.Name = "lblCodigoPostal";
-            this.lblCodigoPostal.Size = new System.Drawing.Size(99, 16);
-            this.lblCodigoPostal.TabIndex = 2;
-            this.lblCodigoPostal.Text = "Codigo Postal :";
             // 
             // lblCalle
             // 
@@ -189,7 +177,7 @@
             // cmbProvincia
             // 
             this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(138, 300);
+            this.cmbProvincia.Location = new System.Drawing.Point(136, 277);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(138, 21);
             this.cmbProvincia.TabIndex = 14;
@@ -198,26 +186,17 @@
             // cmbLocalidad
             // 
             this.cmbLocalidad.FormattingEnabled = true;
-            this.cmbLocalidad.Location = new System.Drawing.Point(138, 272);
+            this.cmbLocalidad.Location = new System.Drawing.Point(138, 247);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(138, 21);
             this.cmbLocalidad.TabIndex = 15;
             this.cmbLocalidad.Text = "La Calera";
             // 
-            // cmbCodigoPostal
-            // 
-            this.cmbCodigoPostal.FormattingEnabled = true;
-            this.cmbCodigoPostal.Location = new System.Drawing.Point(174, 241);
-            this.cmbCodigoPostal.Name = "cmbCodigoPostal";
-            this.cmbCodigoPostal.Size = new System.Drawing.Size(138, 21);
-            this.cmbCodigoPostal.TabIndex = 16;
-            this.cmbCodigoPostal.Text = "5016";
-            // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalidad.Location = new System.Drawing.Point(56, 277);
+            this.lblLocalidad.Location = new System.Drawing.Point(56, 252);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(74, 16);
             this.lblLocalidad.TabIndex = 17;
@@ -227,7 +206,7 @@
             // 
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvincia.Location = new System.Drawing.Point(56, 305);
+            this.lblProvincia.Location = new System.Drawing.Point(56, 282);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(70, 16);
             this.lblProvincia.TabIndex = 18;
@@ -238,7 +217,7 @@
             // 
             this.lblPais.AutoSize = true;
             this.lblPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPais.Location = new System.Drawing.Point(56, 333);
+            this.lblPais.Location = new System.Drawing.Point(56, 314);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(41, 16);
             this.lblPais.TabIndex = 19;
@@ -247,7 +226,7 @@
             // cmbPais
             // 
             this.cmbPais.FormattingEnabled = true;
-            this.cmbPais.Location = new System.Drawing.Point(138, 328);
+            this.cmbPais.Location = new System.Drawing.Point(136, 309);
             this.cmbPais.Name = "cmbPais";
             this.cmbPais.Size = new System.Drawing.Size(138, 21);
             this.cmbPais.TabIndex = 20;
@@ -261,6 +240,7 @@
             this.btnAgregar.TabIndex = 21;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -279,6 +259,7 @@
             this.btnEliminar.TabIndex = 23;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // grillaSuscriptores
             // 
@@ -314,7 +295,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(191, 20);
             this.txtBuscar.TabIndex = 27;
             // 
-            // suscriptores
+            // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -330,7 +311,6 @@
             this.Controls.Add(this.lblPais);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.lblLocalidad);
-            this.Controls.Add(this.cmbCodigoPostal);
             this.Controls.Add(this.cmbLocalidad);
             this.Controls.Add(this.cmbProvincia);
             this.Controls.Add(this.txtCalle);
@@ -344,10 +324,9 @@
             this.Controls.Add(this.lblNroDoc);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblCalle);
-            this.Controls.Add(this.lblCodigoPostal);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblsuscriptores);
-            this.Name = "suscriptores";
+            this.Name = "NuevoSuscriptor";
             this.Text = "Suscriptores";
             this.Load += new System.EventHandler(this.suscriptores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grillaSuscriptores)).EndInit();
@@ -360,7 +339,6 @@
 
         private System.Windows.Forms.Label lblsuscriptores;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblCodigoPostal;
         private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label lblNroDoc;
@@ -374,7 +352,6 @@
         private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.ComboBox cmbProvincia;
         private System.Windows.Forms.ComboBox cmbLocalidad;
-        private System.Windows.Forms.ComboBox cmbCodigoPostal;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.Label lblPais;

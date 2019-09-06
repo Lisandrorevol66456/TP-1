@@ -13,7 +13,7 @@ namespace TP_PAV_3K02.BaseDatos
         OleDbConnection conexion = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
-        string cadena_conexion = "Provider=SQLNCLI11;workstation id=Editorial-PAV.mssql.somee.com;packet size=4096;user id=hassanmafud_SQLLogin_1;pwd=pbhjnb47ux;data source=Editorial-PAV.mssql.somee.com;persist security info=False;initial catalog=pav1-db";
+        string cadena_conexion = "Provider=SQLNCLI11;workstation id=Editorial-PAV.mssql.somee.com;packet size=4096;user id=hassanmafud_SQLLogin_1;pwd=pbhjnb47ux;data source=Editorial-PAV.mssql.somee.com;persist security info=False;initial catalog=Editorial-PAV";
 
         private void conectar()
         {
