@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,28 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.EjecutarSQL(sqltxt);
         }
+        public bool Eliminar(string suscriptornroDoc)
+        {
+            string sqltxt = $"DELETE FROM [dbo].[Directores] WHERE id = {suscriptornroDoc}";
+
+            return _BD.EjecutarSQL(sqltxt);
+        }
+        public Suscriptor ObtenerSuscriptor(string nroDoc)
+        {
+            string sqltxt = $"SELECT * FROM [dbo].[Suscriptores] where id={nroDoc}";
+            var tablaTemporal = _BD.consulta(sqltxt);
+            if (tablaTemporal.Rows.Count == 0)
+                return null;
+            var suscriptor = new Suscriptor();
+            foreach (DataRow fila in tablaTemporal.Rows)
+            {
+                if (fila.HasErrors)
+                    continue; // no corto el ciclo
 
 
+            }
+            return suscriptor;
 
-
+        }
     }
 }
