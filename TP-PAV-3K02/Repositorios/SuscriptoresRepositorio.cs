@@ -19,10 +19,19 @@ namespace TP_PAV_3K02.Repositorios
             _BD = new Editorial_BD();
         }
 
+        public DataTable ObtenerSuscriptoresDT()
+        {
+            string sqltxt = "SELECT * FROM Suscriptores ";
+            
+            return _BD.consulta(sqltxt);
+
+        }
+
         public bool Guardar(Suscriptor suscriptor)
         {
             string sqltxt = $"INSERT [dbo].[Suscriptores] ([nroDoc],[nombre], [apellido], [calle],[numero]) " +
-                $"VALUES ('{suscriptor.nombre}', " + $"'{suscriptor.apellido}', '{suscriptor.calle}', {suscriptor.nroDoc},{suscriptor.numero}";
+                $"VALUES ('{suscriptor.nroDoc}', " + 
+                $"'{suscriptor.nombre}','{suscriptor.apellido}','{suscriptor.calle}','{suscriptor.numero}')";
 
             return _BD.EjecutarSQL(sqltxt);
         }
@@ -32,7 +41,7 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.EjecutarSQL(sqltxt);
         }
-        public Suscriptor ObtenerSuscriptor(string nroDoc)
+        /*public Suscriptor ObtenerSuscriptor(string nroDoc)
         {
             string sqltxt = $"SELECT * FROM [dbo].[Suscriptores] where id={nroDoc}";
             var tablaTemporal = _BD.consulta(sqltxt);
@@ -48,6 +57,6 @@ namespace TP_PAV_3K02.Repositorios
             }
             return suscriptor;
 
-        }
+        }*/
     }
 }

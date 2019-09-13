@@ -9,12 +9,12 @@ namespace TP_PAV_3K02.Modelos
     public class Suscriptor
     {
 
-        public int nroDoc { get; set; }
+        public long nroDoc { get; set; }
         public int cod_TipoDoc { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string calle { get; set; }
-        public int numero { get; set; }
+        public long numero { get; set; }
         public int cod_Localidad { get; set; }
         public int cod_Provincia { get; set; }
         public int cod_Pais { get; set; }
@@ -51,7 +51,7 @@ namespace TP_PAV_3K02.Modelos
 
         public bool NumeroValido()
         {
-            if(numero > 0 && numero< 100000)
+            if(numero > 0 )
                 return true;
             return false;
             

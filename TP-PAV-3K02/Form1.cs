@@ -15,11 +15,52 @@ namespace TP_PAV_3K02
     public partial class NuevoSuscriptor : Form
     {
         SuscriptoresRepositorio _suscriptoresRepositorio;
+        TipoDocumentoRepositorio _tipodocumentoRepositorio;
 
         public NuevoSuscriptor()
         {
             InitializeComponent();
             _suscriptoresRepositorio = new SuscriptoresRepositorio();
+            _tipodocumentoRepositorio = new TipoDocumentoRepositorio();
+        }
+        //METODO PARA CARGAR LA GRILLA DE SUSCRIPTORES EXISTENTES
+        private void ActualizarSuscriptores() {
+
+            DvgSuscriptores.Rows.Clear();
+
+            var suscriptores = _suscriptoresRepositorio.ObtenerSuscriptoresDT().Rows;
+            var filas = new List<DataGridViewRow>();
+
+            foreach (DataRow suscriptor in suscriptores)
+            {
+                if (suscriptor.HasErrors)
+                    continue;//no corto el ciclo
+                var fila = new string[]
+                {
+                    suscriptor.ItemArray[0].ToString(),
+                    suscriptor.ItemArray[1].ToString(),
+                    suscriptor.ItemArray[2].ToString(),
+                    suscriptor.ItemArray[3].ToString(),
+                    suscriptor.ItemArray[4].ToString(),
+                    suscriptor.ItemArray[5].ToString(),
+                    suscriptor.ItemArray[6].ToString(),
+                    suscriptor.ItemArray[7].ToString(),
+                    suscriptor.ItemArray[8].ToString(),
+                };
+
+                DvgSuscriptores.Rows.Add(fila);
+
+            } 
+
+        }
+        //cargar combos Tipo Documento
+        private void ActualizarCombo()
+        {
+            var tip_documentos = _tipodocumentoRepositorio.ObetenerTiposDocumentosDT();
+            cmbTipoDoc.ValueMember = "cod_Tipo_Doc";
+            cmbTipoDoc.DisplayMember = "nombre";
+            cmbTipoDoc.DataSource = tip_documentos;
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -28,11 +69,12 @@ namespace TP_PAV_3K02
             suscriptor.nombre = txtnombre.Text;
             suscriptor.apellido = txtApellido.Text;
             suscriptor.calle = txtCalle.Text;
-            suscriptor.nroDoc = int.Parse(txtNroDoc.Text);
-            suscriptor.numero = int.Parse(txtNumero.Text);
-            //suscriptor.
-            // suscriptor.numero = convertir a integer el sting (txt.numero)
+            var s = long.Parse(txtNroDoc.Text);
+            var d = long.Parse(txtNumero.Text);
 
+            suscriptor.nroDoc = s;
+            suscriptor.numero = d;
+            
 
             if (!suscriptor.NombreValido())
             {
@@ -82,7 +124,6 @@ namespace TP_PAV_3K02
         {
 
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -90,7 +131,8 @@ namespace TP_PAV_3K02
 
         private void suscriptores_Load(object sender, EventArgs e)
         {
-
+            ActualizarSuscriptores();
+            ActualizarCombo();
         }
 
         private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,7 +142,7 @@ namespace TP_PAV_3K02
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            var seleccionadas = grillaSuscriptores.SelectedRows;
+            var seleccionadas = DvgSuscriptores.SelectedRows;
             if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
             {
                 MessageBox.Show("Debe seleccionar una fila");

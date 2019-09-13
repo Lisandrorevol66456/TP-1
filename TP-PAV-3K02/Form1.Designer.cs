@@ -47,14 +47,23 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.grillaSuscriptores = new System.Windows.Forms.DataGridView();
+            this.DvgSuscriptores = new System.Windows.Forms.DataGridView();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.TxtLocalidad = new System.Windows.Forms.TextBox();
             this.TxtProvincia = new System.Windows.Forms.TextBox();
             this.Txtpais = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaSuscriptores)).BeginInit();
+            this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.SuspendLayout();
             // 
             // lblsuscriptores
@@ -239,14 +248,24 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // grillaSuscriptores
+            // DvgSuscriptores
             // 
-            this.grillaSuscriptores.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grillaSuscriptores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaSuscriptores.Location = new System.Drawing.Point(412, 130);
-            this.grillaSuscriptores.Name = "grillaSuscriptores";
-            this.grillaSuscriptores.Size = new System.Drawing.Size(342, 283);
-            this.grillaSuscriptores.TabIndex = 24;
+            this.DvgSuscriptores.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DvgSuscriptores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DvgSuscriptores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NroDoc,
+            this.TipoDoc,
+            this.Nombre,
+            this.Apellido,
+            this.Calle,
+            this.Numero,
+            this.codLocalidad,
+            this.codProvincia,
+            this.codPais});
+            this.DvgSuscriptores.Location = new System.Drawing.Point(364, 117);
+            this.DvgSuscriptores.Name = "DvgSuscriptores";
+            this.DvgSuscriptores.Size = new System.Drawing.Size(424, 279);
+            this.DvgSuscriptores.TabIndex = 24;
             // 
             // lblBuscar
             // 
@@ -297,6 +316,51 @@
             this.Txtpais.Size = new System.Drawing.Size(138, 20);
             this.Txtpais.TabIndex = 30;
             // 
+            // NroDoc
+            // 
+            this.NroDoc.HeaderText = "Nro Doc";
+            this.NroDoc.Name = "NroDoc";
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.HeaderText = "TipoDoc";
+            this.TipoDoc.Name = "TipoDoc";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // Calle
+            // 
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            // 
+            // codLocalidad
+            // 
+            this.codLocalidad.HeaderText = "codLocalidad";
+            this.codLocalidad.Name = "codLocalidad";
+            // 
+            // codProvincia
+            // 
+            this.codProvincia.HeaderText = "codProvincia";
+            this.codProvincia.Name = "codProvincia";
+            // 
+            // codPais
+            // 
+            this.codPais.HeaderText = "codPais";
+            this.codPais.Name = "codPais";
+            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,7 +372,7 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.lblBuscar);
-            this.Controls.Add(this.grillaSuscriptores);
+            this.Controls.Add(this.DvgSuscriptores);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -331,7 +395,7 @@
             this.Name = "NuevoSuscriptor";
             this.Text = "Suscriptores";
             this.Load += new System.EventHandler(this.suscriptores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grillaSuscriptores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,13 +422,22 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView grillaSuscriptores;
+        private System.Windows.Forms.DataGridView DvgSuscriptores;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.TextBox TxtLocalidad;
         private System.Windows.Forms.TextBox TxtProvincia;
         private System.Windows.Forms.TextBox Txtpais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codLocalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codPais;
     }
 }
 

@@ -61,10 +61,12 @@
     </Compile>
     <Compile Include="Modelos\Distribuidor.cs" />
     <Compile Include="Modelos\Suscriptor.cs" />
+    <Compile Include="Modelos\TipoDocumento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\DistribuidoresRepositorio.cs" />
     <Compile Include="Repositorios\SuscriptoresRepositorio.cs" />
+    <Compile Include="Repositorios\TipoDocumentoRepositorio.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
