@@ -41,12 +41,9 @@
             this.txtNroDoc = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtCalle = new System.Windows.Forms.TextBox();
-            this.cmbProvincia = new System.Windows.Forms.ComboBox();
-            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblPais = new System.Windows.Forms.Label();
-            this.cmbPais = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -54,6 +51,9 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.TxtLocalidad = new System.Windows.Forms.TextBox();
+            this.TxtProvincia = new System.Windows.Forms.TextBox();
+            this.Txtpais = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grillaSuscriptores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,24 +179,6 @@
             this.txtCalle.Size = new System.Drawing.Size(138, 20);
             this.txtCalle.TabIndex = 13;
             // 
-            // cmbProvincia
-            // 
-            this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(136, 277);
-            this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(138, 21);
-            this.cmbProvincia.TabIndex = 14;
-            this.cmbProvincia.Text = "Còrdoba";
-            // 
-            // cmbLocalidad
-            // 
-            this.cmbLocalidad.FormattingEnabled = true;
-            this.cmbLocalidad.Location = new System.Drawing.Point(138, 247);
-            this.cmbLocalidad.Name = "cmbLocalidad";
-            this.cmbLocalidad.Size = new System.Drawing.Size(138, 21);
-            this.cmbLocalidad.TabIndex = 15;
-            this.cmbLocalidad.Text = "La Calera";
-            // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
@@ -227,15 +209,6 @@
             this.lblPais.Size = new System.Drawing.Size(41, 16);
             this.lblPais.TabIndex = 19;
             this.lblPais.Text = "Pais :";
-            // 
-            // cmbPais
-            // 
-            this.cmbPais.FormattingEnabled = true;
-            this.cmbPais.Location = new System.Drawing.Point(136, 309);
-            this.cmbPais.Name = "cmbPais";
-            this.cmbPais.Size = new System.Drawing.Size(138, 21);
-            this.cmbPais.TabIndex = 20;
-            this.cmbPais.Text = "Argentina";
             // 
             // btnAgregar
             // 
@@ -300,11 +273,38 @@
             this.txtBuscar.Size = new System.Drawing.Size(191, 20);
             this.txtBuscar.TabIndex = 27;
             // 
+            // TxtLocalidad
+            // 
+            this.TxtLocalidad.Location = new System.Drawing.Point(138, 252);
+            this.TxtLocalidad.MaxLength = 30;
+            this.TxtLocalidad.Name = "TxtLocalidad";
+            this.TxtLocalidad.Size = new System.Drawing.Size(138, 20);
+            this.TxtLocalidad.TabIndex = 28;
+            // 
+            // TxtProvincia
+            // 
+            this.TxtProvincia.Location = new System.Drawing.Point(138, 282);
+            this.TxtProvincia.MaxLength = 30;
+            this.TxtProvincia.Name = "TxtProvincia";
+            this.TxtProvincia.Size = new System.Drawing.Size(138, 20);
+            this.TxtProvincia.TabIndex = 29;
+            // 
+            // Txtpais
+            // 
+            this.Txtpais.Location = new System.Drawing.Point(138, 314);
+            this.Txtpais.MaxLength = 30;
+            this.Txtpais.Name = "Txtpais";
+            this.Txtpais.Size = new System.Drawing.Size(138, 20);
+            this.Txtpais.TabIndex = 30;
+            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Txtpais);
+            this.Controls.Add(this.TxtProvincia);
+            this.Controls.Add(this.TxtLocalidad);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.lblBuscar);
@@ -312,12 +312,9 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.cmbPais);
             this.Controls.Add(this.lblPais);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.lblLocalidad);
-            this.Controls.Add(this.cmbLocalidad);
-            this.Controls.Add(this.cmbProvincia);
             this.Controls.Add(this.txtCalle);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtNroDoc);
@@ -355,12 +352,9 @@
         private System.Windows.Forms.TextBox txtNroDoc;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtCalle;
-        private System.Windows.Forms.ComboBox cmbProvincia;
-        private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.ComboBox cmbPais;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
@@ -368,6 +362,9 @@
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.TextBox TxtLocalidad;
+        private System.Windows.Forms.TextBox TxtProvincia;
+        private System.Windows.Forms.TextBox Txtpais;
     }
 }
 

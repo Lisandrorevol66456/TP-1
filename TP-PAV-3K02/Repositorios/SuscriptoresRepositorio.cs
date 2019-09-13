@@ -28,7 +28,7 @@ namespace TP_PAV_3K02.Repositorios
         }
         public bool Eliminar(string suscriptornroDoc)
         {
-            string sqltxt = $"DELETE FROM [dbo].[Directores] WHERE id = {suscriptornroDoc}";
+            string sqltxt = $"DELETE FROM [dbo].[Suscriptores] WHERE id = {suscriptornroDoc}";
 
             return _BD.EjecutarSQL(sqltxt);
         }

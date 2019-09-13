@@ -6,23 +6,22 @@ using System.Threading.Tasks;
 
 namespace TP_PAV_3K02.Modelos
 {
-    public class Suscriptor
+    public class Distribuidor
     {
 
-        public int nroDoc { get; set; }
-        public int cod_TipoDoc { get; set; }
+        public int cuit_dist { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
-        public string calle { get; set; }
+        public string domicilio { get; set; }
         public int numero { get; set; }
-        public int cod_Localidad { get; set; }
+        public DateTime fecha_inicio { get; set; }
         public int cod_Provincia { get; set; }
         public int cod_Pais { get; set; }
 
 
-        public bool NroDocValido()
+        public bool CuitValido()
         {
-            if(nroDoc > 0)
+            if (cuit_dist > 0)
                 return true;
             return false;
         }
@@ -42,22 +41,21 @@ namespace TP_PAV_3K02.Modelos
             return false;
         }
 
-        public bool CalleValido()
+        public bool domicilioValido()
         {
-            if (!string.IsNullOrEmpty(calle) && calle.Length < 20 )
+            if (!string.IsNullOrEmpty(domicilio) && domicilio.Length < 100)
                 return true;
             return false;
         }
-
-        public bool NumeroValido()
+        public bool fechavalida()
         {
-            if(numero > 0 && numero< 100000)
+            if (fecha_inicio != DateTime.MinValue && fecha_inicio < DateTime.Today)
                 return true;
             return false;
-            
+
+
+
         }
-
-
 
     }
 }

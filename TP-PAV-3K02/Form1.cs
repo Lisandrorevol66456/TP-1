@@ -30,6 +30,7 @@ namespace TP_PAV_3K02
             suscriptor.calle = txtCalle.Text;
             suscriptor.nroDoc = int.Parse(txtNroDoc.Text);
             suscriptor.numero = int.Parse(txtNumero.Text);
+            //suscriptor.
             // suscriptor.numero = convertir a integer el sting (txt.numero)
 
 
