@@ -50,7 +50,7 @@ namespace TP_PAV_3K02
 
                 DvgSuscriptores.Rows.Add(fila);
 
-            } 
+            }
 
         }
         //cargar combos Tipo Documento
@@ -69,13 +69,11 @@ namespace TP_PAV_3K02
             suscriptor.nombre = txtnombre.Text;
             suscriptor.apellido = txtApellido.Text;
             suscriptor.calle = txtCalle.Text;
-            var s = long.Parse(txtNroDoc.Text);
-            var d = long.Parse(txtNumero.Text);
-            suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
+            suscriptor.nroDoc = long.Parse(txtNroDoc.Text);
+            suscriptor.numero = long.Parse(txtNumero.Text);
+            suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedIndex.ToString());
 
-            suscriptor.nroDoc = s;
-            suscriptor.numero = d;
-           
+
             if (!suscriptor.NombreValido())
             {
                 MessageBox.Show("Nombre Invalido");
@@ -94,7 +92,7 @@ namespace TP_PAV_3K02
                 return;
             }
 
-            if(!suscriptor.NroDocValido())
+            if (!suscriptor.NroDocValido())
             {
                 MessageBox.Show("Documento Invalido");
                 return;
@@ -110,6 +108,7 @@ namespace TP_PAV_3K02
             {
                 MessageBox.Show("Se registro con éxito");
                 this.Dispose();
+                
             }
 
 
@@ -133,12 +132,13 @@ namespace TP_PAV_3K02
         {
             ActualizarSuscriptores();
             ActualizarCombo();
+            //Se selecciona automaticamente el DNI
             cmbTipoDoc.SelectedIndex = 0;
         }
 
         private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -149,29 +149,43 @@ namespace TP_PAV_3K02
                 MessageBox.Show("Debe seleccionar una fila");
                 return;
             }
-            foreach(DataGridViewRow fila in seleccionadas)
+            foreach (DataGridViewRow fila in seleccionadas)
             {
                 var nombre = fila.Cells[2].Value;
                 var apellido = fila.Cells[3].Value;
-                var id = fila.Cells[0].Value;
-                
+                var documento = fila.Cells[0].Value;
 
-                //pregunto confirmación
-                var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido}?",
+
+
+                if (documento != null)
+                {
+                    //pregunto confirmación
+                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido}?",
                     "Confirmar operación",
                     MessageBoxButtons.YesNo);
 
-                if (confirmacion.Equals(DialogResult.No))
-                    return;
+                    if (confirmacion.Equals(DialogResult.No))
+                        return;
 
-                if (_suscriptoresRepositorio.Eliminar(id.ToString()))
-                {
-                    MessageBox.Show("Se eliminó exitosamente");
-                    
+                 
+                    if (_suscriptoresRepositorio.Eliminar(documento.ToString()))
+                    {
+                        MessageBox.Show("Se eliminó exitosamente");
+                        ActualizarSuscriptores();
+
+                    }
                 }
+                if(documento == null)
+                    MessageBox.Show("Debe Seleccionar una fila que no este Vacia.....");
+
             }
+
         }
-            //this.Dispose();
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
-    }
+    }   
+}
 

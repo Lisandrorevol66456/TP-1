@@ -157,6 +157,7 @@
             // cmbTipoDoc
             // 
             this.cmbTipoDoc.FormattingEnabled = true;
+            this.cmbTipoDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbTipoDoc.Location = new System.Drawing.Point(138, 117);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(138, 21);
@@ -234,8 +235,9 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 35);
             this.btnEditar.TabIndex = 22;
-            this.btnEditar.Text = "Editar";
+            this.btnEditar.Text = "Cancelar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
