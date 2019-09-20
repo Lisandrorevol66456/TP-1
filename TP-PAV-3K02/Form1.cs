@@ -57,7 +57,7 @@ namespace TP_PAV_3K02
         private void ActualizarCombo()
         {
             var tip_documentos = _tipodocumentoRepositorio.ObetenerTiposDocumentosDT();
-            cmbTipoDoc.ValueMember = "cod_Tipo_Doc";
+            cmbTipoDoc.ValueMember = "cod_TipoDoc";
             cmbTipoDoc.DisplayMember = "nombre";
             cmbTipoDoc.DataSource = tip_documentos;
 
@@ -71,7 +71,7 @@ namespace TP_PAV_3K02
             suscriptor.calle = txtCalle.Text;
             suscriptor.nroDoc = long.Parse(txtNroDoc.Text);
             suscriptor.numero = long.Parse(txtNumero.Text);
-            suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedIndex.ToString());
+            suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
 
 
             if (!suscriptor.NombreValido())
@@ -134,6 +134,7 @@ namespace TP_PAV_3K02
             ActualizarCombo();
             //Se selecciona automaticamente el DNI
             cmbTipoDoc.SelectedIndex = 0;
+         
         }
 
         private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -160,7 +161,7 @@ namespace TP_PAV_3K02
                 if (documento != null)
                 {
                     //pregunto confirmación
-                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido}?",
+                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido}, {documento}?",
                     "Confirmar operación",
                     MessageBoxButtons.YesNo);
 
@@ -185,6 +186,23 @@ namespace TP_PAV_3K02
         private void btnEditar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnFormRepartidores_Click(object sender, EventArgs e)
+        {
+            var formrepar = new FormDistribuidores();
+            formrepar.ShowDialog();
+
+        }
+
+        private void DvgSuscriptores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtCalle_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }   
 }

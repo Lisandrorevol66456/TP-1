@@ -25,9 +25,9 @@ namespace TP_PAV_3K02
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             var distribuidor = new Distribuidor();
-            distribuidor.cuit_dist = int.Parse(TxtCuit.Text);
             distribuidor.nombre = txtnombre.Text;
             distribuidor.apellido = txtApellido.Text;
+            distribuidor.cuit_dist = int.Parse(TxtCuit.Text);
             distribuidor.domicilio = TxtDomicilio.Text;
             distribuidor.fecha_inicio = DTPfechainicio.Value.Date;
 
@@ -45,6 +45,12 @@ namespace TP_PAV_3K02
                 return;
             }
 
+            if (!distribuidor.CuitValido())
+            {
+                MessageBox.Show("Cuit Invalido");
+                TxtCuit.Focus();
+                return;
+            }
             if (!distribuidor.domicilioValido())
             {
                 MessageBox.Show("Domicilio Invalido");
@@ -66,7 +72,7 @@ namespace TP_PAV_3K02
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            var seleccionadas = grillaDistribuidores.SelectedRows;
+            var seleccionadas = DvgDistribuidores.SelectedRows;
             if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
             {
                 MessageBox.Show("Debe seleccionar una fila");
@@ -80,19 +86,68 @@ namespace TP_PAV_3K02
 
 
                 //pregunto confirmación
-                var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido}, {cuit_dist}?",
-                    "Confirmar operación",
-                    MessageBoxButtons.YesNo);
-
-                if (confirmacion.Equals(DialogResult.No))
-                    return;
-
-                if (_distribuidoresRepositorio.Eliminar(cuit_dist.ToString()))
+                if (cuit_dist != null)
                 {
-                    MessageBox.Show("Se eliminó exitosamente");
+                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido}, {cuit_dist}?",
+                   "Confirmar operación",
+                   MessageBoxButtons.YesNo);
+
+                    if (confirmacion.Equals(DialogResult.No))
+                        return;
+
+                    if (_distribuidoresRepositorio.Eliminar(cuit_dist.ToString()))
+                    {
+                        MessageBox.Show("Se eliminó exitosamente");
+                        ActualizarDistribuidores();
+
+                    }
 
                 }
+
+                if(cuit_dist == null)
+                    MessageBox.Show("Debe Seleccionar una fila no Vacia......");
+                
             }
+        }
+
+        private void ActualizarDistribuidores()
+        {
+            DvgDistribuidores.Rows.Clear();
+
+            var distribuidores = _distribuidoresRepositorio.ObtenerDistribuidoresDT().Rows;
+            var filas = new List<DataGridViewRow>();
+
+            foreach (DataRow distribuidor in distribuidores)
+            {
+                if (distribuidor.HasErrors)
+                    continue;
+
+                var fila = new string[]
+                {
+                    distribuidor.ItemArray[0].ToString(),
+                    distribuidor.ItemArray[1].ToString(),
+                    distribuidor.ItemArray[2].ToString(),
+                    distribuidor.ItemArray[3].ToString(),
+                    distribuidor.ItemArray[4].ToString(),
+                  
+                };
+
+                DvgDistribuidores.Rows.Add(fila);
+
+            }
+
+
+        }
+
+        private void FormDistribuidores_Load(object sender, EventArgs e)
+        {
+            ActualizarDistribuidores();
+
+        }
+
+        private void DvgDistribuidores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

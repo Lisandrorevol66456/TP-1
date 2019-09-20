@@ -18,20 +18,29 @@ namespace TP_PAV_3K02.Repositorios
         {
             _BD = new Editorial_BD();
         }
+
+        public DataTable ObtenerDistribuidoresDT()
+        {
+            string sqltext = "SELECT * FROM Distribuidores";
+            return _BD.consulta(sqltext);
+
+        }
         public bool Guardar(Distribuidor distribuidor)
         {
             string sqltxt = $"INSERT [dbo].[Distribuidores] ([cuit_dist],[nombre],[apellido],[domicilio],[fecha_inicio]) " +
-                $"VALUES ('{distribuidor.cuit_dist}','{distribuidor.nombre}', " + $"'{distribuidor.apellido}', '{distribuidor.domicilio}', {distribuidor.fecha_inicio}";
+                $"VALUES ('{distribuidor.cuit_dist}','{distribuidor.nombre}', " +
+                $"'{distribuidor.apellido}', '{distribuidor.domicilio}', '{distribuidor.fecha_inicio.ToString("yyyy-MM-dd")}')";
 
             return _BD.EjecutarSQL(sqltxt);
         }
         public bool Eliminar(string distribuidornrocuit)
         {
-            string sqltxt = $"DELETE FROM [dbo].[Distribuidores] WHERE id = {distribuidornrocuit}";
+            string sqltxt = $"DELETE FROM [dbo].[Distribuidores] WHERE cuit_dist = {distribuidornrocuit}";
 
             return _BD.EjecutarSQL(sqltxt);
         }
-        public Distribuidor ObtenerDistribuidor(string cuit_dist)
+
+        /*public Distribuidor ObtenerDistribuidor(string cuit_dist)
         {
             string sqltxt = $"SELECT * FROM [dbo].[Distribuidores] where id={cuit_dist}";
             var tablaTemporal = _BD.consulta(sqltxt);
@@ -46,6 +55,6 @@ namespace TP_PAV_3K02.Repositorios
 
             }
             return distribuidor;
-        }
+        }*/
     }
 }

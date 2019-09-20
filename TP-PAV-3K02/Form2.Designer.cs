@@ -45,8 +45,13 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.lblBuscar = new System.Windows.Forms.Label();
-            this.grillaDistribuidores = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaDistribuidores)).BeginInit();
+            this.DvgDistribuidores = new System.Windows.Forms.DataGridView();
+            this.cuit_dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.DvgDistribuidores)).BeginInit();
             this.SuspendLayout();
             // 
             // lblsuscriptores
@@ -205,14 +210,46 @@
             this.lblBuscar.TabIndex = 29;
             this.lblBuscar.Text = "Buscar :";
             // 
-            // grillaDistribuidores
+            // DvgDistribuidores
             // 
-            this.grillaDistribuidores.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grillaDistribuidores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaDistribuidores.Location = new System.Drawing.Point(385, 108);
-            this.grillaDistribuidores.Name = "grillaDistribuidores";
-            this.grillaDistribuidores.Size = new System.Drawing.Size(342, 283);
-            this.grillaDistribuidores.TabIndex = 28;
+            this.DvgDistribuidores.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DvgDistribuidores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DvgDistribuidores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cuit_dist,
+            this.nombre,
+            this.apellido,
+            this.domicilio,
+            this.fecha_inicio});
+            this.DvgDistribuidores.Location = new System.Drawing.Point(352, 108);
+            this.DvgDistribuidores.Name = "DvgDistribuidores";
+            this.DvgDistribuidores.Size = new System.Drawing.Size(434, 283);
+            this.DvgDistribuidores.TabIndex = 28;
+            this.DvgDistribuidores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgDistribuidores_CellContentClick);
+            // 
+            // cuit_dist
+            // 
+            this.cuit_dist.HeaderText = "Cuit";
+            this.cuit_dist.Name = "cuit_dist";
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            // 
+            // fecha_inicio
+            // 
+            this.fecha_inicio.HeaderText = "Fecha Inicio";
+            this.fecha_inicio.Name = "fecha_inicio";
             // 
             // FormDistribuidores
             // 
@@ -222,7 +259,7 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.lblBuscar);
-            this.Controls.Add(this.grillaDistribuidores);
+            this.Controls.Add(this.DvgDistribuidores);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -239,7 +276,8 @@
             this.Controls.Add(this.lblsuscriptores);
             this.Name = "FormDistribuidores";
             this.Text = "Distribuidores";
-            ((System.ComponentModel.ISupportInitialize)(this.grillaDistribuidores)).EndInit();
+            this.Load += new System.EventHandler(this.FormDistribuidores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DvgDistribuidores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,6 +302,11 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.Label lblBuscar;
-        private System.Windows.Forms.DataGridView grillaDistribuidores;
+        private System.Windows.Forms.DataGridView DvgDistribuidores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuit_dist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio;
     }
 }

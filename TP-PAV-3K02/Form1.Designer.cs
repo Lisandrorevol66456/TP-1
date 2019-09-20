@@ -63,6 +63,7 @@
             this.TxtLocalidad = new System.Windows.Forms.TextBox();
             this.TxtProvincia = new System.Windows.Forms.TextBox();
             this.Txtpais = new System.Windows.Forms.TextBox();
+            this.btnFormRepartidores = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,6 +157,7 @@
             // 
             // cmbTipoDoc
             // 
+            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbTipoDoc.Location = new System.Drawing.Point(138, 117);
@@ -187,6 +189,7 @@
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(138, 20);
             this.txtCalle.TabIndex = 13;
+            this.txtCalle.TextChanged += new System.EventHandler(this.txtCalle_TextChanged);
             // 
             // lblLocalidad
             // 
@@ -263,10 +266,11 @@
             this.codLocalidad,
             this.codProvincia,
             this.codPais});
-            this.DvgSuscriptores.Location = new System.Drawing.Point(364, 117);
+            this.DvgSuscriptores.Location = new System.Drawing.Point(364, 113);
             this.DvgSuscriptores.Name = "DvgSuscriptores";
             this.DvgSuscriptores.Size = new System.Drawing.Size(424, 279);
             this.DvgSuscriptores.TabIndex = 24;
+            this.DvgSuscriptores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgSuscriptores_CellContentClick);
             // 
             // NroDoc
             // 
@@ -362,11 +366,22 @@
             this.Txtpais.Size = new System.Drawing.Size(138, 20);
             this.Txtpais.TabIndex = 30;
             // 
+            // btnFormRepartidores
+            // 
+            this.btnFormRepartidores.Location = new System.Drawing.Point(536, 415);
+            this.btnFormRepartidores.Name = "btnFormRepartidores";
+            this.btnFormRepartidores.Size = new System.Drawing.Size(124, 23);
+            this.btnFormRepartidores.TabIndex = 31;
+            this.btnFormRepartidores.Text = "FormRepartidores";
+            this.btnFormRepartidores.UseVisualStyleBackColor = true;
+            this.btnFormRepartidores.Click += new System.EventHandler(this.btnFormRepartidores_Click);
+            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnFormRepartidores);
             this.Controls.Add(this.Txtpais);
             this.Controls.Add(this.TxtProvincia);
             this.Controls.Add(this.TxtLocalidad);
@@ -439,6 +454,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn codPais;
+        private System.Windows.Forms.Button btnFormRepartidores;
     }
 }
 

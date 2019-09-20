@@ -15,8 +15,7 @@ namespace TP_PAV_3K02.Modelos
         public string domicilio { get; set; }
         public int numero { get; set; }
         public DateTime fecha_inicio { get; set; }
-        public int cod_Provincia { get; set; }
-        public int cod_Pais { get; set; }
+ 
 
 
         public bool CuitValido()
@@ -43,7 +42,7 @@ namespace TP_PAV_3K02.Modelos
 
         public bool domicilioValido()
         {
-            if (!string.IsNullOrEmpty(domicilio) && domicilio.Length < 100)
+            if (!string.IsNullOrEmpty(domicilio) && domicilio.Length < 51)
                 return true;
             return false;
         }

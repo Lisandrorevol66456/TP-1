@@ -17,6 +17,8 @@ namespace TP_PAV_3K02.BaseDatos
 
         private void conectar()
         {
+            cerrar();
+
             conexion.ConnectionString = cadena_conexion;
 
             conexion.Open();
@@ -33,6 +35,7 @@ namespace TP_PAV_3K02.BaseDatos
         }
         public DataTable consulta(string comando)
         {
+            
             //ejecuta el procedimiento local <conectar>
             conectar();
             //asigna a <cmd> el comando que se debe ejecutar, que viene por parámetro
