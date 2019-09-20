@@ -48,12 +48,6 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.DvgSuscriptores = new System.Windows.Forms.DataGridView();
-            this.lblBuscar = new System.Windows.Forms.Label();
-            this.cmbBuscar = new System.Windows.Forms.ComboBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.TxtLocalidad = new System.Windows.Forms.TextBox();
-            this.TxtProvincia = new System.Windows.Forms.TextBox();
-            this.Txtpais = new System.Windows.Forms.TextBox();
             this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +57,12 @@
             this.codLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.cmbBuscar = new System.Windows.Forms.ComboBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.TxtLocalidad = new System.Windows.Forms.TextBox();
+            this.TxtProvincia = new System.Windows.Forms.TextBox();
+            this.Txtpais = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,7 +161,6 @@
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(138, 21);
             this.cmbTipoDoc.TabIndex = 10;
-            this.cmbTipoDoc.Text = "DNI";
             this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
             // 
             // txtNroDoc
@@ -267,6 +266,51 @@
             this.DvgSuscriptores.Size = new System.Drawing.Size(424, 279);
             this.DvgSuscriptores.TabIndex = 24;
             // 
+            // NroDoc
+            // 
+            this.NroDoc.HeaderText = "Nro Doc";
+            this.NroDoc.Name = "NroDoc";
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.HeaderText = "TipoDoc";
+            this.TipoDoc.Name = "TipoDoc";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // Calle
+            // 
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            // 
+            // codLocalidad
+            // 
+            this.codLocalidad.HeaderText = "codLocalidad";
+            this.codLocalidad.Name = "codLocalidad";
+            // 
+            // codProvincia
+            // 
+            this.codProvincia.HeaderText = "codProvincia";
+            this.codProvincia.Name = "codProvincia";
+            // 
+            // codPais
+            // 
+            this.codPais.HeaderText = "codPais";
+            this.codPais.Name = "codPais";
+            // 
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
@@ -315,51 +359,6 @@
             this.Txtpais.Name = "Txtpais";
             this.Txtpais.Size = new System.Drawing.Size(138, 20);
             this.Txtpais.TabIndex = 30;
-            // 
-            // NroDoc
-            // 
-            this.NroDoc.HeaderText = "Nro Doc";
-            this.NroDoc.Name = "NroDoc";
-            // 
-            // TipoDoc
-            // 
-            this.TipoDoc.HeaderText = "TipoDoc";
-            this.TipoDoc.Name = "TipoDoc";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            // 
-            // Calle
-            // 
-            this.Calle.HeaderText = "Calle";
-            this.Calle.Name = "Calle";
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            // 
-            // codLocalidad
-            // 
-            this.codLocalidad.HeaderText = "codLocalidad";
-            this.codLocalidad.Name = "codLocalidad";
-            // 
-            // codProvincia
-            // 
-            this.codProvincia.HeaderText = "codProvincia";
-            this.codProvincia.Name = "codProvincia";
-            // 
-            // codPais
-            // 
-            this.codPais.HeaderText = "codPais";
-            this.codPais.Name = "codPais";
             // 
             // NuevoSuscriptor
             // 

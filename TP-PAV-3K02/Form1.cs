@@ -71,11 +71,11 @@ namespace TP_PAV_3K02
             suscriptor.calle = txtCalle.Text;
             var s = long.Parse(txtNroDoc.Text);
             var d = long.Parse(txtNumero.Text);
+            suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
 
             suscriptor.nroDoc = s;
             suscriptor.numero = d;
-            
-
+           
             if (!suscriptor.NombreValido())
             {
                 MessageBox.Show("Nombre Invalido");
@@ -133,11 +133,12 @@ namespace TP_PAV_3K02
         {
             ActualizarSuscriptores();
             ActualizarCombo();
+            cmbTipoDoc.SelectedIndex = 0;
         }
 
         private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
