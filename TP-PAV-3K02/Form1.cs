@@ -16,12 +16,15 @@ namespace TP_PAV_3K02
     {
         SuscriptoresRepositorio _suscriptoresRepositorio;
         TipoDocumentoRepositorio _tipodocumentoRepositorio;
+        ProvinciasRepositorio _provinciasRepositorio;
+
 
         public NuevoSuscriptor()
         {
             InitializeComponent();
             _suscriptoresRepositorio = new SuscriptoresRepositorio();
             _tipodocumentoRepositorio = new TipoDocumentoRepositorio();
+            _provinciasRepositorio = new ProvinciasRepositorio();
         }
         //METODO PARA CARGAR LA GRILLA DE SUSCRIPTORES EXISTENTES
         private void ActualizarSuscriptores() {
@@ -60,6 +63,10 @@ namespace TP_PAV_3K02
             cmbTipoDoc.ValueMember = "cod_TipoDoc";
             cmbTipoDoc.DisplayMember = "nombre";
             cmbTipoDoc.DataSource = tip_documentos;
+            var provi = _provinciasRepositorio.ObtenerProvincias();
+            cmbProvincias.ValueMember = "cod_provincia";
+            cmbProvincias.DisplayMember = "nombre";
+            cmbProvincias.DataSource = provi;
 
         }
 
@@ -72,6 +79,7 @@ namespace TP_PAV_3K02
             suscriptor.nroDoc = long.Parse(txtNroDoc.Text);
             suscriptor.numero = long.Parse(txtNumero.Text);
             suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
+            suscriptor.cod_Provincia = int.Parse(cmbProvincias.SelectedValue.ToString());
 
 
             if (!suscriptor.NombreValido())
@@ -109,23 +117,9 @@ namespace TP_PAV_3K02
                 MessageBox.Show("Se registro con éxito");
                 this.Dispose();
                 
+                
             }
-
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            this.Dispose();
         }
 
         private void suscriptores_Load(object sender, EventArgs e)
@@ -134,6 +128,8 @@ namespace TP_PAV_3K02
             ActualizarCombo();
             //Se selecciona automaticamente el DNI
             cmbTipoDoc.SelectedIndex = 0;
+            //Se selecciona automaticamente Cordoba
+            cmbProvincias.SelectedIndex = 6;
          
         }
 
@@ -183,9 +179,9 @@ namespace TP_PAV_3K02
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void btnFormRepartidores_Click(object sender, EventArgs e)

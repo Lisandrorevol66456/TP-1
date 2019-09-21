@@ -9,11 +9,11 @@ namespace TP_PAV_3K02.Modelos
     public class Distribuidor
     {
 
-        public int cuit_dist { get; set; }
+        public long cuit_dist { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string domicilio { get; set; }
-        public int numero { get; set; }
+        public long numero { get; set; }
         public DateTime fecha_inicio { get; set; }
  
 

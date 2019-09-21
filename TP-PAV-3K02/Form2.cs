@@ -27,7 +27,8 @@ namespace TP_PAV_3K02
             var distribuidor = new Distribuidor();
             distribuidor.nombre = txtnombre.Text;
             distribuidor.apellido = txtApellido.Text;
-            distribuidor.cuit_dist = int.Parse(TxtCuit.Text);
+            distribuidor.cuit_dist = long.Parse(TxtCuit.Text); // Se debe modificar la base de datos, ya que cuit esta creado como INT,
+                                                               //cuando debe ser numerico.
             distribuidor.domicilio = TxtDomicilio.Text;
             distribuidor.fecha_inicio = DTPfechainicio.Value.Date;
 

@@ -45,7 +45,7 @@
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblPais = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.DvgSuscriptores = new System.Windows.Forms.DataGridView();
             this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,10 +60,10 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.TxtLocalidad = new System.Windows.Forms.TextBox();
-            this.TxtProvincia = new System.Windows.Forms.TextBox();
-            this.Txtpais = new System.Windows.Forms.TextBox();
             this.btnFormRepartidores = new System.Windows.Forms.Button();
+            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
+            this.cmbProvincias = new System.Windows.Forms.ComboBox();
+            this.cmbPais = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +106,6 @@
             this.lblNumero.Size = new System.Drawing.Size(62, 16);
             this.lblNumero.TabIndex = 4;
             this.lblNumero.Text = "Numero :";
-            this.lblNumero.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblNroDoc
             // 
@@ -127,7 +126,6 @@
             this.lblTipoDoc.Size = new System.Drawing.Size(70, 16);
             this.lblTipoDoc.TabIndex = 6;
             this.lblTipoDoc.Text = "Tipo Doc :";
-            this.lblTipoDoc.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblApellido
             // 
@@ -210,7 +208,6 @@
             this.lblProvincia.Size = new System.Drawing.Size(70, 16);
             this.lblProvincia.TabIndex = 18;
             this.lblProvincia.Text = "Provincia :";
-            this.lblProvincia.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblPais
             // 
@@ -232,15 +229,15 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnEditar
+            // btnCancelar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(283, 378);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 35);
-            this.btnEditar.TabIndex = 22;
-            this.btnEditar.Text = "Cancelar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(283, 378);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 35);
+            this.btnCancelar.TabIndex = 22;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEliminar
             // 
@@ -342,30 +339,6 @@
             this.txtBuscar.Size = new System.Drawing.Size(191, 20);
             this.txtBuscar.TabIndex = 27;
             // 
-            // TxtLocalidad
-            // 
-            this.TxtLocalidad.Location = new System.Drawing.Point(138, 252);
-            this.TxtLocalidad.MaxLength = 30;
-            this.TxtLocalidad.Name = "TxtLocalidad";
-            this.TxtLocalidad.Size = new System.Drawing.Size(138, 20);
-            this.TxtLocalidad.TabIndex = 28;
-            // 
-            // TxtProvincia
-            // 
-            this.TxtProvincia.Location = new System.Drawing.Point(138, 282);
-            this.TxtProvincia.MaxLength = 30;
-            this.TxtProvincia.Name = "TxtProvincia";
-            this.TxtProvincia.Size = new System.Drawing.Size(138, 20);
-            this.TxtProvincia.TabIndex = 29;
-            // 
-            // Txtpais
-            // 
-            this.Txtpais.Location = new System.Drawing.Point(138, 314);
-            this.Txtpais.MaxLength = 30;
-            this.Txtpais.Name = "Txtpais";
-            this.Txtpais.Size = new System.Drawing.Size(138, 20);
-            this.Txtpais.TabIndex = 30;
-            // 
             // btnFormRepartidores
             // 
             this.btnFormRepartidores.Location = new System.Drawing.Point(536, 415);
@@ -376,21 +349,51 @@
             this.btnFormRepartidores.UseVisualStyleBackColor = true;
             this.btnFormRepartidores.Click += new System.EventHandler(this.btnFormRepartidores_Click);
             // 
+            // cmbLocalidad
+            // 
+            this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLocalidad.FormattingEnabled = true;
+            this.cmbLocalidad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbLocalidad.Location = new System.Drawing.Point(138, 251);
+            this.cmbLocalidad.Name = "cmbLocalidad";
+            this.cmbLocalidad.Size = new System.Drawing.Size(138, 21);
+            this.cmbLocalidad.TabIndex = 32;
+            // 
+            // cmbProvincias
+            // 
+            this.cmbProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProvincias.FormattingEnabled = true;
+            this.cmbProvincias.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbProvincias.Location = new System.Drawing.Point(138, 282);
+            this.cmbProvincias.Name = "cmbProvincias";
+            this.cmbProvincias.Size = new System.Drawing.Size(138, 21);
+            this.cmbProvincias.TabIndex = 33;
+            // 
+            // cmbPais
+            // 
+            this.cmbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPais.FormattingEnabled = true;
+            this.cmbPais.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbPais.Location = new System.Drawing.Point(138, 314);
+            this.cmbPais.Name = "cmbPais";
+            this.cmbPais.Size = new System.Drawing.Size(138, 21);
+            this.cmbPais.TabIndex = 34;
+            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbPais);
+            this.Controls.Add(this.cmbProvincias);
+            this.Controls.Add(this.cmbLocalidad);
             this.Controls.Add(this.btnFormRepartidores);
-            this.Controls.Add(this.Txtpais);
-            this.Controls.Add(this.TxtProvincia);
-            this.Controls.Add(this.TxtLocalidad);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.DvgSuscriptores);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblPais);
             this.Controls.Add(this.lblProvincia);
@@ -436,15 +439,12 @@
         private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.Label lblPais;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView DvgSuscriptores;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.TextBox TxtLocalidad;
-        private System.Windows.Forms.TextBox TxtProvincia;
-        private System.Windows.Forms.TextBox Txtpais;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -455,6 +455,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn codPais;
         private System.Windows.Forms.Button btnFormRepartidores;
+        private System.Windows.Forms.ComboBox cmbLocalidad;
+        private System.Windows.Forms.ComboBox cmbProvincias;
+        private System.Windows.Forms.ComboBox cmbPais;
     }
 }
 
