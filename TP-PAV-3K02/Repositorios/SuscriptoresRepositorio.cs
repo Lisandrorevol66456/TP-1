@@ -29,9 +29,9 @@ namespace TP_PAV_3K02.Repositorios
 
         public bool Guardar(Suscriptor suscriptor)
         {
-            string sqltxt = $"INSERT [dbo].[Suscriptores] ([nroDoc],[cod_TipoDoc],[nombre], [apellido], [calle],[numero]) " +
+            string sqltxt = $"INSERT [dbo].[Suscriptores] ([nroDoc],[cod_TipoDoc],[nombre], [apellido], [calle],[numero],[cod_Provincia]) " +
                 $"VALUES ('{suscriptor.nroDoc}', " + 
-                $"'{suscriptor.cod_TipoDoc}','{suscriptor.nombre}','{suscriptor.apellido}','{suscriptor.calle}','{suscriptor.numero}')";
+                $"'{suscriptor.cod_TipoDoc}','{suscriptor.nombre}','{suscriptor.apellido}','{suscriptor.calle}','{suscriptor.numero}','{suscriptor.cod_Provincia}')";
 
             return _BD.EjecutarSQL(sqltxt);
         }

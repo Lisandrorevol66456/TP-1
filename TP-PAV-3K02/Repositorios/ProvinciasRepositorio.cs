@@ -18,7 +18,7 @@ namespace TP_PAV_3K02.Repositorios
         }
         public List<Provincia> ObtenerProvincia()
         {
-            var provinciasDTRows = ObtenerProvincias().Rows;//contiene las provincias
+            var provinciasDTRows = ObtenerProvinciasDT().Rows;//contiene las provincias
 
             var provincia = new List<Provincia>();
             foreach (DataRow fila in provinciasDTRows)
@@ -36,7 +36,7 @@ namespace TP_PAV_3K02.Repositorios
             return provincia;
         }
 
-        public DataTable ObtenerProvincias()
+        public DataTable ObtenerProvinciasDT()
         {
             string sqltext = "SELECT * FROM Provincias";
             var provinciasDTRows = _BD.consulta(sqltext);

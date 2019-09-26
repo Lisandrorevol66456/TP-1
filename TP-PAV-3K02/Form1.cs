@@ -63,7 +63,7 @@ namespace TP_PAV_3K02
             cmbTipoDoc.ValueMember = "cod_TipoDoc";
             cmbTipoDoc.DisplayMember = "nombre";
             cmbTipoDoc.DataSource = tip_documentos;
-            var provi = _provinciasRepositorio.ObtenerProvincias();
+            var provi = _provinciasRepositorio.ObtenerProvinciasDT();
             cmbProvincias.ValueMember = "cod_provincia";
             cmbProvincias.DisplayMember = "nombre";
             cmbProvincias.DataSource = provi;
