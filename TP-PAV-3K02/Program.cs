@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_PAV_3K02.Modulos;
 
 namespace TP_PAV_3K02
 {
@@ -16,7 +17,7 @@ namespace TP_PAV_3K02
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NuevoSuscriptor());
+            Application.Run(new PresTipoDoc());
         }
     }
 }

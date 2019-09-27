@@ -47,34 +47,62 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDatos\Editorial_BD.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpleadosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\PresProvincia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Modulos\PresProvincia.Designer.cs">
+      <DependentUpon>PresProvincia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Modulos\PresSuscriptores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Modulos\PresSuscriptores.Designer.cs">
+      <DependentUpon>PresSuscriptores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\PresDistribuidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\PresDistribuidores.Designer.cs">
+      <DependentUpon>PresDistribuidores.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Distribuidor.cs" />
     <Compile Include="Modelos\Localidad.cs" />
     <Compile Include="Modelos\Provincia.cs" />
     <Compile Include="Modelos\Suscriptor.cs" />
     <Compile Include="Modelos\TipoDocumento.cs" />
+    <Compile Include="Modulos\PresTipoDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\PresTipoDoc.Designer.cs">
+      <DependentUpon>PresTipoDoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\DistribuidoresRepositorio.cs" />
     <Compile Include="Repositorios\ProvinciasRepositorio.cs" />
     <Compile Include="Repositorios\SuscriptoresRepositorio.cs" />
     <Compile Include="Repositorios\TipoDocumentoRepositorio.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Modulos\PresProvincia.resx">
+      <DependentUpon>PresProvincia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Modulos\PresSuscriptores.resx">
+      <DependentUpon>PresSuscriptores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\PresDistribuidores.resx">
+      <DependentUpon>PresDistribuidores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\PresTipoDoc.resx">
+      <DependentUpon>PresTipoDoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +113,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EmpleadosDataSet.xsc">
+      <DependentUpon>EmpleadosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmpleadosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmpleadosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmpleadosDataSet.xss">
+      <DependentUpon>EmpleadosDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,6 +147,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
