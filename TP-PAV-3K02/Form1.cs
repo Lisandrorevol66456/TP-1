@@ -67,7 +67,10 @@ namespace TP_PAV_3K02
             cmbTipoDoc.ValueMember = "cod_TipoDoc";
             cmbTipoDoc.DisplayMember = "nombre";
             cmbTipoDoc.DataSource = tip_documentos;
-            
+            cmbBuscarDNI.ValueMember = "cod_TipoDoc";
+            cmbBuscarDNI.DisplayMember = "nombre";
+            cmbBuscarDNI.DataSource = tip_documentos;
+
         }
         private void ActualizarProvi()
         {
@@ -90,6 +93,7 @@ namespace TP_PAV_3K02
         }   
         private void ActualizarLocalidad(int seleccion)
         {
+            
             string str = "SELECT * FROM Localidades WHERE cod_Provincia =" + seleccion;
             var localidad = _BD.consulta(str);
             cmbLocalidad.ValueMember = "cod_Localidad";
@@ -220,6 +224,40 @@ namespace TP_PAV_3K02
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             ActualizarLocalidad(int.Parse(cmbProvincias.SelectedValue.ToString()));
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            DvgSuscriptores.Rows.Clear();
+            var numdoc = long.Parse(TXTbuscarDNI.Text);
+            var suscriptores = _suscriptoresRepositorio.ObtenerPorDNI(numdoc).Rows;
+            var filas = new List<DataGridViewRow>();
+
+            foreach (DataRow suscriptor in suscriptores)
+            {
+                if (suscriptor.HasErrors)
+                    continue;//no corto el ciclo
+                var fila = new string[]
+                {
+                    suscriptor.ItemArray[0].ToString(),
+                    suscriptor.ItemArray[1].ToString(),
+                    suscriptor.ItemArray[2].ToString(),
+                    suscriptor.ItemArray[3].ToString(),
+                    suscriptor.ItemArray[4].ToString(),
+                    suscriptor.ItemArray[5].ToString(),
+                    suscriptor.ItemArray[6].ToString(),
+                    suscriptor.ItemArray[7].ToString(),
+                    suscriptor.ItemArray[8].ToString(),
+                };
+
+                DvgSuscriptores.Rows.Add(fila);
+
+            }
+        }
+
+        private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

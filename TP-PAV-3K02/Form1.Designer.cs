@@ -63,6 +63,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TXTbuscarDNI = new System.Windows.Forms.TextBox();
             this.cmbBuscarDNI = new System.Windows.Forms.ComboBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -162,6 +163,7 @@
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(138, 21);
             this.cmbTipoDoc.TabIndex = 10;
+            this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
             // 
             // txtNroDoc
             // 
@@ -328,6 +330,7 @@
             // 
             // gbBuscar
             // 
+            this.gbBuscar.Controls.Add(this.BtnBuscar);
             this.gbBuscar.Controls.Add(this.cmbBuscarDNI);
             this.gbBuscar.Controls.Add(this.TXTbuscarDNI);
             this.gbBuscar.Controls.Add(this.label2);
@@ -376,6 +379,16 @@
             this.cmbBuscarDNI.Name = "cmbBuscarDNI";
             this.cmbBuscarDNI.Size = new System.Drawing.Size(138, 21);
             this.cmbBuscarDNI.TabIndex = 35;
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Location = new System.Drawing.Point(288, 40);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(75, 35);
+            this.BtnBuscar.TabIndex = 36;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // NuevoSuscriptor
             // 
@@ -453,6 +466,7 @@
         private System.Windows.Forms.TextBox TXTbuscarDNI;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnBuscar;
     }
 }
 
