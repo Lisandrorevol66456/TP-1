@@ -47,14 +47,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.DvgSuscriptores = new System.Windows.Forms.DataGridView();
-            this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFormRepartidores = new System.Windows.Forms.Button();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbProvincias = new System.Windows.Forms.ComboBox();
@@ -64,6 +56,14 @@
             this.TXTbuscarDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -252,52 +252,12 @@
             this.Apellido,
             this.Calle,
             this.Numero,
-            this.codLocalidad,
+            this.CodLocalidad,
             this.codProvincia});
             this.DvgSuscriptores.Location = new System.Drawing.Point(364, 130);
             this.DvgSuscriptores.Name = "DvgSuscriptores";
-            this.DvgSuscriptores.Size = new System.Drawing.Size(424, 279);
+            this.DvgSuscriptores.Size = new System.Drawing.Size(717, 267);
             this.DvgSuscriptores.TabIndex = 24;
-            // 
-            // NroDoc
-            // 
-            this.NroDoc.HeaderText = "Nro Doc";
-            this.NroDoc.Name = "NroDoc";
-            // 
-            // TipoDoc
-            // 
-            this.TipoDoc.HeaderText = "TipoDoc";
-            this.TipoDoc.Name = "TipoDoc";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            // 
-            // Calle
-            // 
-            this.Calle.HeaderText = "Calle";
-            this.Calle.Name = "Calle";
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            // 
-            // codLocalidad
-            // 
-            this.codLocalidad.HeaderText = "codLocalidad";
-            this.codLocalidad.Name = "codLocalidad";
-            // 
-            // codProvincia
-            // 
-            this.codProvincia.HeaderText = "codProvincia";
-            this.codProvincia.Name = "codProvincia";
             // 
             // btnFormRepartidores
             // 
@@ -392,11 +352,51 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "Tipo Doc :";
             // 
+            // NroDoc
+            // 
+            this.NroDoc.HeaderText = "Nro Doc";
+            this.NroDoc.Name = "NroDoc";
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.HeaderText = "TipoDoc";
+            this.TipoDoc.Name = "TipoDoc";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // Calle
+            // 
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            // 
+            // CodLocalidad
+            // 
+            this.CodLocalidad.HeaderText = "CodLocalidad";
+            this.CodLocalidad.Name = "CodLocalidad";
+            // 
+            // codProvincia
+            // 
+            this.codProvincia.HeaderText = "codProvincia";
+            this.codProvincia.Name = "codProvincia";
+            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1095, 450);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.cmbProvincias);
             this.Controls.Add(this.cmbLocalidad);
@@ -455,20 +455,20 @@
         private System.Windows.Forms.Button btnFormRepartidores;
         private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.ComboBox cmbProvincias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codLocalidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
         private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.ComboBox cmbBuscarDNI;
         private System.Windows.Forms.TextBox TXTbuscarDNI;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodLocalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
     }
 }
 

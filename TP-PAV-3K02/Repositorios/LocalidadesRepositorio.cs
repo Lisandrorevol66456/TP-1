@@ -20,7 +20,7 @@ namespace TP_PAV_3K02.Repositorios
         public DataTable ObtenerLocalidadesDT(string prov)
         {
 
-            string sqltext = $"SELECT * FROM [dbo].[Localidades] WHERE cod_provincia = {prov}";
+            string sqltext = $"SELECT * FROM [dbo].[Localidades] WHERE cod_provincia ='{prov}'";
             var LocalidadesDTRows = _BD.consulta(sqltext);
             return LocalidadesDTRows;
 

@@ -53,7 +53,7 @@ namespace TP_PAV_3K02
                     suscriptor.ItemArray[5].ToString(),
                     suscriptor.ItemArray[6].ToString(),
                     suscriptor.ItemArray[7].ToString(),
-                    suscriptor.ItemArray[8].ToString(),
+                    
                 };
 
                 DvgSuscriptores.Rows.Add(fila);
@@ -95,6 +95,8 @@ namespace TP_PAV_3K02
             cmbLocalidad.DisplayMember = "nombre";
             cmbLocalidad.DataSource = localidad;
             
+
+
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -105,6 +107,7 @@ namespace TP_PAV_3K02
             suscriptor.calle = txtCalle.Text;
             suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
             suscriptor.cod_Provincia = int.Parse(cmbProvincias.SelectedValue.ToString());
+            suscriptor.cod_Localidad = int.Parse(cmbLocalidad.SelectedValue.ToString());
 
 
             if (!suscriptor.NombreValido())
@@ -241,7 +244,7 @@ namespace TP_PAV_3K02
                     suscriptor.ItemArray[5].ToString(),
                     suscriptor.ItemArray[6].ToString(),
                     suscriptor.ItemArray[7].ToString(),
-                    suscriptor.ItemArray[8].ToString(),
+                  
                 };
 
                 DvgSuscriptores.Rows.Add(fila);
