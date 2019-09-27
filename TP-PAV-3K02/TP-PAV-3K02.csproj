@@ -60,6 +60,7 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Distribuidor.cs" />
+    <Compile Include="Modelos\Localidad.cs" />
     <Compile Include="Modelos\Provincia.cs" />
     <Compile Include="Modelos\Suscriptor.cs" />
     <Compile Include="Modelos\TipoDocumento.cs" />

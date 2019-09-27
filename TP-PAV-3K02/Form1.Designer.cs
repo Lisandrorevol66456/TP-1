@@ -43,7 +43,6 @@
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.lblProvincia = new System.Windows.Forms.Label();
-            this.lblPais = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -56,14 +55,12 @@
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnFormRepartidores = new System.Windows.Forms.Button();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbProvincias = new System.Windows.Forms.ComboBox();
-            this.cmbPais = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +88,7 @@
             // 
             this.lblCalle.AutoSize = true;
             this.lblCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalle.Location = new System.Drawing.Point(56, 183);
+            this.lblCalle.Location = new System.Drawing.Point(72, 183);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(45, 16);
             this.lblCalle.TabIndex = 3;
@@ -101,7 +98,7 @@
             // 
             this.lblNumero.AutoSize = true;
             this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.Location = new System.Drawing.Point(56, 213);
+            this.lblNumero.Location = new System.Drawing.Point(55, 213);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(62, 16);
             this.lblNumero.TabIndex = 4;
@@ -121,7 +118,7 @@
             // 
             this.lblTipoDoc.AutoSize = true;
             this.lblTipoDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoDoc.Location = new System.Drawing.Point(56, 122);
+            this.lblTipoDoc.Location = new System.Drawing.Point(47, 122);
             this.lblTipoDoc.Name = "lblTipoDoc";
             this.lblTipoDoc.Size = new System.Drawing.Size(70, 16);
             this.lblTipoDoc.TabIndex = 6;
@@ -158,15 +155,15 @@
             this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmbTipoDoc.Location = new System.Drawing.Point(138, 117);
+            this.cmbTipoDoc.Location = new System.Drawing.Point(138, 121);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(138, 21);
             this.cmbTipoDoc.TabIndex = 10;
-            this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
+            
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(138, 148);
+            this.txtNroDoc.Location = new System.Drawing.Point(138, 151);
             this.txtNroDoc.MaxLength = 10;
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(138, 20);
@@ -174,7 +171,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(138, 209);
+            this.txtNumero.Location = new System.Drawing.Point(138, 212);
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(138, 20);
@@ -182,18 +179,17 @@
             // 
             // txtCalle
             // 
-            this.txtCalle.Location = new System.Drawing.Point(138, 179);
+            this.txtCalle.Location = new System.Drawing.Point(138, 182);
             this.txtCalle.MaxLength = 30;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(138, 20);
             this.txtCalle.TabIndex = 13;
-            this.txtCalle.TextChanged += new System.EventHandler(this.txtCalle_TextChanged);
             // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalidad.Location = new System.Drawing.Point(56, 252);
+            this.lblLocalidad.Location = new System.Drawing.Point(43, 301);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(74, 16);
             this.lblLocalidad.TabIndex = 17;
@@ -203,21 +199,11 @@
             // 
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvincia.Location = new System.Drawing.Point(56, 282);
+            this.lblProvincia.Location = new System.Drawing.Point(49, 254);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(70, 16);
             this.lblProvincia.TabIndex = 18;
             this.lblProvincia.Text = "Provincia :";
-            // 
-            // lblPais
-            // 
-            this.lblPais.AutoSize = true;
-            this.lblPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPais.Location = new System.Drawing.Point(56, 314);
-            this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(41, 16);
-            this.lblPais.TabIndex = 19;
-            this.lblPais.Text = "Pais :";
             // 
             // btnAgregar
             // 
@@ -261,13 +247,11 @@
             this.Calle,
             this.Numero,
             this.codLocalidad,
-            this.codProvincia,
-            this.codPais});
+            this.codProvincia});
             this.DvgSuscriptores.Location = new System.Drawing.Point(364, 113);
             this.DvgSuscriptores.Name = "DvgSuscriptores";
             this.DvgSuscriptores.Size = new System.Drawing.Size(424, 279);
             this.DvgSuscriptores.TabIndex = 24;
-            this.DvgSuscriptores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgSuscriptores_CellContentClick);
             // 
             // NroDoc
             // 
@@ -309,11 +293,6 @@
             this.codProvincia.HeaderText = "codProvincia";
             this.codProvincia.Name = "codProvincia";
             // 
-            // codPais
-            // 
-            this.codPais.HeaderText = "codPais";
-            this.codPais.Name = "codPais";
-            // 
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
@@ -354,37 +333,27 @@
             this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalidad.FormattingEnabled = true;
             this.cmbLocalidad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmbLocalidad.Location = new System.Drawing.Point(138, 251);
+            this.cmbLocalidad.Location = new System.Drawing.Point(138, 300);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(138, 21);
             this.cmbLocalidad.TabIndex = 32;
-            // 
+             
             // cmbProvincias
             // 
             this.cmbProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincias.FormattingEnabled = true;
             this.cmbProvincias.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmbProvincias.Location = new System.Drawing.Point(138, 282);
+            this.cmbProvincias.Location = new System.Drawing.Point(138, 253);
             this.cmbProvincias.Name = "cmbProvincias";
             this.cmbProvincias.Size = new System.Drawing.Size(138, 21);
             this.cmbProvincias.TabIndex = 33;
-            // 
-            // cmbPais
-            // 
-            this.cmbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPais.FormattingEnabled = true;
-            this.cmbPais.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmbPais.Location = new System.Drawing.Point(138, 314);
-            this.cmbPais.Name = "cmbPais";
-            this.cmbPais.Size = new System.Drawing.Size(138, 21);
-            this.cmbPais.TabIndex = 34;
+            
             // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cmbPais);
             this.Controls.Add(this.cmbProvincias);
             this.Controls.Add(this.cmbLocalidad);
             this.Controls.Add(this.btnFormRepartidores);
@@ -395,7 +364,6 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.lblPais);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.lblLocalidad);
             this.Controls.Add(this.txtCalle);
@@ -437,7 +405,6 @@
         private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.Label lblProvincia;
-        private System.Windows.Forms.Label lblPais;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
@@ -445,6 +412,9 @@
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnFormRepartidores;
+        private System.Windows.Forms.ComboBox cmbLocalidad;
+        private System.Windows.Forms.ComboBox cmbProvincias;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -453,11 +423,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn codLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codPais;
-        private System.Windows.Forms.Button btnFormRepartidores;
-        private System.Windows.Forms.ComboBox cmbLocalidad;
-        private System.Windows.Forms.ComboBox cmbProvincias;
-        private System.Windows.Forms.ComboBox cmbPais;
     }
 }
 
