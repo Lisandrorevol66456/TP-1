@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TP_PAV_3K02.Modelos
 {
@@ -20,11 +21,12 @@ namespace TP_PAV_3K02.Modelos
         public int cod_Pais { get; set; }
 
 
-        public bool NroDocValido()
+        public bool NroDocValido(string documento)
         {
-            if(nroDoc > 0)
-                return true;
+            if (long.TryParse(documento, out long resultado))
+               return true;  
             return false;
+            
         }
 
         public bool NombreValido()
@@ -49,9 +51,9 @@ namespace TP_PAV_3K02.Modelos
             return false;
         }
 
-        public bool NumeroValido()
+        public bool NumeroValido(string num)
         {
-            if(numero > 0 )
+            if(long.TryParse(num , out long resultado))
                 return true;
             return false;
             

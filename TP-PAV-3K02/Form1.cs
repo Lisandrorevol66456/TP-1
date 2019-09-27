@@ -86,6 +86,7 @@ namespace TP_PAV_3K02
             
         }  
         
+      
         private void ActualizarLocalidad(string provincia)
         {
            
@@ -98,11 +99,10 @@ namespace TP_PAV_3K02
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             var suscriptor = new Suscriptor();
+            
             suscriptor.nombre = txtnombre.Text;
             suscriptor.apellido = txtApellido.Text;
             suscriptor.calle = txtCalle.Text;
-            suscriptor.nroDoc = long.Parse(txtNroDoc.Text);
-            suscriptor.numero = long.Parse(txtNumero.Text);
             suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
             suscriptor.cod_Provincia = int.Parse(cmbProvincias.SelectedValue.ToString());
 
@@ -125,24 +125,29 @@ namespace TP_PAV_3K02
                 return;
             }
 
-            if (!suscriptor.NroDocValido())
+            if (!suscriptor.NroDocValido(txtNroDoc.Text.ToString()))
             {
+              
                 MessageBox.Show("Documento Invalido");
                 return;
+          
             }
+            suscriptor.nroDoc = long.Parse(txtNroDoc.Text);
 
-            if (!suscriptor.NumeroValido())
+
+            if (!suscriptor.NumeroValido(txtNumero.Text.ToString()))
             {
                 MessageBox.Show("Numero Invalido");
                 return;
             }
+            suscriptor.numero = long.Parse(txtNumero.Text);
+
 
             if (_suscriptoresRepositorio.Guardar(suscriptor))
             {
                 MessageBox.Show("Se registro con éxito");
                 ActualizarSuscriptores();
-                
-                
+  
             }
            
         }
@@ -213,11 +218,7 @@ namespace TP_PAV_3K02
         }
 
 
-        private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-           
-        }
+      
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -248,10 +249,7 @@ namespace TP_PAV_3K02
             }
         }
 
-        private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void cmbProvincias_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -265,6 +263,28 @@ namespace TP_PAV_3K02
                 cmbLocalidad.DataSource = null;
                 DvgSuscriptores.DataSource = null;
             }
+        }
+
+        private void validateTextBox(object sender, KeyPressEventArgs v)
+        {
+            if (Char.IsLetter(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se permiten Letras HDP");
+            }
+
         }
     }
     

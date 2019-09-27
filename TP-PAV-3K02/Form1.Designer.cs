@@ -64,7 +64,6 @@
             this.TXTbuscarDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -146,6 +145,7 @@
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(138, 20);
             this.txtnombre.TabIndex = 8;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateTextBox);
             // 
             // txtApellido
             // 
@@ -154,6 +154,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(138, 20);
             this.txtApellido.TabIndex = 9;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateTextBox);
             // 
             // cmbTipoDoc
             // 
@@ -164,7 +165,6 @@
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(138, 21);
             this.cmbTipoDoc.TabIndex = 10;
-            this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
             // 
             // txtNroDoc
             // 
@@ -189,6 +189,7 @@
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(138, 20);
             this.txtCalle.TabIndex = 13;
+            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateTextBox);
             // 
             // lblLocalidad
             // 
@@ -317,7 +318,6 @@
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(138, 21);
             this.cmbLocalidad.TabIndex = 32;
-            this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
             // 
             // cmbProvincias
             // 
@@ -392,19 +392,11 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "Tipo Doc :";
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(138, 341);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 35;
-            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.cmbProvincias);
             this.Controls.Add(this.cmbLocalidad);
@@ -477,7 +469,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnBuscar;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
 
