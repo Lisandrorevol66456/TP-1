@@ -150,5 +150,35 @@ namespace TP_PAV_3K02
         {
 
         }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            DvgDistribuidores.Rows.Clear();
+            var numcuit = long.Parse(TXTbuscarCUIT.Text);
+            var distribuidores = _distribuidoresRepositorio.ObtenerPorcuit(numcuit).Rows;
+            var filas = new List<DataGridViewRow>();
+
+            foreach (DataRow distribuidor in distribuidores)
+            {
+                if (distribuidor.HasErrors)
+                    continue;//no corto el ciclo
+                var fila = new string[]
+                {
+                    distribuidor.ItemArray[0].ToString(),
+                    distribuidor.ItemArray[1].ToString(),
+                    distribuidor.ItemArray[2].ToString(),
+                    distribuidor.ItemArray[3].ToString(),
+                    distribuidor.ItemArray[4].ToString(),
+                    distribuidor.ItemArray[5].ToString(),
+                    distribuidor.ItemArray[6].ToString(),
+                    distribuidor.ItemArray[7].ToString(),
+                    distribuidor.ItemArray[8].ToString(),
+                };
+
+                DvgDistribuidores.Rows.Add(fila);
+
+            }
+        }
     }
-}
+    }
+

@@ -25,6 +25,12 @@ namespace TP_PAV_3K02.Repositorios
             return _BD.consulta(sqltext);
 
         }
+        public DataTable ObtenerPorcuit(long cuit)
+        {
+            string sqltxt = "SELECT * FROM Distribuidores Where nroDoc=" + cuit;
+
+            return _BD.consulta(sqltxt);
+        }
         public bool Guardar(Distribuidor distribuidor)
         {
             string sqltxt = $"INSERT [dbo].[Distribuidores] ([cuit_dist],[nombre],[apellido],[domicilio],[fecha_inicio]) " +

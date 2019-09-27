@@ -168,7 +168,7 @@
             // txtNroDoc
             // 
             this.txtNroDoc.Location = new System.Drawing.Point(138, 151);
-            this.txtNroDoc.MaxLength = 10;
+            this.txtNroDoc.MaxLength = 11;
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(138, 20);
             this.txtNroDoc.TabIndex = 11;
@@ -365,7 +365,7 @@
             // TXTbuscarDNI
             // 
             this.TXTbuscarDNI.Location = new System.Drawing.Point(103, 65);
-            this.TXTbuscarDNI.MaxLength = 10;
+            this.TXTbuscarDNI.MaxLength = 11;
             this.TXTbuscarDNI.Name = "TXTbuscarDNI";
             this.TXTbuscarDNI.Size = new System.Drawing.Size(138, 20);
             this.TXTbuscarDNI.TabIndex = 30;

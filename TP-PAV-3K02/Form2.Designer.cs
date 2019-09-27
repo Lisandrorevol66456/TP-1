@@ -42,16 +42,18 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cmbBuscar = new System.Windows.Forms.ComboBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
             this.DvgDistribuidores = new System.Windows.Forms.DataGridView();
             this.cuit_dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbBuscar = new System.Windows.Forms.GroupBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.TXTbuscarCUIT = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DvgDistribuidores)).BeginInit();
+            this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblsuscriptores
@@ -185,31 +187,6 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(470, 65);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(191, 20);
-            this.txtBuscar.TabIndex = 31;
-            // 
-            // cmbBuscar
-            // 
-            this.cmbBuscar.FormattingEnabled = true;
-            this.cmbBuscar.Location = new System.Drawing.Point(470, 27);
-            this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(138, 21);
-            this.cmbBuscar.TabIndex = 30;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.Location = new System.Drawing.Point(382, 32);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(56, 16);
-            this.lblBuscar.TabIndex = 29;
-            this.lblBuscar.Text = "Buscar :";
-            // 
             // DvgDistribuidores
             // 
             this.DvgDistribuidores.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -220,7 +197,7 @@
             this.apellido,
             this.domicilio,
             this.fecha_inicio});
-            this.DvgDistribuidores.Location = new System.Drawing.Point(352, 108);
+            this.DvgDistribuidores.Location = new System.Drawing.Point(352, 129);
             this.DvgDistribuidores.Name = "DvgDistribuidores";
             this.DvgDistribuidores.Size = new System.Drawing.Size(434, 283);
             this.DvgDistribuidores.TabIndex = 28;
@@ -251,14 +228,52 @@
             this.fecha_inicio.HeaderText = "Fecha Inicio";
             this.fecha_inicio.Name = "fecha_inicio";
             // 
+            // gbBuscar
+            // 
+            this.gbBuscar.Controls.Add(this.BtnBuscar);
+            this.gbBuscar.Controls.Add(this.TXTbuscarCUIT);
+            this.gbBuscar.Controls.Add(this.label4);
+            this.gbBuscar.Location = new System.Drawing.Point(352, 12);
+            this.gbBuscar.Name = "gbBuscar";
+            this.gbBuscar.Size = new System.Drawing.Size(434, 100);
+            this.gbBuscar.TabIndex = 35;
+            this.gbBuscar.TabStop = false;
+            this.gbBuscar.Text = "Buscar";
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Location = new System.Drawing.Point(35, 59);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(211, 20);
+            this.BtnBuscar.TabIndex = 36;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // TXTbuscarCUIT
+            // 
+            this.TXTbuscarCUIT.Location = new System.Drawing.Point(108, 33);
+            this.TXTbuscarCUIT.MaxLength = 11;
+            this.TXTbuscarCUIT.Name = "TXTbuscarCUIT";
+            this.TXTbuscarCUIT.Size = new System.Drawing.Size(138, 20);
+            this.TXTbuscarCUIT.TabIndex = 30;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(32, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 16);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Nro Cuit:";
+            // 
             // FormDistribuidores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 450);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.cmbBuscar);
-            this.Controls.Add(this.lblBuscar);
+            this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.DvgDistribuidores);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -278,6 +293,8 @@
             this.Text = "Distribuidores";
             this.Load += new System.EventHandler(this.FormDistribuidores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DvgDistribuidores)).EndInit();
+            this.gbBuscar.ResumeLayout(false);
+            this.gbBuscar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,14 +316,15 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ComboBox cmbBuscar;
-        private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.DataGridView DvgDistribuidores;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuit_dist;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio;
+        private System.Windows.Forms.GroupBox gbBuscar;
+        private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.TextBox TXTbuscarCUIT;
+        private System.Windows.Forms.Label label4;
     }
 }
