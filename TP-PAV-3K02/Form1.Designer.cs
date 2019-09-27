@@ -55,20 +55,23 @@
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblBuscar = new System.Windows.Forms.Label();
-            this.cmbBuscar = new System.Windows.Forms.ComboBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnFormRepartidores = new System.Windows.Forms.Button();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbProvincias = new System.Windows.Forms.ComboBox();
+            this.gbBuscar = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TXTbuscarDNI = new System.Windows.Forms.TextBox();
+            this.cmbBuscarDNI = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
+            this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblsuscriptores
             // 
             this.lblsuscriptores.AutoSize = true;
             this.lblsuscriptores.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsuscriptores.Location = new System.Drawing.Point(17, 19);
+            this.lblsuscriptores.Location = new System.Drawing.Point(10, 19);
             this.lblsuscriptores.Name = "lblsuscriptores";
             this.lblsuscriptores.Size = new System.Drawing.Size(107, 23);
             this.lblsuscriptores.TabIndex = 0;
@@ -159,7 +162,6 @@
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(138, 21);
             this.cmbTipoDoc.TabIndex = 10;
-            
             // 
             // txtNroDoc
             // 
@@ -248,7 +250,7 @@
             this.Numero,
             this.codLocalidad,
             this.codProvincia});
-            this.DvgSuscriptores.Location = new System.Drawing.Point(364, 113);
+            this.DvgSuscriptores.Location = new System.Drawing.Point(364, 130);
             this.DvgSuscriptores.Name = "DvgSuscriptores";
             this.DvgSuscriptores.Size = new System.Drawing.Size(424, 279);
             this.DvgSuscriptores.TabIndex = 24;
@@ -293,34 +295,9 @@
             this.codProvincia.HeaderText = "codProvincia";
             this.codProvincia.Name = "codProvincia";
             // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.Location = new System.Drawing.Point(409, 54);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(56, 16);
-            this.lblBuscar.TabIndex = 25;
-            this.lblBuscar.Text = "Buscar :";
-            // 
-            // cmbBuscar
-            // 
-            this.cmbBuscar.FormattingEnabled = true;
-            this.cmbBuscar.Location = new System.Drawing.Point(497, 49);
-            this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(138, 21);
-            this.cmbBuscar.TabIndex = 26;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(497, 87);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(191, 20);
-            this.txtBuscar.TabIndex = 27;
-            // 
             // btnFormRepartidores
             // 
-            this.btnFormRepartidores.Location = new System.Drawing.Point(536, 415);
+            this.btnFormRepartidores.Location = new System.Drawing.Point(664, 415);
             this.btnFormRepartidores.Name = "btnFormRepartidores";
             this.btnFormRepartidores.Size = new System.Drawing.Size(124, 23);
             this.btnFormRepartidores.TabIndex = 31;
@@ -337,7 +314,8 @@
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(138, 21);
             this.cmbLocalidad.TabIndex = 32;
-             
+            this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
+            // 
             // cmbProvincias
             // 
             this.cmbProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -347,19 +325,67 @@
             this.cmbProvincias.Name = "cmbProvincias";
             this.cmbProvincias.Size = new System.Drawing.Size(138, 21);
             this.cmbProvincias.TabIndex = 33;
-            
+            // 
+            // gbBuscar
+            // 
+            this.gbBuscar.Controls.Add(this.cmbBuscarDNI);
+            this.gbBuscar.Controls.Add(this.TXTbuscarDNI);
+            this.gbBuscar.Controls.Add(this.label2);
+            this.gbBuscar.Controls.Add(this.label1);
+            this.gbBuscar.Location = new System.Drawing.Point(364, 19);
+            this.gbBuscar.Name = "gbBuscar";
+            this.gbBuscar.Size = new System.Drawing.Size(414, 100);
+            this.gbBuscar.TabIndex = 34;
+            this.gbBuscar.TabStop = false;
+            this.gbBuscar.Text = "Buscar";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Tipo Doc :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(27, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 16);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Nro Doc:";
+            // 
+            // TXTbuscarDNI
+            // 
+            this.TXTbuscarDNI.Location = new System.Drawing.Point(103, 65);
+            this.TXTbuscarDNI.MaxLength = 10;
+            this.TXTbuscarDNI.Name = "TXTbuscarDNI";
+            this.TXTbuscarDNI.Size = new System.Drawing.Size(138, 20);
+            this.TXTbuscarDNI.TabIndex = 30;
+            // 
+            // cmbBuscarDNI
+            // 
+            this.cmbBuscarDNI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBuscarDNI.FormattingEnabled = true;
+            this.cmbBuscarDNI.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbBuscarDNI.Location = new System.Drawing.Point(103, 35);
+            this.cmbBuscarDNI.Name = "cmbBuscarDNI";
+            this.cmbBuscarDNI.Size = new System.Drawing.Size(138, 21);
+            this.cmbBuscarDNI.TabIndex = 35;
             // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.cmbProvincias);
             this.Controls.Add(this.cmbLocalidad);
             this.Controls.Add(this.btnFormRepartidores);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.cmbBuscar);
-            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.DvgSuscriptores);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
@@ -383,6 +409,8 @@
             this.Text = "Suscriptores";
             this.Load += new System.EventHandler(this.suscriptores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).EndInit();
+            this.gbBuscar.ResumeLayout(false);
+            this.gbBuscar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,9 +437,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView DvgSuscriptores;
-        private System.Windows.Forms.Label lblBuscar;
-        private System.Windows.Forms.ComboBox cmbBuscar;
-        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnFormRepartidores;
         private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.ComboBox cmbProvincias;
@@ -423,6 +448,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn codLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
+        private System.Windows.Forms.GroupBox gbBuscar;
+        private System.Windows.Forms.ComboBox cmbBuscarDNI;
+        private System.Windows.Forms.TextBox TXTbuscarDNI;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
