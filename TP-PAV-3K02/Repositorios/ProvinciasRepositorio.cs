@@ -16,7 +16,7 @@ namespace TP_PAV_3K02.Repositorios
         {
             _BD = new Editorial_BD();
         }
-        public List<Provincia> ObtenerProvincia()
+        /*public List<Provincia> ObtenerProvincia()
         {
             var provinciasDTRows = ObtenerProvinciasDT().Rows;//contiene las provincias
 
@@ -34,7 +34,7 @@ namespace TP_PAV_3K02.Repositorios
             }
 
             return provincia;
-        }
+        }*/
 
         public DataTable ObtenerProvinciasDT()
         {

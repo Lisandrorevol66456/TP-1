@@ -11,7 +11,7 @@ namespace TP_PAV_3K02.Modelos
         public int cod_Localidad { get; set; }
         public string nombre { get; set; }
 
-        public int cod_Provincia { get; set; }
+        public int cod_provincia { get; set; }
 
     }
 }

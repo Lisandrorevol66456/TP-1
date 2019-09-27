@@ -18,6 +18,7 @@ namespace TP_PAV_3K02
         SuscriptoresRepositorio _suscriptoresRepositorio;
         TipoDocumentoRepositorio _tipodocumentoRepositorio;
         ProvinciasRepositorio _provinciasRepositorio;
+        LocalidadesRepositorio _localidadesRepositorio;
         Editorial_BD _BD;
 
         public NuevoSuscriptor()
@@ -26,6 +27,7 @@ namespace TP_PAV_3K02
             _suscriptoresRepositorio = new SuscriptoresRepositorio();
             _tipodocumentoRepositorio = new TipoDocumentoRepositorio();
             _provinciasRepositorio = new ProvinciasRepositorio();
+            _localidadesRepositorio = new LocalidadesRepositorio();
            
             _BD = new Editorial_BD();
         }
@@ -63,10 +65,12 @@ namespace TP_PAV_3K02
         //cargar combos Tipo Documento
         private void ActualizarCombo()
         {
+            //combo Tipo DNI
             var tip_documentos = _tipodocumentoRepositorio.ObetenerTiposDocumentosDT();
             cmbTipoDoc.ValueMember = "cod_TipoDoc";
             cmbTipoDoc.DisplayMember = "nombre";
             cmbTipoDoc.DataSource = tip_documentos;
+
             cmbBuscarDNI.ValueMember = "cod_TipoDoc";
             cmbBuscarDNI.DisplayMember = "nombre";
             cmbBuscarDNI.DataSource = tip_documentos;
@@ -75,27 +79,17 @@ namespace TP_PAV_3K02
         private void ActualizarProvi()
         {
             var provi = _provinciasRepositorio.ObtenerProvinciasDT();
-            
             cmbProvincias.ValueMember = "cod_provincia";
             cmbProvincias.DisplayMember = "nombre";
             cmbProvincias.DataSource = provi;
-            cmbProvincias.SelectedIndex = 6;
-            if (cmbProvincias.Items.Count != 0)
-            {
-                int cod_provincia = int.Parse(cmbProvincias.SelectedValue.ToString());
-                ActualizarLocalidad(cod_provincia);
-            }
-            else
-            {
-                cmbLocalidad.DataSource = null;
-                DvgSuscriptores.DataSource = null;
-            }
-        }   
-        private void ActualizarLocalidad(int seleccion)
-        {
+           
             
-            string str = "SELECT * FROM Localidades WHERE cod_Provincia =" + seleccion;
-            var localidad = _BD.consulta(str);
+        }  
+        
+        private void ActualizarLocalidad(string provincia)
+        {
+           
+            var localidad = _localidadesRepositorio.ObtenerLocalidadesDT(provincia);
             cmbLocalidad.ValueMember = "cod_Localidad";
             cmbLocalidad.DisplayMember = "nombre";
             cmbLocalidad.DataSource = localidad;
@@ -146,11 +140,11 @@ namespace TP_PAV_3K02
             if (_suscriptoresRepositorio.Guardar(suscriptor))
             {
                 MessageBox.Show("Se registro con éxito");
-                this.Dispose();
+                ActualizarSuscriptores();
                 
                 
             }
-            this.Dispose();
+           
         }
 
         private void suscriptores_Load(object sender, EventArgs e)
@@ -160,7 +154,9 @@ namespace TP_PAV_3K02
             //Se selecciona automaticamente el DNI
             cmbTipoDoc.SelectedIndex = 0;
             ActualizarProvi();
-           
+
+
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -216,14 +212,11 @@ namespace TP_PAV_3K02
 
         }
 
-        //private void cmbLocalidad_SelectionChangeCommitted(object sender, EventArgs e)
-        //{
-        //    ActualizarLocalidad(int.Parse(cmbProvincias.SelectedValue.ToString()));
-        //}
 
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ActualizarLocalidad(int.Parse(cmbProvincias.SelectedValue.ToString()));
+           
+           
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -258,6 +251,20 @@ namespace TP_PAV_3K02
         private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbProvincias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProvincias.Items.Count != 0)
+            {
+                ActualizarLocalidad(cmbProvincias.SelectedValue.ToString());
+                
+            }
+            else
+            {
+                cmbLocalidad.DataSource = null;
+                DvgSuscriptores.DataSource = null;
+            }
         }
     }
     

@@ -28,7 +28,7 @@ namespace TP_PAV_3K02.Repositorios
         }
         public DataTable ObtenerPorDNI(long dni)
         {
-            string sqltxt = "SELECT * FROM Suscriptores Where nroDoc="+dni;
+            string sqltxt = "SELECT * FROM Suscriptores Where nroDoc="+ dni;
 
             return _BD.consulta(sqltxt);
         }
