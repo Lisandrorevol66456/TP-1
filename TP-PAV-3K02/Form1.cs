@@ -20,6 +20,7 @@ namespace TP_PAV_3K02
         ProvinciasRepositorio _provinciasRepositorio;
         LocalidadesRepositorio _localidadesRepositorio;
         Editorial_BD _BD;
+        
 
         public NuevoSuscriptor()
         {
@@ -33,9 +34,11 @@ namespace TP_PAV_3K02
         }
        //METODO PARA CARGAR LA GRILLA DE SUSCRIPTORES EXISTENTES
         private void ActualizarSuscriptores() {
-
+            
             DvgSuscriptores.Rows.Clear();
-
+            LimpiarCampos();
+            
+           
             var suscriptores = _suscriptoresRepositorio.ObtenerSuscriptoresDT().Rows;
             var filas = new List<DataGridViewRow>();
 
@@ -53,11 +56,15 @@ namespace TP_PAV_3K02
                     suscriptor.ItemArray[5].ToString(),
                     suscriptor.ItemArray[6].ToString(),
                     suscriptor.ItemArray[7].ToString(),
-                    
+
+
                 };
 
                 DvgSuscriptores.Rows.Add(fila);
-
+                TipoDoc.Visible = false; // la columna tipo doc se hace invisible al usuario, ya que no es un dato
+                                         // relevante para él.
+                
+                
             }
 
         }
@@ -71,11 +78,9 @@ namespace TP_PAV_3K02
             cmbTipoDoc.DisplayMember = "nombre";
             cmbTipoDoc.DataSource = tip_documentos;
 
-            cmbBuscarDNI.ValueMember = "cod_TipoDoc";
-            cmbBuscarDNI.DisplayMember = "nombre";
-            cmbBuscarDNI.DataSource = tip_documentos;
-
         }
+        //cargar combos de provincia
+
         private void ActualizarProvi()
         {
             var provi = _provinciasRepositorio.ObtenerProvinciasDT();
@@ -84,9 +89,9 @@ namespace TP_PAV_3K02
             cmbProvincias.DataSource = provi;
            
             
-        }  
-        
-      
+        }
+
+        //cargar combos de localidades (recibe un codigo de provincia)
         private void ActualizarLocalidad(string provincia)
         {
            
@@ -98,16 +103,31 @@ namespace TP_PAV_3K02
 
 
         }
+
+        private void LimpiarCampos()
+        {
+            //resetea los txt para poder agregar otro suscriptor sin tener que borrar manualmente
+            txtApellido.Clear();
+            txtnombre.Clear();
+            txtCalle.Clear();
+            txtNumero.Clear();
+            txtNroDoc.Clear();
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             var suscriptor = new Suscriptor();
             
             suscriptor.nombre = txtnombre.Text;
+            
             suscriptor.apellido = txtApellido.Text;
+            
             suscriptor.calle = txtCalle.Text;
+            
             suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
+          
             suscriptor.cod_Provincia = int.Parse(cmbProvincias.SelectedValue.ToString());
             suscriptor.cod_Localidad = int.Parse(cmbLocalidad.SelectedValue.ToString());
+            
 
 
             if (!suscriptor.NombreValido())
@@ -115,18 +135,19 @@ namespace TP_PAV_3K02
                 MessageBox.Show("Nombre Invalido");
                 return;
             }
-
+            
             if (!suscriptor.ApellidoValido())
             {
                 MessageBox.Show("Apellido Invalido");
                 return;
             }
-
+            
             if (!suscriptor.CalleValido())
             {
                 MessageBox.Show("Calle Invalida");
                 return;
             }
+           
 
             if (!suscriptor.NroDocValido(txtNroDoc.Text.ToString()))
             {
@@ -135,15 +156,17 @@ namespace TP_PAV_3K02
                 return;
           
             }
+            
             suscriptor.nroDoc = long.Parse(txtNroDoc.Text);
-
 
             if (!suscriptor.NumeroValido(txtNumero.Text.ToString()))
             {
                 MessageBox.Show("Numero Invalido");
                 return;
             }
+            
             suscriptor.numero = long.Parse(txtNumero.Text);
+            
 
 
             if (_suscriptoresRepositorio.Guardar(suscriptor))
@@ -162,8 +185,6 @@ namespace TP_PAV_3K02
             //Se selecciona automaticamente el DNI
             cmbTipoDoc.SelectedIndex = 0;
             ActualizarProvi();
-
-
 
         }
 
@@ -210,9 +231,10 @@ namespace TP_PAV_3K02
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // cancela la carga del suscriptor y limpialos textbox
+            LimpiarCampos();
         }
-
+        // abre el form de distribuidores
         private void btnFormRepartidores_Click(object sender, EventArgs e)
         {
             var formrepar = new FormDistribuidores();
@@ -220,9 +242,7 @@ namespace TP_PAV_3K02
 
         }
 
-
-      
-
+        // boton buscar por documento, filtra la grilla segun el valor ingresado
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             DvgSuscriptores.Rows.Clear();
@@ -252,8 +272,7 @@ namespace TP_PAV_3K02
             }
         }
 
-     
-
+        //segun el valor seleccionado del cmbprovincias actualiza el cmblocalidades
         private void cmbProvincias_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbProvincias.Items.Count != 0)
@@ -288,6 +307,17 @@ namespace TP_PAV_3K02
                 MessageBox.Show("Solo se permiten Letras HDP");
             }
 
+        }
+
+        private void DvgSuscriptores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        // boton cancelar, cancela la busqueda y actualiza la grilla a como estaba
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ActualizarSuscriptores();
         }
     }
     

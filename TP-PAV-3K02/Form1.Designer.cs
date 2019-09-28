@@ -47,15 +47,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.DvgSuscriptores = new System.Windows.Forms.DataGridView();
-            this.btnFormRepartidores = new System.Windows.Forms.Button();
-            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
-            this.cmbProvincias = new System.Windows.Forms.ComboBox();
-            this.gbBuscar = new System.Windows.Forms.GroupBox();
-            this.BtnBuscar = new System.Windows.Forms.Button();
-            this.cmbBuscarDNI = new System.Windows.Forms.ComboBox();
-            this.TXTbuscarDNI = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +55,14 @@
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFormRepartidores = new System.Windows.Forms.Button();
+            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
+            this.cmbProvincias = new System.Windows.Forms.ComboBox();
+            this.gbBuscar = new System.Windows.Forms.GroupBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.TXTbuscarDNI = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -213,7 +212,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(59, 378);
+            this.btnAgregar.Location = new System.Drawing.Point(42, 362);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 35);
             this.btnAgregar.TabIndex = 21;
@@ -223,7 +222,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(283, 378);
+            this.btnCancelar.Location = new System.Drawing.Point(266, 362);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 35);
             this.btnCancelar.TabIndex = 22;
@@ -233,7 +232,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(174, 378);
+            this.btnEliminar.Location = new System.Drawing.Point(157, 362);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 35);
             this.btnEliminar.TabIndex = 23;
@@ -258,6 +257,48 @@
             this.DvgSuscriptores.Name = "DvgSuscriptores";
             this.DvgSuscriptores.Size = new System.Drawing.Size(717, 267);
             this.DvgSuscriptores.TabIndex = 24;
+            this.DvgSuscriptores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgSuscriptores_CellContentClick);
+            // 
+            // NroDoc
+            // 
+            this.NroDoc.HeaderText = "Número Documento";
+            this.NroDoc.Name = "NroDoc";
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.HeaderText = "TipoDoc";
+            this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // Calle
+            // 
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Número";
+            this.Numero.Name = "Numero";
+            // 
+            // CodLocalidad
+            // 
+            this.CodLocalidad.HeaderText = "Localidad";
+            this.CodLocalidad.Name = "CodLocalidad";
+            // 
+            // codProvincia
+            // 
+            this.codProvincia.HeaderText = "Provincia";
+            this.codProvincia.Name = "codProvincia";
             // 
             // btnFormRepartidores
             // 
@@ -265,7 +306,7 @@
             this.btnFormRepartidores.Name = "btnFormRepartidores";
             this.btnFormRepartidores.Size = new System.Drawing.Size(124, 23);
             this.btnFormRepartidores.TabIndex = 31;
-            this.btnFormRepartidores.Text = "FormRepartidores";
+            this.btnFormRepartidores.Text = "Distribuidores";
             this.btnFormRepartidores.UseVisualStyleBackColor = true;
             this.btnFormRepartidores.Click += new System.EventHandler(this.btnFormRepartidores_Click);
             // 
@@ -292,41 +333,30 @@
             // 
             // gbBuscar
             // 
+            this.gbBuscar.Controls.Add(this.button1);
             this.gbBuscar.Controls.Add(this.BtnBuscar);
-            this.gbBuscar.Controls.Add(this.cmbBuscarDNI);
             this.gbBuscar.Controls.Add(this.TXTbuscarDNI);
             this.gbBuscar.Controls.Add(this.label2);
-            this.gbBuscar.Controls.Add(this.label1);
-            this.gbBuscar.Location = new System.Drawing.Point(364, 19);
+            this.gbBuscar.Location = new System.Drawing.Point(383, 19);
             this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Size = new System.Drawing.Size(414, 100);
+            this.gbBuscar.Size = new System.Drawing.Size(366, 100);
             this.gbBuscar.TabIndex = 34;
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(288, 40);
+            this.BtnBuscar.Location = new System.Drawing.Point(224, 35);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 35);
+            this.BtnBuscar.Size = new System.Drawing.Size(79, 20);
             this.BtnBuscar.TabIndex = 36;
-            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.Text = "buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // cmbBuscarDNI
-            // 
-            this.cmbBuscarDNI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBuscarDNI.FormattingEnabled = true;
-            this.cmbBuscarDNI.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmbBuscarDNI.Location = new System.Drawing.Point(103, 35);
-            this.cmbBuscarDNI.Name = "cmbBuscarDNI";
-            this.cmbBuscarDNI.Size = new System.Drawing.Size(138, 21);
-            this.cmbBuscarDNI.TabIndex = 35;
-            // 
             // TXTbuscarDNI
             // 
-            this.TXTbuscarDNI.Location = new System.Drawing.Point(103, 65);
+            this.TXTbuscarDNI.Location = new System.Drawing.Point(78, 61);
             this.TXTbuscarDNI.MaxLength = 11;
             this.TXTbuscarDNI.Name = "TXTbuscarDNI";
             this.TXTbuscarDNI.Size = new System.Drawing.Size(138, 20);
@@ -336,61 +366,21 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 69);
+            this.label2.Location = new System.Drawing.Point(75, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 29;
             this.label2.Text = "Nro Doc:";
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Tipo Doc :";
-            // 
-            // NroDoc
-            // 
-            this.NroDoc.HeaderText = "Nro Doc";
-            this.NroDoc.Name = "NroDoc";
-            // 
-            // TipoDoc
-            // 
-            this.TipoDoc.HeaderText = "TipoDoc";
-            this.TipoDoc.Name = "TipoDoc";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            // 
-            // Calle
-            // 
-            this.Calle.HeaderText = "Calle";
-            this.Calle.Name = "Calle";
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            // 
-            // CodLocalidad
-            // 
-            this.CodLocalidad.HeaderText = "CodLocalidad";
-            this.CodLocalidad.Name = "CodLocalidad";
-            // 
-            // codProvincia
-            // 
-            this.codProvincia.HeaderText = "codProvincia";
-            this.codProvincia.Name = "codProvincia";
+            this.button1.Location = new System.Drawing.Point(224, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 21);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "cancelar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NuevoSuscriptor
             // 
@@ -456,10 +446,8 @@
         private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.ComboBox cmbProvincias;
         private System.Windows.Forms.GroupBox gbBuscar;
-        private System.Windows.Forms.ComboBox cmbBuscarDNI;
         private System.Windows.Forms.TextBox TXTbuscarDNI;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
@@ -469,6 +457,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
+        private System.Windows.Forms.Button button1;
     }
 }
 
