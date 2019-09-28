@@ -319,6 +319,42 @@ namespace TP_PAV_3K02
         {
             ActualizarSuscriptores();
         }
+
+        private void BTNeditar_Click(object sender, EventArgs e)
+        {
+            var seleccionadas = DvgSuscriptores.SelectedRows;
+            if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
+            {
+                MessageBox.Show("Debe seleccionar una fila");
+                return;
+            }
+            foreach (DataGridViewRow fila in seleccionadas)
+            {
+                var nombre = fila.Cells[2].Value;
+                var apellido = fila.Cells[3].Value;
+                var documento = fila.Cells[0].Value;
+
+
+
+                if (documento != null)
+                {
+                    //pregunto confirmación
+                    var confirmacion = MessageBox.Show($"Desea editar a {nombre}, {apellido}, {documento}?",
+                    "Confirmar operación",
+                    MessageBoxButtons.YesNo);
+
+                    if (confirmacion.Equals(DialogResult.No))
+                        return;
+                    else
+                    {
+                        var editar = new EditarSuscriptor();
+                        editar.ShowDialog();
+                    }
+                }
+
+
+            }
+        }
     }
     
 }

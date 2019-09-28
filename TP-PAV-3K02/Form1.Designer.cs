@@ -59,10 +59,11 @@
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbProvincias = new System.Windows.Forms.ComboBox();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.TXTbuscarDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BTNeditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -222,7 +223,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(266, 362);
+            this.btnCancelar.Location = new System.Drawing.Point(147, 362);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 35);
             this.btnCancelar.TabIndex = 22;
@@ -232,7 +233,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(157, 362);
+            this.btnEliminar.Location = new System.Drawing.Point(364, 403);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 35);
             this.btnEliminar.TabIndex = 23;
@@ -344,6 +345,16 @@
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(224, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 21);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "cancelar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BtnBuscar
             // 
             this.BtnBuscar.Location = new System.Drawing.Point(224, 35);
@@ -372,21 +383,22 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "Nro Doc:";
             // 
-            // button1
+            // BTNeditar
             // 
-            this.button1.Location = new System.Drawing.Point(224, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 21);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BTNeditar.Location = new System.Drawing.Point(461, 403);
+            this.BTNeditar.Name = "BTNeditar";
+            this.BTNeditar.Size = new System.Drawing.Size(75, 35);
+            this.BTNeditar.TabIndex = 35;
+            this.BTNeditar.Text = "Editar";
+            this.BTNeditar.UseVisualStyleBackColor = true;
+            this.BTNeditar.Click += new System.EventHandler(this.BTNeditar_Click);
             // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 450);
+            this.Controls.Add(this.BTNeditar);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.cmbProvincias);
             this.Controls.Add(this.cmbLocalidad);
@@ -458,6 +470,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CodLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTNeditar;
     }
 }
 
