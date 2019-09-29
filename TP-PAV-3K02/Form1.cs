@@ -20,7 +20,7 @@ namespace TP_PAV_3K02
         ProvinciasRepositorio _provinciasRepositorio;
         LocalidadesRepositorio _localidadesRepositorio;
         Editorial_BD _BD;
-        
+
 
         public NuevoSuscriptor()
         {
@@ -29,16 +29,16 @@ namespace TP_PAV_3K02
             _tipodocumentoRepositorio = new TipoDocumentoRepositorio();
             _provinciasRepositorio = new ProvinciasRepositorio();
             _localidadesRepositorio = new LocalidadesRepositorio();
-           
+
             _BD = new Editorial_BD();
         }
-       //METODO PARA CARGAR LA GRILLA DE SUSCRIPTORES EXISTENTES
+        //METODO PARA CARGAR LA GRILLA DE SUSCRIPTORES EXISTENTES
         private void ActualizarSuscriptores() {
-            
+
             DvgSuscriptores.Rows.Clear();
             LimpiarCampos();
-            
-           
+
+
             var suscriptores = _suscriptoresRepositorio.ObtenerSuscriptoresDT().Rows;
             var filas = new List<DataGridViewRow>();
 
@@ -63,12 +63,12 @@ namespace TP_PAV_3K02
                 DvgSuscriptores.Rows.Add(fila);
                 TipoDoc.Visible = false; // la columna tipo doc se hace invisible al usuario, ya que no es un dato
                                          // relevante para él.
-                
-                
+
+
             }
 
         }
-         
+
         //cargar combos Tipo Documento
         private void ActualizarCombo()
         {
@@ -87,19 +87,19 @@ namespace TP_PAV_3K02
             cmbProvincias.ValueMember = "cod_provincia";
             cmbProvincias.DisplayMember = "nombre";
             cmbProvincias.DataSource = provi;
-           
-            
+
+
         }
 
         //cargar combos de localidades (recibe un codigo de provincia)
         private void ActualizarLocalidad(string provincia)
         {
-           
+
             var localidad = _localidadesRepositorio.ObtenerLocalidadesDT(provincia);
             cmbLocalidad.ValueMember = "cod_Localidad";
             cmbLocalidad.DisplayMember = "nombre";
             cmbLocalidad.DataSource = localidad;
-            
+
 
 
         }
@@ -116,18 +116,18 @@ namespace TP_PAV_3K02
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             var suscriptor = new Suscriptor();
-            
+
             suscriptor.nombre = txtnombre.Text;
-            
+
             suscriptor.apellido = txtApellido.Text;
-            
+
             suscriptor.calle = txtCalle.Text;
-            
+
             suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
-          
+
             suscriptor.cod_Provincia = int.Parse(cmbProvincias.SelectedValue.ToString());
             suscriptor.cod_Localidad = int.Parse(cmbLocalidad.SelectedValue.ToString());
-            
+
 
 
             if (!suscriptor.NombreValido())
@@ -135,28 +135,28 @@ namespace TP_PAV_3K02
                 MessageBox.Show("Nombre Invalido");
                 return;
             }
-            
+
             if (!suscriptor.ApellidoValido())
             {
                 MessageBox.Show("Apellido Invalido");
                 return;
             }
-            
+
             if (!suscriptor.CalleValido())
             {
                 MessageBox.Show("Calle Invalida");
                 return;
             }
-           
+
 
             if (!suscriptor.NroDocValido(txtNroDoc.Text.ToString()))
             {
-              
+
                 MessageBox.Show("Documento Invalido");
                 return;
-          
+
             }
-            
+
             suscriptor.nroDoc = long.Parse(txtNroDoc.Text);
 
             if (!suscriptor.NumeroValido(txtNumero.Text.ToString()))
@@ -164,18 +164,18 @@ namespace TP_PAV_3K02
                 MessageBox.Show("Numero Invalido");
                 return;
             }
-            
+
             suscriptor.numero = long.Parse(txtNumero.Text);
-            
+
 
 
             if (_suscriptoresRepositorio.Guardar(suscriptor))
             {
                 MessageBox.Show("Se registro con éxito");
                 ActualizarSuscriptores();
-  
+
             }
-           
+
         }
 
         private void suscriptores_Load(object sender, EventArgs e)
@@ -214,7 +214,7 @@ namespace TP_PAV_3K02
                     if (confirmacion.Equals(DialogResult.No))
                         return;
 
-                 
+
                     if (_suscriptoresRepositorio.Eliminar(documento.ToString()))
                     {
                         MessageBox.Show("Se eliminó exitosamente");
@@ -222,7 +222,7 @@ namespace TP_PAV_3K02
 
                     }
                 }
-                if(documento == null)
+                if (documento == null)
                     MessageBox.Show("Debe Seleccionar una fila que no este Vacia.....");
 
             }
@@ -244,18 +244,26 @@ namespace TP_PAV_3K02
 
         // boton buscar por documento, filtra la grilla segun el valor ingresado
         private void BtnBuscar_Click(object sender, EventArgs e)
-        {
-            DvgSuscriptores.Rows.Clear();
-            var numdoc = long.Parse(TXTbuscarDNI.Text);
-            var suscriptores = _suscriptoresRepositorio.ObtenerPorDNI(numdoc).Rows;
-            var filas = new List<DataGridViewRow>();
 
-            foreach (DataRow suscriptor in suscriptores)
+        {
+            var sus = new Suscriptor();
+            if (sus.busquedaValida(TXTbuscarDNI.Text.ToString()))
             {
-                if (suscriptor.HasErrors)
-                    continue;//no corto el ciclo
-                var fila = new string[]
+                if (sus.NumeroValido(TXTbuscarDNI.Text))
                 {
+                    DvgSuscriptores.Rows.Clear();
+                    var numdoc = long.Parse(TXTbuscarDNI.Text);
+                    var suscriptores = _suscriptoresRepositorio.ObtenerPorDNI(numdoc).Rows;
+                    var filas = new List<DataGridViewRow>();
+
+                    foreach (DataRow suscriptor in suscriptores)
+                    {
+                        if (suscriptor.HasErrors)
+                            continue;//no corto el ciclo
+
+                        {
+                            var fila = new string[]
+                        {
                     suscriptor.ItemArray[0].ToString(),
                     suscriptor.ItemArray[1].ToString(),
                     suscriptor.ItemArray[2].ToString(),
@@ -264,101 +272,111 @@ namespace TP_PAV_3K02
                     suscriptor.ItemArray[5].ToString(),
                     suscriptor.ItemArray[6].ToString(),
                     suscriptor.ItemArray[7].ToString(),
-                  
-                };
 
-                DvgSuscriptores.Rows.Add(fila);
+                        };
 
-            }
-        }
+                            DvgSuscriptores.Rows.Add(fila);
 
-        //segun el valor seleccionado del cmbprovincias actualiza el cmblocalidades
-        private void cmbProvincias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbProvincias.Items.Count != 0)
-            {
-                ActualizarLocalidad(cmbProvincias.SelectedValue.ToString());
-                
-            }
-            else
-            {
-                cmbLocalidad.DataSource = null;
-                DvgSuscriptores.DataSource = null;
-            }
-        }
-
-        private void validateTextBox(object sender, KeyPressEventArgs v)
-        {
-            if (Char.IsLetter(v.KeyChar))
-            {
-                v.Handled = false;
-            }
-            else if (Char.IsSeparator(v.KeyChar))
-            {
-                v.Handled = false;
-            }
-            else if (Char.IsControl(v.KeyChar))
-            {
-                v.Handled = false;
-            }
-            else
-            {
-                v.Handled = true;
-                MessageBox.Show("Solo se permiten Letras HDP");
-            }
-
-        }
-
-        private void DvgSuscriptores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
-        // boton cancelar, cancela la busqueda y actualiza la grilla a como estaba
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ActualizarSuscriptores();
-            TXTbuscarDNI.Clear();
-        }
-
-        private void BTNeditar_Click(object sender, EventArgs e)
-        {
-            var seleccionadas = DvgSuscriptores.SelectedRows;
-            if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
-            {
-                MessageBox.Show("Debe seleccionar una fila");
-                return;
-            }
-            foreach (DataGridViewRow fila in seleccionadas)
-            {
-                var nombre = fila.Cells[2].Value;
-                var apellido = fila.Cells[3].Value;
-                var documento = fila.Cells[0].Value;
+                        }
 
 
 
-                if (documento != null)
-                {
-                    //pregunto confirmación
-                    var confirmacion = MessageBox.Show($"Desea editar a {nombre}, {apellido}, {documento}?",
-                    "Confirmar operación",
-                    MessageBoxButtons.YesNo);
-
-                    if (confirmacion.Equals(DialogResult.No))
-                        return;
-                    else
-                    {
-                        var id = fila.Cells[0].Value;
-                        var editar = new EditarSuscriptor(id.ToString());
-                        editar.ShowDialog();
-                        ActualizarSuscriptores();
                     }
                 }
-
-
+                else
+                {
+                    MessageBox.Show("No se puede buscar lo ingresado, ingrese nuevamente.");
+                    TXTbuscarDNI.Focus();
+                }
             }
         }
-    }
-    
-}
+            //segun el valor seleccionado del cmbprovincias actualiza el cmblocalidades
+            private void cmbProvincias_SelectedIndexChanged(object sender, EventArgs e)
+            {
+                if (cmbProvincias.Items.Count != 0)
+                {
+                    ActualizarLocalidad(cmbProvincias.SelectedValue.ToString());
+
+                }
+                else
+                {
+                    cmbLocalidad.DataSource = null;
+                    DvgSuscriptores.DataSource = null;
+                }
+            }
+
+            private void validateTextBox(object sender, KeyPressEventArgs v)
+            {
+                if (Char.IsLetter(v.KeyChar))
+                {
+                    v.Handled = false;
+                }
+                else if (Char.IsSeparator(v.KeyChar))
+                {
+                    v.Handled = false;
+                }
+                else if (Char.IsControl(v.KeyChar))
+                {
+                    v.Handled = false;
+                }
+                else
+                {
+                    v.Handled = true;
+                    MessageBox.Show("Solo se permiten Letras HDP");
+                }
+
+            }
+
+            private void DvgSuscriptores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            {
+
+            }
+
+            // boton cancelar, cancela la busqueda y actualiza la grilla a como estaba
+            private void button1_Click(object sender, EventArgs e)
+            {
+                ActualizarSuscriptores();
+                TXTbuscarDNI.Clear();
+            }
+
+            private void BTNeditar_Click(object sender, EventArgs e)
+            {
+                var seleccionadas = DvgSuscriptores.SelectedRows;
+                if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
+                {
+                    MessageBox.Show("Debe seleccionar una fila");
+                    return;
+                }
+                foreach (DataGridViewRow fila in seleccionadas)
+                {
+                    var nombre = fila.Cells[2].Value;
+                    var apellido = fila.Cells[3].Value;
+                    var documento = fila.Cells[0].Value;
+
+
+
+                    if (documento != null)
+                    {
+                        //pregunto confirmación
+                        var confirmacion = MessageBox.Show($"Desea editar a {nombre}, {apellido}, {documento}?",
+                        "Confirmar operación",
+                        MessageBoxButtons.YesNo);
+
+                        if (confirmacion.Equals(DialogResult.No))
+                            return;
+                        else
+                        {
+                            var id = fila.Cells[0].Value;
+                            var editar = new EditarSuscriptor(id.ToString());
+                            editar.ShowDialog();
+                            ActualizarSuscriptores();
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+    } 
 
