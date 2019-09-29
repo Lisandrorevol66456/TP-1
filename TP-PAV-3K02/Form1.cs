@@ -318,6 +318,7 @@ namespace TP_PAV_3K02
         private void button1_Click(object sender, EventArgs e)
         {
             ActualizarSuscriptores();
+            TXTbuscarDNI.Clear();
         }
 
         private void BTNeditar_Click(object sender, EventArgs e)
@@ -347,8 +348,10 @@ namespace TP_PAV_3K02
                         return;
                     else
                     {
-                        var editar = new EditarSuscriptor();
+                        var id = fila.Cells[0].Value;
+                        var editar = new EditarSuscriptor(id.ToString());
                         editar.ShowDialog();
+                        ActualizarSuscriptores();
                     }
                 }
 

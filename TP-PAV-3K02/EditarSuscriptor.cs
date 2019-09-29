@@ -23,17 +23,21 @@ namespace TP_PAV_3K02
         public EditarSuscriptor()
         {
             InitializeComponent();
-            _suscriptoresRepositorio = new SuscriptoresRepositorio();
-
+            
         }
             public EditarSuscriptor(string suscriptorDOC)
             {
-                InitializeComponent();
-                _suscriptoresRepositorio = new SuscriptoresRepositorio();
-                suscrip = _suscriptoresRepositorio.ObtenerSuscriptor(suscriptorDOC);
+            InitializeComponent();
+            _suscriptoresRepositorio = new SuscriptoresRepositorio();
+            _tipodocumentoRepositorio = new TipoDocumentoRepositorio();
+            _provinciasRepositorio = new ProvinciasRepositorio();
+            _localidadesRepositorio = new LocalidadesRepositorio();
+            _BD = new Editorial_BD();
+            
+            suscrip = _suscriptoresRepositorio.ObtenerSuscriptor(suscriptorDOC);
             }
 
-            //cargar combos Tipo Documento
+        //cargar combos Tipo Documento
         private void ActualizarCombo()
         {
         //combo Tipo DNI
@@ -70,54 +74,58 @@ namespace TP_PAV_3K02
 
         private void EditarSuscriptor_Load(object sender, EventArgs e)
         {
+           // var n = _suscriptoresRepositorio.ObtenerSuscriptor(suscrip.nroDoc.ToString());
             ActualizarCombo();
             comboTipodoc.SelectedIndex = 0;
             ActualizarProvi();
             comboProvincias.SelectedIndex = 6;
+            
 
             TXTnombre.Text = suscrip.nombre;
             TXTapellido.Text = suscrip.apellido;
             TXTcalle.Text = suscrip.calle;
             
+
+
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            var suscriptor = new Suscriptor();
+            var Datossuscriptor = new Suscriptor();
 
-            suscriptor.nombre = TXTnombre.Text;
+            Datossuscriptor.nombre = TXTnombre.Text;
 
-            suscriptor.apellido = TXTapellido.Text;
+            Datossuscriptor.apellido = TXTapellido.Text;
 
-            suscriptor.calle = TXTcalle.Text;
+            Datossuscriptor.calle = TXTcalle.Text;
 
-            suscriptor.cod_TipoDoc = int.Parse(comboTipodoc.SelectedValue.ToString());
+            Datossuscriptor.cod_TipoDoc = int.Parse(comboTipodoc.SelectedValue.ToString());
 
-            suscriptor.cod_Provincia = int.Parse(comboProvincias.SelectedValue.ToString());
-            suscriptor.cod_Localidad = int.Parse(ComboLocalidades.SelectedValue.ToString());
+            Datossuscriptor.cod_Provincia = int.Parse(comboProvincias.SelectedValue.ToString());
+            Datossuscriptor.cod_Localidad = int.Parse(ComboLocalidades.SelectedValue.ToString());
 
 
 
-            if (!suscriptor.NombreValido())
+            if (!Datossuscriptor.NombreValido())
             {
                 MessageBox.Show("Nombre Invalido");
                 return;
             }
 
-            if (!suscriptor.ApellidoValido())
+            if (!Datossuscriptor.ApellidoValido())
             {
                 MessageBox.Show("Apellido Invalido");
                 return;
             }
 
-            if (!suscriptor.CalleValido())
+            if (!Datossuscriptor.CalleValido())
             {
                 MessageBox.Show("Calle Invalida");
                 return;
             }
 
 
-            if (!suscriptor.NroDocValido(TXTnroDoc.Text.ToString()))
+            if (!Datossuscriptor.NroDocValido(TXTnroDoc.Text.ToString()))
             {
 
                 MessageBox.Show("Documento Invalido");
@@ -125,22 +133,22 @@ namespace TP_PAV_3K02
 
             }
 
-            suscriptor.nroDoc = long.Parse(TXTnroDoc.Text);
+            Datossuscriptor.nroDoc = long.Parse(TXTnroDoc.Text);
 
-            if (!suscriptor.NumeroValido(TXTnumero.Text.ToString()))
+            if (!Datossuscriptor.NumeroValido(TXTnumero.Text.ToString()))
             {
                 MessageBox.Show("Numero Invalido");
                 return;
             }
 
-            suscriptor.numero = long.Parse(TXTnumero.Text);
+            Datossuscriptor.numero = long.Parse(TXTnumero.Text);
 
 
 
-            if (_suscriptoresRepositorio.Actualizar(suscriptor))
+            if (_suscriptoresRepositorio.Actualizar(Datossuscriptor))
             {
-                MessageBox.Show("Se registro con éxito");
-                this.Dispose();//Libera los recursos
+                MessageBox.Show("Se actualizó con éxito");
+                Dispose();//Libera los recursos
 
             }
 

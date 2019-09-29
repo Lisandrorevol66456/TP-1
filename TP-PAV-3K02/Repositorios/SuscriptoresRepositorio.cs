@@ -69,6 +69,7 @@ namespace TP_PAV_3K02.Repositorios
         {
             string sqltxt = $"SELECT * FROM [dbo].[Suscriptores] WHERE nroDoc = {suscriptorDOC}";
             var tablaTemporal = _BD.consulta(sqltxt);
+            
 
             if (tablaTemporal.Rows.Count == 0)
                 return null;
@@ -85,7 +86,7 @@ namespace TP_PAV_3K02.Repositorios
                 suscri.apellido = fila.ItemArray[3].ToString(); // apellido
                 suscri.calle = fila.ItemArray[4].ToString(); // calle
                 suscri.numero = long.Parse(fila.ItemArray[5].ToString()); // numero de calle
-                suscri.cod_Localidad = int.Parse(fila.ItemArray[6].ToString()); // codigo de la localidad
+                suscri.cod_Localidad =int.Parse(fila.ItemArray[6].ToString()); // codigo de la localidad
                 suscri.cod_Provincia = int.Parse(fila.ItemArray[7].ToString()); // codigo de la provincia
                     
 
@@ -95,9 +96,15 @@ namespace TP_PAV_3K02.Repositorios
         }
         public bool Actualizar(Suscriptor suscriptor)
         {
-            string sqltxt = $"UPDATE [dbo].[Suscriptores] SET (,[nombre], [apellido], [calle],[numero],[cod_Provincia],[cod_Localidad]) " +
-                $"VALUES ('{suscriptor.nombre}','{suscriptor.apellido}','{suscriptor.calle}','{suscriptor.numero}','{suscriptor.cod_Provincia}','{suscriptor.cod_Localidad}') WHERE nroDoc={suscriptor.nroDoc}";
-
+            string sqltxt = $"UPDATE [dbo].[Suscriptores] SET nombre='{suscriptor.nombre}' , " +
+                $" apellido ='{suscriptor.apellido}'," +
+                $" calle ='{suscriptor.calle}'," + 
+                $" nroDoc='{suscriptor.nroDoc}', " +
+                $" cod_TipoDoc = '{suscriptor.cod_TipoDoc}'," +
+                $" numero ='{suscriptor.numero}'," +
+                $" cod_Provincia='{suscriptor.cod_Provincia}'," +
+                $" cod_Localidad= '{suscriptor.cod_Localidad}'";
+//WHERE nroDoc={suscriptor.nroDoc}";
 
             return _BD.EjecutarSQL(sqltxt);
         }
