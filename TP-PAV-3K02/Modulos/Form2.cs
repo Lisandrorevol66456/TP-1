@@ -179,6 +179,11 @@ namespace TP_PAV_3K02
 
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
     }
 
