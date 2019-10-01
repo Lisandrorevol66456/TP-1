@@ -71,5 +71,10 @@ namespace TP_PAV_3K02.Modulos
         {
             this.Close();
         }
+
+        private void EditarDistribuidor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

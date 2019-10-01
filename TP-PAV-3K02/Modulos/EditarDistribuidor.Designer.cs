@@ -185,6 +185,7 @@
             this.Controls.Add(this.lblsuscriptores);
             this.Name = "EditarDistribuidor";
             this.Text = "EditarDistribuidor";
+            this.Load += new System.EventHandler(this.EditarDistribuidor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

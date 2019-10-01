@@ -65,6 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BTNeditar = new System.Windows.Forms.Button();
             this.BTNactualizar = new System.Windows.Forms.Button();
+            this.btnEmpresa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -403,11 +404,22 @@
             this.BTNactualizar.UseVisualStyleBackColor = true;
             this.BTNactualizar.Click += new System.EventHandler(this.BTNactualizar_Click);
             // 
+            // btnEmpresa
+            // 
+            this.btnEmpresa.Location = new System.Drawing.Point(856, 415);
+            this.btnEmpresa.Name = "btnEmpresa";
+            this.btnEmpresa.Size = new System.Drawing.Size(75, 23);
+            this.btnEmpresa.TabIndex = 37;
+            this.btnEmpresa.Text = "Empresas";
+            this.btnEmpresa.UseVisualStyleBackColor = true;
+            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
+            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 450);
+            this.Controls.Add(this.btnEmpresa);
             this.Controls.Add(this.BTNactualizar);
             this.Controls.Add(this.BTNeditar);
             this.Controls.Add(this.gbBuscar);
@@ -483,6 +495,7 @@
         private System.Windows.Forms.Button btnCancelarBusqueda;
         private System.Windows.Forms.Button BTNeditar;
         private System.Windows.Forms.Button BTNactualizar;
+        private System.Windows.Forms.Button btnEmpresa;
     }
 }
 

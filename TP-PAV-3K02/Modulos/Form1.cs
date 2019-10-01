@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TP_PAV_3K02.Modelos;
 using TP_PAV_3K02.Repositorios;
 using TP_PAV_3K02.BaseDatos;
+using TP_PAV_3K02.Modulos;
 
 namespace TP_PAV_3K02
 {
@@ -383,6 +384,12 @@ namespace TP_PAV_3K02
             ActualizarSuscriptores();
             TXTbuscarDNI.Clear(); // limpio contenido de txt buscar
 
+        }
+
+        private void btnEmpresa_Click(object sender, EventArgs e)
+        {
+            var formempresa = new Empresas();
+            formempresa.ShowDialog();
         }
     }
 
