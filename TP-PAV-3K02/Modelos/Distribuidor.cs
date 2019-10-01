@@ -18,9 +18,9 @@ namespace TP_PAV_3K02.Modelos
  
 
 
-        public bool CuitValido()
+        public bool CuitValido(string cuit)
         {
-            if (cuit_dist > 0)
+            if (long.TryParse(cuit, out long resultado))
                 return true;
             return false;
         }
@@ -35,7 +35,7 @@ namespace TP_PAV_3K02.Modelos
 
         public bool ApellidoValido()
         {
-            if (!string.IsNullOrEmpty(apellido) && apellido.Length < 30)
+            if (!string.IsNullOrEmpty(apellido) && apellido.Length < 51)
                 return true;
             return false;
         }

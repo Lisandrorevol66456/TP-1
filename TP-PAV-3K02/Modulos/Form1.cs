@@ -11,6 +11,7 @@ using TP_PAV_3K02.Modelos;
 using TP_PAV_3K02.Repositorios;
 using TP_PAV_3K02.BaseDatos;
 using TP_PAV_3K02.Modulos;
+using TP_PAV_3K02.Utils;
 
 namespace TP_PAV_3K02
 {
@@ -119,13 +120,9 @@ namespace TP_PAV_3K02
             var suscriptor = new Suscriptor();
 
             suscriptor.nombre = txtnombre.Text;
-
             suscriptor.apellido = txtApellido.Text;
-
             suscriptor.calle = txtCalle.Text;
-
             suscriptor.cod_TipoDoc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
-
             suscriptor.cod_Provincia = int.Parse(cmbProvincias.SelectedValue.ToString());
             suscriptor.cod_Localidad = int.Parse(cmbLocalidad.SelectedValue.ToString());
 
@@ -298,28 +295,15 @@ namespace TP_PAV_3K02
                 DvgSuscriptores.DataSource = null;
             }
         }
-
-        private void validateTextBox(object sender, KeyPressEventArgs v)
+        //validar TextBox Solo Letras
+        private void ValidarTxtLetras(object sender, KeyPressEventArgs v)
         {
-            if (Char.IsLetter(v.KeyChar))
-            {
-                v.Handled = false;
-            }
-            else if (Char.IsSeparator(v.KeyChar))
-            {
-                v.Handled = false;
-            }
-            else if (Char.IsControl(v.KeyChar))
-            {
-                v.Handled = false;
-            }
-            else
-            {
-                v.Handled = true;
-             
-            }
-
+           
+            ValidateTextBox e = new ValidateTextBox();
+            e.validateSoloLetras(sender, v);
         }
+
+        
 
         //editar un suscriptor
         private void BTNeditar_Click(object sender, EventArgs e)
@@ -390,6 +374,13 @@ namespace TP_PAV_3K02
         {
             var formempresa = new Empresas();
             formempresa.ShowDialog();
+        }
+
+        private void ValidateSoloNumeros(object sender, KeyPressEventArgs v)
+        {
+            
+            ValidateTextBox e = new ValidateTextBox();
+            e.ValidateSoloNumeros(sender, v);
         }
     }
 

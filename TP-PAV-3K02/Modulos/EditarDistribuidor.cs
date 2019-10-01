@@ -32,7 +32,6 @@ namespace TP_PAV_3K02.Modulos
 
             distribuidor.apellido = txtApellido.Text;
             distribuidor.nombre = txtnombre.Text;
-            distribuidor.cuit_dist = int.Parse(TxtCuit.Text);
             distribuidor.domicilio = TxtDomicilio.Text;
             distribuidor.fecha_inicio = DTPfechainicio.Value;
 
@@ -48,11 +47,12 @@ namespace TP_PAV_3K02.Modulos
                 return;
             }
 
-            if (!distribuidor.CuitValido())
+            if (!distribuidor.CuitValido(TxtCuit.Text.ToString()))
             {
                 MessageBox.Show("El CUIT que ingreso no es valido");
                 return;
             }
+            distribuidor.cuit_dist = long.Parse(TxtCuit.Text);
 
             if (!distribuidor.domicilioValido())
             {

@@ -142,12 +142,12 @@
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(138, 54);
+            this.txtnombre.Location = new System.Drawing.Point(138, 50);
             this.txtnombre.MaxLength = 20;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(138, 20);
             this.txtnombre.TabIndex = 8;
-            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateTextBox);
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarTxtLetras);
             // 
             // txtApellido
             // 
@@ -156,7 +156,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(138, 20);
             this.txtApellido.TabIndex = 9;
-            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateTextBox);
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarTxtLetras);
             // 
             // cmbTipoDoc
             // 
@@ -175,6 +175,7 @@
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(138, 20);
             this.txtNroDoc.TabIndex = 11;
+            this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
             // txtNumero
             // 
@@ -183,6 +184,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(138, 20);
             this.txtNumero.TabIndex = 12;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
             // txtCalle
             // 
@@ -191,7 +193,7 @@
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(138, 20);
             this.txtCalle.TabIndex = 13;
-            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateTextBox);
+            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarTxtLetras);
             // 
             // lblLocalidad
             // 

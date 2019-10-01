@@ -74,6 +74,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 20);
             this.txtApellido.TabIndex = 13;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloLetras);
             // 
             // txtnombre
             // 
@@ -82,6 +83,7 @@
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(200, 20);
             this.txtnombre.TabIndex = 12;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloLetras);
             // 
             // lblApellido
             // 
@@ -110,6 +112,7 @@
             this.TxtDomicilio.Name = "TxtDomicilio";
             this.TxtDomicilio.Size = new System.Drawing.Size(200, 20);
             this.TxtDomicilio.TabIndex = 15;
+            this.TxtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloLetras);
             // 
             // label1
             // 
@@ -148,6 +151,7 @@
             this.TxtCuit.Name = "TxtCuit";
             this.TxtCuit.Size = new System.Drawing.Size(200, 20);
             this.TxtCuit.TabIndex = 19;
+            this.TxtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
             // label3
             // 
@@ -177,7 +181,6 @@
             this.btnEditar.TabIndex = 25;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -203,7 +206,6 @@
             this.DvgDistribuidores.Name = "DvgDistribuidores";
             this.DvgDistribuidores.Size = new System.Drawing.Size(434, 283);
             this.DvgDistribuidores.TabIndex = 28;
-            this.DvgDistribuidores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgDistribuidores_CellContentClick);
             // 
             // cuit_dist
             // 

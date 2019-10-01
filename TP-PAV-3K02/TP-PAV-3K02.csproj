@@ -96,6 +96,7 @@
     <Compile Include="Repositorios\ProvinciasRepositorio.cs" />
     <Compile Include="Repositorios\SuscriptoresRepositorio.cs" />
     <Compile Include="Repositorios\TipoDocumentoRepositorio.cs" />
+    <Compile Include="Utils\ValidateTextBox.cs" />
     <EmbeddedResource Include="Modulos\EditarDistribuidor.resx">
       <DependentUpon>EditarDistribuidor.cs</DependentUpon>
     </EmbeddedResource>

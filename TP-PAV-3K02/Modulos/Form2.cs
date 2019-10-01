@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV_3K02.Modelos;
 using TP_PAV_3K02.Repositorios;
+using TP_PAV_3K02.Utils;
 
 namespace TP_PAV_3K02
 {
@@ -25,12 +26,13 @@ namespace TP_PAV_3K02
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             var distribuidor = new Distribuidor();
+
             distribuidor.nombre = txtnombre.Text;
             distribuidor.apellido = txtApellido.Text;
-            distribuidor.cuit_dist = long.Parse(TxtCuit.Text); // Se debe modificar la base de datos, ya que cuit esta creado como INT,
-                                                               //cuando debe ser numerico.
             distribuidor.domicilio = TxtDomicilio.Text;
             distribuidor.fecha_inicio = DTPfechainicio.Value.Date;
+
+
 
             if (!distribuidor.NombreValido())
             {
@@ -46,12 +48,15 @@ namespace TP_PAV_3K02
                 return;
             }
 
-            if (!distribuidor.CuitValido())
+            if (!distribuidor.CuitValido(TxtCuit.Text.ToString()))
             {
                 MessageBox.Show("Cuit Invalido");
                 TxtCuit.Focus();
                 return;
             }
+
+            distribuidor.cuit_dist = long.Parse(TxtCuit.Text);
+
             if (!distribuidor.domicilioValido())
             {
                 MessageBox.Show("Domicilio Invalido");
@@ -64,10 +69,12 @@ namespace TP_PAV_3K02
                 DTPfechainicio.Focus();
                 return;
             }
+
             if (_distribuidoresRepositorio.Guardar(distribuidor))
             {
                 MessageBox.Show("Se registro con éxito");
-                this.Dispose();
+                ActualizarDistribuidores();
+                
             }
         }
 
@@ -146,10 +153,7 @@ namespace TP_PAV_3K02
 
         }
 
-        private void DvgDistribuidores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -180,10 +184,19 @@ namespace TP_PAV_3K02
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        public void ValidateSoloNumeros(object sender, KeyPressEventArgs v)
         {
-            
+            ValidateTextBox e = new ValidateTextBox();
+            e.ValidateSoloNumeros(sender, v);
+
+        }
+
+        private void ValidateSoloLetras(object sender, KeyPressEventArgs v)
+        {
+            ValidateTextBox e = new ValidateTextBox();
+            e.validateSoloLetras(sender, v);
+
         }
     }
-    }
+}
 
