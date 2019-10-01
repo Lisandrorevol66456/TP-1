@@ -218,7 +218,6 @@ namespace TP_PAV_3K02
                     if (_suscriptoresRepositorio.Eliminar(documento.ToString()))
                     {
                         MessageBox.Show("Se eliminó exitosamente");
-                        
 
                     }
                 }
@@ -290,6 +289,7 @@ namespace TP_PAV_3K02
             {
                 ActualizarLocalidad(cmbProvincias.SelectedValue.ToString());
 
+
             }
             else
             {
@@ -334,7 +334,10 @@ namespace TP_PAV_3K02
                 var nombre = fila.Cells[2].Value;
                 var apellido = fila.Cells[3].Value;
                 var documento = fila.Cells[0].Value;
-
+                var prov = fila.Cells[7].Value;
+                var loc = fila.Cells[6].Value;
+               
+               
 
 
                 if (documento != null)
@@ -348,12 +351,14 @@ namespace TP_PAV_3K02
                         return;
                     else
                     {
-                        var id = fila.Cells[0].Value;
-                        var editar = new EditarSuscriptor(id.ToString());
+                       
+                        var editar = new EditarSuscriptor(documento.ToString(),prov.ToString(),loc.ToString());
                         editar.ShowDialog();
                         ActualizarSuscriptores();
                     }
                 }
+                else
+                    MessageBox.Show("Debe seleccionar una fila no vacia para poder editar");
 
 
             }
