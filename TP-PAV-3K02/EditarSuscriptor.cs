@@ -84,6 +84,8 @@ namespace TP_PAV_3K02
             TXTnombre.Text = suscrip.nombre;
             TXTapellido.Text = suscrip.apellido;
             TXTcalle.Text = suscrip.calle;
+            TXTnroDoc.Text = suscrip.nroDoc.ToString();
+            TXTnumero.Text = suscrip.numero.ToString();
             
 
 

@@ -49,7 +49,8 @@
             this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
-            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.BtnBuscarCuit = new System.Windows.Forms.Button();
             this.TXTbuscarCUIT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DvgDistribuidores)).BeginInit();
@@ -230,29 +231,38 @@
             // 
             // gbBuscar
             // 
-            this.gbBuscar.Controls.Add(this.BtnBuscar);
+            this.gbBuscar.Controls.Add(this.button1);
+            this.gbBuscar.Controls.Add(this.BtnBuscarCuit);
             this.gbBuscar.Controls.Add(this.TXTbuscarCUIT);
             this.gbBuscar.Controls.Add(this.label4);
-            this.gbBuscar.Location = new System.Drawing.Point(352, 12);
+            this.gbBuscar.Location = new System.Drawing.Point(352, 19);
             this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Size = new System.Drawing.Size(434, 100);
+            this.gbBuscar.Size = new System.Drawing.Size(366, 100);
             this.gbBuscar.TabIndex = 35;
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
             // 
-            // BtnBuscar
+            // button1
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(35, 59);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(211, 20);
-            this.BtnBuscar.TabIndex = 36;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = true;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            this.button1.Location = new System.Drawing.Point(224, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 21);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "cancelar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // BtnBuscarCuit
+            // 
+            this.BtnBuscarCuit.Location = new System.Drawing.Point(224, 35);
+            this.BtnBuscarCuit.Name = "BtnBuscarCuit";
+            this.BtnBuscarCuit.Size = new System.Drawing.Size(79, 20);
+            this.BtnBuscarCuit.TabIndex = 36;
+            this.BtnBuscarCuit.Text = "buscar";
+            this.BtnBuscarCuit.UseVisualStyleBackColor = true;
             // 
             // TXTbuscarCUIT
             // 
-            this.TXTbuscarCUIT.Location = new System.Drawing.Point(108, 33);
+            this.TXTbuscarCUIT.Location = new System.Drawing.Point(78, 61);
             this.TXTbuscarCUIT.MaxLength = 11;
             this.TXTbuscarCUIT.Name = "TXTbuscarCUIT";
             this.TXTbuscarCUIT.Size = new System.Drawing.Size(138, 20);
@@ -262,11 +272,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 33);
+            this.label4.Location = new System.Drawing.Point(75, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 16);
+            this.label4.Size = new System.Drawing.Size(67, 16);
             this.label4.TabIndex = 29;
-            this.label4.Text = "Nro Cuit:";
+            this.label4.Text = "Nro CUIT:";
             // 
             // FormDistribuidores
             // 
@@ -323,7 +333,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio;
         private System.Windows.Forms.GroupBox gbBuscar;
-        private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnBuscarCuit;
         private System.Windows.Forms.TextBox TXTbuscarCUIT;
         private System.Windows.Forms.Label label4;
     }

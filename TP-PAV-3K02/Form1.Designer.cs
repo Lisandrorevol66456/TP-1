@@ -64,6 +64,7 @@
             this.TXTbuscarDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.BTNeditar = new System.Windows.Forms.Button();
+            this.BTNactualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -173,6 +174,7 @@
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(138, 20);
             this.txtNroDoc.TabIndex = 11;
+            
             // 
             // txtNumero
             // 
@@ -393,11 +395,22 @@
             this.BTNeditar.UseVisualStyleBackColor = true;
             this.BTNeditar.Click += new System.EventHandler(this.BTNeditar_Click);
             // 
+            // BTNactualizar
+            // 
+            this.BTNactualizar.Location = new System.Drawing.Point(1006, 89);
+            this.BTNactualizar.Name = "BTNactualizar";
+            this.BTNactualizar.Size = new System.Drawing.Size(75, 35);
+            this.BTNactualizar.TabIndex = 36;
+            this.BTNactualizar.Text = "Actualizar";
+            this.BTNactualizar.UseVisualStyleBackColor = true;
+            this.BTNactualizar.Click += new System.EventHandler(this.BTNactualizar_Click);
+            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 450);
+            this.Controls.Add(this.BTNactualizar);
             this.Controls.Add(this.BTNeditar);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.cmbProvincias);
@@ -471,6 +484,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BTNeditar;
+        private System.Windows.Forms.Button BTNactualizar;
     }
 }
 

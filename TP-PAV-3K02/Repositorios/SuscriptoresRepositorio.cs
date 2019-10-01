@@ -47,24 +47,7 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.EjecutarSQL(sqltxt);
         }
-        /*public Suscriptor ObtenerSuscriptor(string nroDoc)
-        {
-            string sqltxt = $"SELECT * FROM [dbo].[Suscriptores] where id={nroDoc}";
-            var tablaTemporal = _BD.consulta(sqltxt);
-            if (tablaTemporal.Rows.Count == 0)
-                return null;
-            var suscriptor = new Suscriptor();
-            foreach (DataRow fila in tablaTemporal.Rows)
-            {
-                if (fila.HasErrors)
-                    continue; // no corto el ciclo
-
-
-            }
-            return suscriptor;
-
-        }*/
-
+        
         public Suscriptor ObtenerSuscriptor(string suscriptorDOC)
         {
             string sqltxt = $"SELECT * FROM [dbo].[Suscriptores] WHERE nroDoc = {suscriptorDOC}";
@@ -88,8 +71,7 @@ namespace TP_PAV_3K02.Repositorios
                 suscri.numero = long.Parse(fila.ItemArray[5].ToString()); // numero de calle
                 suscri.cod_Localidad =int.Parse(fila.ItemArray[6].ToString()); // codigo de la localidad
                 suscri.cod_Provincia = int.Parse(fila.ItemArray[7].ToString()); // codigo de la provincia
-                    
-
+                 
             }
 
             return suscri;
@@ -104,7 +86,7 @@ namespace TP_PAV_3K02.Repositorios
                 $" numero ='{suscriptor.numero}'," +
                 $" cod_Provincia='{suscriptor.cod_Provincia}'," +
                 $" cod_Localidad= '{suscriptor.cod_Localidad}'";
-//WHERE nroDoc={suscriptor.nroDoc}";
+
 
             return _BD.EjecutarSQL(sqltxt);
         }
