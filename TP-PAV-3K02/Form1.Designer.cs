@@ -55,11 +55,11 @@
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFormRepartidores = new System.Windows.Forms.Button();
+            this.btnFormDistribuidores = new System.Windows.Forms.Button();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbProvincias = new System.Windows.Forms.ComboBox();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelarBusqueda = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.TXTbuscarDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -174,7 +174,6 @@
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(138, 20);
             this.txtNroDoc.TabIndex = 11;
-            
             // 
             // txtNumero
             // 
@@ -260,7 +259,6 @@
             this.DvgSuscriptores.Name = "DvgSuscriptores";
             this.DvgSuscriptores.Size = new System.Drawing.Size(717, 267);
             this.DvgSuscriptores.TabIndex = 24;
-            this.DvgSuscriptores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgSuscriptores_CellContentClick);
             // 
             // NroDoc
             // 
@@ -303,15 +301,15 @@
             this.codProvincia.HeaderText = "Provincia";
             this.codProvincia.Name = "codProvincia";
             // 
-            // btnFormRepartidores
+            // btnFormDistribuidores
             // 
-            this.btnFormRepartidores.Location = new System.Drawing.Point(664, 415);
-            this.btnFormRepartidores.Name = "btnFormRepartidores";
-            this.btnFormRepartidores.Size = new System.Drawing.Size(124, 23);
-            this.btnFormRepartidores.TabIndex = 31;
-            this.btnFormRepartidores.Text = "Distribuidores";
-            this.btnFormRepartidores.UseVisualStyleBackColor = true;
-            this.btnFormRepartidores.Click += new System.EventHandler(this.btnFormRepartidores_Click);
+            this.btnFormDistribuidores.Location = new System.Drawing.Point(664, 415);
+            this.btnFormDistribuidores.Name = "btnFormDistribuidores";
+            this.btnFormDistribuidores.Size = new System.Drawing.Size(124, 23);
+            this.btnFormDistribuidores.TabIndex = 31;
+            this.btnFormDistribuidores.Text = "Distribuidores";
+            this.btnFormDistribuidores.UseVisualStyleBackColor = true;
+            this.btnFormDistribuidores.Click += new System.EventHandler(this.btnFormDistribuidores_Click);
             // 
             // cmbLocalidad
             // 
@@ -336,7 +334,7 @@
             // 
             // gbBuscar
             // 
-            this.gbBuscar.Controls.Add(this.button1);
+            this.gbBuscar.Controls.Add(this.btnCancelarBusqueda);
             this.gbBuscar.Controls.Add(this.BtnBuscar);
             this.gbBuscar.Controls.Add(this.TXTbuscarDNI);
             this.gbBuscar.Controls.Add(this.label2);
@@ -347,15 +345,15 @@
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
             // 
-            // button1
+            // btnCancelarBusqueda
             // 
-            this.button1.Location = new System.Drawing.Point(224, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 21);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelarBusqueda.Location = new System.Drawing.Point(224, 67);
+            this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
+            this.btnCancelarBusqueda.Size = new System.Drawing.Size(79, 21);
+            this.btnCancelarBusqueda.TabIndex = 35;
+            this.btnCancelarBusqueda.Text = "cancelar";
+            this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
+            this.btnCancelarBusqueda.Click += new System.EventHandler(this.btnCancelarBusqueda_Click);
             // 
             // BtnBuscar
             // 
@@ -415,7 +413,7 @@
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.cmbProvincias);
             this.Controls.Add(this.cmbLocalidad);
-            this.Controls.Add(this.btnFormRepartidores);
+            this.Controls.Add(this.btnFormDistribuidores);
             this.Controls.Add(this.DvgSuscriptores);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
@@ -467,7 +465,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView DvgSuscriptores;
-        private System.Windows.Forms.Button btnFormRepartidores;
+        private System.Windows.Forms.Button btnFormDistribuidores;
         private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.ComboBox cmbProvincias;
         private System.Windows.Forms.GroupBox gbBuscar;
@@ -482,7 +480,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProvincia;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelarBusqueda;
         private System.Windows.Forms.Button BTNeditar;
         private System.Windows.Forms.Button BTNactualizar;
     }

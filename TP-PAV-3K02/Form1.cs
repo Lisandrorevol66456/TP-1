@@ -172,7 +172,7 @@ namespace TP_PAV_3K02
             if (_suscriptoresRepositorio.Guardar(suscriptor))
             {
                 MessageBox.Show("Se registro con éxito");
-                ActualizarSuscriptores();
+                
 
             }
 
@@ -218,7 +218,7 @@ namespace TP_PAV_3K02
                     if (_suscriptoresRepositorio.Eliminar(documento.ToString()))
                     {
                         MessageBox.Show("Se eliminó exitosamente");
-                        ActualizarSuscriptores();
+                        
 
                     }
                 }
@@ -234,13 +234,8 @@ namespace TP_PAV_3K02
             // cancela la carga del suscriptor y limpialos textbox
             LimpiarCampos();
         }
-        // abre el form de distribuidores
-        private void btnFormRepartidores_Click(object sender, EventArgs e)
-        {
-            var formrepar = new FormDistribuidores();
-            formrepar.ShowDialog();
-
-        }
+       
+      
 
         // boton buscar por documento, filtra la grilla segun el valor ingresado
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -261,24 +256,21 @@ namespace TP_PAV_3K02
                         if (suscriptor.HasErrors)
                             continue;//no corto el ciclo
 
-                        {
-                            var fila = new string[]
-                        {
-                    suscriptor.ItemArray[0].ToString(),
-                    suscriptor.ItemArray[1].ToString(),
-                    suscriptor.ItemArray[2].ToString(),
-                    suscriptor.ItemArray[3].ToString(),
-                    suscriptor.ItemArray[4].ToString(),
-                    suscriptor.ItemArray[5].ToString(),
-                    suscriptor.ItemArray[6].ToString(),
-                    suscriptor.ItemArray[7].ToString(),
+                        
+                        var fila = new string[]
+                            {
+                                suscriptor.ItemArray[0].ToString(),
+                                suscriptor.ItemArray[1].ToString(),
+                                suscriptor.ItemArray[2].ToString(),
+                                suscriptor.ItemArray[3].ToString(),
+                                suscriptor.ItemArray[4].ToString(),
+                                suscriptor.ItemArray[5].ToString(),
+                                suscriptor.ItemArray[6].ToString(),
+                                suscriptor.ItemArray[7].ToString(),
 
-                        };
+                            };  
 
-                            DvgSuscriptores.Rows.Add(fila);
-
-                        }
-
+                            DvgSuscriptores.Rows.Add(fila);    
 
 
                     }
@@ -290,6 +282,7 @@ namespace TP_PAV_3K02
                 }
             }
         }
+
         //segun el valor seleccionado del cmbprovincias actualiza el cmblocalidades
         private void cmbProvincias_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -322,23 +315,12 @@ namespace TP_PAV_3K02
             else
             {
                 v.Handled = true;
-                MessageBox.Show("Solo se permiten Letras HDP");
+             
             }
 
         }
 
-        private void DvgSuscriptores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        // boton cancelar, cancela la busqueda y actualiza la grilla a como estaba
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ActualizarSuscriptores();
-            TXTbuscarDNI.Clear(); // limpio contenido de txt buscar
-        }
-
+        //editar un suscriptor
         private void BTNeditar_Click(object sender, EventArgs e)
         {
             var seleccionadas = DvgSuscriptores.SelectedRows;
@@ -383,7 +365,20 @@ namespace TP_PAV_3K02
             ActualizarSuscriptores(); // refresh a grid
         }
 
-        
+        // abre el form de distribuidores
+        private void btnFormDistribuidores_Click(object sender, EventArgs e)
+        {
+            var formrepar = new FormDistribuidores();
+            formrepar.ShowDialog();
+        }
+
+        // boton cancelar, cancela la busqueda y actualiza la grilla a como estaba
+        private void btnCancelarBusqueda_Click(object sender, EventArgs e)
+        {
+            ActualizarSuscriptores();
+            TXTbuscarDNI.Clear(); // limpio contenido de txt buscar
+
+        }
     }
 
 } 
