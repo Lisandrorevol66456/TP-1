@@ -76,7 +76,7 @@ namespace TP_PAV_3K02.Repositorios
 
             return suscri;
         }
-        public bool Actualizar(Suscriptor suscriptor)
+        public bool Actualizar(Suscriptor suscriptor, string suscriptordni)
         {
             string sqltxt = $"UPDATE [dbo].[Suscriptores] SET nombre='{suscriptor.nombre}' , " +
                 $" apellido ='{suscriptor.apellido}'," +
@@ -85,7 +85,7 @@ namespace TP_PAV_3K02.Repositorios
                 $" cod_TipoDoc = '{suscriptor.cod_TipoDoc}'," +
                 $" numero ='{suscriptor.numero}'," +
                 $" cod_Provincia='{suscriptor.cod_Provincia}'," +
-                $" cod_Localidad= '{suscriptor.cod_Localidad}'";
+                $" cod_Localidad= '{suscriptor.cod_Localidad}' where nroDoc = {suscriptordni}";
 
 
             return _BD.EjecutarSQL(sqltxt);

@@ -107,6 +107,7 @@
             // 
             // TXTnroDoc
             // 
+            this.TXTnroDoc.Enabled = false;
             this.TXTnroDoc.Location = new System.Drawing.Point(139, 123);
             this.TXTnroDoc.MaxLength = 11;
             this.TXTnroDoc.Name = "TXTnroDoc";
