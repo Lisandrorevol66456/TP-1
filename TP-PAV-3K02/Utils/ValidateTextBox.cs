@@ -34,19 +34,23 @@ namespace TP_PAV_3K02.Utils
 
         public void ValidateSoloNumeros(object sender, KeyPressEventArgs v)
         {
-            if (Char.IsNumber(v.KeyChar))
+            if (Char.IsDigit(v.KeyChar))
             {
-               
+                v.Handled = false;
+                
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
                 v.Handled = false;
             }
-            if (Char.IsControl(v.KeyChar))
+            else if (Char.IsSeparator(v.KeyChar))
             {
                 v.Handled = false;
             }
             else
             {
                 v.Handled = true;
-                MessageBox.Show("No es numero");
+               
                
             }
 
