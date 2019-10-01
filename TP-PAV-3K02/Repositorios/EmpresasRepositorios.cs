@@ -12,8 +12,7 @@ namespace TP_PAV_3K02.Repositorios
     class EmpresasRepositorio
     {
         private Editorial_BD _BD;
-        private 
-
+     
         public EmpresasRepositorio()
         {
             var _BD = new Editorial_BD();
@@ -56,7 +55,7 @@ namespace TP_PAV_3K02.Repositorios
                  $"VALUES ('{empresa.cuit}', '{empresa.nombre}', '{empresa.apellido}', '{empresa.domicilio}'," +
                 $"'{empresa.codCal}')";
 
-            return _BD.EjecutarSQL(sqlTxt)
+            return _BD.EjecutarSQL(sqlTxt);
         } 
     }
 }
