@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV_3K02.Modelos;
+using TP_PAV_3K02.Modulos;
 using TP_PAV_3K02.Repositorios;
 using TP_PAV_3K02.Utils;
 
@@ -196,6 +197,48 @@ namespace TP_PAV_3K02
             ValidateTextBox e = new ValidateTextBox();
             e.validateSoloLetras(sender, v);
 
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            var seleccionadas = DvgDistribuidores.SelectedRows;
+            if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
+            {
+                MessageBox.Show("Debe seleccionar una fila");
+                return;
+            }
+            foreach (DataGridViewRow fila in seleccionadas)
+            {
+                var nombre = fila.Cells[1].Value;
+                var apellido = fila.Cells[2].Value;
+                var cuit = fila.Cells[0].Value;
+            
+
+
+
+
+                if (cuit != null)
+                {
+                    //pregunto confirmación
+                    var confirmacion = MessageBox.Show($"Desea editar a {nombre}, {apellido}, {cuit}?",
+                    "Confirmar operación",
+                    MessageBoxButtons.YesNo);
+
+                    if (confirmacion.Equals(DialogResult.No))
+                        return;
+                    else
+                    {
+
+                        var editar = new EditarDistribuidor();
+                        editar.ShowDialog();
+                        ActualizarDistribuidores();
+                    }
+                }
+                else
+                    MessageBox.Show("Debe seleccionar una fila no vacia para poder editar");
+
+
+            }
         }
     }
 }
