@@ -16,14 +16,24 @@ namespace TP_PAV_3K02.Modulos
     public partial class EditarDistribuidor : Form
     {
 
-        DistribuidoresRepositorio _ORepoDist;
+        DistribuidoresRepositorio _distribuidoresRepositorio;
         Editorial_BD _BD;
-        Distribuidor _distribuidor;
+        Distribuidor distribuidor;
 
         public EditarDistribuidor()
         {
             InitializeComponent();
-            _ORepoDist = new DistribuidoresRepositorio();
+            
+        }
+        
+        public EditarDistribuidor(string distribuidorCuit)
+        {
+            InitializeComponent();
+            _distribuidoresRepositorio = new DistribuidoresRepositorio();
+            _BD = new Editorial_BD();
+            distribuidor = _distribuidoresRepositorio.ObtenerDistribuidor(distribuidorCuit);
+
+
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -52,6 +62,7 @@ namespace TP_PAV_3K02.Modulos
                 MessageBox.Show("El CUIT que ingreso no es valido");
                 return;
             }
+
             distribuidor.cuit_dist = long.Parse(TxtCuit.Text);
 
             if (!distribuidor.domicilioValido())
@@ -74,6 +85,11 @@ namespace TP_PAV_3K02.Modulos
 
         private void EditarDistribuidor_Load(object sender, EventArgs e)
         {
+            
+            txtnombre.Text = distribuidor.nombre;
+            txtApellido.Text = distribuidor.apellido;
+            TxtDomicilio.Text = distribuidor.domicilio;
+            TxtCuit.Text = distribuidor.cuit_dist.ToString();
 
         }
     }

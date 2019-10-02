@@ -71,6 +71,7 @@ namespace TP_PAV_3K02.Repositorios
                 suscri.numero = long.Parse(fila.ItemArray[5].ToString()); // numero de calle
                 suscri.cod_Localidad =int.Parse(fila.ItemArray[6].ToString()); // codigo de la localidad
                 suscri.cod_Provincia = int.Parse(fila.ItemArray[7].ToString()); // codigo de la provincia
+                
                  
             }
 
