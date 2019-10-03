@@ -193,7 +193,7 @@
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(138, 20);
             this.txtCalle.TabIndex = 13;
-            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarTxtLetras);
+            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateLetrasYnumeros);
             // 
             // lblLocalidad
             // 

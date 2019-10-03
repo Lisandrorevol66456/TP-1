@@ -376,6 +376,11 @@ namespace TP_PAV_3K02
            v.ValidateSoloNumeros(sender, e);  
           
         }
+
+        private void validateLetrasYnumeros(object sender, KeyPressEventArgs e)
+        {
+            v.validateLetrasNumeros(sender, e);
+        }
     }
 
 } 

@@ -26,6 +26,7 @@ namespace TP_PAV_3K02.Utils
             else
             {
                 v.Handled = true;
+               
 
             }
 
@@ -54,6 +55,30 @@ namespace TP_PAV_3K02.Utils
                
             }
 
+
+        }
+
+        public void validateLetrasNumeros(object sender, KeyPressEventArgs v)
+        {
+            if(Char.IsLetterOrDigit(v.KeyChar))
+            {
+                v.Handled = false;
+
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+
+
+            }
 
         }
     }
