@@ -52,7 +52,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Calificacion.cs" />
     <Compile Include="Modelos\Empresa.cs" />
+    <Compile Include="Modulos\Calificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Calificacion.Designer.cs">
+      <DependentUpon>Calificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\EditarDistribuidor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +97,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\CalificacionesRepositorio.cs" />
     <Compile Include="Repositorios\DistribuidoresRepositorio.cs" />
     <Compile Include="Repositorios\EmpresasRepositorios.cs" />
     <Compile Include="Repositorios\LocalidadesRepositorio.cs" />
@@ -97,6 +105,9 @@
     <Compile Include="Repositorios\SuscriptoresRepositorio.cs" />
     <Compile Include="Repositorios\TipoDocumentoRepositorio.cs" />
     <Compile Include="Utils\ValidateTextBox.cs" />
+    <EmbeddedResource Include="Modulos\Calificacion.resx">
+      <DependentUpon>Calificacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\EditarDistribuidor.resx">
       <DependentUpon>EditarDistribuidor.cs</DependentUpon>
     </EmbeddedResource>

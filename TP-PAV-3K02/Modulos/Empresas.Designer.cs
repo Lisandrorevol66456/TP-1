@@ -57,8 +57,7 @@
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.TXTbuscarCUIT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbCodCal = new System.Windows.Forms.ComboBox();
-            this.Calificacion = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -135,7 +134,7 @@
             // TxtCuit
             // 
             this.TxtCuit.Location = new System.Drawing.Point(144, 190);
-            this.TxtCuit.MaxLength = 20;
+            this.TxtCuit.MaxLength = 14;
             this.TxtCuit.Name = "TxtCuit";
             this.TxtCuit.Size = new System.Drawing.Size(200, 20);
             this.TxtCuit.TabIndex = 29;
@@ -302,31 +301,22 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "Nro Cuit:";
             // 
-            // cmbCodCal
+            // button1
             // 
-            this.cmbCodCal.FormattingEnabled = true;
-            this.cmbCodCal.Location = new System.Drawing.Point(144, 324);
-            this.cmbCodCal.Name = "cmbCodCal";
-            this.cmbCodCal.Size = new System.Drawing.Size(200, 21);
-            this.cmbCodCal.TabIndex = 37;
-            // 
-            // Calificacion
-            // 
-            this.Calificacion.AutoSize = true;
-            this.Calificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.7F);
-            this.Calificacion.Location = new System.Drawing.Point(33, 329);
-            this.Calificacion.Name = "Calificacion";
-            this.Calificacion.Size = new System.Drawing.Size(83, 16);
-            this.Calificacion.TabIndex = 38;
-            this.Calificacion.Text = "Calificacion :";
+            this.button1.Location = new System.Drawing.Point(364, 403);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 35);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Calificar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Empresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 450);
-            this.Controls.Add(this.Calificacion);
-            this.Controls.Add(this.cmbCodCal);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -386,7 +376,6 @@
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.TextBox TXTbuscarCUIT;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbCodCal;
-        private System.Windows.Forms.Label Calificacion;
+        private System.Windows.Forms.Button button1;
     }
 }
