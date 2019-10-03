@@ -36,12 +36,12 @@ namespace TP_PAV_3K02.Modelos
             return false;
 
         }
-        public bool busquedaValida(string busqueda)
-        {
+        /*public bool busquedaValida(string busqueda)
+          {
             if (!string.IsNullOrEmpty(busqueda) || !string.IsNullOrWhiteSpace(busqueda))
                 return true;
             return false;
-        }
+          }*/
 
         public bool ApellidoValido()
         {

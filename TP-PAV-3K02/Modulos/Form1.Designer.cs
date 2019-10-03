@@ -375,6 +375,7 @@
             this.TXTbuscarDNI.Name = "TXTbuscarDNI";
             this.TXTbuscarDNI.Size = new System.Drawing.Size(138, 20);
             this.TXTbuscarDNI.TabIndex = 30;
+            this.TXTbuscarDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
             // label2
             // 

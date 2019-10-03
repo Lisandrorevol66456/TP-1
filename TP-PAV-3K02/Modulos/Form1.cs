@@ -21,6 +21,7 @@ namespace TP_PAV_3K02
         TipoDocumentoRepositorio _tipodocumentoRepositorio;
         ProvinciasRepositorio _provinciasRepositorio;
         LocalidadesRepositorio _localidadesRepositorio;
+        ValidateTextBox v;
         Editorial_BD _BD;
 
         public NuevoSuscriptor()
@@ -30,6 +31,7 @@ namespace TP_PAV_3K02
             _tipodocumentoRepositorio = new TipoDocumentoRepositorio();
             _provinciasRepositorio = new ProvinciasRepositorio();
             _localidadesRepositorio = new LocalidadesRepositorio();
+            v = new ValidateTextBox();
 
             _BD = new Editorial_BD();
         }
@@ -38,8 +40,6 @@ namespace TP_PAV_3K02
         private void ActualizarSuscriptores() {
 
             DvgSuscriptores.Rows.Clear();
-            LimpiarCampos();
-
 
             var suscriptores = _suscriptoresRepositorio.ObtenerSuscriptoresDT().Rows;
             var filas = new List<DataGridViewRow>();
@@ -114,7 +114,9 @@ namespace TP_PAV_3K02
             txtCalle.Clear();
             txtNumero.Clear();
             txtNroDoc.Clear();
+           
         }
+        //Agregar un suscriptor
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             var suscriptor = new Suscriptor();
@@ -185,7 +187,7 @@ namespace TP_PAV_3K02
             ActualizarProvi();
 
         }
-
+        //Eliminar un suscriptor
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             var seleccionadas = DvgSuscriptores.SelectedRows;
@@ -239,23 +241,21 @@ namespace TP_PAV_3K02
 
         {
             var sus = new Suscriptor();
-            if (sus.busquedaValida(TXTbuscarDNI.Text.ToString())) // valido que no sea espacio en blanco o campo vacio
+            if (sus.NumeroValido(TXTbuscarDNI.Text)) // valido que sea un numero
             {
-                if (sus.NumeroValido(TXTbuscarDNI.Text)) // valido qeu sea numero
+                DvgSuscriptores.Rows.Clear();
+                var numdoc = long.Parse(TXTbuscarDNI.Text);
+                var suscriptores = _suscriptoresRepositorio.ObtenerPorDNI(numdoc).Rows;
+                var filas = new List<DataGridViewRow>();
+
+                foreach (DataRow suscriptor in suscriptores)
                 {
-                    DvgSuscriptores.Rows.Clear();
-                    var numdoc = long.Parse(TXTbuscarDNI.Text);
-                    var suscriptores = _suscriptoresRepositorio.ObtenerPorDNI(numdoc).Rows;
-                    var filas = new List<DataGridViewRow>();
+                    if (suscriptor.HasErrors)
+                        continue;//no corto el ciclo
 
-                    foreach (DataRow suscriptor in suscriptores)
-                    {
-                        if (suscriptor.HasErrors)
-                            continue;//no corto el ciclo
 
-                        
-                        var fila = new string[]
-                            {
+                    var fila = new string[]
+                        {
                                 suscriptor.ItemArray[0].ToString(),
                                 suscriptor.ItemArray[1].ToString(),
                                 suscriptor.ItemArray[2].ToString(),
@@ -265,19 +265,15 @@ namespace TP_PAV_3K02
                                 suscriptor.ItemArray[6].ToString(),
                                 suscriptor.ItemArray[7].ToString(),
 
-                            };  
+                        };
 
-                            DvgSuscriptores.Rows.Add(fila);    
+                    DvgSuscriptores.Rows.Add(fila);
 
 
-                    }
                 }
-                else
-                {
-                    MessageBox.Show("No se puede buscar lo ingresado, ingrese nuevamente.");
-                    TXTbuscarDNI.Focus(); // me devuelve el prompt al txt buscar para que el usuario reingrese datos
-                }
-            }
+            } 
+                
+            
         }
 
         //segun el valor seleccionado del cmbprovincias actualiza el cmblocalidades
@@ -296,11 +292,10 @@ namespace TP_PAV_3K02
             }
         }
         //validar TextBox Solo Letras
-        private void ValidarTxtLetras(object sender, KeyPressEventArgs v)
+        private void ValidarTxtLetras(object sender, KeyPressEventArgs e)
         {
+            v.validateSoloLetras(sender, e);
            
-            ValidateTextBox e = new ValidateTextBox();
-            e.validateSoloLetras(sender, v);
         }
 
         
@@ -376,11 +371,10 @@ namespace TP_PAV_3K02
             formempresa.ShowDialog();
         }
 
-        private void ValidateSoloNumeros(object sender, KeyPressEventArgs v)
+        private void ValidateSoloNumeros(object sender, KeyPressEventArgs e)
         {
-            
-            ValidateTextBox e = new ValidateTextBox();
-            e.ValidateSoloNumeros(sender, v);
+           v.ValidateSoloNumeros(sender, e);  
+          
         }
     }
 

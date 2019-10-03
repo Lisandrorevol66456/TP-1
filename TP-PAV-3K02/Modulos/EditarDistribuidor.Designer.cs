@@ -45,11 +45,13 @@
             // 
             // TxtCuit
             // 
+            this.TxtCuit.Enabled = false;
             this.TxtCuit.Location = new System.Drawing.Point(125, 154);
             this.TxtCuit.MaxLength = 20;
             this.TxtCuit.Name = "TxtCuit";
             this.TxtCuit.Size = new System.Drawing.Size(200, 20);
             this.TxtCuit.TabIndex = 30;
+            this.TxtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumeros);
             // 
             // label3
             // 
@@ -88,6 +90,7 @@
             this.TxtDomicilio.Name = "TxtDomicilio";
             this.TxtDomicilio.Size = new System.Drawing.Size(200, 20);
             this.TxtDomicilio.TabIndex = 26;
+            this.TxtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras);
             // 
             // label1
             // 
@@ -106,6 +109,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 20);
             this.txtApellido.TabIndex = 24;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras);
             // 
             // txtnombre
             // 
@@ -114,6 +118,7 @@
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(200, 20);
             this.txtnombre.TabIndex = 23;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras);
             // 
             // lblApellido
             // 

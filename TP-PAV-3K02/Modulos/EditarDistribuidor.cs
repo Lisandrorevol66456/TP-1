@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TP_PAV_3K02.Modelos;
 using TP_PAV_3K02.Repositorios;
 using TP_PAV_3K02.BaseDatos;
+using TP_PAV_3K02.Utils;
 
 namespace TP_PAV_3K02.Modulos
 {
@@ -45,18 +46,19 @@ namespace TP_PAV_3K02.Modulos
             distribuidor.domicilio = TxtDomicilio.Text;
             distribuidor.fecha_inicio = DTPfechainicio.Value;
 
-            if (!distribuidor.ApellidoValido())
-            {
-                MessageBox.Show("El apellido que ingreso no es valido ");
-                return;
-            }
-
             if (!distribuidor.NombreValido())
             {
                 MessageBox.Show("El nombre que ingreso no es valido");
                 return;
             }
 
+            if (!distribuidor.ApellidoValido())
+            {
+                MessageBox.Show("El apellido que ingreso no es valido ");
+                return;
+            }
+
+            
             if (!distribuidor.CuitValido(TxtCuit.Text.ToString()))
             {
                 MessageBox.Show("El CUIT que ingreso no es valido");
@@ -76,6 +78,12 @@ namespace TP_PAV_3K02.Modulos
                 MessageBox.Show("La fecha ingresada no es valida");
                 return;
             }
+
+            if(_distribuidoresRepositorio.Actualizar(distribuidor, TxtCuit.Text.ToString()))
+            {
+                MessageBox.Show("Se actualizo con Exito");
+                this.Dispose();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -90,6 +98,19 @@ namespace TP_PAV_3K02.Modulos
             txtApellido.Text = distribuidor.apellido;
             TxtDomicilio.Text = distribuidor.domicilio;
             TxtCuit.Text = distribuidor.cuit_dist.ToString();
+
+        }
+
+        private void validarLetras(object sender, KeyPressEventArgs e)
+        {
+            ValidateTextBox v = new ValidateTextBox();
+            v.validateSoloLetras(sender, e);
+        }
+
+        private void validateNumeros(object sender, KeyPressEventArgs e)
+        {
+            ValidateTextBox v = new ValidateTextBox();
+            v.ValidateSoloNumeros(sender, e);
 
         }
     }

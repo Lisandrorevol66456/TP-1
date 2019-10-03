@@ -10,7 +10,7 @@ using TP_PAV_3K02.Modelos;
 namespace TP_PAV_3K02.Repositorios
 {
    public class DistribuidoresRepositorio
-    {
+   {
 
         private Editorial_BD _BD;
 
@@ -27,10 +27,11 @@ namespace TP_PAV_3K02.Repositorios
         }
         public DataTable ObtenerPorcuit(long cuit)
         {
-            string sqltxt = "SELECT * FROM Distribuidores Where nroDoc=" + cuit;
+            string sqltxt = "SELECT * FROM Distribuidores Where cuit_dist =" +cuit;
 
             return _BD.consulta(sqltxt);
         }
+
         public bool Guardar(Distribuidor distribuidor)
         {
             string sqltxt = $"INSERT [dbo].[Distribuidores] ([cuit_dist],[nombre],[apellido],[domicilio],[fecha_inicio]) " +
@@ -46,9 +47,9 @@ namespace TP_PAV_3K02.Repositorios
             return _BD.EjecutarSQL(sqltxt);
         }
 
-        public Distribuidor ObtenerDistribuidor(string cuit_dist)
+        public Distribuidor ObtenerDistribuidor(string cuit)
         {
-            string sqltxt = $"SELECT * FROM [dbo].[Distribuidores] Where cuit_dist ={cuit_dist}'";
+            string sqltxt = $"SELECT * FROM [dbo].[Distribuidores] Where cuit_dist ='{cuit}'";
             var tablaTemporal = _BD.consulta(sqltxt);
             if (tablaTemporal.Rows.Count == 0)
                 return null;
@@ -69,5 +70,19 @@ namespace TP_PAV_3K02.Repositorios
             }
             return distribuidor;
         }
-    }
+
+        public bool Actualizar(Distribuidor dist, string cuit)
+        {
+            string sqltext = $"UPDATE [dbo].[Distribuidores] SET cuit_dist = '{dist.cuit_dist}' , "+
+                $" nombre =  '{dist.nombre}' , " +
+                $" apellido = '{dist.apellido}', " +
+                $" domicilio = '{dist.domicilio}' ," +
+                $" fecha_inicio = '{dist.fecha_inicio.ToString("yyyy-MM-dd")}' where cuit_dist = {cuit} ";
+
+            return _BD.EjecutarSQL(sqltext);
+
+
+        }
+
+   }
 }

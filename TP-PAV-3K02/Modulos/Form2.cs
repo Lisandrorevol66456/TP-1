@@ -16,10 +16,12 @@ namespace TP_PAV_3K02
 {
     public partial class FormDistribuidores : Form
     {
+        ValidateTextBox v;
         DistribuidoresRepositorio _distribuidoresRepositorio;
         public FormDistribuidores()
         {
             InitializeComponent();
+            v = new ValidateTextBox();
             _distribuidoresRepositorio = new DistribuidoresRepositorio();
 
         }
@@ -75,6 +77,7 @@ namespace TP_PAV_3K02
             {
                 MessageBox.Show("Se registro con éxito");
                 ActualizarDistribuidores();
+                LimpiarCampos();
                 
             }
         }
@@ -156,13 +159,14 @@ namespace TP_PAV_3K02
 
        
 
-        private void BtnBuscar_Click(object sender, EventArgs e)
+        private void BtnBuscarCuit_Click(object sender, EventArgs e)
         {
+
             DvgDistribuidores.Rows.Clear();
             var numcuit = long.Parse(TXTbuscarCUIT.Text);
             var distribuidores = _distribuidoresRepositorio.ObtenerPorcuit(numcuit).Rows;
-            var filas = new List<DataGridViewRow>();
 
+            var filas = new List<DataGridViewRow>();
             foreach (DataRow distribuidor in distribuidores)
             {
                 if (distribuidor.HasErrors)
@@ -175,9 +179,7 @@ namespace TP_PAV_3K02
                     distribuidor.ItemArray[3].ToString(),
                     distribuidor.ItemArray[4].ToString(),
                     distribuidor.ItemArray[5].ToString(),
-                    distribuidor.ItemArray[6].ToString(),
-                    distribuidor.ItemArray[7].ToString(),
-                    distribuidor.ItemArray[8].ToString(),
+                    
                 };
 
                 DvgDistribuidores.Rows.Add(fila);
@@ -185,17 +187,16 @@ namespace TP_PAV_3K02
             }
         }
 
-        public void ValidateSoloNumeros(object sender, KeyPressEventArgs v)
+        public void ValidateSoloNumeros(object sender, KeyPressEventArgs e)
         {
-            ValidateTextBox e = new ValidateTextBox();
-            e.ValidateSoloNumeros(sender, v);
+            v.ValidateSoloNumeros(sender, e);
 
         }
 
-        private void ValidateSoloLetras(object sender, KeyPressEventArgs v)
+        private void ValidateSoloLetras(object sender, KeyPressEventArgs e)
         {
-            ValidateTextBox e = new ValidateTextBox();
-            e.validateSoloLetras(sender, v);
+            
+            v.validateSoloLetras(sender, e);
 
         }
 
@@ -229,7 +230,7 @@ namespace TP_PAV_3K02
                     else
                     {
 
-                        var editar = new EditarDistribuidor();
+                        var editar = new EditarDistribuidor(cuit.ToString());
                         editar.ShowDialog();
                         ActualizarDistribuidores();
                     }
@@ -239,6 +240,28 @@ namespace TP_PAV_3K02
 
 
             }
+        }
+
+        private void btnCancelarBusqueda_Click(object sender, EventArgs e)
+        {
+            ActualizarDistribuidores();
+            TXTbuscarCUIT.Clear();
+        }
+
+
+        private void LimpiarCampos()
+        {
+            txtnombre.Clear();
+            txtApellido.Clear();
+            TxtCuit.Clear();
+            TxtDomicilio.Clear();
+            
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }

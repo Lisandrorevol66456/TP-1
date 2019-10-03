@@ -49,10 +49,11 @@
             this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelarBusqueda = new System.Windows.Forms.Button();
             this.BtnBuscarCuit = new System.Windows.Forms.Button();
             this.TXTbuscarCUIT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgDistribuidores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -175,7 +176,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(243, 356);
+            this.btnEditar.Location = new System.Drawing.Point(259, 298);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 35);
             this.btnEditar.TabIndex = 25;
@@ -235,7 +236,7 @@
             // 
             // gbBuscar
             // 
-            this.gbBuscar.Controls.Add(this.button1);
+            this.gbBuscar.Controls.Add(this.btnCancelarBusqueda);
             this.gbBuscar.Controls.Add(this.BtnBuscarCuit);
             this.gbBuscar.Controls.Add(this.TXTbuscarCUIT);
             this.gbBuscar.Controls.Add(this.label4);
@@ -246,14 +247,15 @@
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
             // 
-            // button1
+            // btnCancelarBusqueda
             // 
-            this.button1.Location = new System.Drawing.Point(224, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 21);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancelarBusqueda.Location = new System.Drawing.Point(224, 67);
+            this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
+            this.btnCancelarBusqueda.Size = new System.Drawing.Size(79, 21);
+            this.btnCancelarBusqueda.TabIndex = 35;
+            this.btnCancelarBusqueda.Text = "cancelar";
+            this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
+            this.btnCancelarBusqueda.Click += new System.EventHandler(this.btnCancelarBusqueda_Click);
             // 
             // BtnBuscarCuit
             // 
@@ -263,6 +265,7 @@
             this.BtnBuscarCuit.TabIndex = 36;
             this.BtnBuscarCuit.Text = "buscar";
             this.BtnBuscarCuit.UseVisualStyleBackColor = true;
+            this.BtnBuscarCuit.Click += new System.EventHandler(this.BtnBuscarCuit_Click);
             // 
             // TXTbuscarCUIT
             // 
@@ -271,6 +274,7 @@
             this.TXTbuscarCUIT.Name = "TXTbuscarCUIT";
             this.TXTbuscarCUIT.Size = new System.Drawing.Size(138, 20);
             this.TXTbuscarCUIT.TabIndex = 30;
+            this.TXTbuscarCUIT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
             // label4
             // 
@@ -282,11 +286,22 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "Nro CUIT:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(259, 356);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 35);
+            this.btnCancelar.TabIndex = 36;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FormDistribuidores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 450);
+            this.ClientSize = new System.Drawing.Size(811, 476);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.DvgDistribuidores);
             this.Controls.Add(this.btnEliminar);
@@ -337,9 +352,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio;
         private System.Windows.Forms.GroupBox gbBuscar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelarBusqueda;
         private System.Windows.Forms.Button BtnBuscarCuit;
         private System.Windows.Forms.TextBox TXTbuscarCUIT;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
