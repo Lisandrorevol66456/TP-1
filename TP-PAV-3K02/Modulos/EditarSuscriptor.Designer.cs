@@ -96,6 +96,7 @@
             this.TXTcalle.Name = "TXTcalle";
             this.TXTcalle.Size = new System.Drawing.Size(138, 20);
             this.TXTcalle.TabIndex = 45;
+            this.TXTcalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarLetras);
             // 
             // TXTnumero
             // 
@@ -104,6 +105,7 @@
             this.TXTnumero.Name = "TXTnumero";
             this.TXTnumero.Size = new System.Drawing.Size(138, 20);
             this.TXTnumero.TabIndex = 44;
+            this.TXTnumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNumeros);
             // 
             // TXTnroDoc
             // 
@@ -113,6 +115,7 @@
             this.TXTnroDoc.Name = "TXTnroDoc";
             this.TXTnroDoc.Size = new System.Drawing.Size(138, 20);
             this.TXTnroDoc.TabIndex = 43;
+            this.TXTnroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNumeros);
             // 
             // comboTipodoc
             // 
@@ -131,6 +134,7 @@
             this.TXTapellido.Name = "TXTapellido";
             this.TXTapellido.Size = new System.Drawing.Size(138, 20);
             this.TXTapellido.TabIndex = 41;
+            this.TXTapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarLetras);
             // 
             // TXTnombre
             // 
@@ -139,6 +143,7 @@
             this.TXTnombre.Name = "TXTnombre";
             this.TXTnombre.Size = new System.Drawing.Size(138, 20);
             this.TXTnombre.TabIndex = 40;
+            this.TXTnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarLetras);
             // 
             // lblApellido
             // 

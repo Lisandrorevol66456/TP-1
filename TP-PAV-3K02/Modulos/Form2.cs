@@ -178,7 +178,7 @@ namespace TP_PAV_3K02
                     distribuidor.ItemArray[2].ToString(),
                     distribuidor.ItemArray[3].ToString(),
                     distribuidor.ItemArray[4].ToString(),
-                    distribuidor.ItemArray[5].ToString(),
+                    
                     
                 };
 
@@ -213,6 +213,7 @@ namespace TP_PAV_3K02
                 var nombre = fila.Cells[1].Value;
                 var apellido = fila.Cells[2].Value;
                 var cuit = fila.Cells[0].Value;
+                var fecha = fila.Cells[4].Value;
             
 
 
@@ -230,7 +231,7 @@ namespace TP_PAV_3K02
                     else
                     {
 
-                        var editar = new EditarDistribuidor(cuit.ToString());
+                        var editar = new EditarDistribuidor(cuit.ToString(),fecha.ToString());
                         editar.ShowDialog();
                         ActualizarDistribuidores();
                     }
@@ -255,7 +256,6 @@ namespace TP_PAV_3K02
             txtApellido.Clear();
             TxtCuit.Clear();
             TxtDomicilio.Clear();
-            
 
         }
 

@@ -20,6 +20,8 @@ namespace TP_PAV_3K02.Modulos
         DistribuidoresRepositorio _distribuidoresRepositorio;
         Editorial_BD _BD;
         Distribuidor distribuidor;
+        ValidateTextBox v;
+        string fechadist;
 
         public EditarDistribuidor()
         {
@@ -27,11 +29,13 @@ namespace TP_PAV_3K02.Modulos
             
         }
         
-        public EditarDistribuidor(string distribuidorCuit)
+        public EditarDistribuidor(string distribuidorCuit, string fecha)
         {
             InitializeComponent();
             _distribuidoresRepositorio = new DistribuidoresRepositorio();
+            v = new ValidateTextBox();
             _BD = new Editorial_BD();
+            fechadist = fecha;
             distribuidor = _distribuidoresRepositorio.ObtenerDistribuidor(distribuidorCuit);
 
 
@@ -98,18 +102,19 @@ namespace TP_PAV_3K02.Modulos
             txtApellido.Text = distribuidor.apellido;
             TxtDomicilio.Text = distribuidor.domicilio;
             TxtCuit.Text = distribuidor.cuit_dist.ToString();
+            DTPfechainicio.Text = fechadist;
 
         }
 
         private void validarLetras(object sender, KeyPressEventArgs e)
         {
-            ValidateTextBox v = new ValidateTextBox();
+            
             v.validateSoloLetras(sender, e);
         }
 
         private void validateNumeros(object sender, KeyPressEventArgs e)
         {
-            ValidateTextBox v = new ValidateTextBox();
+            
             v.ValidateSoloNumeros(sender, e);
 
         }

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using TP_PAV_3K02.Modelos;
 using TP_PAV_3K02.Repositorios;
 using TP_PAV_3K02.BaseDatos;
+using TP_PAV_3K02.Utils;
+
 namespace TP_PAV_3K02
 {
     public partial class EditarSuscriptor : Form
@@ -22,6 +24,7 @@ namespace TP_PAV_3K02
         Suscriptor suscrip;
         string suscriptorLOC;
         string suscriptorPROV;
+        ValidateTextBox v;
 
         public EditarSuscriptor()
         {
@@ -175,6 +178,16 @@ namespace TP_PAV_3K02
                 ComboLocalidades.DataSource = null;
                 
             }
+        }
+
+        private void ValidarLetras(object sender, KeyPressEventArgs e)
+        {
+            v.validateSoloLetras(sender,e);
+        }
+
+        private void ValidarNumeros(object sender, KeyPressEventArgs e)
+        {
+            v.ValidateSoloNumeros(sender,e);
         }
     }
 }

@@ -13,7 +13,6 @@ namespace TP_PAV_3K02.Modelos
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string domicilio { get; set; }
-        public long numero { get; set; }
         public DateTime fecha_inicio { get; set; }
  
 
