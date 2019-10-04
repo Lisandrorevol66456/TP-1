@@ -104,6 +104,7 @@
             this.txtCuit.Location = new System.Drawing.Point(114, 102);
             this.txtCuit.MaxLength = 20;
             this.txtCuit.Name = "txtCuit";
+            this.txtCuit.ReadOnly = true;
             this.txtCuit.Size = new System.Drawing.Size(163, 20);
             this.txtCuit.TabIndex = 48;
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumero);

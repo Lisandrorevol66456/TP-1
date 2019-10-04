@@ -32,12 +32,7 @@ namespace TP_PAV_3K02.Modulos
             _BD = new Editorial_BD();
         }
 
-        private void Peliculas_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.Empresas' Puede moverla o quitarla según sea necesario.
-          //  this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
-            ActualizarEmpresas();
-        }
+       
         private void ActualizarEmpresas()
         {
 
@@ -76,7 +71,7 @@ namespace TP_PAV_3K02.Modulos
             empresa.cuit_Empresa = long.Parse(TxtCuit.Text);
             empresa.domicilio = TxtDomicilio.Text;
             empresa.fecha_Inicio = DTPfechainicio.Value.Date;
-            //empresa.codCal = int.Parse(cmbCodCal.SelectedIndex.ToString());
+            
 
             if (!empresa.NombreValido())
             {
@@ -107,13 +102,17 @@ namespace TP_PAV_3K02.Modulos
 
             empresa.cuit_Empresa = long.Parse(TxtCuit.Text);
 
-            
-            if (_empresaRepositorio.guardar(empresa))
+            if (!_empresaRepositorio.ValidarDuplicado(TxtCuit.Text.ToString()))
             {
-                MessageBox.Show("Se registro con éxito");
+                if (_empresaRepositorio.guardar(empresa))
+                {
+                    MessageBox.Show("Se registro con éxito");
+                    ActualizarEmpresas();
 
-
+                }
             }
+            else
+                MessageBox.Show("Ya existe una empresa con ese numero de Cuit");
 
         }
 
@@ -149,7 +148,7 @@ namespace TP_PAV_3K02.Modulos
                     if (_empresaRepositorio.eliminar(cuit.ToString()))
                     {
                         MessageBox.Show("Se eliminó exitosamente");
-
+                        ActualizarEmpresas();
                     }
                 }
                 if (cuit == null)
@@ -172,9 +171,9 @@ namespace TP_PAV_3K02.Modulos
                 var cuit = fila.Cells[0].Value;
                 var nombre = fila.Cells[1].Value;
                 var apellido = fila.Cells[2].Value;
-                var domicilio = fila.Cells[0].Value;
-                var fechaI = fila.Cells[0].Value;
-                var codCal = fila.Cells[0].Value;
+                //var domicilio = fila.Cells[0].Value;
+                //var fechaI = fila.Cells[0].Value;
+                //var codCal = fila.Cells[0].Value;
 
 
                 if (cuit != null)
@@ -189,7 +188,7 @@ namespace TP_PAV_3K02.Modulos
 
                     var formCalificacion = new Calificacion(cuit.ToString()); // abre el form de calificaciones
                     formCalificacion.ShowDialog();
-
+                    ActualizarEmpresas();
                 }
                 if (cuit == null)
                     MessageBox.Show("Debe Seleccionar una fila que no este Vacia.....");
@@ -290,8 +289,6 @@ namespace TP_PAV_3K02.Modulos
                 var cod_cal = fila.Cells[6].Value;
 
 
-
-
                 if (cuit != null)
                 {
                     //pregunto confirmación
@@ -314,6 +311,11 @@ namespace TP_PAV_3K02.Modulos
 
 
             }
+        }
+
+        private void Empresas_Load(object sender, EventArgs e)
+        {
+            ActualizarEmpresas();
         }
     }
 }

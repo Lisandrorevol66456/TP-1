@@ -130,12 +130,12 @@
             // DTPfechainicio
             // 
             this.DTPfechainicio.Location = new System.Drawing.Point(144, 283);
-            this.DTPfechainicio.MaxDate = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
+            this.DTPfechainicio.MaxDate = new System.DateTime(2019, 10, 4, 19, 3, 48, 0);
             this.DTPfechainicio.MinDate = new System.DateTime(1919, 12, 29, 0, 0, 0, 0);
             this.DTPfechainicio.Name = "DTPfechainicio";
             this.DTPfechainicio.Size = new System.Drawing.Size(163, 20);
             this.DTPfechainicio.TabIndex = 26;
-            this.DTPfechainicio.Value = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
+            this.DTPfechainicio.Value = new System.DateTime(2019, 10, 3, 0, 0, 0, 0);
             // 
             // TxtDomicilio
             // 
@@ -318,18 +318,21 @@
             // 
             // cuit_Emp
             // 
-            this.cuit_Emp.HeaderText = "Cuit Empresa";
+            this.cuit_Emp.HeaderText = "Numero de CUIT";
             this.cuit_Emp.Name = "cuit_Emp";
+            this.cuit_Emp.ReadOnly = true;
             // 
             // nombre
             // 
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             // 
             // apellido
             // 
             this.apellido.HeaderText = "Apellido";
             this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
             // 
             // domicilio
             // 
@@ -339,19 +342,19 @@
             // 
             // fechainicio
             // 
-            this.fechainicio.HeaderText = "Fecha Inicio";
+            this.fechainicio.HeaderText = "Fecha de Inicio";
             this.fechainicio.Name = "fechainicio";
             this.fechainicio.ReadOnly = true;
             // 
             // fecha_cal
             // 
-            this.fecha_cal.HeaderText = "Fecha Calf";
+            this.fecha_cal.HeaderText = "Fecha de Calificacion";
             this.fecha_cal.Name = "fecha_cal";
             this.fecha_cal.ReadOnly = true;
             // 
             // Cod_calif
             // 
-            this.Cod_calif.HeaderText = "Cod Calificacion";
+            this.Cod_calif.HeaderText = "Calificacion";
             this.Cod_calif.Name = "Cod_calif";
             this.Cod_calif.ReadOnly = true;
             // 
@@ -381,7 +384,7 @@
             this.Controls.Add(this.dgvEmpresas);
             this.Name = "Empresas";
             this.Text = "Empresas";
-            this.Load += new System.EventHandler(this.Peliculas_Load);
+            this.Load += new System.EventHandler(this.Empresas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

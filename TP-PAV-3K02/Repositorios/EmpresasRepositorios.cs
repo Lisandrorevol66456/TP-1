@@ -40,20 +40,23 @@ namespace TP_PAV_3K02.Repositorios
                 if (fila.HasErrors)
                     continue; // no corto el ciclo
 
-                empresa.cuit_Empresa = long.Parse(fila.ItemArray[0].ToString()); // numero documento
+                empresa.cuit_Empresa = long.Parse(fila.ItemArray[0].ToString()); // numero cuit
                 
                 empresa.nombre = fila.ItemArray[1].ToString(); // Nombre
                 empresa.apellido = fila.ItemArray[2].ToString(); // apellido
                 empresa.domicilio = fila.ItemArray[3].ToString(); // calle
 
-                empresa.cod_calificacion = int.Parse(fila.ItemArray[5].ToString());
+                empresa.cod_calificacion = int.Parse(fila.ItemArray[6].ToString());
 
                 // tratamiento de fechas
-                DateTime fecha = DateTime.MinValue;
-
+                DateTime fechaI = DateTime.MinValue;
+                DateTime fechaCal = DateTime.MinValue;  
                 // Si lo que esta en la BD de datos se puede parsear a date se lo parsea y almacena en la variable
-                DateTime.TryParse(fila.ItemArray[4]?.ToString(), out fecha);
-                empresa.fecha_Inicio = fecha; // fecha
+                DateTime.TryParse(fila.ItemArray[4]?.ToString(), out fechaI);
+                empresa.fecha_Inicio = fechaI; // fecha
+
+                DateTime.TryParse(fila.ItemArray[5]?.ToString(), out fechaCal);
+                empresa.fecha_cal = fechaCal;
             }
 
             return empresa;
@@ -65,38 +68,50 @@ namespace TP_PAV_3K02.Repositorios
             return _BD.consulta(sqltxt);
         }
 
+        public bool ValidarDuplicado(string cuit)
+        {
+            string sqltxt = $"SELECT * FROM Empresas where cuit_Empresa ={cuit}";
 
-        public bool guardar(Empresa empresa)
+            var tablaResultante = _BD.consulta(sqltxt);
+
+            var filas = tablaResultante.Rows;
+
+            if (filas.Count > 0)
+                return true;
+            return false;
+        }
+
+            public bool guardar(Empresa empresa)
         {
             string sqlTxt = $"INSERT [dbo].[Empresas] ([cuit_Empresa], [nombre], [apellido], " +
                 $"[domicilio], [fecha_Inicio],[fecha_cal], [cod_calificacion])" +
                 $"VALUES ('{empresa.cuit_Empresa}', '{empresa.nombre}', '{empresa.apellido}', '{empresa.domicilio}'," +
-                $"'{empresa.fecha_Inicio.ToString("yyyy-MM-dd")}','{empresa.fecha_cal}','{empresa.cod_calificacion}')";
+                $"'{empresa.fecha_Inicio.ToString("yyyy-MM-dd")}','{empresa.fecha_cal.ToString("yyyy-MM-dd")}','{empresa.cod_calificacion}')";
 
             return _BD.EjecutarSQL(sqlTxt);
         }
         public bool calificar(Empresa empresa, string cuit_empre)
         {
-            string sqltxt = $"UPDATE [dbo].[Empresas] SET fecha_cal ='{empresa.fecha_cal}', " +
+            string sqltxt = $"UPDATE [dbo].[Empresas] SET fecha_cal ='{empresa.fecha_cal.ToString("yyyy-MM-dd")}', " +
                 $"cod_calificacion= '{empresa.cod_calificacion}' WHERE cuit_Empresa= '{cuit_empre}'";
             return _BD.EjecutarSQL(sqltxt);
         }
 
         public bool eliminar(string cuit)
         {
-            string sqlTxt = $"DELETE FROM [dbo].[Empresas] WHERE cuit_Empresas ='{cuit}'";
+            string sqlTxt = $"DELETE FROM [dbo].[Empresas] WHERE cuit_Empresa ='{cuit}'";
 
             return _BD.EjecutarSQL(sqlTxt);
         }
 
         public bool actualizar(Empresa empresa, string empresaCuit)
-        {
-            string sqlTxt = "UPDATE [dbo].[Empresas] SET cuit_Empresa= '{empresa.cuit_Empresa}'," +
+        { 
+            string sqlTxt = $"UPDATE [dbo].[Empresas] SET cuit_Empresa='{empresa.cuit_Empresa}' , " +
                 $" nombre='{empresa.nombre}'," +
                 $" apellido = '{empresa.apellido}'," +
                 $" domicilio ='{empresa.domicilio}'," +
-                $" fecha_Inicio = '{empresa.fecha_Inicio.ToString("yyyy-MM-dd")}'," +
-                $" cod_calificacion = '{empresa.cod_calificacion}' WHERE cuit_Empresa ={empresaCuit}";
+                $" fecha_Inicio = '{empresa.fecha_Inicio.ToString("yyyy-MM-dd")}' WHERE cuit_Empresa ={empresaCuit}";
+               
 
             return _BD.EjecutarSQL(sqlTxt);
         } 

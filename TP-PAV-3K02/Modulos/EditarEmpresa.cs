@@ -32,6 +32,7 @@ namespace TP_PAV_3K02.Modulos
             _BD = new Editorial_BD();
             _empresaRepositorio = new EmpresasRepositorio();
             empresa = _empresaRepositorio.ObtenerPorCuit(nroCuit);
+            v = new ValidateTextBox();
 
         }
 
@@ -41,16 +42,16 @@ namespace TP_PAV_3K02.Modulos
             TXTnombre.Text = empresa.nombre;
             TXTapellido.Text = empresa.apellido;
             txtCuit.Text = empresa.cuit_Empresa.ToString();
-
+            txtDomicilio.Text = empresa.domicilio;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            empresa.cuit_Empresa = long.Parse(txtCuit.Text.ToString());
             empresa.nombre = TXTnombre.Text;
             empresa.apellido = TXTapellido.Text;
-            empresa.cuit_Empresa = long.Parse(txtCuit.Text.ToString());
-            empresa.fecha_Inicio = DateTime.Parse(DTPfechainicio.ToString());
-
+            empresa.fecha_Inicio = DTPfechainicio.Value.Date;
+            empresa.domicilio = txtDomicilio.Text;
             if (_empresaRepositorio.actualizar(empresa, txtCuit.Text.ToString()))
             {
                 MessageBox.Show("Se actualizó con éxito");

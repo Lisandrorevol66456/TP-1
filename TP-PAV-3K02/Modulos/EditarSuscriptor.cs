@@ -43,7 +43,7 @@ namespace TP_PAV_3K02
             suscrip = _suscriptoresRepositorio.ObtenerSuscriptor(suscriptorDOC);
             suscriptorLOC = loc;
             suscriptorPROV =prov;
-
+            v = new ValidateTextBox();
         }
 
         //cargar combos Tipo Documento
