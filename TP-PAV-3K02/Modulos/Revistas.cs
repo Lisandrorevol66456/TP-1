@@ -42,6 +42,14 @@ namespace TP_PAV_3K02.Modulos
 
         }
 
+        private void ActualizarRubros()
+        {
+            var rubros = _rubrosRepositorio.ObtenerRubrosDT();
+            cmbRubro.ValueMember = "cod_Rubro";
+            cmbRubro.DisplayMember = "nombre";
+            cmbRubro.DataSource = rubros;
+        }
+
         private void Revista_Load(object sender, EventArgs e)
         {
 
