@@ -112,13 +112,18 @@ namespace TP_PAV_3K02.Modulos
                 MessageBox.Show("Fecha de inicio invalida");
                 return;
             }
-
-            if (_revistasRepositorio.Guardar(revista))
+            if (!_revistasRepositorio.ValidarCod(txtcodigoInterno.Text.ToString()))
             {
-                MessageBox.Show("Se Registro con Exito !!");
-                ActualizarRevista();
-                LimpiarCampos();
+                if (_revistasRepositorio.Guardar(revista))
+                {
+                    MessageBox.Show("Se Registro con Exito !!");
+                    ActualizarRevista();
+                    LimpiarCampos();
+                }
             }
+            else
+                MessageBox.Show("El codigo de esa revista ya existe");
+
         }
 
         private void btncancelar_Click(object sender, EventArgs e)

@@ -43,8 +43,8 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.dgvRevistas = new System.Windows.Forms.DataGridView();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_frecPublic = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -179,8 +179,8 @@
             // 
             this.dgvRevistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRevistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nom,
             this.Cod_Interno,
+            this.nom,
             this.cod_frecPublic,
             this.cod_Rubro,
             this.FechaInicio});
@@ -189,15 +189,15 @@
             this.dgvRevistas.Size = new System.Drawing.Size(421, 349);
             this.dgvRevistas.TabIndex = 18;
             // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nombre";
-            this.nom.Name = "nom";
-            // 
             // Cod_Interno
             // 
             this.Cod_Interno.HeaderText = "Codigo Interno";
             this.Cod_Interno.Name = "Cod_Interno";
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nombre";
+            this.nom.Name = "nom";
             // 
             // cod_frecPublic
             // 
@@ -259,8 +259,8 @@
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.DataGridView dgvRevistas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Interno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_frecPublic;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_Rubro;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
