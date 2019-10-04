@@ -58,6 +58,9 @@
             this.TXTbuscarCUIT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.BTNactualizar = new System.Windows.Forms.Button();
+            this.btnCancelarBusqueda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -76,9 +79,9 @@
             this.fechaInicioDataGridViewTextBoxColumn,
             this.codcalificacionDataGridViewTextBoxColumn});
             this.dgvEmpresas.DataSource = this.empresasBindingSource;
-            this.dgvEmpresas.Location = new System.Drawing.Point(364, 130);
+            this.dgvEmpresas.Location = new System.Drawing.Point(336, 130);
             this.dgvEmpresas.Name = "dgvEmpresas";
-            this.dgvEmpresas.Size = new System.Drawing.Size(717, 267);
+            this.dgvEmpresas.Size = new System.Drawing.Size(745, 267);
             this.dgvEmpresas.TabIndex = 0;
             // 
             // cuitEmpresaDataGridViewTextBoxColumn
@@ -136,8 +139,9 @@
             this.TxtCuit.Location = new System.Drawing.Point(144, 190);
             this.TxtCuit.MaxLength = 14;
             this.TxtCuit.Name = "TxtCuit";
-            this.TxtCuit.Size = new System.Drawing.Size(200, 20);
+            this.TxtCuit.Size = new System.Drawing.Size(163, 20);
             this.TxtCuit.TabIndex = 29;
+            this.TxtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
             // label3
             // 
@@ -165,7 +169,7 @@
             this.DTPfechainicio.MaxDate = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
             this.DTPfechainicio.MinDate = new System.DateTime(1919, 12, 29, 0, 0, 0, 0);
             this.DTPfechainicio.Name = "DTPfechainicio";
-            this.DTPfechainicio.Size = new System.Drawing.Size(200, 20);
+            this.DTPfechainicio.Size = new System.Drawing.Size(163, 20);
             this.DTPfechainicio.TabIndex = 26;
             this.DTPfechainicio.Value = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
             // 
@@ -174,8 +178,9 @@
             this.TxtDomicilio.Location = new System.Drawing.Point(143, 237);
             this.TxtDomicilio.MaxLength = 20;
             this.TxtDomicilio.Name = "TxtDomicilio";
-            this.TxtDomicilio.Size = new System.Drawing.Size(201, 20);
+            this.TxtDomicilio.Size = new System.Drawing.Size(164, 20);
             this.TxtDomicilio.TabIndex = 25;
+            this.TxtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetrayNumero);
             // 
             // label1
             // 
@@ -192,16 +197,18 @@
             this.txtApellido.Location = new System.Drawing.Point(144, 146);
             this.txtApellido.MaxLength = 20;
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(200, 20);
+            this.txtApellido.Size = new System.Drawing.Size(163, 20);
             this.txtApellido.TabIndex = 23;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarletra);
             // 
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(144, 102);
             this.txtnombre.MaxLength = 20;
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(200, 20);
+            this.txtnombre.Size = new System.Drawing.Size(163, 20);
             this.txtnombre.TabIndex = 22;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarletra);
             // 
             // lblApellido
             // 
@@ -235,7 +242,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(143, 387);
+            this.btnEliminar.Location = new System.Drawing.Point(444, 403);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 35);
             this.btnEliminar.TabIndex = 33;
@@ -245,16 +252,17 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(252, 387);
+            this.btnEditar.Location = new System.Drawing.Point(525, 403);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 35);
             this.btnEditar.TabIndex = 32;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(28, 387);
+            this.btnAgregar.Location = new System.Drawing.Point(27, 362);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 35);
             this.btnAgregar.TabIndex = 31;
@@ -264,38 +272,41 @@
             // 
             // gbBuscar
             // 
+            this.gbBuscar.Controls.Add(this.btnCancelarBusqueda);
             this.gbBuscar.Controls.Add(this.BtnBuscar);
             this.gbBuscar.Controls.Add(this.TXTbuscarCUIT);
             this.gbBuscar.Controls.Add(this.label4);
-            this.gbBuscar.Location = new System.Drawing.Point(364, 12);
+            this.gbBuscar.Location = new System.Drawing.Point(336, 12);
             this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Size = new System.Drawing.Size(434, 100);
+            this.gbBuscar.Size = new System.Drawing.Size(462, 100);
             this.gbBuscar.TabIndex = 36;
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(35, 73);
+            this.BtnBuscar.Location = new System.Drawing.Point(271, 33);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(211, 20);
+            this.BtnBuscar.Size = new System.Drawing.Size(86, 20);
             this.BtnBuscar.TabIndex = 36;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TXTbuscarCUIT
             // 
-            this.TXTbuscarCUIT.Location = new System.Drawing.Point(108, 33);
+            this.TXTbuscarCUIT.Location = new System.Drawing.Point(123, 47);
             this.TXTbuscarCUIT.MaxLength = 11;
             this.TXTbuscarCUIT.Name = "TXTbuscarCUIT";
             this.TXTbuscarCUIT.Size = new System.Drawing.Size(138, 20);
             this.TXTbuscarCUIT.TabIndex = 30;
+            this.TXTbuscarCUIT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 33);
+            this.label4.Location = new System.Drawing.Point(47, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 29;
@@ -303,7 +314,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(364, 403);
+            this.button1.Location = new System.Drawing.Point(336, 403);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 35);
             this.button1.TabIndex = 37;
@@ -311,11 +322,43 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(143, 362);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 35);
+            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // BTNactualizar
+            // 
+            this.BTNactualizar.Location = new System.Drawing.Point(1006, 85);
+            this.BTNactualizar.Name = "BTNactualizar";
+            this.BTNactualizar.Size = new System.Drawing.Size(75, 35);
+            this.BTNactualizar.TabIndex = 39;
+            this.BTNactualizar.Text = "Actualizar";
+            this.BTNactualizar.UseVisualStyleBackColor = true;
+            this.BTNactualizar.Click += new System.EventHandler(this.BTNactualizar_Click);
+            // 
+            // btnCancelarBusqueda
+            // 
+            this.btnCancelarBusqueda.Location = new System.Drawing.Point(271, 59);
+            this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
+            this.btnCancelarBusqueda.Size = new System.Drawing.Size(86, 21);
+            this.btnCancelarBusqueda.TabIndex = 40;
+            this.btnCancelarBusqueda.Text = "cancelar";
+            this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
+            this.btnCancelarBusqueda.Click += new System.EventHandler(this.btnCancelarBusqueda_Click);
+            // 
             // Empresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 450);
+            this.Controls.Add(this.BTNactualizar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.btnEliminar);
@@ -377,5 +420,8 @@
         private System.Windows.Forms.TextBox TXTbuscarCUIT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button BTNactualizar;
+        private System.Windows.Forms.Button btnCancelarBusqueda;
     }
 }

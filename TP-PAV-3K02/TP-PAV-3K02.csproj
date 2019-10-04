@@ -67,6 +67,12 @@
     <Compile Include="Modulos\EditarDistribuidor.Designer.cs">
       <DependentUpon>EditarDistribuidor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\EditarEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\EditarEmpresa.Designer.cs">
+      <DependentUpon>EditarEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\EditarSuscriptor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\EditarDistribuidor.resx">
       <DependentUpon>EditarDistribuidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\EditarEmpresa.resx">
+      <DependentUpon>EditarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\EditarSuscriptor.resx">
       <DependentUpon>EditarSuscriptor.cs</DependentUpon>

@@ -31,9 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCodCal = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.DTPfechainicio = new System.Windows.Forms.DateTimePicker();
+            this.DTPfechacal = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtCuit = new System.Windows.Forms.TextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.BtnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,15 +66,15 @@
             this.label2.TabIndex = 41;
             this.label2.Text = "Fecha de calificacion:";
             // 
-            // DTPfechainicio
+            // DTPfechacal
             // 
-            this.DTPfechainicio.Location = new System.Drawing.Point(156, 98);
-            this.DTPfechainicio.MaxDate = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
-            this.DTPfechainicio.MinDate = new System.DateTime(1919, 12, 29, 0, 0, 0, 0);
-            this.DTPfechainicio.Name = "DTPfechainicio";
-            this.DTPfechainicio.Size = new System.Drawing.Size(200, 20);
-            this.DTPfechainicio.TabIndex = 42;
-            this.DTPfechainicio.Value = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
+            this.DTPfechacal.Location = new System.Drawing.Point(156, 98);
+            this.DTPfechacal.MaxDate = new System.DateTime(2019, 10, 4, 0, 0, 0, 0);
+            this.DTPfechacal.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
+            this.DTPfechacal.Name = "DTPfechacal";
+            this.DTPfechacal.Size = new System.Drawing.Size(200, 20);
+            this.DTPfechacal.TabIndex = 42;
+            this.DTPfechacal.Value = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
             // 
             // label3
             // 
@@ -94,14 +96,36 @@
             this.TxtCuit.Size = new System.Drawing.Size(200, 20);
             this.TxtCuit.TabIndex = 44;
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(143, 151);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(95, 35);
+            this.btnAceptar.TabIndex = 45;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.Location = new System.Drawing.Point(261, 151);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(95, 35);
+            this.BtnCancelar.TabIndex = 46;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
             // Calificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 288);
+            this.ClientSize = new System.Drawing.Size(373, 234);
+            this.Controls.Add(this.BtnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.TxtCuit);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.DTPfechainicio);
+            this.Controls.Add(this.DTPfechacal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbCodCal);
@@ -118,8 +142,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbCodCal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker DTPfechainicio;
+        private System.Windows.Forms.DateTimePicker DTPfechacal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtCuit;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button BtnCancelar;
     }
 }
