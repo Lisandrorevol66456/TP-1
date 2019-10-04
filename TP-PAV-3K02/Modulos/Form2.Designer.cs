@@ -113,7 +113,7 @@
             this.TxtDomicilio.Name = "TxtDomicilio";
             this.TxtDomicilio.Size = new System.Drawing.Size(200, 20);
             this.TxtDomicilio.TabIndex = 15;
-            this.TxtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloLetras);
+            this.TxtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloLetrasNumeros);
             // 
             // label1
             // 

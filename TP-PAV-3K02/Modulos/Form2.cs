@@ -200,6 +200,8 @@ namespace TP_PAV_3K02
 
         }
 
+
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var seleccionadas = DvgDistribuidores.SelectedRows;
@@ -262,6 +264,11 @@ namespace TP_PAV_3K02
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+
+        private void ValidateSoloLetrasNumeros(object sender, KeyPressEventArgs e)
+        {
+            v.validateLetrasNumeros(sender, e);
         }
     }
 }
