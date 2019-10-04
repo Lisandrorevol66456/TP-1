@@ -124,6 +124,7 @@
             // 
             // cmbFrecuencia
             // 
+            this.cmbFrecuencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFrecuencia.FormattingEnabled = true;
             this.cmbFrecuencia.Location = new System.Drawing.Point(181, 178);
             this.cmbFrecuencia.Name = "cmbFrecuencia";
@@ -132,6 +133,7 @@
             // 
             // cmbRubro
             // 
+            this.cmbRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRubro.FormattingEnabled = true;
             this.cmbRubro.Location = new System.Drawing.Point(130, 231);
             this.cmbRubro.Name = "cmbRubro";

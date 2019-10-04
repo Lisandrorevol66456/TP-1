@@ -45,6 +45,7 @@ namespace TP_PAV_3K02.Repositorios
                 empresa.nombre = fila.ItemArray[1].ToString(); // Nombre
                 empresa.apellido = fila.ItemArray[2].ToString(); // apellido
                 empresa.domicilio = fila.ItemArray[3].ToString(); // calle
+
                 empresa.cod_calificacion = int.Parse(fila.ItemArray[5].ToString());
 
                 // tratamiento de fechas
@@ -68,9 +69,9 @@ namespace TP_PAV_3K02.Repositorios
         public bool guardar(Empresa empresa)
         {
             string sqlTxt = $"INSERT [dbo].[Empresas] ([cuit_Empresa], [nombre], [apellido], " +
-                $"[domicilio], [fecha_Inicio], [cod_calificacion])" +
+                $"[domicilio], [fecha_Inicio],[fecha_cal], [cod_calificacion])" +
                 $"VALUES ('{empresa.cuit_Empresa}', '{empresa.nombre}', '{empresa.apellido}', '{empresa.domicilio}'," +
-                $"'{empresa.fecha_Inicio.ToString("yyyy-MM-dd")}','{empresa.cod_calificacion}')";
+                $"'{empresa.fecha_Inicio.ToString("yyyy-MM-dd")}','{empresa.fecha_cal}','{empresa.cod_calificacion}')";
 
             return _BD.EjecutarSQL(sqlTxt);
         }

@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvEmpresas = new System.Windows.Forms.DataGridView();
-            this.cuitEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codcalificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new TP_PAV_3K02.DataSet1();
             this.empresasTableAdapter = new TP_PAV_3K02.DataSet1TableAdapters.EmpresasTableAdapter();
@@ -54,13 +48,20 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
+            this.btnCancelarBusqueda = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.TXTbuscarCUIT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.BTNactualizar = new System.Windows.Forms.Button();
-            this.btnCancelarBusqueda = new System.Windows.Forms.Button();
+            this.cuit_Emp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechainicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_cal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_calif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -69,56 +70,19 @@
             // 
             // dgvEmpresas
             // 
-            this.dgvEmpresas.AutoGenerateColumns = false;
             this.dgvEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpresas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cuitEmpresaDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn,
-            this.apellidoDataGridViewTextBoxColumn,
-            this.domicilioDataGridViewTextBoxColumn,
-            this.fechaInicioDataGridViewTextBoxColumn,
-            this.codcalificacionDataGridViewTextBoxColumn});
-            this.dgvEmpresas.DataSource = this.empresasBindingSource;
+            this.cuit_Emp,
+            this.nombre,
+            this.apellido,
+            this.domicilio,
+            this.fechainicio,
+            this.fecha_cal,
+            this.Cod_calif});
             this.dgvEmpresas.Location = new System.Drawing.Point(336, 130);
             this.dgvEmpresas.Name = "dgvEmpresas";
             this.dgvEmpresas.Size = new System.Drawing.Size(745, 267);
             this.dgvEmpresas.TabIndex = 0;
-            // 
-            // cuitEmpresaDataGridViewTextBoxColumn
-            // 
-            this.cuitEmpresaDataGridViewTextBoxColumn.DataPropertyName = "cuit_Empresa";
-            this.cuitEmpresaDataGridViewTextBoxColumn.HeaderText = "cuit_Empresa";
-            this.cuitEmpresaDataGridViewTextBoxColumn.Name = "cuitEmpresaDataGridViewTextBoxColumn";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // domicilioDataGridViewTextBoxColumn
-            // 
-            this.domicilioDataGridViewTextBoxColumn.DataPropertyName = "domicilio";
-            this.domicilioDataGridViewTextBoxColumn.HeaderText = "domicilio";
-            this.domicilioDataGridViewTextBoxColumn.Name = "domicilioDataGridViewTextBoxColumn";
-            // 
-            // fechaInicioDataGridViewTextBoxColumn
-            // 
-            this.fechaInicioDataGridViewTextBoxColumn.DataPropertyName = "fecha_Inicio";
-            this.fechaInicioDataGridViewTextBoxColumn.HeaderText = "fecha_Inicio";
-            this.fechaInicioDataGridViewTextBoxColumn.Name = "fechaInicioDataGridViewTextBoxColumn";
-            // 
-            // codcalificacionDataGridViewTextBoxColumn
-            // 
-            this.codcalificacionDataGridViewTextBoxColumn.DataPropertyName = "cod_calificacion";
-            this.codcalificacionDataGridViewTextBoxColumn.HeaderText = "cod_calificacion";
-            this.codcalificacionDataGridViewTextBoxColumn.Name = "codcalificacionDataGridViewTextBoxColumn";
             // 
             // empresasBindingSource
             // 
@@ -283,6 +247,16 @@
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
             // 
+            // btnCancelarBusqueda
+            // 
+            this.btnCancelarBusqueda.Location = new System.Drawing.Point(271, 59);
+            this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
+            this.btnCancelarBusqueda.Size = new System.Drawing.Size(86, 21);
+            this.btnCancelarBusqueda.TabIndex = 40;
+            this.btnCancelarBusqueda.Text = "cancelar";
+            this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
+            this.btnCancelarBusqueda.Click += new System.EventHandler(this.btnCancelarBusqueda_Click);
+            // 
             // BtnBuscar
             // 
             this.BtnBuscar.Location = new System.Drawing.Point(271, 33);
@@ -342,15 +316,44 @@
             this.BTNactualizar.UseVisualStyleBackColor = true;
             this.BTNactualizar.Click += new System.EventHandler(this.BTNactualizar_Click);
             // 
-            // btnCancelarBusqueda
+            // cuit_Emp
             // 
-            this.btnCancelarBusqueda.Location = new System.Drawing.Point(271, 59);
-            this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
-            this.btnCancelarBusqueda.Size = new System.Drawing.Size(86, 21);
-            this.btnCancelarBusqueda.TabIndex = 40;
-            this.btnCancelarBusqueda.Text = "cancelar";
-            this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
-            this.btnCancelarBusqueda.Click += new System.EventHandler(this.btnCancelarBusqueda_Click);
+            this.cuit_Emp.HeaderText = "Cuit Empresa";
+            this.cuit_Emp.Name = "cuit_Emp";
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            this.domicilio.ReadOnly = true;
+            // 
+            // fechainicio
+            // 
+            this.fechainicio.HeaderText = "Fecha Inicio";
+            this.fechainicio.Name = "fechainicio";
+            this.fechainicio.ReadOnly = true;
+            // 
+            // fecha_cal
+            // 
+            this.fecha_cal.HeaderText = "Fecha Calf";
+            this.fecha_cal.Name = "fecha_cal";
+            this.fecha_cal.ReadOnly = true;
+            // 
+            // Cod_calif
+            // 
+            this.Cod_calif.HeaderText = "Cod Calificacion";
+            this.Cod_calif.Name = "Cod_calif";
+            this.Cod_calif.ReadOnly = true;
             // 
             // Empresas
             // 
@@ -395,12 +398,6 @@
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource empresasBindingSource;
         private DataSet1TableAdapters.EmpresasTableAdapter empresasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuitEmpresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn domicilioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codcalificacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox TxtCuit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -423,5 +420,12 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button BTNactualizar;
         private System.Windows.Forms.Button btnCancelarBusqueda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuit_Emp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechainicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_cal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_calif;
     }
 }

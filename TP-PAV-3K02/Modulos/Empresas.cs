@@ -28,7 +28,7 @@ namespace TP_PAV_3K02.Modulos
             InitializeComponent();
             _empresaRepositorio = new EmpresasRepositorio();
             _calificacionRepositorio = new CalificacionesRepositorio();
-
+            v = new ValidateTextBox();
             _BD = new Editorial_BD();
         }
 
@@ -129,7 +129,7 @@ namespace TP_PAV_3K02.Modulos
             {
                 var cuit = fila.Cells[0].Value;
                 var nombre = fila.Cells[1].Value;
-                var apellido = fila.Cells[0].Value;
+                var apellido = fila.Cells[2].Value;
                 var domicilio = fila.Cells[0].Value;
                 var fechaI = fila.Cells[0].Value;
                 var codCal = fila.Cells[0].Value;
@@ -171,7 +171,7 @@ namespace TP_PAV_3K02.Modulos
             {
                 var cuit = fila.Cells[0].Value;
                 var nombre = fila.Cells[1].Value;
-                var apellido = fila.Cells[0].Value;
+                var apellido = fila.Cells[2].Value;
                 var domicilio = fila.Cells[0].Value;
                 var fechaI = fila.Cells[0].Value;
                 var codCal = fila.Cells[0].Value;
