@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Revistas));
             this.lblRevista = new System.Windows.Forms.Label();
             this.lblnombre = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
@@ -40,11 +39,16 @@
             this.cmbFrecuencia = new System.Windows.Forms.ComboBox();
             this.cmbRubro = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnagregar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.dgvRevistas = new System.Windows.Forms.DataGridView();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodInterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FrecPublic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRevista
@@ -139,16 +143,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 12;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(392, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(380, 387);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnagregar
             // 
             this.btnagregar.Location = new System.Drawing.Point(27, 357);
@@ -176,15 +170,54 @@
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
             // 
+            // dgvRevistas
+            // 
+            this.dgvRevistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRevistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombre,
+            this.CodInterno,
+            this.FrecPublic,
+            this.Rubro,
+            this.FechaInicio});
+            this.dgvRevistas.Location = new System.Drawing.Point(367, 31);
+            this.dgvRevistas.Name = "dgvRevistas";
+            this.dgvRevistas.Size = new System.Drawing.Size(421, 349);
+            this.dgvRevistas.TabIndex = 18;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // CodInterno
+            // 
+            this.CodInterno.HeaderText = "Codigo Interno";
+            this.CodInterno.Name = "CodInterno";
+            // 
+            // FrecPublic
+            // 
+            this.FrecPublic.HeaderText = "Frec. Public";
+            this.FrecPublic.Name = "FrecPublic";
+            // 
+            // Rubro
+            // 
+            this.Rubro.HeaderText = "Rubro";
+            this.Rubro.Name = "Rubro";
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.HeaderText = "Fecha Inicio";
+            this.FechaInicio.Name = "FechaInicio";
+            // 
             // Revistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvRevistas);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnagregar);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.cmbRubro);
             this.Controls.Add(this.cmbFrecuencia);
@@ -199,7 +232,7 @@
             this.Name = "Revistas";
             this.Text = "Revista";
             this.Load += new System.EventHandler(this.Revista_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,9 +250,14 @@
         private System.Windows.Forms.ComboBox cmbFrecuencia;
         private System.Windows.Forms.ComboBox cmbRubro;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.DataGridView dgvRevistas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodInterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FrecPublic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rubro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
     }
 }

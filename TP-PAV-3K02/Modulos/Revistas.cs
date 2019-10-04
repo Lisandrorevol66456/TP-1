@@ -50,9 +50,36 @@ namespace TP_PAV_3K02.Modulos
             cmbRubro.DataSource = rubros;
         }
 
+        private void ActualizarGrilla()
+        {
+            dgvRevistas.Rows.Clear();
+            var revistas = _revistasRepositorio.ObtenerRevistasDT().Rows;
+            var filas = new List<DataGridView>();
+
+            foreach( DataRow revista in revistas)
+            {
+                if (revista.HasErrors)
+                    continue;
+                var fila = new string[]
+                {
+                    revista.ItemArray[0].ToString(),
+                    revista.ItemArray[1].ToString(),
+                    revista.ItemArray[2].ToString(),
+                    revista.ItemArray[3].ToString(),
+                    revista.ItemArray[4].ToString(),
+                };
+
+                dgvRevistas.Rows.Add(fila);
+            }
+
+
+        }
+
         private void Revista_Load(object sender, EventArgs e)
         {
 
+            ActualizarFrecuenciaPublicacion();
+            ActualizarRubros();
         }
     }
 }
