@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace TP_PAV_3K02.Modulos
 {
-    public partial class Revista : Form
+    public partial class Revistas : Form
     {
-        public Revista()
+        public Revistas()
         {
             InitializeComponent();
+        }
+
+        private void ActualizarFrecuenciaPublicacion()
+        {
+            var 
+
+
         }
 
         private void Revista_Load(object sender, EventArgs e)

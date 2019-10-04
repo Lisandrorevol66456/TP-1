@@ -18,7 +18,7 @@ namespace TP_PAV_3K02.Repositorios
             _BD = new Editorial_BD();
         }
 
-        public List<TipoDocumento> ObtenertDocumentos()
+        /*public List<TipoDocumento> ObtenertDocumentos()
         {
             var documentosDTRows = ObetenerTiposDocumentosDT().Rows;//contiene lso tipos de docuemtos por filas
 
@@ -37,7 +37,8 @@ namespace TP_PAV_3K02.Repositorios
 
             return documentos;
 
-        }
+        }*/
+
         public DataTable ObetenerTiposDocumentosDT()
         {
             string sqltext = "SELECT * FROM TipoDocumento";

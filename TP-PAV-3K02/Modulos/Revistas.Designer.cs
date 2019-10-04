@@ -1,6 +1,6 @@
 ﻿namespace TP_PAV_3K02.Modulos
 {
-    partial class Revista
+    partial class Revistas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Revista));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Revistas));
             this.lblRevista = new System.Windows.Forms.Label();
             this.lblnombre = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
