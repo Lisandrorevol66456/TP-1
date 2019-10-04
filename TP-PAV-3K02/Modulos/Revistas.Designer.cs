@@ -37,8 +37,8 @@
             this.lblfrecuenciaPublicacion = new System.Windows.Forms.Label();
             this.lblRubro = new System.Windows.Forms.Label();
             this.lblFechaIncio = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbFrecuencia = new System.Windows.Forms.ComboBox();
+            this.cmbRubro = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnagregar = new System.Windows.Forms.Button();
@@ -116,21 +116,21 @@
             this.lblFechaIncio.TabIndex = 9;
             this.lblFechaIncio.Text = "Fecha Inicio :";
             // 
-            // comboBox1
+            // cmbFrecuencia
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(181, 178);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 10;
+            this.cmbFrecuencia.FormattingEnabled = true;
+            this.cmbFrecuencia.Location = new System.Drawing.Point(181, 178);
+            this.cmbFrecuencia.Name = "cmbFrecuencia";
+            this.cmbFrecuencia.Size = new System.Drawing.Size(121, 21);
+            this.cmbFrecuencia.TabIndex = 10;
             // 
-            // comboBox2
+            // cmbRubro
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(130, 231);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 21);
-            this.comboBox2.TabIndex = 11;
+            this.cmbRubro.FormattingEnabled = true;
+            this.cmbRubro.Location = new System.Drawing.Point(130, 231);
+            this.cmbRubro.Name = "cmbRubro";
+            this.cmbRubro.Size = new System.Drawing.Size(172, 21);
+            this.cmbRubro.TabIndex = 11;
             // 
             // dateTimePicker1
             // 
@@ -176,7 +176,7 @@
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
             // 
-            // Revista
+            // Revistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,8 +186,8 @@
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbRubro);
+            this.Controls.Add(this.cmbFrecuencia);
             this.Controls.Add(this.lblFechaIncio);
             this.Controls.Add(this.lblRubro);
             this.Controls.Add(this.lblfrecuenciaPublicacion);
@@ -196,7 +196,7 @@
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.lblnombre);
             this.Controls.Add(this.lblRevista);
-            this.Name = "Revista";
+            this.Name = "Revistas";
             this.Text = "Revista";
             this.Load += new System.EventHandler(this.Revista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -214,8 +214,8 @@
         private System.Windows.Forms.Label lblfrecuenciaPublicacion;
         private System.Windows.Forms.Label lblRubro;
         private System.Windows.Forms.Label lblFechaIncio;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbFrecuencia;
+        private System.Windows.Forms.ComboBox cmbRubro;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnagregar;

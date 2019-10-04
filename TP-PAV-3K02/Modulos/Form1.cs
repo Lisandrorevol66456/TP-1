@@ -32,7 +32,6 @@ namespace TP_PAV_3K02
             _provinciasRepositorio = new ProvinciasRepositorio();
             _localidadesRepositorio = new LocalidadesRepositorio();
             v = new ValidateTextBox();
-
             _BD = new Editorial_BD();
         }
 
