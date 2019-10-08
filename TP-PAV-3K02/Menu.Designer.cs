@@ -32,6 +32,7 @@
             this.btnSuscriptores = new System.Windows.Forms.Button();
             this.btnDist = new System.Windows.Forms.Button();
             this.btnRevista = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEmpresa
@@ -74,11 +75,21 @@
             this.btnRevista.UseVisualStyleBackColor = true;
             this.btnRevista.Click += new System.EventHandler(this.btnRevista_Click);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Location = new System.Drawing.Point(179, 416);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(100, 40);
+            this.btnCerrarSesion.TabIndex = 4;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 450);
+            this.ClientSize = new System.Drawing.Size(458, 468);
+            this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnRevista);
             this.Controls.Add(this.btnDist);
             this.Controls.Add(this.btnSuscriptores);
@@ -95,5 +106,6 @@
         private System.Windows.Forms.Button btnSuscriptores;
         private System.Windows.Forms.Button btnDist;
         private System.Windows.Forms.Button btnRevista;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }
