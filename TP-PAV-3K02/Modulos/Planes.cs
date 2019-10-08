@@ -23,6 +23,7 @@ namespace TP_PAV_3K02.Modulos
             _planesRepos = new PlanesRepositorio();
         }
 
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             var plan = new Plan();
@@ -33,7 +34,12 @@ namespace TP_PAV_3K02.Modulos
             plan.fechaFin = DateTime.Today.AddYears(1);
             plan.Precio = 200;
 
-            MessageBox.Show.AcceptButton("¿Estas seguro/a de elejir este plan?")
+            DialogResult result = MessageBox.Show("¿Estas seguro/a de elejir este plan?", "Salir", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+                _planesRepos.guardar(plan);
+            else
+                this.Dispose();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -45,6 +51,14 @@ namespace TP_PAV_3K02.Modulos
             plan.fechaInicial = DateTime.Today;
             plan.fechaFin = DateTime.Today.AddYears(1);
             plan.Precio = 400;
+
+            DialogResult result = MessageBox.Show("¿Estas seguro/a de elejir este plan?", "Salir", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+                _planesRepos.guardar(plan);
+            else
+                this.Dispose();
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -56,6 +70,18 @@ namespace TP_PAV_3K02.Modulos
             plan.fechaInicial = DateTime.Today;
             plan.fechaFin = DateTime.Today.AddYears(1);
             plan.Precio = 500;
+
+            DialogResult result = MessageBox.Show("¿Estas seguro/a de elejir este plan?", "Salir", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+                _planesRepos.guardar(plan);
+            else
+                this.Dispose();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

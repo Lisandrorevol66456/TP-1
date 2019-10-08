@@ -15,7 +15,7 @@ namespace TP_PAV_3K02.Repositorios
 
         public PlanesRepositorio()
         {
-            _BD = new Editorial_BD;
+            _BD = new Editorial_BD();
         }
 
         public DataTable obtenerPlanes()
