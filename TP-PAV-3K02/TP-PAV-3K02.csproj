@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Modelos\Calificacion.cs" />
     <Compile Include="Modelos\Empresa.cs" />
+    <Compile Include="Modelos\Plan.cs" />
     <Compile Include="Modelos\Revista.cs" />
     <Compile Include="Modulos\Calificacion.cs">
       <SubType>Form</SubType>
@@ -102,6 +103,12 @@
     <Compile Include="Modulos\Empresas.Designer.cs">
       <DependentUpon>Empresas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Planes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Planes.Designer.cs">
+      <DependentUpon>Planes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Revistas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +122,7 @@
     <Compile Include="Repositorios\EmpresasRepositorios.cs" />
     <Compile Include="Repositorios\FrecuenciaPublicacionRepositorio.cs" />
     <Compile Include="Repositorios\LocalidadesRepositorio.cs" />
+    <Compile Include="Repositorios\PlanesRepositorio.cs" />
     <Compile Include="Repositorios\ProvinciasRepositorio.cs" />
     <Compile Include="Repositorios\RevistasRepositorio.cs" />
     <Compile Include="Repositorios\RubrosRepositorio.cs" />
@@ -141,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Empresas.resx">
       <DependentUpon>Empresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Planes.resx">
+      <DependentUpon>Planes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Revistas.resx">
       <DependentUpon>Revistas.cs</DependentUpon>
