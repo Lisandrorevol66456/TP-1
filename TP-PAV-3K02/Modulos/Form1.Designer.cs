@@ -217,7 +217,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(42, 362);
+            this.btnAgregar.Location = new System.Drawing.Point(46, 403);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 35);
             this.btnAgregar.TabIndex = 21;
@@ -227,7 +227,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(147, 362);
+            this.btnCancelar.Location = new System.Drawing.Point(201, 403);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 35);
             this.btnCancelar.TabIndex = 22;
@@ -306,9 +306,9 @@
             // 
             // btnFormDistribuidores
             // 
-            this.btnFormDistribuidores.Location = new System.Drawing.Point(664, 415);
+            this.btnFormDistribuidores.Location = new System.Drawing.Point(817, 403);
             this.btnFormDistribuidores.Name = "btnFormDistribuidores";
-            this.btnFormDistribuidores.Size = new System.Drawing.Size(124, 23);
+            this.btnFormDistribuidores.Size = new System.Drawing.Size(124, 35);
             this.btnFormDistribuidores.TabIndex = 31;
             this.btnFormDistribuidores.Text = "Distribuidores";
             this.btnFormDistribuidores.UseVisualStyleBackColor = true;
@@ -409,9 +409,9 @@
             // 
             // btnEmpresa
             // 
-            this.btnEmpresa.Location = new System.Drawing.Point(856, 415);
+            this.btnEmpresa.Location = new System.Drawing.Point(957, 403);
             this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.Size = new System.Drawing.Size(75, 23);
+            this.btnEmpresa.Size = new System.Drawing.Size(124, 35);
             this.btnEmpresa.TabIndex = 37;
             this.btnEmpresa.Text = "Empresas";
             this.btnEmpresa.UseVisualStyleBackColor = true;

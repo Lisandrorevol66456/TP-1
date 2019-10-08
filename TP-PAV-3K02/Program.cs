@@ -17,7 +17,7 @@ namespace TP_PAV_3K02
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Planes());
+            Application.Run(new Menu());
         }
     }
 }
