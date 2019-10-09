@@ -62,6 +62,7 @@
     <Compile Include="Modelos\Empresa.cs" />
     <Compile Include="Modelos\Plan.cs" />
     <Compile Include="Modelos\Revista.cs" />
+    <Compile Include="Modelos\Sucripciones.cs" />
     <Compile Include="Modulos\Calificacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +110,12 @@
     <Compile Include="Modulos\Empresas.Designer.cs">
       <DependentUpon>Empresas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Planes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +139,7 @@
     <Compile Include="Repositorios\ProvinciasRepositorio.cs" />
     <Compile Include="Repositorios\RevistasRepositorio.cs" />
     <Compile Include="Repositorios\RubrosRepositorio.cs" />
+    <Compile Include="Repositorios\SuscripcionesRepositorio.cs" />
     <Compile Include="Repositorios\SuscriptoresRepositorio.cs" />
     <Compile Include="Repositorios\TipoDocumentoRepositorio.cs" />
     <Compile Include="Utils\ValidateTextBox.cs" />
@@ -158,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Empresas.resx">
       <DependentUpon>Empresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
