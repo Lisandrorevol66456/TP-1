@@ -68,5 +68,54 @@ namespace TP_PAV_3K02.BaseDatos
             return filasAfectadas > 0;
         }
 
+        public int EjecutarTransaccion(string comando)
+        {
+            var id = 0;
+            cmd.CommandText = comando;
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                string consultaGetId = "Select @@Identity";
+                cmd.CommandText = consultaGetId;
+                id = int.Parse(cmd.ExecuteScalar()?.ToString());
+            }
+            return id;
+        }
+
+        public DataTable ConsultaDuranteTransaccion(string comando)
+        {
+
+            cmd.CommandText = comando;
+            //instancia un objeto <tabla> del tipo DataTable
+            DataTable tabla = new DataTable();
+
+            tabla.Load(cmd.ExecuteReader());
+
+            //devuelve el valor calculado a través de la función
+            return tabla;
+        }
+
+        public bool EjecutarSentenciaPreparadaSQL(string comando)
+        {
+            conectar();
+
+            cmd.CommandText = comando;
+
+            var filasAfectadas = cmd.ExecuteNonQuery(); //Cantidad de filas afectadas
+
+            //ejecuta el procedimiento <cerrar>
+            cerrar();
+
+            return filasAfectadas > 0;
+        }
+
+        public OleDbTransaction IniciarTransaccion()
+        {
+            conectar();
+            var transaccion = conexion.BeginTransaction();
+            cmd.Transaction = transaccion;
+            return transaccion;
+        }
     }
 }
+
