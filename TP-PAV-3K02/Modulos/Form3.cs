@@ -20,6 +20,7 @@ namespace TP_PAV_3K02.Modulos
         public Suscripciones()
         {
             InitializeComponent();
+            v = new ValidateTextBox();
         }
 
         private void btnPlan_Click(object sender, EventArgs e)

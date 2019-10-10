@@ -34,6 +34,7 @@ namespace TP_PAV_3K02.Modulos
             _distribucionesRepositorio = new DistribucionesRepositorio();
             v = new ValidateTextBox();
             _BD = new Editorial_BD();
+            distribucion = new Distribucion();
             distribuidor = _distribuidoresRepositorio.ObtenerDistribuidor(distribuidorCuit);
 
         }
@@ -75,7 +76,7 @@ namespace TP_PAV_3K02.Modulos
                     MessageBox.Show($"Ya existe una distribucion con el Codigo = {TXTCod_Int.Text}");
             }
             else
-                MessageBox.Show($"El Codigo = {TXTCod_Int.Text} no existe");
+                MessageBox.Show($"No existe revista con el Codigo {TXTCod_Int.Text}.");
 
         }
 
@@ -137,19 +138,21 @@ namespace TP_PAV_3K02.Modulos
             {
                 var cod_int = fila.Cells[1].Value;
                 var cuit_dist = fila.Cells[0].Value;
+                var fecha_entr = fila.Cells[4].Value;
+                var ejemplares = fila.Cells[2].Value;
 
 
                 //pregunto confirmación
                 if (cuit_dist != null)
                 {
-                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar la distribucion {cod_int}, {cuit_dist}?",
+                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar la distribucion {cod_int}, {cuit_dist}, {fecha_entr}?",
                    "Confirmar operación",
                    MessageBoxButtons.YesNo);
 
                     if (confirmacion.Equals(DialogResult.No))
                         return;
 
-                    if (_distribucionesRepositorio.Eliminar(cuit_dist.ToString()))
+                    if (_distribucionesRepositorio.Eliminar(cod_int.ToString(), cuit_dist.ToString(), ejemplares.ToString()))
                     {
                         MessageBox.Show("Se eliminó exitosamente");
                         ActualizarDistribuciones(distribucion.Cuit_dist);
@@ -162,6 +165,11 @@ namespace TP_PAV_3K02.Modulos
                     MessageBox.Show("Debe Seleccionar una fila no Vacia......");
 
             }
+        }
+
+        private void validarnumeros(object sender, KeyPressEventArgs e)
+        {
+            v.ValidateSoloNumeros(sender, e);
         }
     }
 }

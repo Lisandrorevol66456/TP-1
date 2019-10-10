@@ -110,7 +110,7 @@
             // TxtDomicilio
             // 
             this.TxtDomicilio.Location = new System.Drawing.Point(134, 175);
-            this.TxtDomicilio.MaxLength = 20;
+            this.TxtDomicilio.MaxLength = 50;
             this.TxtDomicilio.Name = "TxtDomicilio";
             this.TxtDomicilio.Size = new System.Drawing.Size(200, 20);
             this.TxtDomicilio.TabIndex = 15;
@@ -129,7 +129,7 @@
             // DTPfechainicio
             // 
             this.DTPfechainicio.Location = new System.Drawing.Point(134, 217);
-            this.DTPfechainicio.MaxDate = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
+            this.DTPfechainicio.MaxDate = new System.DateTime(2019, 10, 10, 0, 0, 0, 0);
             this.DTPfechainicio.MinDate = new System.DateTime(1919, 12, 29, 0, 0, 0, 0);
             this.DTPfechainicio.Name = "DTPfechainicio";
             this.DTPfechainicio.Size = new System.Drawing.Size(200, 20);
@@ -149,7 +149,7 @@
             // TxtCuit
             // 
             this.TxtCuit.Location = new System.Drawing.Point(134, 143);
-            this.TxtCuit.MaxLength = 20;
+            this.TxtCuit.MaxLength = 11;
             this.TxtCuit.Name = "TxtCuit";
             this.TxtCuit.Size = new System.Drawing.Size(200, 20);
             this.TxtCuit.TabIndex = 19;
@@ -207,7 +207,7 @@
             this.fecha_inicio});
             this.DvgDistribuidores.Location = new System.Drawing.Point(352, 129);
             this.DvgDistribuidores.Name = "DvgDistribuidores";
-            this.DvgDistribuidores.Size = new System.Drawing.Size(434, 283);
+            this.DvgDistribuidores.Size = new System.Drawing.Size(533, 283);
             this.DvgDistribuidores.TabIndex = 28;
             // 
             // cuit_dist
@@ -311,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 476);
+            this.ClientSize = new System.Drawing.Size(919, 476);
             this.Controls.Add(this.BTNAgregarDistribucion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.gbBuscar);

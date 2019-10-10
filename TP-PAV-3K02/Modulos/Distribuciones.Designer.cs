@@ -35,6 +35,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DTPfechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.DGV_Distribuciones = new System.Windows.Forms.DataGridView();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_ejemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_ejemplares_pagos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TXTCod_Int = new System.Windows.Forms.TextBox();
             this.TXTCUIT = new System.Windows.Forms.TextBox();
             this.TXTtotal = new System.Windows.Forms.TextBox();
@@ -45,11 +50,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_ejemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_ejemplares_pagos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Distribuciones)).BeginInit();
             this.GRBejemplares.SuspendLayout();
             this.SuspendLayout();
@@ -121,6 +121,41 @@
             this.DGV_Distribuciones.Size = new System.Drawing.Size(528, 268);
             this.DGV_Distribuciones.TabIndex = 15;
             // 
+            // Cuit
+            // 
+            this.Cuit.Frozen = true;
+            this.Cuit.HeaderText = "CUIT";
+            this.Cuit.Name = "Cuit";
+            this.Cuit.ReadOnly = true;
+            // 
+            // Cod_Interno
+            // 
+            this.Cod_Interno.Frozen = true;
+            this.Cod_Interno.HeaderText = "CODIGO INTERNO";
+            this.Cod_Interno.Name = "Cod_Interno";
+            this.Cod_Interno.ReadOnly = true;
+            // 
+            // nro_ejemplares
+            // 
+            this.nro_ejemplares.Frozen = true;
+            this.nro_ejemplares.HeaderText = "EJEMPLARES";
+            this.nro_ejemplares.Name = "nro_ejemplares";
+            this.nro_ejemplares.ReadOnly = true;
+            // 
+            // nro_ejemplares_pagos
+            // 
+            this.nro_ejemplares_pagos.Frozen = true;
+            this.nro_ejemplares_pagos.HeaderText = "EJEMPLARES PAGOS";
+            this.nro_ejemplares_pagos.Name = "nro_ejemplares_pagos";
+            this.nro_ejemplares_pagos.ReadOnly = true;
+            // 
+            // fecha_Entrega
+            // 
+            this.fecha_Entrega.Frozen = true;
+            this.fecha_Entrega.HeaderText = "FECHA DE ENTREGA";
+            this.fecha_Entrega.Name = "fecha_Entrega";
+            this.fecha_Entrega.ReadOnly = true;
+            // 
             // TXTCod_Int
             // 
             this.TXTCod_Int.Location = new System.Drawing.Point(121, 23);
@@ -128,6 +163,7 @@
             this.TXTCod_Int.Name = "TXTCod_Int";
             this.TXTCod_Int.Size = new System.Drawing.Size(89, 20);
             this.TXTCod_Int.TabIndex = 13;
+            this.TXTCod_Int.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarnumeros);
             // 
             // TXTCUIT
             // 
@@ -145,6 +181,7 @@
             this.TXTtotal.Name = "TXTtotal";
             this.TXTtotal.Size = new System.Drawing.Size(89, 20);
             this.TXTtotal.TabIndex = 24;
+            this.TXTtotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarnumeros);
             // 
             // GRBejemplares
             // 
@@ -179,6 +216,7 @@
             this.TXTpagados.Name = "TXTpagados";
             this.TXTpagados.Size = new System.Drawing.Size(89, 20);
             this.TXTpagados.TabIndex = 26;
+            this.TXTpagados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarnumeros);
             // 
             // btnCancelar
             // 
@@ -218,41 +256,6 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // Cuit
-            // 
-            this.Cuit.Frozen = true;
-            this.Cuit.HeaderText = "CUIT";
-            this.Cuit.Name = "Cuit";
-            this.Cuit.ReadOnly = true;
-            // 
-            // Cod_Interno
-            // 
-            this.Cod_Interno.Frozen = true;
-            this.Cod_Interno.HeaderText = "CODIGO INTERNO";
-            this.Cod_Interno.Name = "Cod_Interno";
-            this.Cod_Interno.ReadOnly = true;
-            // 
-            // nro_ejemplares
-            // 
-            this.nro_ejemplares.Frozen = true;
-            this.nro_ejemplares.HeaderText = "EJEMPLARES";
-            this.nro_ejemplares.Name = "nro_ejemplares";
-            this.nro_ejemplares.ReadOnly = true;
-            // 
-            // nro_ejemplares_pagos
-            // 
-            this.nro_ejemplares_pagos.Frozen = true;
-            this.nro_ejemplares_pagos.HeaderText = "EJEMPLARES PAGOS";
-            this.nro_ejemplares_pagos.Name = "nro_ejemplares_pagos";
-            this.nro_ejemplares_pagos.ReadOnly = true;
-            // 
-            // fecha_Entrega
-            // 
-            this.fecha_Entrega.Frozen = true;
-            this.fecha_Entrega.HeaderText = "FECHA DE ENTREGA";
-            this.fecha_Entrega.Name = "fecha_Entrega";
-            this.fecha_Entrega.ReadOnly = true;
             // 
             // Distribuciones
             // 

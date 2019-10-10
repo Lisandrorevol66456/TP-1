@@ -11,6 +11,7 @@ namespace TP_PAV_3K02.Repositorios
 {
     class DistribucionesRepositorio
     {
+        private int _codigo ;
         private Editorial_BD _BD;
         public DistribucionesRepositorio()
         {
@@ -36,9 +37,9 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.consulta(sqltxt);
         }
-        public bool Eliminar(string cod_int)
+        public bool Eliminar(string cod_int, string cuit, string ejemplares)
         {
-            string sqltxt = $"DELETE FROM [dbo].[Distribuciones] WHERE Cod_Interno= {cod_int}";
+            string sqltxt = $"DELETE FROM [dbo].[Distribuciones] WHERE Cod_Interno= {cod_int} and Cuit_dist ={cuit} and nro_ejemplares={ejemplares}";
 
             return _BD.EjecutarSQL(sqltxt);
         }
