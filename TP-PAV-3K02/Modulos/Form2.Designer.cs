@@ -54,6 +54,7 @@
             this.TXTbuscarCUIT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.BTNAgregarDistribucion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgDistribuidores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -296,11 +297,22 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // BTNAgregarDistribucion
+            // 
+            this.BTNAgregarDistribucion.Location = new System.Drawing.Point(724, 42);
+            this.BTNAgregarDistribucion.Name = "BTNAgregarDistribucion";
+            this.BTNAgregarDistribucion.Size = new System.Drawing.Size(75, 65);
+            this.BTNAgregarDistribucion.TabIndex = 37;
+            this.BTNAgregarDistribucion.Text = "Agregar distribucion";
+            this.BTNAgregarDistribucion.UseVisualStyleBackColor = true;
+            this.BTNAgregarDistribucion.Click += new System.EventHandler(this.BTNAgregarDistribucion_Click);
+            // 
             // FormDistribuidores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 476);
+            this.Controls.Add(this.BTNAgregarDistribucion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.DvgDistribuidores);
@@ -357,5 +369,6 @@
         private System.Windows.Forms.TextBox TXTbuscarCUIT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button BTNAgregarDistribucion;
     }
 }

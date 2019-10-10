@@ -270,6 +270,49 @@ namespace TP_PAV_3K02
         {
             v.validateLetrasNumeros(sender, e);
         }
+
+        private void BTNAgregarDistribucion_Click(object sender, EventArgs e)
+        {
+            var seleccionadas = DvgDistribuidores.SelectedRows;
+            if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
+            {
+                MessageBox.Show("Debe seleccionar una fila");
+                return;
+            }
+            foreach (DataGridViewRow fila in seleccionadas)
+            {
+                var nombre = fila.Cells[1].Value;
+                var apellido = fila.Cells[2].Value;
+                var cuit = fila.Cells[0].Value;
+                var fecha = fila.Cells[4].Value;
+
+
+
+
+
+                if (cuit != null)
+                {
+                    //pregunto confirmación
+                    var confirmacion = MessageBox.Show($"Desea agregar una distribucion a {nombre}, {apellido}, {cuit}?",
+                    "Confirmar operación",
+                    MessageBoxButtons.YesNo);
+
+                    if (confirmacion.Equals(DialogResult.No))
+                        return;
+                    else
+                    {
+
+                        var distribuir = new Distribuciones(cuit.ToString());
+                        distribuir.ShowDialog();
+                        ActualizarDistribuidores();
+                    }
+                }
+                else
+                    MessageBox.Show("Debe seleccionar una fila no vacia para poder editar");
+
+
+            }
+        }
     }
 }
 
