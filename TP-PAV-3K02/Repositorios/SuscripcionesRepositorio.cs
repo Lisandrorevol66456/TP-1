@@ -45,6 +45,24 @@ namespace TP_PAV_3K02.Repositorios
             return suscripciones;
         }
 
-        
+        public void guardar(Suscripcion s)
+        {
+            using (var tx = _BD.IniciarTransaccion())
+            {
+                try
+                {
+                    string sqlTxt = $"INSERT [dbo].[Suscripciones] ([nro_doc], [cod_TipoDoc], [cod_int], [fecha_inicio], [fecha_fin], [doc_plan]) " +
+                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.cod_int}', '{s.fecha_inicio}', '{s.fecha_fin}', '{s.doc_plan}')";
+
+                    tx.Commit();
+                }
+                catch (Exception ex)
+                {
+                    tx.Rollback();
+                    throw new ApplicationException("No se pudo guardar la suscripcion.");
+                }
+                
+            }
+        }
     }
 }

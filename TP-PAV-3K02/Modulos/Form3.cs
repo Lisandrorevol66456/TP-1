@@ -34,5 +34,12 @@ namespace TP_PAV_3K02.Modulos
             v.ValidateSoloNumeros(sender, e);
 
         }
+
+        private void Suscripciones_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dataSet1.Suscripcion' Puede moverla o quitarla según sea necesario.
+            this.suscripcionTableAdapter.Fill(this.dataSet1.Suscripcion);
+
+        }
     }
 }

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtDoc = new System.Windows.Forms.TextBox();
             this.txtCodInt = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSuscripciones = new System.Windows.Forms.DataGridView();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +47,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataSet1 = new TP_PAV_3K02.DataSet1();
+            this.suscripcionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.suscripcionTableAdapter = new TP_PAV_3K02.DataSet1TableAdapters.SuscripcionTableAdapter();
+            this.nrodocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codTipoDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechainicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechafinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docplanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suscripcionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDoc
@@ -67,13 +79,22 @@
             this.txtCodInt.TabIndex = 1;
             this.txtCodInt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
-            // dataGridView1
+            // dgvSuscripciones
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(379, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(704, 268);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvSuscripciones.AutoGenerateColumns = false;
+            this.dgvSuscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSuscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nrodocDataGridViewTextBoxColumn,
+            this.codTipoDocDataGridViewTextBoxColumn,
+            this.codintDataGridViewTextBoxColumn,
+            this.fechainicioDataGridViewTextBoxColumn,
+            this.fechafinDataGridViewTextBoxColumn,
+            this.docplanDataGridViewTextBoxColumn});
+            this.dgvSuscripciones.DataSource = this.suscripcionBindingSource;
+            this.dgvSuscripciones.Location = new System.Drawing.Point(379, 78);
+            this.dgvSuscripciones.Name = "dgvSuscripciones";
+            this.dgvSuscripciones.Size = new System.Drawing.Size(704, 268);
+            this.dgvSuscripciones.TabIndex = 3;
             // 
             // dtpFechaInicio
             // 
@@ -209,6 +230,56 @@
             this.cmbTipoDoc.Size = new System.Drawing.Size(163, 21);
             this.cmbTipoDoc.TabIndex = 18;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // suscripcionBindingSource
+            // 
+            this.suscripcionBindingSource.DataMember = "Suscripcion";
+            this.suscripcionBindingSource.DataSource = this.dataSet1;
+            // 
+            // suscripcionTableAdapter
+            // 
+            this.suscripcionTableAdapter.ClearBeforeFill = true;
+            // 
+            // nrodocDataGridViewTextBoxColumn
+            // 
+            this.nrodocDataGridViewTextBoxColumn.DataPropertyName = "nro_doc";
+            this.nrodocDataGridViewTextBoxColumn.HeaderText = "nro_doc";
+            this.nrodocDataGridViewTextBoxColumn.Name = "nrodocDataGridViewTextBoxColumn";
+            // 
+            // codTipoDocDataGridViewTextBoxColumn
+            // 
+            this.codTipoDocDataGridViewTextBoxColumn.DataPropertyName = "cod_TipoDoc";
+            this.codTipoDocDataGridViewTextBoxColumn.HeaderText = "cod_TipoDoc";
+            this.codTipoDocDataGridViewTextBoxColumn.Name = "codTipoDocDataGridViewTextBoxColumn";
+            // 
+            // codintDataGridViewTextBoxColumn
+            // 
+            this.codintDataGridViewTextBoxColumn.DataPropertyName = "cod_int";
+            this.codintDataGridViewTextBoxColumn.HeaderText = "cod_int";
+            this.codintDataGridViewTextBoxColumn.Name = "codintDataGridViewTextBoxColumn";
+            // 
+            // fechainicioDataGridViewTextBoxColumn
+            // 
+            this.fechainicioDataGridViewTextBoxColumn.DataPropertyName = "fecha_inicio";
+            this.fechainicioDataGridViewTextBoxColumn.HeaderText = "fecha_inicio";
+            this.fechainicioDataGridViewTextBoxColumn.Name = "fechainicioDataGridViewTextBoxColumn";
+            // 
+            // fechafinDataGridViewTextBoxColumn
+            // 
+            this.fechafinDataGridViewTextBoxColumn.DataPropertyName = "fecha_fin";
+            this.fechafinDataGridViewTextBoxColumn.HeaderText = "fecha_fin";
+            this.fechafinDataGridViewTextBoxColumn.Name = "fechafinDataGridViewTextBoxColumn";
+            // 
+            // docplanDataGridViewTextBoxColumn
+            // 
+            this.docplanDataGridViewTextBoxColumn.DataPropertyName = "doc_plan";
+            this.docplanDataGridViewTextBoxColumn.HeaderText = "doc_plan";
+            this.docplanDataGridViewTextBoxColumn.Name = "docplanDataGridViewTextBoxColumn";
+            // 
             // Suscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,12 +300,15 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.dtpFechaInicio);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSuscripciones);
             this.Controls.Add(this.txtCodInt);
             this.Controls.Add(this.txtDoc);
             this.Name = "Suscripciones";
             this.Text = "Suscripciones";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Suscripciones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suscripcionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,7 +318,7 @@
 
         private System.Windows.Forms.TextBox txtDoc;
         private System.Windows.Forms.TextBox txtCodInt;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSuscripciones;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.Label label1;
@@ -260,5 +334,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox cmbTipoDoc;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource suscripcionBindingSource;
+        private DataSet1TableAdapters.SuscripcionTableAdapter suscripcionTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nrodocDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codTipoDocDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codintDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechainicioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechafinDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn docplanDataGridViewTextBoxColumn;
     }
 }
