@@ -156,6 +156,7 @@
     <Compile Include="Repositorios\SuscripcionesRepositorio.cs" />
     <Compile Include="Repositorios\SuscriptoresRepositorio.cs" />
     <Compile Include="Repositorios\TipoDocumentoRepositorio.cs" />
+    <Compile Include="Utils\ValidarFechas.cs" />
     <Compile Include="Utils\ValidateTextBox.cs" />
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

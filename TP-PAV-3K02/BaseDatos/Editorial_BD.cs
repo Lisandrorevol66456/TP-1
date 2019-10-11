@@ -28,7 +28,7 @@ namespace TP_PAV_3K02.BaseDatos
             cmd.CommandType = CommandType.Text;
 
         }
-        private void cerrar()
+        public void cerrar()
         {
             
             conexion.Close();

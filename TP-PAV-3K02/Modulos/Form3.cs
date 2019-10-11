@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV_3K02.Utils;
+using TP_PAV_3K02.Modelos;
+using TP_PAV_3K02.Repositorios;
+
 
 namespace TP_PAV_3K02.Modulos
 {
@@ -15,6 +18,7 @@ namespace TP_PAV_3K02.Modulos
     {
 
         ValidateTextBox v;
+        SuscripcionesRepositorios repos;
 
 
         public Suscripciones()
@@ -25,6 +29,8 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnPlan_Click(object sender, EventArgs e)
         {
+            
+
             Planes frm = new Planes();
 
             frm.Show();
@@ -41,6 +47,43 @@ namespace TP_PAV_3K02.Modulos
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Suscripcion' Puede moverla o quitarla según sea necesario.
             this.suscripcionTableAdapter.Fill(this.dataSet1.Suscripcion);
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            
+
+            var s = new Suscripcion();
+
+            
+
+            DateTime fechaI = DateTime.Today;
+            DateTime fechaF = DateTime.Today.AddYears(1);
+
+            s.nro_doc = int.Parse(txtDoc.Text);
+            s.cod_TipoDoc = cmbTipoDoc.SelectedIndex;
+            s.cod_int = int.Parse(txtCodInt.Text);
+            s.fecha_inicio = fechaI;
+            s.fecha_fin = fechaF;
+            
+
+            repos.guardar(s);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public Plan guardarPlan()
+        {
+            var combo = cmbTipoDoc.
         }
     }
 }
