@@ -34,8 +34,7 @@ namespace TP_PAV_3K02.Modulos
 
         private void Peliculas_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.Empresas' Puede moverla o quitarla según sea necesario.
-          //  this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
+          
             ActualizarEmpresas();
         }
         private void ActualizarEmpresas()
@@ -76,7 +75,7 @@ namespace TP_PAV_3K02.Modulos
             empresa.cuit_Empresa = long.Parse(TxtCuit.Text);
             empresa.domicilio = TxtDomicilio.Text;
             empresa.fecha_Inicio = DTPfechainicio.Value.Date;
-            //empresa.codCal = int.Parse(cmbCodCal.SelectedIndex.ToString());
+      
 
             if (!empresa.NombreValido())
             {

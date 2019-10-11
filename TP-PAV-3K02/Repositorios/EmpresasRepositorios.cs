@@ -46,12 +46,7 @@ namespace TP_PAV_3K02.Repositorios
                 empresa.domicilio = fila.ItemArray[3].ToString(); // calle
                 empresa.cod_calificacion = int.Parse(fila.ItemArray[6].ToString());
 
-                // tratamiento de fechas
-                /*DateTime fecha = DateTime.MinValue;
-
-                // Si lo que esta en la BD de datos se puede parsear a date se lo parsea y almacena en la variable
-                DateTime.TryParse(fila.ItemArray[4]?.ToString(), out fecha);
-                empresa.fecha_Inicio = fecha; // fecha*/
+            
             }
 
             return empresa;
