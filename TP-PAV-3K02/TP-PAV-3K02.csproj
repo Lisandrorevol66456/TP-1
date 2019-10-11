@@ -129,6 +129,12 @@
     <Compile Include="Modulos\Planes.Designer.cs">
       <DependentUpon>Planes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Publicidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Publicidad.Designer.cs">
+      <DependentUpon>Publicidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Revistas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Publicidad.resx">
+      <DependentUpon>Publicidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Revistas.resx">
       <DependentUpon>Revistas.cs</DependentUpon>

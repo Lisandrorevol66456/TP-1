@@ -50,6 +50,7 @@
             // 
             // cmbCodCal
             // 
+            this.cmbCodCal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodCal.FormattingEnabled = true;
             this.cmbCodCal.Location = new System.Drawing.Point(101, 55);
             this.cmbCodCal.Name = "cmbCodCal";
@@ -68,13 +69,14 @@
             // 
             // DTPfechacal
             // 
+            this.DTPfechacal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTPfechacal.Location = new System.Drawing.Point(156, 98);
-            this.DTPfechacal.MaxDate = new System.DateTime(2019, 10, 4, 0, 0, 0, 0);
+            this.DTPfechacal.MaxDate = new System.DateTime(2019, 10, 4, 19, 0, 53, 0);
             this.DTPfechacal.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.DTPfechacal.Name = "DTPfechacal";
             this.DTPfechacal.Size = new System.Drawing.Size(200, 20);
             this.DTPfechacal.TabIndex = 42;
-            this.DTPfechacal.Value = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
+            this.DTPfechacal.Value = new System.DateTime(2019, 10, 3, 0, 0, 0, 0);
             // 
             // label3
             // 

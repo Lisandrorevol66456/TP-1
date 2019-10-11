@@ -41,18 +41,12 @@ namespace TP_PAV_3K02.Repositorios
                     continue; // no corto el ciclo
 
                 empresa.cuit_Empresa = long.Parse(fila.ItemArray[0].ToString()); // numero documento
-                
                 empresa.nombre = fila.ItemArray[1].ToString(); // Nombre
                 empresa.apellido = fila.ItemArray[2].ToString(); // apellido
                 empresa.domicilio = fila.ItemArray[3].ToString(); // calle
-                empresa.cod_calificacion = int.Parse(fila.ItemArray[5].ToString());
+                empresa.cod_calificacion = int.Parse(fila.ItemArray[6].ToString());
 
-                // tratamiento de fechas
-                DateTime fecha = DateTime.MinValue;
-
-                // Si lo que esta en la BD de datos se puede parsear a date se lo parsea y almacena en la variable
-                DateTime.TryParse(fila.ItemArray[4]?.ToString(), out fecha);
-                empresa.fecha_Inicio = fecha; // fecha
+            
             }
 
             return empresa;
@@ -68,22 +62,23 @@ namespace TP_PAV_3K02.Repositorios
         public bool guardar(Empresa empresa)
         {
             string sqlTxt = $"INSERT [dbo].[Empresas] ([cuit_Empresa], [nombre], [apellido], " +
-                $"[domicilio], [fecha_Inicio], [cod_calificacion])" +
+                $"[domicilio], [fecha_Inicio],[fecha_cal],[cod_calificacion])" +
                 $"VALUES ('{empresa.cuit_Empresa}', '{empresa.nombre}', '{empresa.apellido}', '{empresa.domicilio}'," +
-                $"'{empresa.fecha_Inicio.ToString("yyyy-MM-dd")}','{empresa.cod_calificacion}')";
+                $"'{empresa.fecha_Inicio.ToString("yyyy-MM-dd")}','{empresa.fecha_cal.ToString("yyyy-MM-dd")}','{empresa.cod_calificacion}')";
 
             return _BD.EjecutarSQL(sqlTxt);
         }
         public bool calificar(Empresa empresa, string cuit_empre)
         {
-            string sqltxt = $"UPDATE [dbo].[Empresas] SET fecha_cal ='{empresa.fecha_cal}', " +
-                $"cod_calificacion= '{empresa.cod_calificacion}' WHERE cuit_Empresa= '{cuit_empre}'";
+            string sqltxt = $"UPDATE [dbo].[Empresas] SET fecha_cal ='{empresa.fecha_cal.ToString("yyyy-MM-dd")}', " +
+                $" cod_calificacion = '{empresa.cod_calificacion}' WHERE cuit_Empresa = {cuit_empre}";
+
             return _BD.EjecutarSQL(sqltxt);
         }
 
         public bool eliminar(string cuit)
         {
-            string sqlTxt = $"DELETE FROM [dbo].[Empresas] WHERE cuit_Empresas ='{cuit}'";
+            string sqlTxt = $"DELETE FROM [dbo].[Empresas] WHERE cuit_Empresa ={cuit}";
 
             return _BD.EjecutarSQL(sqlTxt);
         }
@@ -98,6 +93,19 @@ namespace TP_PAV_3K02.Repositorios
                 $" cod_calificacion = '{empresa.cod_calificacion}' WHERE cuit_Empresa ={empresaCuit}";
 
             return _BD.EjecutarSQL(sqlTxt);
-        } 
+        }
+
+        public bool Validar(string cuit)
+        {
+            string sqltext = $"SELECT * From Empresas where cuit_Empresa = {cuit}";
+
+            var tabla = _BD.consulta(sqltext);
+
+            var filas = tabla.Rows;
+
+            if (filas.Count > 0)
+                return true;
+            return false;
+        }
     }
 }
