@@ -102,11 +102,13 @@
     <Compile Include="Modulos\Empresas.Designer.cs">
       <DependentUpon>Empresas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\Revistas.cs">
+    <Compile Include="..\..\..\..\OneDrive\Desktop\Revistas.cs">
       <SubType>Form</SubType>
+      <Link>Modulos\Revistas.cs</Link>
     </Compile>
-    <Compile Include="Modulos\Revistas.Designer.cs">
+    <Compile Include="..\..\..\..\OneDrive\Desktop\Revistas.Designer.cs">
       <DependentUpon>Revistas.cs</DependentUpon>
+      <Link>Modulos\Revistas.Designer.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,7 +118,9 @@
     <Compile Include="Repositorios\FrecuenciaPublicacionRepositorio.cs" />
     <Compile Include="Repositorios\LocalidadesRepositorio.cs" />
     <Compile Include="Repositorios\ProvinciasRepositorio.cs" />
-    <Compile Include="Repositorios\RevistasRepositorio.cs" />
+    <Compile Include="..\..\..\..\OneDrive\Desktop\RevistasRepositorio.cs">
+      <Link>Repositorios\RevistasRepositorio.cs</Link>
+    </Compile>
     <Compile Include="Repositorios\RubrosRepositorio.cs" />
     <Compile Include="Repositorios\SuscriptoresRepositorio.cs" />
     <Compile Include="Repositorios\TipoDocumentoRepositorio.cs" />
@@ -142,8 +146,9 @@
     <EmbeddedResource Include="Modulos\Empresas.resx">
       <DependentUpon>Empresas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Revistas.resx">
+    <EmbeddedResource Include="..\..\..\..\OneDrive\Desktop\Revistas.resx">
       <DependentUpon>Revistas.cs</DependentUpon>
+      <Link>Modulos\Revistas.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
