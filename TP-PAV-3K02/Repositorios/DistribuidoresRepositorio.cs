@@ -84,5 +84,18 @@ namespace TP_PAV_3K02.Repositorios
 
         }
 
-   }
+        public bool Validar(string cuit)
+        {
+            string sqltext = $"SELECT * From Distribuidores where cuit_dist = {cuit}";
+
+            var tabla = _BD.consulta(sqltext);
+
+            var filas = tabla.Rows;
+
+            if (filas.Count > 0)
+                return true;
+            return false;
+        }
+
+    }
 }

@@ -167,13 +167,16 @@ namespace TP_PAV_3K02
             suscriptor.numero = long.Parse(txtNumero.Text);
 
 
+            if (!_suscriptoresRepositorio.Validar(txtNroDoc.Text.ToString())) {
+                if (_suscriptoresRepositorio.Guardar(suscriptor))
+                {
+                    MessageBox.Show("Se registro con éxito");
 
-            if (_suscriptoresRepositorio.Guardar(suscriptor))
-            {
-                MessageBox.Show("Se registro con éxito");
-                
 
+                }
             }
+            else
+                MessageBox.Show("Ya existe");
 
         }
 

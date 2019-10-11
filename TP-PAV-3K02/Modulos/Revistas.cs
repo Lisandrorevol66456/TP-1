@@ -81,5 +81,10 @@ namespace TP_PAV_3K02.Modulos
             ActualizarFrecuenciaPublicacion();
             ActualizarRubros();
         }
+
+        private void btnagregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

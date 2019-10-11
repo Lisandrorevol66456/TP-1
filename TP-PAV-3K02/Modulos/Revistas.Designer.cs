@@ -151,6 +151,7 @@
             this.btnagregar.TabIndex = 15;
             this.btnagregar.Text = "Agregar";
             this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
             // btncancelar
             // 

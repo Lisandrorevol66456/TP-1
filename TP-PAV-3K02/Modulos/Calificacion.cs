@@ -53,10 +53,7 @@ namespace TP_PAV_3K02.Modulos
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             empresa.cod_calificacion = int.Parse(cmbCodCal.SelectedValue.ToString());
-
-            DateTime fecha = DateTime.MinValue;
-            DateTime.TryParse(DTPfechacal.ToString(), out fecha);
-            empresa.fecha_cal = fecha; // fecha
+            empresa.fecha_cal = DTPfechacal.Value.Date;
 
             if (_empresasRepositorio.calificar(empresa, TxtCuit.Text.ToString()))
             {

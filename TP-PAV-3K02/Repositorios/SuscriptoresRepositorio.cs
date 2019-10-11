@@ -91,5 +91,18 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.EjecutarSQL(sqltxt);
         }
+
+        public bool Validar(string doc)
+        {
+            string sqltext = $"SELECT * From Suscriptores where nroDoc = {doc}";
+
+            var tabla = _BD.consulta(sqltext);
+
+            var filas = tabla.Rows;
+
+            if (filas.Count > 0)
+                return true;
+            return false;
+        }
     }
 }

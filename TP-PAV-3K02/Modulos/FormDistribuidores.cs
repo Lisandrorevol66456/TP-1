@@ -72,14 +72,19 @@ namespace TP_PAV_3K02
                 DTPfechainicio.Focus();
                 return;
             }
-
-            if (_distribuidoresRepositorio.Guardar(distribuidor))
+            if (!_distribuidoresRepositorio.Validar(TxtCuit.Text.ToString()))
             {
-                MessageBox.Show("Se registro con éxito");
-                ActualizarDistribuidores();
-                LimpiarCampos();
-                
+                if (_distribuidoresRepositorio.Guardar(distribuidor))
+                {
+                    MessageBox.Show("Se registro con éxito");
+                    ActualizarDistribuidores();
+                    LimpiarCampos();
+
+                }
+
             }
+            else
+                MessageBox.Show("YA EXISTE");
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -161,30 +166,34 @@ namespace TP_PAV_3K02
 
         private void BtnBuscarCuit_Click(object sender, EventArgs e)
         {
-
-            DvgDistribuidores.Rows.Clear();
-            var numcuit = long.Parse(TXTbuscarCUIT.Text);
-            var distribuidores = _distribuidoresRepositorio.ObtenerPorcuit(numcuit).Rows;
-
-            var filas = new List<DataGridViewRow>();
-            foreach (DataRow distribuidor in distribuidores)
+            var dist = new Distribuidor();
+            if (dist.CuitValido(TXTbuscarCUIT.Text))
             {
-                if (distribuidor.HasErrors)
-                    continue;//no corto el ciclo
-                var fila = new string[]
+                DvgDistribuidores.Rows.Clear();
+                var numcuit = long.Parse(TXTbuscarCUIT.Text);
+                var distribuidores = _distribuidoresRepositorio.ObtenerPorcuit(numcuit).Rows;
+
+                var filas = new List<DataGridViewRow>();
+                foreach (DataRow distribuidor in distribuidores)
                 {
+                    if (distribuidor.HasErrors)
+                        continue;//no corto el ciclo
+                    var fila = new string[]
+                    {
                     distribuidor.ItemArray[0].ToString(),
                     distribuidor.ItemArray[1].ToString(),
                     distribuidor.ItemArray[2].ToString(),
                     distribuidor.ItemArray[3].ToString(),
                     distribuidor.ItemArray[4].ToString(),
-                    
-                    
-                };
 
-                DvgDistribuidores.Rows.Add(fila);
 
+                    };
+
+                    DvgDistribuidores.Rows.Add(fila);
+
+                }
             }
+            
         }
 
         public void ValidateSoloNumeros(object sender, KeyPressEventArgs e)
