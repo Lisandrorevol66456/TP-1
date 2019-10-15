@@ -87,22 +87,19 @@ namespace TP_PAV_3K02.Repositorios
                 $" numero ='{suscriptor.numero}'," +
                 $" cod_Provincia='{suscriptor.cod_Provincia}'," +
                 $" cod_Localidad= '{suscriptor.cod_Localidad}' where nroDoc = {suscriptordni}";
-
-
             return _BD.EjecutarSQL(sqltxt);
         }
 
         public bool Validar(string doc)
         {
             string sqltext = $"SELECT * From Suscriptores where nroDoc = {doc}";
-
             var tabla = _BD.consulta(sqltext);
-
             var filas = tabla.Rows;
-
             if (filas.Count > 0)
                 return true;
             return false;
         }
+
+        
     }
 }

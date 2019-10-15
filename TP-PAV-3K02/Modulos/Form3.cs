@@ -22,6 +22,7 @@ namespace TP_PAV_3K02.Modulos
         public Suscripciones()
         {
             InitializeComponent();
+            repos =new SuscripcionesRepositorios();
             v = new ValidateTextBox();
         }
 
@@ -141,12 +142,14 @@ namespace TP_PAV_3K02.Modulos
             }
         }
 
-        private void actualizar(IList<Suscripcion> suscripciones)
+        private void actualizar()
         {
-            dgvSuscripciones.Rows.Clear();
+            dgvSuscripciones.DataSource = null;
+
+            var subs = repos.obtenerSuscripciones().Rows;
             var filas = new List<DataGridViewRow>();
 
-            foreach ( Suscripcion suscripcion in suscripciones)
+            foreach ( DataRow suscripcion in subs)
             {
                 var fila = new string[]
                 {
@@ -163,5 +166,9 @@ namespace TP_PAV_3K02.Modulos
 
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            actualizar();
+        }
     }
 }

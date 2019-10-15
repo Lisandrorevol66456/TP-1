@@ -55,10 +55,7 @@ namespace TP_PAV_3K02
                     suscriptor.ItemArray[3].ToString(),
                     suscriptor.ItemArray[4].ToString(),
                     suscriptor.ItemArray[5].ToString(),
-                    suscriptor.ItemArray[6].ToString(),
-                    suscriptor.ItemArray[7].ToString(),
-
-
+                    
                 };
 
                 DvgSuscriptores.Rows.Add(fila);
