@@ -60,22 +60,17 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            var suscripcion = new Suscripcion();
 
-            try
-            {
-                var suscripcion = new Suscripcion()
-                {
-                    nro_doc = int.Parse(txtDoc.Text),
-                    cod_TipoDoc = cmbTipoDoc.SelectedIndex,
-                    fecha_inicio = DateTime.Today,
-                    fecha_fin = DateTime.Today.AddYears(1),
-                    doc_plan = obtenerDocPlan(),
-                    plan = consegirPlanes()
-                };
+            suscripcion.nro_doc = int.Parse(txtDoc.Text);
+            suscripcion.cod_TipoDoc = cmbTipoDoc.SelectedIndex;
+            suscripcion.cod_int = int.Parse(txtCodInt.Text);
+            suscripcion.fecha_inicio = DateTime.Today;
+            suscripcion.fecha_fin = DateTime.Today.AddYears(1);
+            suscripcion.doc_plan = obtenerDocPlan();
+            suscripcion.plan = consegirPlanes();
 
-            }
-
-            catch { }
+            repos.guardar(suscripcion);
         }
 
         public IList<Plan> consegirPlanes()
@@ -151,6 +146,9 @@ namespace TP_PAV_3K02.Modulos
 
             foreach ( DataRow suscripcion in subs)
             {
+                if (suscripcion.HasErrors)
+                    continue;
+
                 var fila = new string[]
                 {
                     suscripcion.ItemArray[0].ToString(),
@@ -169,6 +167,11 @@ namespace TP_PAV_3K02.Modulos
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             actualizar();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

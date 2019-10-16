@@ -225,6 +225,7 @@
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cmbTipoDoc
             // 
