@@ -19,8 +19,8 @@ namespace TP_PAV_3K02.Repositorios
         }
         public bool Guardar(Distribucion distribucion)
         {
-            string sqltxt = $"INSERT [dbo].[Distribuciones] ([Cuit_dist],[Cod_Interno],[nro_ejemplares],[nro_ejemplares_pagos],[fecha_Entrega]) " +
-                $"VALUES ('{distribucion.Cuit_dist}','{distribucion.Cod_Interno}', " +
+            string sqltxt = $"INSERT [dbo].[Distribuciones] ([Id],[Cuit_dist],[Cod_Interno],[nro_ejemplares],[nro_ejemplares_pagos],[fecha_Entrega]) " +
+                $"VALUES ('{distribucion.id}','{distribucion.Cuit_dist}','{distribucion.Cod_Interno}', " +
                 $"'{distribucion.nro_ejemplares}', '{distribucion.nro_ejemplares_pagos}', '{distribucion.fecha_Entrega.ToString("yyyy-MM-dd")}')";
 
             return _BD.EjecutarSQL(sqltxt);
@@ -59,6 +59,19 @@ namespace TP_PAV_3K02.Repositorios
         public bool ValidarCod_duplicado(string cod, string cuit)
         {
             string sqltxt = $"SELECT * FROM Distribuciones where Cod_Interno ={cod} and Cuit_dist = {cuit}";
+
+            var tablaResultante = _BD.consulta(sqltxt);
+
+            var filas = tablaResultante.Rows;
+
+            if (filas.Count > 0)
+                return true;
+            return false;
+
+        }
+        public bool ValidarIDduplicadp(string id)
+        {
+            string sqltxt = $"SELECT * FROM Distribuciones where Id ={id}";
 
             var tablaResultante = _BD.consulta(sqltxt);
 

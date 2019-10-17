@@ -35,11 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DTPfechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.DGV_Distribuciones = new System.Windows.Forms.DataGridView();
-            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_ejemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_ejemplares_pagos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TXTCod_Int = new System.Windows.Forms.TextBox();
             this.TXTCUIT = new System.Windows.Forms.TextBox();
             this.TXTtotal = new System.Windows.Forms.TextBox();
@@ -50,6 +45,14 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblIdDist = new System.Windows.Forms.Label();
+            this.IDDistribucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_ejemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_ejemplares_pagos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtidDistribucion = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Distribuciones)).BeginInit();
             this.GRBejemplares.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +97,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label1.Location = new System.Drawing.Point(41, 34);
+            this.label1.Location = new System.Drawing.Point(38, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 24);
             this.label1.TabIndex = 18;
@@ -111,6 +114,7 @@
             // 
             this.DGV_Distribuciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Distribuciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDDistribucion,
             this.Cuit,
             this.Cod_Interno,
             this.nro_ejemplares,
@@ -120,41 +124,6 @@
             this.DGV_Distribuciones.Name = "DGV_Distribuciones";
             this.DGV_Distribuciones.Size = new System.Drawing.Size(528, 268);
             this.DGV_Distribuciones.TabIndex = 15;
-            // 
-            // Cuit
-            // 
-            this.Cuit.Frozen = true;
-            this.Cuit.HeaderText = "CUIT";
-            this.Cuit.Name = "Cuit";
-            this.Cuit.ReadOnly = true;
-            // 
-            // Cod_Interno
-            // 
-            this.Cod_Interno.Frozen = true;
-            this.Cod_Interno.HeaderText = "CODIGO INTERNO";
-            this.Cod_Interno.Name = "Cod_Interno";
-            this.Cod_Interno.ReadOnly = true;
-            // 
-            // nro_ejemplares
-            // 
-            this.nro_ejemplares.Frozen = true;
-            this.nro_ejemplares.HeaderText = "EJEMPLARES";
-            this.nro_ejemplares.Name = "nro_ejemplares";
-            this.nro_ejemplares.ReadOnly = true;
-            // 
-            // nro_ejemplares_pagos
-            // 
-            this.nro_ejemplares_pagos.Frozen = true;
-            this.nro_ejemplares_pagos.HeaderText = "EJEMPLARES PAGOS";
-            this.nro_ejemplares_pagos.Name = "nro_ejemplares_pagos";
-            this.nro_ejemplares_pagos.ReadOnly = true;
-            // 
-            // fecha_Entrega
-            // 
-            this.fecha_Entrega.Frozen = true;
-            this.fecha_Entrega.HeaderText = "FECHA DE ENTREGA";
-            this.fecha_Entrega.Name = "fecha_Entrega";
-            this.fecha_Entrega.ReadOnly = true;
             // 
             // TXTCod_Int
             // 
@@ -173,6 +142,7 @@
             this.TXTCUIT.ReadOnly = true;
             this.TXTCUIT.Size = new System.Drawing.Size(163, 20);
             this.TXTCUIT.TabIndex = 12;
+            this.TXTCUIT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarnumeros);
             // 
             // TXTtotal
             // 
@@ -257,11 +227,71 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // lblIdDist
+            // 
+            this.lblIdDist.AutoSize = true;
+            this.lblIdDist.Location = new System.Drawing.Point(39, 62);
+            this.lblIdDist.Name = "lblIdDist";
+            this.lblIdDist.Size = new System.Drawing.Size(104, 13);
+            this.lblIdDist.TabIndex = 41;
+            this.lblIdDist.Text = "ID DISTRIBUCION :";
+            // 
+            // IDDistribucion
+            // 
+            this.IDDistribucion.Frozen = true;
+            this.IDDistribucion.HeaderText = "ID Dist.";
+            this.IDDistribucion.Name = "IDDistribucion";
+            // 
+            // Cuit
+            // 
+            this.Cuit.Frozen = true;
+            this.Cuit.HeaderText = "CUIT";
+            this.Cuit.Name = "Cuit";
+            this.Cuit.ReadOnly = true;
+            // 
+            // Cod_Interno
+            // 
+            this.Cod_Interno.Frozen = true;
+            this.Cod_Interno.HeaderText = "CODIGO INTERNO";
+            this.Cod_Interno.Name = "Cod_Interno";
+            this.Cod_Interno.ReadOnly = true;
+            // 
+            // nro_ejemplares
+            // 
+            this.nro_ejemplares.Frozen = true;
+            this.nro_ejemplares.HeaderText = "EJEMPLARES";
+            this.nro_ejemplares.Name = "nro_ejemplares";
+            this.nro_ejemplares.ReadOnly = true;
+            // 
+            // nro_ejemplares_pagos
+            // 
+            this.nro_ejemplares_pagos.Frozen = true;
+            this.nro_ejemplares_pagos.HeaderText = "EJEMPLARES PAGOS";
+            this.nro_ejemplares_pagos.Name = "nro_ejemplares_pagos";
+            this.nro_ejemplares_pagos.ReadOnly = true;
+            // 
+            // fecha_Entrega
+            // 
+            this.fecha_Entrega.Frozen = true;
+            this.fecha_Entrega.HeaderText = "FECHA DE ENTREGA";
+            this.fecha_Entrega.Name = "fecha_Entrega";
+            this.fecha_Entrega.ReadOnly = true;
+            // 
+            // TxtidDistribucion
+            // 
+            this.TxtidDistribucion.Location = new System.Drawing.Point(149, 55);
+            this.TxtidDistribucion.MaxLength = 18;
+            this.TxtidDistribucion.Name = "TxtidDistribucion";
+            this.TxtidDistribucion.Size = new System.Drawing.Size(129, 20);
+            this.TxtidDistribucion.TabIndex = 42;
+            // 
             // Distribuciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 413);
+            this.Controls.Add(this.TxtidDistribucion);
+            this.Controls.Add(this.lblIdDist);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -300,10 +330,13 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label lblIdDist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDDistribucion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Interno;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_ejemplares;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_ejemplares_pagos;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_Entrega;
+        private System.Windows.Forms.TextBox TxtidDistribucion;
     }
 }

@@ -8,6 +8,7 @@ namespace TP_PAV_3K02.Modelos
 {
     class Distribucion
     {
+        public int id { get; set; }
         public long Cuit_dist { get; set; }
         public int Cod_Interno { get; set; }
         public long nro_ejemplares { get; set; }
@@ -20,6 +21,14 @@ namespace TP_PAV_3K02.Modelos
                 return true;
             return false;
         }
+
+        public bool idValido(string id)
+        {
+            if (int.TryParse(id, out int resultado))
+                return true;
+            return false;
+        }
+
         public bool fechavalida()
         {
             if (fecha_Entrega != DateTime.MinValue && fecha_Entrega < DateTime.Today)

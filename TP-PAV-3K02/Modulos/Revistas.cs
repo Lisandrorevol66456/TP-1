@@ -130,6 +130,7 @@ namespace TP_PAV_3K02.Modulos
         {
             
             LimpiarCampos();
+
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
