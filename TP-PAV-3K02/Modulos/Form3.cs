@@ -75,8 +75,6 @@ namespace TP_PAV_3K02.Modulos
 
         public IList<Plan> consegirPlanes()
         {
-
-            
                 var planes = new List<Plan>();
 
                 var filas = dgvSuscripciones.Rows;
@@ -137,26 +135,31 @@ namespace TP_PAV_3K02.Modulos
             }
         }
 
-        private void actualizar()
+        private void actualizarGrilla()
         {
-            dgvSuscripciones.DataSource = null;
+            var suscripciones = repos.obtenerSuscripciones();
+            actualizar(suscripciones);
+        }
 
-            var subs = repos.obtenerSuscripciones().Rows;
+        private void actualizar(IList<Suscripcion> subs)
+        {
+         //   if(dgvSuscripciones.Rows != null)
+         //       dgvSuscripciones.Rows.Clear();
+
+            
             var filas = new List<DataGridViewRow>();
 
-            foreach ( DataRow suscripcion in subs)
+            foreach ( Suscripcion suscripcion in subs)
             {
-                if (suscripcion.HasErrors)
-                    continue;
 
                 var fila = new string[]
                 {
-                    suscripcion.ItemArray[0].ToString(),
-                    suscripcion.ItemArray[1].ToString(),
-                    suscripcion.ItemArray[2].ToString(),
-                    suscripcion.ItemArray[3].ToString(),
-                    suscripcion.ItemArray[4].ToString(),
-                    suscripcion.ItemArray[5].ToString(),
+                    suscripcion.nro_doc.ToString(),
+                    suscripcion.cod_int.ToString(),
+                    suscripcion.fecha_inicio.ToString(),
+                    suscripcion.fecha_fin.ToString(),
+                    suscripcion.doc_plan.ToString(),
+                    suscripcion.plan.ToString(),
                 };
             
                 dgvSuscripciones.Rows.Add(fila);
@@ -166,7 +169,7 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            actualizar();
+            actualizarGrilla();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
