@@ -60,17 +60,6 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var suscripcion = new Suscripcion();
-
-            suscripcion.nro_doc = int.Parse(txtDoc.Text);
-            suscripcion.cod_TipoDoc = cmbTipoDoc.SelectedIndex;
-            suscripcion.cod_int = int.Parse(txtCodInt.Text);
-            suscripcion.fecha_inicio = DateTime.Today;
-            suscripcion.fecha_fin = DateTime.Today.AddYears(1);
-            suscripcion.doc_plan = obtenerDocPlan();
-            suscripcion.plan = consegirPlanes();
-
-            repos.guardar(suscripcion);
         }
 
         public IList<Plan> consegirPlanes()
@@ -79,7 +68,7 @@ namespace TP_PAV_3K02.Modulos
 
                 var filas = dgvSuscripciones.Rows;
 
-                if (cmbPlan.SelectedIndex == 0)
+                if (cmbPlanes.SelectedIndex == 0)
                 {
                     foreach (DataGridViewRow fila in filas)
                     {
@@ -90,7 +79,7 @@ namespace TP_PAV_3K02.Modulos
                 }
                 else
                 {
-                    if (cmbPlan.SelectedIndex == 1)
+                    if (cmbPlanes.SelectedIndex == 1)
                     {
                         foreach (DataGridViewRow fila in filas)
                         {
@@ -101,7 +90,7 @@ namespace TP_PAV_3K02.Modulos
                     }
                     else
                     {
-                        if (cmbPlan.SelectedIndex == 2)
+                        if (cmbPlanes.SelectedIndex == 2)
                         {
                             foreach (DataGridViewRow fila in filas)
                             {
@@ -120,12 +109,12 @@ namespace TP_PAV_3K02.Modulos
 
         public int obtenerDocPlan()
         {
-            if (cmbPlan.SelectedIndex == 0)
+            if (cmbPlanes.SelectedIndex == 0)
                 return 00;
 
             else
             {
-                if (cmbPlan.SelectedIndex == 1)
+                if (cmbPlanes.SelectedIndex == 1)
                 return 01;
 
                 else
@@ -143,26 +132,30 @@ namespace TP_PAV_3K02.Modulos
 
         private void actualizar(IList<Suscripcion> subs)
         {
-         //   if(dgvSuscripciones.Rows != null)
-         //       dgvSuscripciones.Rows.Clear();
-
-            
+            dgvSuscripciones.Rows.Clear();
+            var sus = new Suscripcion();
+            var codeInt = sus.cod_int;
+            var sustros = repos.obtenerSuscripcionesPorCod(codeInt.ToString()).Rows;
             var filas = new List<DataGridViewRow>();
 
-            foreach ( Suscripcion suscripcion in subs)
+            foreach (DataRow distribucion in sustros)
             {
+                if (distribucion.HasErrors)
+                    continue;
 
                 var fila = new string[]
                 {
-                    suscripcion.nro_doc.ToString(),
-                    suscripcion.cod_int.ToString(),
-                    suscripcion.fecha_inicio.ToString(),
-                    suscripcion.fecha_fin.ToString(),
-                    suscripcion.doc_plan.ToString(),
-                    suscripcion.plan.ToString(),
+                    distribucion.ItemArray[0].ToString(),
+                    distribucion.ItemArray[1].ToString(),
+                    distribucion.ItemArray[2].ToString(),
+                    distribucion.ItemArray[3].ToString(),
+                    distribucion.ItemArray[4].ToString(),
+                    distribucion.ItemArray[5].ToString(),
+
                 };
-            
+
                 dgvSuscripciones.Rows.Add(fila);
+
             }
 
         }
@@ -175,6 +168,57 @@ namespace TP_PAV_3K02.Modulos
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tnAdd_Click(object sender, EventArgs e)
+        {
+            var suscripcion = new Suscripcion();
+
+            suscripcion.nro_doc = int.Parse(txtDoc.Text);
+            suscripcion.fecha_inicio = DateTime.Today;
+            suscripcion.fecha_fin = DateTime.Today.AddYears(1);
+            suscripcion.doc_plan = obtenerDocPlan();
+            suscripcion.plan = consegirPlanes();
+
+            repos.guardar(suscripcion);
+            actualizarGrilla();
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            var seleccionadas = dgvSuscripciones.SelectedRows;
+            if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
+            {
+                MessageBox.Show("Debe seleccionar una fila");
+                return;
+            }
+            foreach (DataGridViewRow fila in seleccionadas)
+            {
+                var nroDoc = fila.Cells[0].Value;
+                var tipDoc = fila.Cells[1].Value;
+                var codInt = fila.Cells[2].Value;
+                var fechaI = fila.Cells[3].Value;
+                var fechaF = fila.Cells[4].Value;
+
+
+                //pregunto confirmación
+                if (nroDoc != null)
+                {
+                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar la distribucion {nroDoc}?",
+                   "Confirmar operación",
+                   MessageBoxButtons.YesNo);
+
+                    if (confirmacion.Equals(DialogResult.No))
+                        return;
+
+                    if (repos.borrar(codInt.ToString()))
+                    {
+                        MessageBox.Show("Se eliminó exitosamente");
+                        actualizarGrilla();
+
+                    }
+                }
+            }
         }
     }
 }

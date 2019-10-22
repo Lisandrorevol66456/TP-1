@@ -54,7 +54,7 @@ namespace TP_PAV_3K02.Repositorios
                 try
                 {
                     string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc], [cod_TipoDoc], [cod_int], [fecha_inicio], [fecha_fin], [doc_plan]) " +
-                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.cod_int}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
+                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
                     
 
                    foreach (var p in s.plan )
@@ -95,14 +95,25 @@ namespace TP_PAV_3K02.Repositorios
             }
         }
 
-        public bool borrar(int s)
+        public bool borrar(string cod)
         {
+            int codigo = int.Parse(cod);
 
-            string sqltxt = $"DELETE [dbo].[Suscripcion] where cod_int = {s}";
+            string sqltxt = $"DELETE [dbo].[Suscripcion] where cod_int = {codigo}";
 
             return _BD.EjecutarSQL(sqltxt);
         }
 
+        public DataTable obtenerSuscripcionesPorCod(string codInt)
+        {
+            int code = int.Parse(codInt);
+
+            string sqlTxt = "SELECT * FROM Suscripcion WHERE cod_int ="+code;
+
+            return _BD.consulta(sqlTxt);
+        }
+
+        
     }
  
 }

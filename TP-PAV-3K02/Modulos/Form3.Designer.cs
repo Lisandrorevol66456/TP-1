@@ -29,106 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtDoc = new System.Windows.Forms.TextBox();
-            this.txtCodInt = new System.Windows.Forms.TextBox();
-            this.dgvSuscripciones = new System.Windows.Forms.DataGridView();
-            this.nrodocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codTipoDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechainicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechafinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.docplanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.suscripcionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new TP_PAV_3K02.DataSet1();
+            this.suscripcionTableAdapter = new TP_PAV_3K02.DataSet1TableAdapters.SuscripcionTableAdapter();
+            this.dgvSuscripciones = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbTipDoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmbPlanes = new System.Windows.Forms.ComboBox();
+            this.txtDoc = new System.Windows.Forms.TextBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.tnAdd = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
-            this.suscripcionTableAdapter = new TP_PAV_3K02.DataSet1TableAdapters.SuscripcionTableAdapter();
-            this.cmbPlan = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suscripcionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtDoc
-            // 
-            this.txtDoc.Location = new System.Drawing.Point(144, 78);
-            this.txtDoc.MaxLength = 18;
-            this.txtDoc.Name = "txtDoc";
-            this.txtDoc.Size = new System.Drawing.Size(163, 20);
-            this.txtDoc.TabIndex = 0;
-            this.txtDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
-            // 
-            // txtCodInt
-            // 
-            this.txtCodInt.Location = new System.Drawing.Point(144, 243);
-            this.txtCodInt.MaxLength = 18;
-            this.txtCodInt.Name = "txtCodInt";
-            this.txtCodInt.Size = new System.Drawing.Size(163, 20);
-            this.txtCodInt.TabIndex = 1;
-            this.txtCodInt.TextChanged += new System.EventHandler(this.txtCodInt_TextChanged);
-            this.txtCodInt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
-            // 
-            // dgvSuscripciones
-            // 
-            this.dgvSuscripciones.AutoGenerateColumns = false;
-            this.dgvSuscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSuscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nrodocDataGridViewTextBoxColumn,
-            this.codTipoDocDataGridViewTextBoxColumn,
-            this.codintDataGridViewTextBoxColumn,
-            this.fechainicioDataGridViewTextBoxColumn,
-            this.fechafinDataGridViewTextBoxColumn,
-            this.docplanDataGridViewTextBoxColumn});
-            this.dgvSuscripciones.DataSource = this.suscripcionBindingSource;
-            this.dgvSuscripciones.Location = new System.Drawing.Point(379, 78);
-            this.dgvSuscripciones.Name = "dgvSuscripciones";
-            this.dgvSuscripciones.Size = new System.Drawing.Size(704, 268);
-            this.dgvSuscripciones.TabIndex = 3;
-            // 
-            // nrodocDataGridViewTextBoxColumn
-            // 
-            this.nrodocDataGridViewTextBoxColumn.DataPropertyName = "nro_doc";
-            this.nrodocDataGridViewTextBoxColumn.HeaderText = "nro_doc";
-            this.nrodocDataGridViewTextBoxColumn.Name = "nrodocDataGridViewTextBoxColumn";
-            // 
-            // codTipoDocDataGridViewTextBoxColumn
-            // 
-            this.codTipoDocDataGridViewTextBoxColumn.DataPropertyName = "cod_TipoDoc";
-            this.codTipoDocDataGridViewTextBoxColumn.HeaderText = "cod_TipoDoc";
-            this.codTipoDocDataGridViewTextBoxColumn.Name = "codTipoDocDataGridViewTextBoxColumn";
-            // 
-            // codintDataGridViewTextBoxColumn
-            // 
-            this.codintDataGridViewTextBoxColumn.DataPropertyName = "cod_int";
-            this.codintDataGridViewTextBoxColumn.HeaderText = "cod_int";
-            this.codintDataGridViewTextBoxColumn.Name = "codintDataGridViewTextBoxColumn";
-            // 
-            // fechainicioDataGridViewTextBoxColumn
-            // 
-            this.fechainicioDataGridViewTextBoxColumn.DataPropertyName = "fecha_inicio";
-            this.fechainicioDataGridViewTextBoxColumn.HeaderText = "fecha_inicio";
-            this.fechainicioDataGridViewTextBoxColumn.Name = "fechainicioDataGridViewTextBoxColumn";
-            // 
-            // fechafinDataGridViewTextBoxColumn
-            // 
-            this.fechafinDataGridViewTextBoxColumn.DataPropertyName = "fecha_fin";
-            this.fechafinDataGridViewTextBoxColumn.HeaderText = "fecha_fin";
-            this.fechafinDataGridViewTextBoxColumn.Name = "fechafinDataGridViewTextBoxColumn";
-            // 
-            // docplanDataGridViewTextBoxColumn
-            // 
-            this.docplanDataGridViewTextBoxColumn.DataPropertyName = "doc_plan";
-            this.docplanDataGridViewTextBoxColumn.HeaderText = "doc_plan";
-            this.docplanDataGridViewTextBoxColumn.Name = "docplanDataGridViewTextBoxColumn";
             // 
             // suscripcionBindingSource
             // 
@@ -140,190 +65,205 @@
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label1.Location = new System.Drawing.Point(32, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 24);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Suscripciones";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Nº Documento :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Tipo de Documento :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 250);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Codigo Int :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(610, 396);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 40);
-            this.btnUpdate.TabIndex = 13;
-            this.btnUpdate.Text = "Actualizar";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(379, 398);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 40);
-            this.btnCancel.TabIndex = 14;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(485, 398);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 40);
-            this.btnSave.TabIndex = 15;
-            this.btnSave.Text = "Guardar";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(983, 396);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 40);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Salir";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(716, 396);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 40);
-            this.btnDelete.TabIndex = 17;
-            this.btnDelete.Text = "Eliminar";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // cmbTipoDoc
-            // 
-            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmbTipoDoc.Items.AddRange(new object[] {
-            "D.N.I.",
-            "L.E."});
-            this.cmbTipoDoc.Location = new System.Drawing.Point(144, 156);
-            this.cmbTipoDoc.Name = "cmbTipoDoc";
-            this.cmbTipoDoc.Size = new System.Drawing.Size(163, 21);
-            this.cmbTipoDoc.TabIndex = 18;
-            this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
-            // 
             // suscripcionTableAdapter
             // 
             this.suscripcionTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbPlan
+            // dgvSuscripciones
             // 
-            this.cmbPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPlan.FormattingEnabled = true;
-            this.cmbPlan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmbPlan.Items.AddRange(new object[] {
-            "Plan Low",
-            "Plan Medium",
-            "Plan High"});
-            this.cmbPlan.Location = new System.Drawing.Point(144, 325);
-            this.cmbPlan.Name = "cmbPlan";
-            this.cmbPlan.Size = new System.Drawing.Size(163, 21);
-            this.cmbPlan.TabIndex = 20;
+            this.dgvSuscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSuscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dgvSuscripciones.Location = new System.Drawing.Point(12, 126);
+            this.dgvSuscripciones.Name = "dgvSuscripciones";
+            this.dgvSuscripciones.Size = new System.Drawing.Size(641, 219);
+            this.dgvSuscripciones.TabIndex = 0;
             // 
-            // label5
+            // Column1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 333);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Planes :";
+            this.Column1.HeaderText = "Numero de Documento";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tipo de Documento";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Codigo Interno";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Fecha de Inicio";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Fecha de Finalizacion";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Codigo de Plan";
+            this.Column6.Name = "Column6";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Suscripciones";
+            // 
+            // cmbTipDoc
+            // 
+            this.cmbTipDoc.FormattingEnabled = true;
+            this.cmbTipDoc.Location = new System.Drawing.Point(12, 77);
+            this.cmbTipDoc.Name = "cmbTipDoc";
+            this.cmbTipDoc.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipDoc.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(570, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Planes";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(278, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Numero de Documentacion";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(10, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Tipo de Documentacion";
+            // 
+            // cmbPlanes
+            // 
+            this.cmbPlanes.FormattingEnabled = true;
+            this.cmbPlanes.Location = new System.Drawing.Point(529, 76);
+            this.cmbPlanes.Name = "cmbPlanes";
+            this.cmbPlanes.Size = new System.Drawing.Size(121, 21);
+            this.cmbPlanes.TabIndex = 6;
+            // 
+            // txtDoc
+            // 
+            this.txtDoc.Location = new System.Drawing.Point(261, 77);
+            this.txtDoc.Name = "txtDoc";
+            this.txtDoc.Size = new System.Drawing.Size(170, 20);
+            this.txtDoc.TabIndex = 7;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(12, 371);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(100, 40);
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // tnAdd
+            // 
+            this.tnAdd.Location = new System.Drawing.Point(444, 371);
+            this.tnAdd.Name = "tnAdd";
+            this.tnAdd.Size = new System.Drawing.Size(100, 40);
+            this.tnAdd.TabIndex = 9;
+            this.tnAdd.Text = "Agregar";
+            this.tnAdd.UseVisualStyleBackColor = true;
+            this.tnAdd.Click += new System.EventHandler(this.tnAdd_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(550, 371);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 40);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "Salir";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(118, 371);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 40);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // Suscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 450);
-            this.Controls.Add(this.cmbPlan);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.cmbTipoDoc);
+            this.ClientSize = new System.Drawing.Size(665, 423);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.tnAdd);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.txtDoc);
+            this.Controls.Add(this.cmbPlanes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbTipDoc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvSuscripciones);
-            this.Controls.Add(this.txtCodInt);
-            this.Controls.Add(this.txtDoc);
             this.Name = "Suscripciones";
             this.Text = "Suscripciones";
             this.Load += new System.EventHandler(this.Suscripciones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suscripcionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtDoc;
-        private System.Windows.Forms.TextBox txtCodInt;
-        private System.Windows.Forms.DataGridView dgvSuscripciones;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.ComboBox cmbTipoDoc;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource suscripcionBindingSource;
         private DataSet1TableAdapters.SuscripcionTableAdapter suscripcionTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nrodocDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codTipoDocDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codintDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechainicioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechafinDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn docplanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox cmbPlan;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvSuscripciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbTipDoc;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbPlanes;
+        private System.Windows.Forms.TextBox txtDoc;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button tnAdd;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
