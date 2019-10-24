@@ -127,6 +127,9 @@
             // cmbTipDoc
             // 
             this.cmbTipDoc.FormattingEnabled = true;
+            this.cmbTipDoc.Items.AddRange(new object[] {
+            "D.N.I.",
+            "L.E."});
             this.cmbTipDoc.Location = new System.Drawing.Point(12, 77);
             this.cmbTipDoc.Name = "cmbTipDoc";
             this.cmbTipDoc.Size = new System.Drawing.Size(121, 21);
@@ -165,6 +168,10 @@
             // cmbPlanes
             // 
             this.cmbPlanes.FormattingEnabled = true;
+            this.cmbPlanes.Items.AddRange(new object[] {
+            "Plan Simple",
+            "Plan Medio",
+            "Plan Premium"});
             this.cmbPlanes.Location = new System.Drawing.Point(529, 76);
             this.cmbPlanes.Name = "cmbPlanes";
             this.cmbPlanes.Size = new System.Drawing.Size(121, 21);

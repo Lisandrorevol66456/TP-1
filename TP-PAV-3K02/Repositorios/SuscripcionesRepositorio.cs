@@ -31,8 +31,8 @@ namespace TP_PAV_3K02.Repositorios
                     continue;
                 DateTime fechaI = DateTime.Today;
                 DateTime fechaF = DateTime.Today.AddYears(1);
-                DateTime.TryParse(fila.ItemArray[2]?.ToString(), out fechaI);
-                DateTime.TryParse(fila.ItemArray[3]?.ToString(), out fechaF);
+                DateTime.TryParse(fila.ItemArray[3]?.ToString(), out fechaI);
+                DateTime.TryParse(fila.ItemArray[4]?.ToString(), out fechaF);
                 var s = new Suscripcion()
                 {
                     nro_doc = int.Parse(fila.ItemArray[0].ToString()),
@@ -53,8 +53,8 @@ namespace TP_PAV_3K02.Repositorios
             {
                 try
                 {
-                    string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc], [cod_TipoDoc], [cod_int], [fecha_inicio], [fecha_fin], [doc_plan]) " +
-                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
+                    string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc],[cod_TipoDoc], [cod_int],[fecha_inicio], [fecha_fin], [doc_plan]) " +
+                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.cod_int}','{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
                     
 
                    foreach (var p in s.plan )
