@@ -123,12 +123,6 @@
     <Compile Include="Modulos\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\Planes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos\Planes.Designer.cs">
-      <DependentUpon>Planes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulos\Publicidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,9 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Planes.resx">
-      <DependentUpon>Planes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Publicidad.resx">
       <DependentUpon>Publicidad.cs</DependentUpon>

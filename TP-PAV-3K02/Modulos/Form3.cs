@@ -28,9 +28,6 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnPlan_Click(object sender, EventArgs e)
         {
-            Planes frm = new Planes();
-
-            frm.Show();
         }
 
         private void ValidateSoloNumeros(object sender, KeyPressEventArgs e)
@@ -72,9 +69,13 @@ namespace TP_PAV_3K02.Modulos
                 {
                     foreach (DataGridViewRow fila in filas)
                     {
-                        var plan = new Plan(00, 10, DateTime.Today, DateTime.Today.AddYears(1), 200);
-                        planes.Add(plan);
-                    }
+                    var plan = new Plan();
+                    plan.cod_Plan = 00;
+                    plan.fechaInicial = DateTime.Today;
+                    plan.fechaFin = DateTime.Today.AddYears(1);
+                    plan.Precio = 200;
+                    planes.Add(plan);
+                }
                     
                 }
                 else
@@ -83,9 +84,13 @@ namespace TP_PAV_3K02.Modulos
                     {
                         foreach (DataGridViewRow fila in filas)
                         {
-                            var plan = new Plan(01, 20, DateTime.Today, DateTime.Today.AddYears(1), 400);
-                            planes.Add(plan);
-                        }
+                        var plan = new Plan();
+                        plan.cod_Plan = 01;
+                        plan.fechaInicial = DateTime.Today;
+                        plan.fechaFin = DateTime.Today.AddYears(1);
+                        plan.Precio = 400;
+                        planes.Add(plan);
+                    }
                         
                     }
                     else
@@ -94,7 +99,12 @@ namespace TP_PAV_3K02.Modulos
                         {
                             foreach (DataGridViewRow fila in filas)
                             {
-                                var plan = new Plan(02, 30, DateTime.Today, DateTime.Today.AddYears(1), 600);
+                                var plan = new Plan();
+                                plan.cod_Plan = 02;
+                                plan.cod_int = 30;
+                                plan.fechaInicial = DateTime.Today;
+                                plan.fechaFin = DateTime.Today.AddYears(1);
+                                plan.Precio = 600;
                                 planes.Add(plan);
                             }
                             
@@ -127,15 +137,14 @@ namespace TP_PAV_3K02.Modulos
         private void actualizarGrilla()
         {
             var suscripciones = repos.obtenerSuscripciones();
-            actualizar(suscripciones);
+            actualizar();
         }
 
-        private void actualizar(IList<Suscripcion> subs)
+        private void actualizar()
         {
             dgvSuscripciones.Rows.Clear();
-            var sus = new Suscripcion();
-            var codeInt = sus.cod_int;
-            var sustros = repos.obtenerSuscripcionesPorCod(codeInt.ToString()).Rows;
+            var doc = long.Parse(txtDoc.Text);
+            var sustros = repos.obtenerSuscripcionesPorDoc(doc).Rows;
             var filas = new List<DataGridViewRow>();
 
             foreach (DataRow distribucion in sustros)
@@ -172,16 +181,29 @@ namespace TP_PAV_3K02.Modulos
 
         private void tnAdd_Click(object sender, EventArgs e)
         {
-            var suscripcion = new Suscripcion();
 
-            suscripcion.nro_doc = int.Parse(txtDoc.Text);
-            suscripcion.fecha_inicio = DateTime.Today;
-            suscripcion.fecha_fin = DateTime.Today.AddYears(1);
-            suscripcion.doc_plan = obtenerDocPlan();
-            suscripcion.plan = consegirPlanes();
+            if (MessageBox.Show("Confirma nueva Suscripcion", "Confirmación", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                return;
 
-            repos.guardar(suscripcion);
-            actualizarGrilla();
+            StringBuilder mensaje = new StringBuilder("La operación ");
+            try
+            {
+                var sus = prepararSus();
+                actualizarGrilla();
+            }
+            catch (InvalidOperationException ex)
+            {
+                mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
+            }
+            catch (Exception exc)
+            {
+                mensaje.Append("no se realizó. Ops. Hubo un problema inesperado.");
+            }
+            finally
+            {
+                MessageBox.Show(mensaje.ToString());
+            }
+
         }
 
         private void btnDelete_Click_1(object sender, EventArgs e)
@@ -219,6 +241,21 @@ namespace TP_PAV_3K02.Modulos
                     }
                 }
             }
+        }
+
+        public Suscripcion prepararSus()
+        {
+            var suscripcion = new Suscripcion();
+
+            suscripcion.nro_doc = long.Parse(txtDoc.Text);
+            suscripcion.fecha_inicio = DateTime.Today;
+            suscripcion.fecha_fin = DateTime.Today.AddYears(1);
+            suscripcion.doc_plan = obtenerDocPlan();
+            repos.guardar(suscripcion);
+            
+
+            return suscripcion;
+
         }
     }
 }

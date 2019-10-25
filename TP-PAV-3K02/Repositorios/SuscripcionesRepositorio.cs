@@ -29,19 +29,23 @@ namespace TP_PAV_3K02.Repositorios
             {
                 if (fila.HasErrors)
                     continue;
+
                 DateTime fechaI = DateTime.Today;
                 DateTime fechaF = DateTime.Today.AddYears(1);
                 DateTime.TryParse(fila.ItemArray[3]?.ToString(), out fechaI);
                 DateTime.TryParse(fila.ItemArray[4]?.ToString(), out fechaF);
-                var s = new Suscripcion()
-                {
-                    nro_doc = int.Parse(fila.ItemArray[0].ToString()),
-                    cod_int = int.Parse(fila.ItemArray[1].ToString()),
-                    fecha_inicio = fechaI,
-                    fecha_fin = fechaF,
-                    doc_plan = int.Parse(fila.ItemArray[4].ToString()),
+                var s = new Suscripcion();
+                var p = new Plan();
+
+                
+
+                s.nro_doc = int.Parse(fila.ItemArray[0].ToString());
+                s.cod_int = int.Parse(fila.ItemArray[1].ToString());
+                s.fecha_inicio = fechaI;
+                s.fecha_fin = fechaF;
+                s.doc_plan = int.Parse(fila.ItemArray[5].ToString());
                     
-                };
+                
                 subs.Add(s);
             }
             return subs;
@@ -49,50 +53,9 @@ namespace TP_PAV_3K02.Repositorios
         
         public void guardar(Suscripcion s)
         {
-            using (var tx = _BD.IniciarTransaccion())
-            {
-                try
-                {
-                    string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc],[cod_TipoDoc], [cod_int],[fecha_inicio], [fecha_fin], [doc_plan]) " +
-                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.cod_int}','{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
-                    
-
-                   foreach (var p in s.plan )
-                    {
-                        string sqlText = $"INSERT [dbo].[Planes] ([cod_Plan], [cod_int], [fecha_inicio]" +
-                            $", [fecha_fin], [Precio])" +
-                            $"VALUES ('{p.cod_Plan}', '{p.cod_int}', '{p.fechaInicial}', '{p.fechaFin}', " +
-                            $"'{p.Precio}')";
-
-                        _BD.EjecutarTransaccion(sqlTxt);
-                    }
-    
-                    
-                    tx.Commit();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Commit Exception Type: {0}", ex.GetType());
-                    Console.WriteLine("  Message: {0}", ex.Message);
-
-                    try
-                    {
-                        tx.Rollback();
-                    }
-                    catch (Exception ex2)
-                    {
-                        Console.WriteLine("Rollback Exception Type: {0}", ex2.GetType());
-                        Console.WriteLine("  Message: {0}", ex2.Message);
-                    }
-
-                }
-
-                finally
-                {
-                    _BD.cerrar();
-                }
-                
-            }
+            string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc], [cod_TipoDoc], [fecha_inicio], [fecha_fin], [doc_plan]) " +
+                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
+            _BD.EjecutarSQL(sqlTxt);
         }
 
         public bool borrar(string cod)
@@ -104,16 +67,17 @@ namespace TP_PAV_3K02.Repositorios
             return _BD.EjecutarSQL(sqltxt);
         }
 
-        public DataTable obtenerSuscripcionesPorCod(string codInt)
+        public DataTable obtenerSuscripcionesPorDoc(long doc)
         {
-            int code = int.Parse(codInt);
-
-            string sqlTxt = "SELECT * FROM Suscripcion WHERE cod_int ="+code;
+            
+            string sqlTxt = "SELECT * FROM Suscripcion WHERE nro_doc = "+ doc;
 
             return _BD.consulta(sqlTxt);
         }
 
         
+
+
     }
  
 }

@@ -17,7 +17,6 @@ namespace TP_PAV_3K02.BaseDatos
 
         private void conectar()
         {
-            cerrar();
 
             conexion.ConnectionString = cadena_conexion;
 
