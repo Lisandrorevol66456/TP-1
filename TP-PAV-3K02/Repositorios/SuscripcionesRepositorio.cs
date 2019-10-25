@@ -39,7 +39,7 @@ namespace TP_PAV_3K02.Repositorios
 
                 
 
-                s.nro_doc = int.Parse(fila.ItemArray[0].ToString());
+                s.nro_doc = long.Parse(fila.ItemArray[0].ToString());
                 s.cod_int = int.Parse(fila.ItemArray[1].ToString());
                 s.fecha_inicio = fechaI;
                 s.fecha_fin = fechaF;
@@ -50,7 +50,16 @@ namespace TP_PAV_3K02.Repositorios
             }
             return subs;
         }
-        
+
+        public bool Actualizar(Suscripcion sus,string doc)
+        {
+            string sqltext = $"UPDATE [dbo].[Distribuidores] SET doc_plan = {sus.doc_plan} nro_doc where cuit_dist = {doc} ";
+
+            return _BD.EjecutarSQL(sqltext);
+
+
+        }
+
         public void guardar(Suscripcion s)
         {
             string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc], [cod_TipoDoc], [fecha_inicio], [fecha_fin], [doc_plan]) " +

@@ -113,9 +113,15 @@ namespace TP_PAV_3K02.Modulos
                 }
                 return planes;
             }
-            
-        
 
+
+        public void cambiarDoc()
+        {
+            if (cmbTipDoc.SelectedIndex == 0)
+            {
+                txtDoc.MaxLength = 8;
+            }
+        }
 
         public int obtenerDocPlan()
         {
@@ -147,20 +153,19 @@ namespace TP_PAV_3K02.Modulos
             var sustros = repos.obtenerSuscripcionesPorDoc(doc).Rows;
             var filas = new List<DataGridViewRow>();
 
-            foreach (DataRow distribucion in sustros)
+            foreach (DataRow suscrib in sustros)
             {
-                if (distribucion.HasErrors)
+                if (suscrib.HasErrors)
                     continue;
 
                 var fila = new string[]
                 {
-                    distribucion.ItemArray[0].ToString(),
-                    distribucion.ItemArray[1].ToString(),
-                    distribucion.ItemArray[2].ToString(),
-                    distribucion.ItemArray[3].ToString(),
-                    distribucion.ItemArray[4].ToString(),
-                    distribucion.ItemArray[5].ToString(),
-
+                    suscrib.ItemArray[0].ToString(),
+                    suscrib.ItemArray[1].ToString(),
+                    suscrib.ItemArray[2].ToString(),
+                    suscrib.ItemArray[3].ToString(),
+                    suscrib.ItemArray[4].ToString(),
+                    suscrib.ItemArray[5].ToString()
                 };
 
                 dgvSuscripciones.Rows.Add(fila);
@@ -189,15 +194,12 @@ namespace TP_PAV_3K02.Modulos
             try
             {
                 var sus = prepararSus();
+                repos.guardar(sus);
                 actualizarGrilla();
             }
             catch (InvalidOperationException ex)
             {
                 mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
-            }
-            catch (Exception exc)
-            {
-                mensaje.Append("no se realizó. Ops. Hubo un problema inesperado.");
             }
             finally
             {
@@ -226,7 +228,7 @@ namespace TP_PAV_3K02.Modulos
                 //pregunto confirmación
                 if (nroDoc != null)
                 {
-                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar la distribucion {nroDoc}?",
+                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar la Suscripcion del suscriptor de DNI{nroDoc}?",
                    "Confirmar operación",
                    MessageBoxButtons.YesNo);
 
@@ -251,11 +253,14 @@ namespace TP_PAV_3K02.Modulos
             suscripcion.fecha_inicio = DateTime.Today;
             suscripcion.fecha_fin = DateTime.Today.AddYears(1);
             suscripcion.doc_plan = obtenerDocPlan();
-            repos.guardar(suscripcion);
             
-
             return suscripcion;
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -33,12 +33,6 @@
             this.dataSet1 = new TP_PAV_3K02.DataSet1();
             this.suscripcionTableAdapter = new TP_PAV_3K02.DataSet1TableAdapters.SuscripcionTableAdapter();
             this.dgvSuscripciones = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbTipDoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +44,12 @@
             this.tnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.suscripcionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).BeginInit();
@@ -79,40 +79,10 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dgvSuscripciones.Location = new System.Drawing.Point(12, 126);
+            this.dgvSuscripciones.Location = new System.Drawing.Point(12, 123);
             this.dgvSuscripciones.Name = "dgvSuscripciones";
-            this.dgvSuscripciones.Size = new System.Drawing.Size(641, 219);
+            this.dgvSuscripciones.Size = new System.Drawing.Size(637, 219);
             this.dgvSuscripciones.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Numero de Documento";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tipo de Documento";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Codigo Interno";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Fecha de Inicio";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Fecha de Finalizacion";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Codigo de Plan";
-            this.Column6.Name = "Column6";
             // 
             // label1
             // 
@@ -126,6 +96,7 @@
             // 
             // cmbTipDoc
             // 
+            this.cmbTipDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipDoc.FormattingEnabled = true;
             this.cmbTipDoc.Items.AddRange(new object[] {
             "D.N.I.",
@@ -167,6 +138,7 @@
             // 
             // cmbPlanes
             // 
+            this.cmbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPlanes.FormattingEnabled = true;
             this.cmbPlanes.Items.AddRange(new object[] {
             "Plan Simple",
@@ -183,6 +155,7 @@
             this.txtDoc.Name = "txtDoc";
             this.txtDoc.Size = new System.Drawing.Size(170, 20);
             this.txtDoc.TabIndex = 7;
+            this.txtDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
             // btnEdit
             // 
@@ -211,6 +184,7 @@
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Salir";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -221,6 +195,36 @@
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Numero de Documento";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tipo de Documento";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Codigo Interno";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Fecha de Inicio";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Fecha de Finalizacion";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Codigo de Plan";
+            this.Column6.Name = "Column6";
             // 
             // Suscripciones
             // 
@@ -255,12 +259,6 @@
         private System.Windows.Forms.BindingSource suscripcionBindingSource;
         private DataSet1TableAdapters.SuscripcionTableAdapter suscripcionTableAdapter;
         private System.Windows.Forms.DataGridView dgvSuscripciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbTipDoc;
         private System.Windows.Forms.Label label2;
@@ -272,5 +270,11 @@
         private System.Windows.Forms.Button tnAdd;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
