@@ -279,6 +279,7 @@ namespace TP_PAV_3K02.Modulos
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
