@@ -16,6 +16,6 @@ namespace TP_PAV_3K02.Modelos
         public DateTime fecha_inicio { get; set; }
         public DateTime fecha_fin { get; set; }
         public int doc_plan { get; set; }
-        public IList<Plan> plan { get; set; }
+        public Plan precio { get; set; }
     }
 }

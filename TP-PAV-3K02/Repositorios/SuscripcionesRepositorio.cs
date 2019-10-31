@@ -44,7 +44,6 @@ namespace TP_PAV_3K02.Repositorios
                 s.fecha_inicio = fechaI;
                 s.fecha_fin = fechaF;
                 s.doc_plan = int.Parse(fila.ItemArray[5].ToString());
-                    
                 
                 subs.Add(s);
             }
@@ -53,7 +52,7 @@ namespace TP_PAV_3K02.Repositorios
 
         public bool Actualizar(Suscripcion sus,string doc)
         {
-            string sqltext = $"UPDATE [dbo].[Distribuidores] SET doc_plan = {sus.doc_plan} nro_doc where cuit_dist = {doc} ";
+            string sqltext = $"UPDATE [dbo].[Suscripcion] SET doc_plan = {sus.doc_plan}  where nro_doc = {doc} ";
 
             return _BD.EjecutarSQL(sqltext);
 

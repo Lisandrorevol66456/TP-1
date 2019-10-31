@@ -18,20 +18,43 @@ namespace TP_PAV_3K02.Repositorios
             _BD = new Editorial_BD();
         }
 
-        public DataTable obtenerPlanes()
+        public IList<Plan> obtenerPlanesByDoc()
         {
-            string sqlText = $"SELECT * FROM Planes";
+            string sqlTxt = $"SELECT * FROM Planes ";
+
+            var tmp = _BD.consulta(sqlTxt);
+            var pla = new List<Plan>();
+
+            foreach (DataRow fila in tmp.Rows)
+            {
+                if (fila.HasErrors)
+                    continue;
+
+                DateTime fechaI = DateTime.Today;
+                DateTime fechaF = DateTime.Today.AddYears(1);
+                DateTime.TryParse(fila.ItemArray[3]?.ToString(), out fechaI);
+                DateTime.TryParse(fila.ItemArray[4]?.ToString(), out fechaF);
+
+                var p = new Plan();
+
+                p.cod_Plan = int.Parse(fila[0].ToString());
+                p.cod_int = int.Parse(fila[1].ToString());
+                p.fechaInicial = fechaI;
+                p.fechaFin = fechaF;
+                p.Precio = int.Parse(fila.ItemArray[4].ToString());
+
+                pla.Add(p);
+            }
+            return pla;
+        }
+
+        public DataTable obtenerPlanesByDoc(string Id)
+        {
+            string sqlText = $"SELECT * FROM Planes WHERE cod_plan = {Id}";
 
             return _BD.consulta(sqlText);
         }
-
-        public DataTable obtenerPlanesByCod(int cod)
-        {
-            string sqlText = $"SELECT * FROM Planes WHERE cod_plan =" + cod;
-
-            return _BD.consulta(sqlText); 
-        }
-
+        
         public bool guardar(Plan plan)
         {
             string sqlText = $"INSERT [dbo].[Planes] ([cod_Plan], [cod_Int], [fecha_inicio], [fecha_fin], [precio])" +

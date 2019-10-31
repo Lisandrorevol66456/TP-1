@@ -18,11 +18,13 @@ namespace TP_PAV_3K02.Modulos
 
         ValidateTextBox v;
         SuscripcionesRepositorios repos;
+        PlanesRepositorio pRepos;
 
         public Suscripciones()
         {
             InitializeComponent();
             repos =new SuscripcionesRepositorios();
+            pRepos = new PlanesRepositorio();
             v = new ValidateTextBox();
         }
 
@@ -59,9 +61,9 @@ namespace TP_PAV_3K02.Modulos
         {
         }
 
-        public IList<Plan> consegirPlanes()
+        public Plan consegirPlanes()
         {
-                var planes = new List<Plan>();
+                var planes = new Plan();
 
                 var filas = dgvSuscripciones.Rows;
 
@@ -74,7 +76,6 @@ namespace TP_PAV_3K02.Modulos
                     plan.fechaInicial = DateTime.Today;
                     plan.fechaFin = DateTime.Today.AddYears(1);
                     plan.Precio = 200;
-                    planes.Add(plan);
                 }
                     
                 }
@@ -84,13 +85,12 @@ namespace TP_PAV_3K02.Modulos
                     {
                         foreach (DataGridViewRow fila in filas)
                         {
-                        var plan = new Plan();
-                        plan.cod_Plan = 01;
-                        plan.fechaInicial = DateTime.Today;
-                        plan.fechaFin = DateTime.Today.AddYears(1);
-                        plan.Precio = 400;
-                        planes.Add(plan);
-                    }
+                            var plan = new Plan();
+                            plan.cod_Plan = 01;
+                            plan.fechaInicial = DateTime.Today;
+                            plan.fechaFin = DateTime.Today.AddYears(1);
+                            plan.Precio = 400;
+                        }
                         
                     }
                     else
@@ -105,12 +105,13 @@ namespace TP_PAV_3K02.Modulos
                                 plan.fechaInicial = DateTime.Today;
                                 plan.fechaFin = DateTime.Today.AddYears(1);
                                 plan.Precio = 600;
-                                planes.Add(plan);
                             }
                             
                         }
                     }
                 }
+
+                pRepos.guardar(planes);
                 return planes;
             }
 
@@ -150,8 +151,11 @@ namespace TP_PAV_3K02.Modulos
         {
             dgvSuscripciones.Rows.Clear();
             var doc = long.Parse(txtDoc.Text);
+            var idPlan = cmbPlanes.SelectedIndex.ToString();
             var sustros = repos.obtenerSuscripcionesPorDoc(doc).Rows;
+            var plans = pRepos.obtenerPlanesByDoc(idPlan).Rows;
             var filas = new List<DataGridViewRow>();
+            var filasP = new List<DataGridViewRow>();
 
             foreach (DataRow suscrib in sustros)
             {
@@ -167,11 +171,25 @@ namespace TP_PAV_3K02.Modulos
                     suscrib.ItemArray[4].ToString(),
                     suscrib.ItemArray[5].ToString()
                 };
-
                 dgvSuscripciones.Rows.Add(fila);
 
-            }
+                foreach (DataRow plan in plans)
+                {
+                    if (suscrib.HasErrors)
+                        continue;
 
+                    var filaP = new string[]
+                    {
+                    plan.ItemArray[0].ToString(),
+                    plan.ItemArray[1].ToString(),
+                    plan.ItemArray[2].ToString(),
+                    plan.ItemArray[3].ToString(),
+                    plan.ItemArray[4].ToString(),
+                    };
+                    dgvSuscripciones.Rows.Add(filaP);
+                }
+            }
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -243,6 +261,7 @@ namespace TP_PAV_3K02.Modulos
                     }
                 }
             }
+            clear();
         }
 
         public Suscripcion prepararSus()
@@ -253,7 +272,6 @@ namespace TP_PAV_3K02.Modulos
             suscripcion.fecha_inicio = DateTime.Today;
             suscripcion.fecha_fin = DateTime.Today.AddYears(1);
             suscripcion.doc_plan = obtenerDocPlan();
-            
             return suscripcion;
 
         }
@@ -261,6 +279,18 @@ namespace TP_PAV_3K02.Modulos
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
+
+        public void clear()
+        {
+            cmbPlanes.SelectedIndex = -1;
+            cmbTipDoc.SelectedIndex = -1;
+            txtDoc.Clear();
         }
     }
 }
