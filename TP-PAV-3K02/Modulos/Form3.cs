@@ -28,9 +28,7 @@ namespace TP_PAV_3K02.Modulos
             v = new ValidateTextBox();
         }
 
-        private void btnPlan_Click(object sender, EventArgs e)
-        {
-        }
+        
 
         private void ValidateSoloNumeros(object sender, KeyPressEventArgs e)
         {
@@ -45,21 +43,7 @@ namespace TP_PAV_3K02.Modulos
 
         }
 
-        private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
-        {}
-
-        private void label4_Click(object sender, EventArgs e)
-        {}
-
-        private void label3_Click(object sender, EventArgs e)
-        {}
-
-        private void txtCodInt_TextChanged(object sender, EventArgs e)
-        {}
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-        }
+      
 
         public Plan consegirPlanes()
         {
@@ -197,10 +181,7 @@ namespace TP_PAV_3K02.Modulos
             actualizarGrilla();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void tnAdd_Click(object sender, EventArgs e)
         {
@@ -208,7 +189,7 @@ namespace TP_PAV_3K02.Modulos
             if (MessageBox.Show("Confirma nueva Suscripcion", "Confirmación", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
                 return;
 
-            StringBuilder mensaje = new StringBuilder("La operación ");
+            StringBuilder mensaje = new StringBuilder("La operación se realizo con exito ");
             try
             {
                 var sus = prepararSus();
@@ -225,42 +206,47 @@ namespace TP_PAV_3K02.Modulos
             }
 
         }
+        private void Delete()
+        {
+            StringBuilder mensaje = new StringBuilder("La operación ");
+            if (MessageBox.Show("Desea eliminar?", "Confirmación", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                return;
+            try
+            {
+                var seleccionadas = dgvSuscripciones.SelectedRows;
+                if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
+                {
+                    MessageBox.Show("Debe seleccionar una fila");
+                    return;
+                }
+                foreach (DataGridViewRow fila in seleccionadas)
+                {
+                    var nroDoc = fila.Cells[0].Value;
+                    var tipDoc = fila.Cells[1].Value;
+                    var codInt = fila.Cells[2].Value;
+                    var fechaI = fila.Cells[3].Value;
+                    var fechaF = fila.Cells[4].Value;
+
+                    repos.borrar(codInt.ToString());
+                    
+                    mensaje.Append("eliminar se realizo con exito");
+
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
+            }
+            finally
+            {
+                MessageBox.Show(mensaje.ToString());
+            }
+        }
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
-            var seleccionadas = dgvSuscripciones.SelectedRows;
-            if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
-            {
-                MessageBox.Show("Debe seleccionar una fila");
-                return;
-            }
-            foreach (DataGridViewRow fila in seleccionadas)
-            {
-                var nroDoc = fila.Cells[0].Value;
-                var tipDoc = fila.Cells[1].Value;
-                var codInt = fila.Cells[2].Value;
-                var fechaI = fila.Cells[3].Value;
-                var fechaF = fila.Cells[4].Value;
-
-
-                //pregunto confirmación
-                if (nroDoc != null)
-                {
-                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar la Suscripcion del suscriptor de DNI{nroDoc}?",
-                   "Confirmar operación",
-                   MessageBoxButtons.YesNo);
-
-                    if (confirmacion.Equals(DialogResult.No))
-                        return;
-
-                    if (repos.borrar(codInt.ToString()))
-                    {
-                        MessageBox.Show("Se eliminó exitosamente");
-                        actualizarGrilla();
-
-                    }
-                }
-            }
+            Delete();
+            actualizarGrilla();
             clear();
         }
 
@@ -293,5 +279,7 @@ namespace TP_PAV_3K02.Modulos
             cmbTipDoc.SelectedIndex = -1;
             txtDoc.Clear();
         }
+
+       
     }
 }

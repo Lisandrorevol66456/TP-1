@@ -88,7 +88,7 @@ namespace TP_PAV_3K02.Modulos
             }
             else
                 MessageBox.Show($"Ya existe un Id de una distribucion con ID = {TxtidDistribucion.Text}");
-            
+
 
         }
 
@@ -124,7 +124,7 @@ namespace TP_PAV_3K02.Modulos
                 DGV_Distribuciones.Rows.Add(fila);
 
             }
-            
+
         }
         private void LimpiarCampos()
         {
@@ -183,6 +183,48 @@ namespace TP_PAV_3K02.Modulos
         private void validarnumeros(object sender, KeyPressEventArgs e)
         {
             v.ValidateSoloNumeros(sender, e);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            var seleccionadas = DGV_Distribuciones.SelectedRows;
+            if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
+            {
+                MessageBox.Show("Debe seleccionar una fila");
+                return;
+            }
+            foreach (DataGridViewRow fila in seleccionadas)
+            {
+                
+                var cuit_dist = fila.Cells[1].Value;
+                
+                var ejemplares = fila.Cells[3].Value;
+                var id_dist = fila.Cells[0].Value;
+
+
+                //pregunto confirmación
+                if (cuit_dist != null)
+                {
+                    var confirmacion = MessageBox.Show($"Editar la distribucion {id_dist}, {cuit_dist}?",
+                   "Confirmar operación",
+                   MessageBoxButtons.YesNo);
+
+                    if (confirmacion.Equals(DialogResult.No))
+                        return;
+                    else
+                    {
+
+                        var editar = new EditarDistribucion(cuit_dist.ToString(), id_dist.ToString());
+                        editar.ShowDialog();
+
+                    }
+                }
+                else
+                    MessageBox.Show("Debe seleccionar una fila no vacia para poder editar");
+
+
+
+            }
         }
     }
 }

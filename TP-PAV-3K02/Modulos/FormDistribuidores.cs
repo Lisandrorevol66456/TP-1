@@ -159,11 +159,9 @@ namespace TP_PAV_3K02
         private void FormDistribuidores_Load(object sender, EventArgs e)
         {
             ActualizarDistribuidores();
-
+                
         }
-
-       
-
+        
         private void BtnBuscarCuit_Click(object sender, EventArgs e)
         {
             var dist = new Distribuidor();
@@ -320,6 +318,17 @@ namespace TP_PAV_3K02
                     MessageBox.Show("Debe seleccionar una fila no vacia para poder editar");
 
 
+            }
+        }
+
+        private void DvgDistribuidores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var seleccionadas = DvgDistribuidores.SelectedRows;
+            if (seleccionadas.Count == 1)
+            {
+                btnEditar.Enabled = true;
+                btnEliminar.Enabled = true;
+                BTNAgregarDistribucion.Enabled = true;
             }
         }
     }

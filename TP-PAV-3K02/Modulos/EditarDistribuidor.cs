@@ -118,5 +118,10 @@ namespace TP_PAV_3K02.Modulos
             v.ValidateSoloNumeros(sender, e);
 
         }
+
+        private void validarLetrasynumeros(object sender, KeyPressEventArgs e)
+        {
+            v.validateLetrasNumeros(sender, e);
+        }
     }
 }

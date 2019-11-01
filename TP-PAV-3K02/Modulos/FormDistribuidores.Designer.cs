@@ -43,11 +43,6 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.DvgDistribuidores = new System.Windows.Forms.DataGridView();
-            this.cuit_dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
             this.btnCancelarBusqueda = new System.Windows.Forms.Button();
             this.BtnBuscarCuit = new System.Windows.Forms.Button();
@@ -55,6 +50,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.BTNAgregarDistribucion = new System.Windows.Forms.Button();
+            this.cuit_dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DvgDistribuidores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,7 @@
             this.txtApellido.Location = new System.Drawing.Point(134, 108);
             this.txtApellido.MaxLength = 20;
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(200, 20);
+            this.txtApellido.Size = new System.Drawing.Size(171, 20);
             this.txtApellido.TabIndex = 13;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloLetras);
             // 
@@ -83,7 +83,7 @@
             this.txtnombre.Location = new System.Drawing.Point(134, 71);
             this.txtnombre.MaxLength = 20;
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(200, 20);
+            this.txtnombre.Size = new System.Drawing.Size(171, 20);
             this.txtnombre.TabIndex = 12;
             this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloLetras);
             // 
@@ -112,7 +112,7 @@
             this.TxtDomicilio.Location = new System.Drawing.Point(134, 175);
             this.TxtDomicilio.MaxLength = 50;
             this.TxtDomicilio.Name = "TxtDomicilio";
-            this.TxtDomicilio.Size = new System.Drawing.Size(200, 20);
+            this.TxtDomicilio.Size = new System.Drawing.Size(171, 20);
             this.TxtDomicilio.TabIndex = 15;
             this.TxtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloLetrasNumeros);
             // 
@@ -128,11 +128,12 @@
             // 
             // DTPfechainicio
             // 
+            this.DTPfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPfechainicio.Location = new System.Drawing.Point(134, 217);
             this.DTPfechainicio.MaxDate = new System.DateTime(2019, 10, 10, 0, 0, 0, 0);
             this.DTPfechainicio.MinDate = new System.DateTime(1919, 12, 29, 0, 0, 0, 0);
             this.DTPfechainicio.Name = "DTPfechainicio";
-            this.DTPfechainicio.Size = new System.Drawing.Size(200, 20);
+            this.DTPfechainicio.Size = new System.Drawing.Size(171, 20);
             this.DTPfechainicio.TabIndex = 16;
             this.DTPfechainicio.Value = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
             // 
@@ -151,7 +152,7 @@
             this.TxtCuit.Location = new System.Drawing.Point(134, 143);
             this.TxtCuit.MaxLength = 11;
             this.TxtCuit.Name = "TxtCuit";
-            this.TxtCuit.Size = new System.Drawing.Size(200, 20);
+            this.TxtCuit.Size = new System.Drawing.Size(171, 20);
             this.TxtCuit.TabIndex = 19;
             this.TxtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
@@ -167,7 +168,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(134, 356);
+            this.btnEliminar.Location = new System.Drawing.Point(449, 418);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 35);
             this.btnEliminar.TabIndex = 26;
@@ -177,7 +178,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(259, 298);
+            this.btnEditar.Location = new System.Drawing.Point(352, 418);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 35);
             this.btnEditar.TabIndex = 25;
@@ -187,9 +188,9 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(19, 356);
+            this.btnAgregar.Location = new System.Drawing.Point(42, 304);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 35);
+            this.btnAgregar.Size = new System.Drawing.Size(263, 35);
             this.btnAgregar.TabIndex = 24;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -205,35 +206,11 @@
             this.apellido,
             this.domicilio,
             this.fecha_inicio});
-            this.DvgDistribuidores.Location = new System.Drawing.Point(352, 129);
+            this.DvgDistribuidores.Location = new System.Drawing.Point(341, 129);
             this.DvgDistribuidores.Name = "DvgDistribuidores";
-            this.DvgDistribuidores.Size = new System.Drawing.Size(533, 283);
+            this.DvgDistribuidores.Size = new System.Drawing.Size(546, 283);
             this.DvgDistribuidores.TabIndex = 28;
-            // 
-            // cuit_dist
-            // 
-            this.cuit_dist.HeaderText = "Cuit";
-            this.cuit_dist.Name = "cuit_dist";
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            // 
-            // domicilio
-            // 
-            this.domicilio.HeaderText = "Domicilio";
-            this.domicilio.Name = "domicilio";
-            // 
-            // fecha_inicio
-            // 
-            this.fecha_inicio.HeaderText = "Fecha Inicio";
-            this.fecha_inicio.Name = "fecha_inicio";
+            this.DvgDistribuidores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgDistribuidores_CellContentClick);
             // 
             // gbBuscar
             // 
@@ -241,7 +218,7 @@
             this.gbBuscar.Controls.Add(this.BtnBuscarCuit);
             this.gbBuscar.Controls.Add(this.TXTbuscarCUIT);
             this.gbBuscar.Controls.Add(this.label4);
-            this.gbBuscar.Location = new System.Drawing.Point(352, 19);
+            this.gbBuscar.Location = new System.Drawing.Point(341, 19);
             this.gbBuscar.Name = "gbBuscar";
             this.gbBuscar.Size = new System.Drawing.Size(366, 100);
             this.gbBuscar.TabIndex = 35;
@@ -252,7 +229,7 @@
             // 
             this.btnCancelarBusqueda.Location = new System.Drawing.Point(224, 67);
             this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
-            this.btnCancelarBusqueda.Size = new System.Drawing.Size(79, 21);
+            this.btnCancelarBusqueda.Size = new System.Drawing.Size(95, 21);
             this.btnCancelarBusqueda.TabIndex = 35;
             this.btnCancelarBusqueda.Text = "cancelar";
             this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
@@ -262,7 +239,7 @@
             // 
             this.BtnBuscarCuit.Location = new System.Drawing.Point(224, 35);
             this.BtnBuscarCuit.Name = "BtnBuscarCuit";
-            this.BtnBuscarCuit.Size = new System.Drawing.Size(79, 20);
+            this.BtnBuscarCuit.Size = new System.Drawing.Size(95, 20);
             this.BtnBuscarCuit.TabIndex = 36;
             this.BtnBuscarCuit.Text = "buscar";
             this.BtnBuscarCuit.UseVisualStyleBackColor = true;
@@ -289,9 +266,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(259, 356);
+            this.btnCancelar.Location = new System.Drawing.Point(42, 368);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(263, 35);
             this.btnCancelar.TabIndex = 36;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -299,13 +276,43 @@
             // 
             // BTNAgregarDistribucion
             // 
-            this.BTNAgregarDistribucion.Location = new System.Drawing.Point(724, 42);
+            this.BTNAgregarDistribucion.Location = new System.Drawing.Point(550, 418);
             this.BTNAgregarDistribucion.Name = "BTNAgregarDistribucion";
-            this.BTNAgregarDistribucion.Size = new System.Drawing.Size(75, 65);
+            this.BTNAgregarDistribucion.Size = new System.Drawing.Size(139, 35);
             this.BTNAgregarDistribucion.TabIndex = 37;
             this.BTNAgregarDistribucion.Text = "Agregar distribucion";
             this.BTNAgregarDistribucion.UseVisualStyleBackColor = true;
             this.BTNAgregarDistribucion.Click += new System.EventHandler(this.BTNAgregarDistribucion_Click);
+            // 
+            // cuit_dist
+            // 
+            this.cuit_dist.HeaderText = "Cuit";
+            this.cuit_dist.Name = "cuit_dist";
+            this.cuit_dist.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            this.domicilio.ReadOnly = true;
+            // 
+            // fecha_inicio
+            // 
+            this.fecha_inicio.HeaderText = "Fecha Inicio";
+            this.fecha_inicio.Name = "fecha_inicio";
+            this.fecha_inicio.ReadOnly = true;
             // 
             // FormDistribuidores
             // 
@@ -358,11 +365,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView DvgDistribuidores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuit_dist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio;
         private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.Button btnCancelarBusqueda;
         private System.Windows.Forms.Button BtnBuscarCuit;
@@ -370,5 +372,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button BTNAgregarDistribucion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuit_dist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio;
     }
 }

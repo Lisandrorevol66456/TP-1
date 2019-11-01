@@ -25,11 +25,50 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.EjecutarSQL(sqltxt);
         }
+
+        
         public DataTable ObtenerDistribucionesDT()
         {
             string sqltext = "SELECT * FROM Distribuciones";
             return _BD.consulta(sqltext);
 
+        }
+        public Distribucion ObtenerPorID(string ID)
+        {
+            string sqltxt = $"SELECT * FROM Distribuciones Where Id = '{ID}'";
+            var tablaTemporal = _BD.consulta(sqltxt);
+            if (tablaTemporal.Rows.Count == 0)
+                return null;
+
+            var distribuc = new Distribucion();
+            foreach (DataRow fila in tablaTemporal.Rows)
+            {
+                if (fila.HasErrors)
+                    continue; // no corto el ciclo
+
+                distribuc.id = int.Parse(fila.ItemArray[0].ToString());
+                distribuc.Cuit_dist = long.Parse(fila.ItemArray[1].ToString());
+                distribuc.Cod_Interno = int.Parse(fila.ItemArray[2].ToString());
+                distribuc.nro_ejemplares = long.Parse(fila.ItemArray[3].ToString());
+                distribuc.nro_ejemplares_pagos = long.Parse(fila.ItemArray[4].ToString());
+                //distribuc.fecha_Entrega =DateTime.Parse(fila.ItemArray[5].ToString());
+
+
+            }
+            return distribuc;
+
+        }
+
+        public bool Editar(Distribucion d, string Id)
+        {
+            string sqltxt = $"UPDATE [dbo].[Distribuciones] SET Id='{d.id}" +
+                $" Cuit_dist='{d.Cuit_dist}', " +
+                $" Cod_Interno='{d.Cod_Interno}'," +
+                $" nro_ejemplares='{d.nro_ejemplares}'," +
+                $"nro_ejemplares_pagos='{d.nro_ejemplares_pagos}'," +
+                $"fecha_Entrega='{d.fecha_Entrega.ToString("yyyy-MM-dd")}' Where Cuit_dist ='{Id}";
+
+            return _BD.EjecutarSQL(sqltxt);
         }
         public DataTable ObtenerPorcuit(long cuit)
         {
