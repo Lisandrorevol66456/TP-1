@@ -61,9 +61,10 @@ namespace TP_PAV_3K02.Repositorios
 
         public void guardar(Suscripcion s)
         {
+           
             string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc], [cod_TipoDoc], [fecha_inicio], [fecha_fin], [doc_plan]) " +
                         $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
-            _BD.EjecutarSQL(sqlTxt);
+            _BD.EjecutarTransaccion(sqlTxt);
         }
 
         public bool borrar(string cod)
