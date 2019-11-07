@@ -39,7 +39,7 @@ namespace TP_PAV_3K02.Modulos
         private void Suscripciones_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Suscripcion' Puede moverla o quitarla según sea necesario.
-            this.suscripcionTableAdapter.Fill(this.dataSet1.Suscripcion);
+ //           this.suscripcionTableAdapter.Fill(this.dataSet1.Suscripcion);
 
         }
 
@@ -47,57 +47,49 @@ namespace TP_PAV_3K02.Modulos
 
         public Plan consegirPlanes()
         {
-                var planes = new Plan();
+                Plan planes = new Plan();
 
                 var filas = dgvSuscripciones.Rows;
 
                 if (cmbPlanes.SelectedIndex == 0)
                 {
-                    foreach (DataGridViewRow fila in filas)
-                    {
-                    var plan = new Plan();
+                Plan plan = new Plan();
                     plan.cod_Plan = 00;
                     plan.fechaInicial = DateTime.Today;
                     plan.fechaFin = DateTime.Today.AddYears(1);
                     plan.Precio = 200;
-                }
-                    
+                return plan;  
+                   
                 }
                 else
                 {
                     if (cmbPlanes.SelectedIndex == 1)
                     {
-                        foreach (DataGridViewRow fila in filas)
-                        {
-                            var plan = new Plan();
+                            Plan plan = new Plan();
                             plan.cod_Plan = 01;
                             plan.fechaInicial = DateTime.Today;
                             plan.fechaFin = DateTime.Today.AddYears(1);
                             plan.Precio = 400;
-                        }
-                        
-                    }
+                    return plan;
+
+                }
                     else
                     {
                         if (cmbPlanes.SelectedIndex == 2)
                         {
-                            foreach (DataGridViewRow fila in filas)
-                            {
-                                var plan = new Plan();
+                                Plan plan = new Plan();
                                 plan.cod_Plan = 02;
                                 plan.cod_int = 30;
                                 plan.fechaInicial = DateTime.Today;
                                 plan.fechaFin = DateTime.Today.AddYears(1);
                                 plan.Precio = 600;
-                            }
-                            
-                        }
+                        return plan;
+                    }
                     }
                 }
 
-                pRepos.guardar(planes);
-                return planes;
-            }
+            return planes;
+        }
 
 
         public void cambiarDoc()
@@ -185,24 +177,22 @@ namespace TP_PAV_3K02.Modulos
 
         private void tnAdd_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("Confirma nueva Suscripcion", "Confirmación", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
-                return;
-
-            StringBuilder mensaje = new StringBuilder("La operación se realizo con exito ");
             try
             {
-                var sus = prepararSus();
-                repos.guardar(sus);
-                actualizarGrilla();
+                var _suscripcion = prepararSus();
+
+                repos.guardar(_suscripcion);
+
             }
-            catch (InvalidOperationException ex)
+
+            catch (ApplicationException aex)
             {
-                mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
+                MessageBox.Show(aex.Message);
             }
-            finally
+
+            catch (Exception ex)
             {
-                MessageBox.Show(mensaje.ToString());
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -258,6 +248,7 @@ namespace TP_PAV_3K02.Modulos
             suscripcion.fecha_inicio = DateTime.Today;
             suscripcion.fecha_fin = DateTime.Today.AddYears(1);
             suscripcion.doc_plan = obtenerDocPlan();
+            suscripcion.plan.Add(consegirPlanes());
             return suscripcion;
 
         }
