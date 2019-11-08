@@ -68,6 +68,7 @@
             this.btnEmpresa = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BTNSuscripciones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -437,11 +438,22 @@
             this.informesToolStripMenuItem.Text = "&Informes";
             this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
             // 
+            // BTNSuscripciones
+            // 
+            this.BTNSuscripciones.Location = new System.Drawing.Point(776, 84);
+            this.BTNSuscripciones.Name = "BTNSuscripciones";
+            this.BTNSuscripciones.Size = new System.Drawing.Size(75, 35);
+            this.BTNSuscripciones.TabIndex = 39;
+            this.BTNSuscripciones.Text = "Suscripciones";
+            this.BTNSuscripciones.UseVisualStyleBackColor = true;
+            this.BTNSuscripciones.Click += new System.EventHandler(this.BTNSuscripciones_Click);
+            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 450);
+            this.Controls.Add(this.BTNSuscripciones);
             this.Controls.Add(this.btnEmpresa);
             this.Controls.Add(this.BTNactualizar);
             this.Controls.Add(this.BTNeditar);
@@ -525,6 +537,7 @@
         private System.Windows.Forms.Button btnEmpresa;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
+        private System.Windows.Forms.Button BTNSuscripciones;
     }
 }
 
