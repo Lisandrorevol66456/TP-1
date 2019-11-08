@@ -169,6 +169,8 @@ namespace TP_PAV_3K02
                 if (_suscriptoresRepositorio.Guardar(suscriptor))
                 {
                     MessageBox.Show("Se registro con éxito");
+                    ActualizarSuscriptores();
+                    LimpiarCampos();
 
 
                 }
@@ -389,6 +391,12 @@ namespace TP_PAV_3K02
             var info = new fORMULARIOREPORTES();
             info.ShowDialog();
             
+        }
+
+        private void BTNSuscripciones_Click(object sender, EventArgs e)
+        {
+            var suscri = new Suscripciones();
+            suscri.ShowDialog();
         }
     }
 

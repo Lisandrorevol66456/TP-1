@@ -43,20 +43,20 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            var distribucion = new Distribucion();
-            distribucion.id = int.Parse(TxtidDistribucion.ToString());
-            distribucion.nro_ejemplares = long.Parse(TXTtotal.ToString());
-            distribucion.nro_ejemplares_pagos = long.Parse(TXTpagados.ToString());
-            distribucion.Cod_Interno = int.Parse(TXTCod_Int.ToString());
-            distribucion.Cuit_dist = long.Parse(TXTCUIT.ToString());
-            distribucion.fecha_Entrega = DTPfechaEntrega.Value;
+            var distribucion1 = new Distribucion();
+            distribucion1.id = int.Parse(TxtidDistribucion.Text);
+            distribucion1.nro_ejemplares = long.Parse(TXTtotal.Text);
+            distribucion1.nro_ejemplares_pagos = long.Parse(TXTpagados.Text);
+            distribucion1.Cod_Interno = int.Parse(TXTCod_Int.Text);
+            distribucion1.Cuit_dist = long.Parse(TXTCUIT.Text);
+            distribucion1.fecha_Entrega = DTPfechaEntrega.Value;
 
-            if (!distribucion.fechavalida())
+            if (!distribucion1.fechavalida())
             {
                 MessageBox.Show("La fecha que ingreso no es valido");
                 return;
             }
-            if (_distribRepos.Editar(distribucion, TxtidDistribucion.ToString()))
+            if (_distribRepos.Editar(distribucion1, dist.id.ToString()))
             {
                 MessageBox.Show("Se actualizo con Exito");
                 this.Dispose();

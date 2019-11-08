@@ -216,7 +216,7 @@ namespace TP_PAV_3K02.Modulos
 
                         var editar = new EditarDistribucion(cuit_dist.ToString(), id_dist.ToString());
                         editar.ShowDialog();
-
+                        ActualizarDistribuciones(distribucion.Cuit_dist);
                     }
                 }
                 else

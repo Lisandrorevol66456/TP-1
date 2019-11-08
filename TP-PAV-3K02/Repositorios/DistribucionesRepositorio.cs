@@ -61,12 +61,12 @@ namespace TP_PAV_3K02.Repositorios
 
         public bool Editar(Distribucion d, string Id)
         {
-            string sqltxt = $"UPDATE [dbo].[Distribuciones] SET Id='{d.id}" +
-                $" Cuit_dist='{d.Cuit_dist}', " +
+            string sqltxt = $"UPDATE [dbo].[Distribuciones] SET Cuit_dist='{d.Cuit_dist}'," +
+                
                 $" Cod_Interno='{d.Cod_Interno}'," +
                 $" nro_ejemplares='{d.nro_ejemplares}'," +
-                $"nro_ejemplares_pagos='{d.nro_ejemplares_pagos}'," +
-                $"fecha_Entrega='{d.fecha_Entrega.ToString("yyyy-MM-dd")}' Where Cuit_dist ='{Id}";
+                $" nro_ejemplares_pagos='{d.nro_ejemplares_pagos}'," +
+                $"fecha_Entrega='{d.fecha_Entrega.ToString("yyyy-MM-dd")}' Where Id ={Id}";
 
             return _BD.EjecutarSQL(sqltxt);
         }

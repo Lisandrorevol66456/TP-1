@@ -31,6 +31,7 @@ namespace TP_PAV_3K02.REPORTES
             rvFORMREPOR.LocalReport.DataSources.Add(ds);
 
             this.rvFORMREPOR.RefreshReport();
+            //this.reportViewer1.RefreshReport();
         }
     }
 }

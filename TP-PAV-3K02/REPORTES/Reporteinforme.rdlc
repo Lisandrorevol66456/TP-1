@@ -105,7 +105,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Numero Doc</Value>
+                                  <Value>NUMERO DOC</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -135,7 +135,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>TIPO DOcC</Value>
+                                  <Value>TIPO DOC</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -674,17 +674,17 @@
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>nro Doc</Label>
+                  <Label>NOMBRE</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="nroDoc">
+                <ChartSeries Name="NOMBRE">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!nroDoc.Value)</Y>
+                        <Y>=Count(Fields!NOMBRE.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
