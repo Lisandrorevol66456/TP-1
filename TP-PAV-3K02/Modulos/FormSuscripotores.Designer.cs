@@ -66,8 +66,11 @@
             this.BTNeditar = new System.Windows.Forms.Button();
             this.BTNactualizar = new System.Windows.Forms.Button();
             this.btnEmpresa = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblsuscriptores
@@ -417,6 +420,23 @@
             this.btnEmpresa.UseVisualStyleBackColor = true;
             this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1095, 24);
+            this.menuStrip1.TabIndex = 38;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // informesToolStripMenuItem
+            // 
+            this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
+            this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.informesToolStripMenuItem.Text = "&Informes";
+            this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
+            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,12 +468,16 @@
             this.Controls.Add(this.lblCalle);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblsuscriptores);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "NuevoSuscriptor";
             this.Text = "Suscriptores";
             this.Load += new System.EventHandler(this.suscriptores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).EndInit();
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,6 +523,8 @@
         private System.Windows.Forms.Button BTNeditar;
         private System.Windows.Forms.Button BTNactualizar;
         private System.Windows.Forms.Button btnEmpresa;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
     }
 }
 

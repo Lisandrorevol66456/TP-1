@@ -12,6 +12,7 @@ using TP_PAV_3K02.Repositorios;
 using TP_PAV_3K02.BaseDatos;
 using TP_PAV_3K02.Modulos;
 using TP_PAV_3K02.Utils;
+using TP_PAV_3K02.REPORTES;
 
 namespace TP_PAV_3K02
 {
@@ -381,6 +382,13 @@ namespace TP_PAV_3K02
         private void validateLetrasYnumeros(object sender, KeyPressEventArgs e)
         {
             v.validateLetrasNumeros(sender, e);
+        }
+
+        private void informesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var info = new fORMULARIOREPORTES();
+            info.ShowDialog();
+            
         }
     }
 
