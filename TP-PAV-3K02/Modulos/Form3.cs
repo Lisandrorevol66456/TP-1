@@ -26,6 +26,7 @@ namespace TP_PAV_3K02.Modulos
             repos =new SuscripcionesRepositorios();
             pRepos = new PlanesRepositorio();
             v = new ValidateTextBox();
+            cargarCMB();
         }
 
         
@@ -43,79 +44,6 @@ namespace TP_PAV_3K02.Modulos
 
         }
 
-      
-
-        public Plan consegirPlanes()
-        {
-                Plan planes = new Plan();
-
-                var filas = dgvSuscripciones.Rows;
-
-                if (cmbPlanes.SelectedIndex == 0)
-                {
-                Plan plan = new Plan();
-                    plan.cod_Plan = 00;
-                    plan.fechaInicial = DateTime.Today;
-                    plan.fechaFin = DateTime.Today.AddYears(1);
-                    plan.Precio = 200;
-                return plan;  
-                   
-                }
-                else
-                {
-                    if (cmbPlanes.SelectedIndex == 1)
-                    {
-                            Plan plan = new Plan();
-                            plan.cod_Plan = 01;
-                            plan.fechaInicial = DateTime.Today;
-                            plan.fechaFin = DateTime.Today.AddYears(1);
-                            plan.Precio = 400;
-                    return plan;
-
-                }
-                    else
-                    {
-                        if (cmbPlanes.SelectedIndex == 2)
-                        {
-                                Plan plan = new Plan();
-                                plan.cod_Plan = 02;
-                                plan.cod_int = 30;
-                                plan.fechaInicial = DateTime.Today;
-                                plan.fechaFin = DateTime.Today.AddYears(1);
-                                plan.Precio = 600;
-                        return plan;
-                    }
-                    }
-                }
-
-            return planes;
-        }
-
-
-        public void cambiarDoc()
-        {
-            if (cmbTipDoc.SelectedIndex == 0)
-            {
-                txtDoc.MaxLength = 8;
-            }
-        }
-
-        public int obtenerDocPlan()
-        {
-            if (cmbPlanes.SelectedIndex == 0)
-                return 00;
-
-            else
-            {
-                if (cmbPlanes.SelectedIndex == 1)
-                return 01;
-
-                else
-                {
-                    return 02;
-                }
-            }
-        }
 
         private void actualizarGrilla()
         {
@@ -127,9 +55,9 @@ namespace TP_PAV_3K02.Modulos
         {
             dgvSuscripciones.Rows.Clear();
             var doc = long.Parse(txtDoc.Text);
-            var idPlan = cmbPlanes.SelectedIndex.ToString();
+            var codPlan = cmbPlanes.SelectedValue.ToString();
+            var precPlan = pRepos.obtenerPlanesByValue(codPlan);
             var sustros = repos.obtenerSuscripcionesPorDoc(doc).Rows;
-            var plans = pRepos.obtenerPlanesByDoc(idPlan).Rows;
             var filas = new List<DataGridViewRow>();
             var filasP = new List<DataGridViewRow>();
 
@@ -144,27 +72,21 @@ namespace TP_PAV_3K02.Modulos
                     suscrib.ItemArray[1].ToString(),
                     suscrib.ItemArray[2].ToString(),
                     suscrib.ItemArray[3].ToString(),
-                    suscrib.ItemArray[4].ToString(),
-                    suscrib.ItemArray[5].ToString()
+                    suscrib.ItemArray[4].ToString()
+                    
                 };
-                dgvSuscripciones.Rows.Add(fila);
-
-                foreach (DataRow plan in plans)
-                {
-                    if (suscrib.HasErrors)
-                        continue;
-
-                    var filaP = new string[]
+                var planPart = new string[]
                     {
-                    plan.ItemArray[0].ToString(),
-                    plan.ItemArray[1].ToString(),
-                    plan.ItemArray[2].ToString(),
-                    plan.ItemArray[3].ToString(),
-                    plan.ItemArray[4].ToString(),
-                    };
-                    dgvSuscripciones.Rows.Add(filaP);
-                }
+                    codPlan, precPlan.ToString()
+                     };
+
+                planPart.CopyTo(fila, fila.Length);
+
+                dgvSuscripciones.Rows.Add(fila);
+                
+
             }
+
             
         }
 
@@ -173,8 +95,15 @@ namespace TP_PAV_3K02.Modulos
             actualizarGrilla();
         }
 
-       
 
+        public void cargarCMB()
+        {
+            var planes = pRepos.obtenerPlanes();
+            cmbPlanes.DisplayMember = "nombre";
+            cmbPlanes.ValueMember = "cod_Plan";
+            cmbPlanes.DataSource = planes;
+        }
+        
         private void tnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -182,6 +111,8 @@ namespace TP_PAV_3K02.Modulos
                 var _suscripcion = prepararSus();
 
                 repos.guardar(_suscripcion);
+
+                actualizar();
 
             }
 
@@ -226,6 +157,7 @@ namespace TP_PAV_3K02.Modulos
             catch (InvalidOperationException ex)
             {
                 mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
+                
             }
             finally
             {
@@ -245,10 +177,9 @@ namespace TP_PAV_3K02.Modulos
             var suscripcion = new Suscripcion();
 
             suscripcion.nro_doc = long.Parse(txtDoc.Text);
+            suscripcion.cod_TipoDoc = cmbPlanes.SelectedIndex;
             suscripcion.fecha_inicio = DateTime.Today;
             suscripcion.fecha_fin = DateTime.Today.AddYears(1);
-            suscripcion.doc_plan = obtenerDocPlan();
-            suscripcion.plan.Add(consegirPlanes());
             return suscripcion;
 
         }

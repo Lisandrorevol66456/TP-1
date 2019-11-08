@@ -33,16 +33,6 @@
             this.dataSet1 = new TP_PAV_3K02.DataSet1();
             this.suscripcionTableAdapter = new TP_PAV_3K02.DataSet1TableAdapters.SuscripcionTableAdapter();
             this.dgvSuscripciones = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbTipDoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,6 +45,13 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.suscripcionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).BeginInit();
@@ -84,64 +81,11 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column8,
-            this.Column9,
-            this.Column10,
             this.Column7});
             this.dgvSuscripciones.Location = new System.Drawing.Point(12, 127);
             this.dgvSuscripciones.Name = "dgvSuscripciones";
             this.dgvSuscripciones.Size = new System.Drawing.Size(638, 219);
             this.dgvSuscripciones.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Numero de Documento";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tipo de Documento";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Codigo Interno";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Fecha de Inicio";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Fecha de Finalizacion";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Codigo de Plan";
-            this.Column6.Name = "Column6";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Codigo Interno de Plan";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Fecha Inicio de Plan";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Fecha final de plan";
-            this.Column10.Name = "Column10";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Precio";
-            this.Column7.Name = "Column7";
             // 
             // label1
             // 
@@ -211,6 +155,7 @@
             // txtDoc
             // 
             this.txtDoc.Location = new System.Drawing.Point(261, 77);
+            this.txtDoc.MaxLength = 8;
             this.txtDoc.Name = "txtDoc";
             this.txtDoc.Size = new System.Drawing.Size(170, 20);
             this.txtDoc.TabIndex = 7;
@@ -265,6 +210,41 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Numero de Documento";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tipo de Documento";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Codigo Interno";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Fecha de Inicio";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Fecha de Finalizacion";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Codigo de Plan";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Precio";
+            this.Column7.Name = "Column7";
+            // 
             // Suscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,16 +290,13 @@
         private System.Windows.Forms.Button tnAdd;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Button btnClear;
     }
 }

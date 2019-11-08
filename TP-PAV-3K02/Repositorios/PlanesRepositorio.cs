@@ -36,9 +36,7 @@ namespace TP_PAV_3K02.Repositorios
                 DateTime.TryParse(fila.ItemArray[4]?.ToString(), out fechaF);
 
                 var p = new Plan();
-
-                p.cod_Plan = int.Parse(fila[0].ToString());
-                p.cod_int = int.Parse(fila[1].ToString());
+                
                 p.fechaInicial = fechaI;
                 p.fechaFin = fechaF;
                 p.Precio = int.Parse(fila.ItemArray[4].ToString());
@@ -48,17 +46,30 @@ namespace TP_PAV_3K02.Repositorios
             return pla;
         }
 
-        public DataTable obtenerPlanesByDoc(string Id)
+        public DataTable obtenerPlanesByDoc(string prec)
         {
-            string sqlText = $"SELECT * FROM Planes WHERE cod_plan = {Id}";
+            string sqlText = $"SELECT * FROM Planes WHERE precio = {prec}";
 
             return _BD.consulta(sqlText);
         }
-        
+         public DataTable obtenerPlanes()
+        {
+            string sqlText = $"SELECT * FROM Planes";
+
+            return _BD.consulta(sqlText);
+        }
+
+        public DataTable obtenerPlanesByValue(string value)
+        {
+            string sqlText = $"SELECT precio FROM Planes WHERE cod_Plan = {value}";
+
+            return _BD.consulta(sqlText);
+        }
+
         public bool guardar(Plan plan)
         {
-            string sqlText = $"INSERT [dbo].[Planes] ([cod_Plan], [cod_Int], [fecha_inicio], [fecha_fin], [precio])" +
-                $"VALUES('{plan.cod_Plan}', '{plan.cod_int}', '{plan.fechaInicial}', '{plan.fechaFin}', '{plan.Precio}')";
+            string sqlText = $"INSERT [dbo].[Planes] ([fecha_inicio], [fecha_fin], [precio])" +
+                $"VALUES('{plan.fechaInicial}', '{plan.fechaFin}', '{plan.Precio}')";
             return _BD.EjecutarSQL(sqlText);
         }
 

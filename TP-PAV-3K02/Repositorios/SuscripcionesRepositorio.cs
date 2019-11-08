@@ -68,24 +68,19 @@ namespace TP_PAV_3K02.Repositorios
                 StringBuilder mensaje = new StringBuilder("La operación se realizo con exito ");
                 try
                 {
-                        string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc], [cod_TipoDoc], [fecha_inicio], [fecha_fin], [doc_plan]) " +
-                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
+                        string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc], [cod_TipoDoc], [fecha_inicio], [fecha_fin]) " +
+                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}')";
 
                     s.cod_int = _BD.EjecutarTransaccion(sqlTxt);
                     if(s.cod_int == 0)
                         throw new ApplicationException();
-                    foreach(var p in s.plan)
-                    {
-                        string sqlTxtP = $"INSERT [dbo].[Plane] ([cod_Plan], [cod_Int], [fecha_inicio], [fecha_fin], [precio]) " +
-                       $"VALUES ('{p.cod_Plan}', '{p.cod_int}', '{p.fechaInicial.ToString("yyyy-MM-dd")}', '{p.fechaFin.ToString("yyyy-MM-dd")}', '{p.Precio}')";
-
-                        _BD.EjecutarTransaccion(sqlTxtP);
-                    }
+                    
                     tx.Commit();
                 }
                 catch (InvalidOperationException ex)
                 {
                     mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
+                    tx.Rollback();
                 }
                 finally
                 {
