@@ -79,6 +79,7 @@ namespace TP_PAV_3K02.Repositorios
                 }
                 catch (InvalidOperationException ex)
                 {
+                     
                     mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
                     tx.Rollback();
                 }
