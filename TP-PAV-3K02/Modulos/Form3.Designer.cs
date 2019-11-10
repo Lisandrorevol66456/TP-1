@@ -45,9 +45,9 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,9 +75,9 @@
             // 
             this.dgvSuscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+            this.Column8,
             this.Column2,
-            this.Column3,
+            this.Column1,
             this.Column4,
             this.Column5,
             this.Column6,
@@ -123,7 +123,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(278, 51);
+            this.label3.Location = new System.Drawing.Point(263, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 13);
             this.label3.TabIndex = 4;
@@ -154,7 +154,7 @@
             // 
             // txtDoc
             // 
-            this.txtDoc.Location = new System.Drawing.Point(261, 77);
+            this.txtDoc.Location = new System.Drawing.Point(246, 78);
             this.txtDoc.MaxLength = 8;
             this.txtDoc.Name = "txtDoc";
             this.txtDoc.Size = new System.Drawing.Size(170, 20);
@@ -210,20 +210,20 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // Column1
+            // Column8
             // 
-            this.Column1.HeaderText = "Numero de Documento";
-            this.Column1.Name = "Column1";
+            this.Column8.HeaderText = "Codigo Interno";
+            this.Column8.Name = "Column8";
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Tipo de Documento";
             this.Column2.Name = "Column2";
             // 
-            // Column3
+            // Column1
             // 
-            this.Column3.HeaderText = "Codigo Interno";
-            this.Column3.Name = "Column3";
+            this.Column1.HeaderText = "Numero de Documento";
+            this.Column1.Name = "Column1";
             // 
             // Column4
             // 
@@ -291,9 +291,9 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;

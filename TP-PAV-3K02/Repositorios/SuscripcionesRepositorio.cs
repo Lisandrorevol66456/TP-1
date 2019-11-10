@@ -68,8 +68,8 @@ namespace TP_PAV_3K02.Repositorios
                 StringBuilder mensaje = new StringBuilder("La operación se realizo con exito ");
                 try
                 {
-                        string sqlTxt = $"INSERT [dbo].[Suscripcion] ([nro_doc], [cod_TipoDoc], [fecha_inicio], [fecha_fin]) " +
-                        $"VALUES ('{s.nro_doc}', '{s.cod_TipoDoc}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}')";
+                        string sqlTxt = $"INSERT [dbo].[Suscripcion] ([cod_TipoDoc], [nro_doc], [fecha_inicio], [fecha_fin], [cod_Plan]) " +
+                        $"VALUES ('{s.cod_TipoDoc}', '{s.nro_doc}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
 
                     s.cod_int = _BD.EjecutarTransaccion(sqlTxt);
                     if(s.cod_int == 0)
@@ -102,7 +102,7 @@ namespace TP_PAV_3K02.Repositorios
         public DataTable obtenerSuscripcionesPorDoc(long doc)
         {
             
-            string sqlTxt = "SELECT * FROM Suscripcion WHERE nro_doc = "+ doc;
+            string sqlTxt = "SELECT S.* , P.precio FROM Suscripcion S JOIN Planes P ON S.cod_Plan = P.cod_Plan WHERE nro_doc = "+ doc;
 
             return _BD.consulta(sqlTxt);
         }

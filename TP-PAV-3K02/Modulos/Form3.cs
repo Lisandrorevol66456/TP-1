@@ -27,6 +27,7 @@ namespace TP_PAV_3K02.Modulos
             pRepos = new PlanesRepositorio();
             v = new ValidateTextBox();
             cargarCMB();
+            clear();
         }
 
         
@@ -72,15 +73,12 @@ namespace TP_PAV_3K02.Modulos
                     suscrib.ItemArray[1].ToString(),
                     suscrib.ItemArray[2].ToString(),
                     suscrib.ItemArray[3].ToString(),
-                    suscrib.ItemArray[4].ToString()
-                    
+                    suscrib.ItemArray[4].ToString(),
+                    suscrib.ItemArray[5].ToString(),
+                    suscrib.ItemArray[6].ToString(),
                 };
-                var planPart = new string[]
-                    {
-                    codPlan, precPlan.ToString()
-                     };
-
-                planPart.CopyTo(fila, fila.Length);
+                
+                
 
                 dgvSuscripciones.Rows.Add(fila);
                 
@@ -119,11 +117,13 @@ namespace TP_PAV_3K02.Modulos
             catch (ApplicationException aex)
             {
                 MessageBox.Show(aex.Message);
+                clear();
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                clear();
             }
 
         }
@@ -180,6 +180,8 @@ namespace TP_PAV_3K02.Modulos
             suscripcion.cod_TipoDoc = cmbPlanes.SelectedIndex;
             suscripcion.fecha_inicio = DateTime.Today;
             suscripcion.fecha_fin = DateTime.Today.AddYears(1);
+            suscripcion.doc_plan = int.Parse(cmbPlanes.SelectedValue.ToString());
+
             return suscripcion;
 
         }
