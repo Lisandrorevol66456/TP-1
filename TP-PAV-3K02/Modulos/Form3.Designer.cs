@@ -33,6 +33,13 @@
             this.dataSet1 = new TP_PAV_3K02.DataSet1();
             this.suscripcionTableAdapter = new TP_PAV_3K02.DataSet1TableAdapters.SuscripcionTableAdapter();
             this.dgvSuscripciones = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbTipDoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,13 +52,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.suscripcionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).BeginInit();
@@ -82,133 +82,10 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dgvSuscripciones.Location = new System.Drawing.Point(12, 127);
+            this.dgvSuscripciones.Location = new System.Drawing.Point(12, 123);
             this.dgvSuscripciones.Name = "dgvSuscripciones";
-            this.dgvSuscripciones.Size = new System.Drawing.Size(638, 219);
+            this.dgvSuscripciones.Size = new System.Drawing.Size(744, 219);
             this.dgvSuscripciones.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Suscripciones";
-            // 
-            // cmbTipDoc
-            // 
-            this.cmbTipDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipDoc.FormattingEnabled = true;
-            this.cmbTipDoc.Items.AddRange(new object[] {
-            "D.N.I.",
-            "L.E."});
-            this.cmbTipDoc.Location = new System.Drawing.Point(12, 77);
-            this.cmbTipDoc.Name = "cmbTipDoc";
-            this.cmbTipDoc.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipDoc.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(570, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Planes";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(263, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Numero de Documentacion";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(10, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Tipo de Documentacion";
-            // 
-            // cmbPlanes
-            // 
-            this.cmbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPlanes.FormattingEnabled = true;
-            this.cmbPlanes.Items.AddRange(new object[] {
-            "Plan Simple",
-            "Plan Medio",
-            "Plan Premium"});
-            this.cmbPlanes.Location = new System.Drawing.Point(529, 76);
-            this.cmbPlanes.Name = "cmbPlanes";
-            this.cmbPlanes.Size = new System.Drawing.Size(121, 21);
-            this.cmbPlanes.TabIndex = 6;
-            // 
-            // txtDoc
-            // 
-            this.txtDoc.Location = new System.Drawing.Point(246, 78);
-            this.txtDoc.MaxLength = 8;
-            this.txtDoc.Name = "txtDoc";
-            this.txtDoc.Size = new System.Drawing.Size(170, 20);
-            this.txtDoc.TabIndex = 7;
-            this.txtDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(12, 371);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 40);
-            this.btnEdit.TabIndex = 8;
-            this.btnEdit.Text = "Editar";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // tnAdd
-            // 
-            this.tnAdd.Location = new System.Drawing.Point(444, 371);
-            this.tnAdd.Name = "tnAdd";
-            this.tnAdd.Size = new System.Drawing.Size(100, 40);
-            this.tnAdd.TabIndex = 9;
-            this.tnAdd.Text = "Agregar";
-            this.tnAdd.UseVisualStyleBackColor = true;
-            this.tnAdd.Click += new System.EventHandler(this.tnAdd_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(550, 371);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 40);
-            this.btnClose.TabIndex = 10;
-            this.btnClose.Text = "Salir";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(118, 371);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 40);
-            this.btnDelete.TabIndex = 11;
-            this.btnDelete.Text = "Eliminar";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(144, 12);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "Limpiar";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Column8
             // 
@@ -245,11 +122,135 @@
             this.Column7.HeaderText = "Precio";
             this.Column7.Name = "Column7";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Suscripciones";
+            // 
+            // cmbTipDoc
+            // 
+            this.cmbTipDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipDoc.FormattingEnabled = true;
+            this.cmbTipDoc.Items.AddRange(new object[] {
+            "D.N.I.",
+            "L.E."});
+            this.cmbTipDoc.Location = new System.Drawing.Point(12, 77);
+            this.cmbTipDoc.Name = "cmbTipDoc";
+            this.cmbTipDoc.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipDoc.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(676, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Planes";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(342, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Numero de Documentacion";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(10, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Tipo de Documentacion";
+            // 
+            // cmbPlanes
+            // 
+            this.cmbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPlanes.FormattingEnabled = true;
+            this.cmbPlanes.Items.AddRange(new object[] {
+            "Plan Simple",
+            "Plan Medio",
+            "Plan Premium"});
+            this.cmbPlanes.Location = new System.Drawing.Point(635, 77);
+            this.cmbPlanes.Name = "cmbPlanes";
+            this.cmbPlanes.Size = new System.Drawing.Size(121, 21);
+            this.cmbPlanes.TabIndex = 6;
+            // 
+            // txtDoc
+            // 
+            this.txtDoc.Location = new System.Drawing.Point(325, 78);
+            this.txtDoc.MaxLength = 8;
+            this.txtDoc.Name = "txtDoc";
+            this.txtDoc.Size = new System.Drawing.Size(170, 20);
+            this.txtDoc.TabIndex = 7;
+            this.txtDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(12, 371);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(100, 40);
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // tnAdd
+            // 
+            this.tnAdd.Location = new System.Drawing.Point(550, 371);
+            this.tnAdd.Name = "tnAdd";
+            this.tnAdd.Size = new System.Drawing.Size(100, 40);
+            this.tnAdd.TabIndex = 9;
+            this.tnAdd.Text = "Agregar";
+            this.tnAdd.UseVisualStyleBackColor = true;
+            this.tnAdd.Click += new System.EventHandler(this.tnAdd_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(656, 371);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 40);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "Salir";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(118, 371);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 40);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(144, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "Limpiar";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Suscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 423);
+            this.ClientSize = new System.Drawing.Size(781, 424);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClose);

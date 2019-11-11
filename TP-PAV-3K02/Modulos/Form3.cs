@@ -19,6 +19,7 @@ namespace TP_PAV_3K02.Modulos
         ValidateTextBox v;
         SuscripcionesRepositorios repos;
         PlanesRepositorio pRepos;
+        long docpass;
 
         public Suscripciones()
         {
@@ -60,7 +61,6 @@ namespace TP_PAV_3K02.Modulos
             var precPlan = pRepos.obtenerPlanesByValue(codPlan);
             var sustros = repos.obtenerSuscripcionesPorDoc(doc).Rows;
             var filas = new List<DataGridViewRow>();
-            var filasP = new List<DataGridViewRow>();
 
             foreach (DataRow suscrib in sustros)
             {
@@ -76,6 +76,7 @@ namespace TP_PAV_3K02.Modulos
                     suscrib.ItemArray[4].ToString(),
                     suscrib.ItemArray[5].ToString(),
                     suscrib.ItemArray[6].ToString(),
+
                 };
                 
                 
@@ -142,9 +143,9 @@ namespace TP_PAV_3K02.Modulos
                 }
                 foreach (DataGridViewRow fila in seleccionadas)
                 {
-                    var nroDoc = fila.Cells[0].Value;
+                    var nroDoc = fila.Cells[2].Value;
                     var tipDoc = fila.Cells[1].Value;
-                    var codInt = fila.Cells[2].Value;
+                    var codInt = fila.Cells[0].Value;
                     var fechaI = fila.Cells[3].Value;
                     var fechaF = fila.Cells[4].Value;
 
@@ -181,7 +182,10 @@ namespace TP_PAV_3K02.Modulos
             suscripcion.fecha_inicio = DateTime.Today;
             suscripcion.fecha_fin = DateTime.Today.AddYears(1);
             suscripcion.doc_plan = int.Parse(cmbPlanes.SelectedValue.ToString());
-
+            var frm = new NuevoSuscriptor();
+            docpass = long.Parse(txtDoc.Text);
+            MessageBox.Show("Ahora debera Ingresar datos del suscriptor");
+            frm.ShowDialog();
             return suscripcion;
 
         }
@@ -204,6 +208,9 @@ namespace TP_PAV_3K02.Modulos
             txtDoc.Clear();
         }
 
-       
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

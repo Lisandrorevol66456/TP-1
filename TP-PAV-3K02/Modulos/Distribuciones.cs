@@ -41,54 +41,58 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            var distribucion = new Distribucion();
-            distribucion.id = int.Parse(TxtidDistribucion.Text);
-            distribucion.Cod_Interno = int.Parse(TXTCod_Int.Text);
-            distribucion.nro_ejemplares = long.Parse(TXTtotal.Text);
-            distribucion.nro_ejemplares_pagos = long.Parse(TXTpagados.Text);
-            distribucion.fecha_Entrega = DTPfechaEntrega.Value;
-
-            if (!distribucion.idValido(TxtidDistribucion.Text.ToString()))
+            try
             {
-                MessageBox.Show("El ID ingresado no es valido");
-                return;
-            }
-            if (!distribucion.CuitValido(TXTCUIT.Text.ToString()))
-            {
-                MessageBox.Show("El CUIT que ingreso no es valido");
-                return;
-            }
-            distribucion.Cuit_dist = long.Parse(TXTCUIT.Text);
-            if (!distribucion.fechavalida())
-            {
-                MessageBox.Show("La fecha ingresada no es valida");
-                return;
-            }
-            //valida que el id no se repita
-            if (!_distribucionesRepositorio.ValidarIDduplicadp(TxtidDistribucion.Text.ToString()))
-            {
-                // valida que el codigo interno exista en la tabla revistas
-                if (!_distribucionesRepositorio.ValidarCod(TXTCod_Int.Text.ToString()))
-                { // y que no este repetido sino daria error por primary key
-                    if (!_distribucionesRepositorio.ValidarCod_duplicado(TXTCod_Int.Text.ToString(), TXTCUIT.Text.ToString()))
-                    {
-                        if (_distribucionesRepositorio.Guardar(distribucion))
+                var distribucion = prepararDist();
+                
+                if (!distribucion.idValido(TxtidDistribucion.Text.ToString()))
+                {
+                    MessageBox.Show("El ID ingresado no es valido");
+                    return;
+                }
+                if (!distribucion.CuitValido(TXTCUIT.Text.ToString()))
+                {
+                    MessageBox.Show("El CUIT que ingreso no es valido");
+                    return;
+                }
+                distribucion.Cuit_dist = long.Parse(TXTCUIT.Text);
+                if (!distribucion.fechavalida())
+                {
+                    MessageBox.Show("La fecha ingresada no es valida");
+                    return;
+                }
+                //valida que el id no se repita
+                if (!_distribucionesRepositorio.ValidarIDduplicadp(TxtidDistribucion.Text.ToString()))
+                {
+                    // valida que el codigo interno exista en la tabla revistas
+                    if (!_distribucionesRepositorio.ValidarCod(TXTCod_Int.Text.ToString()))
+                    { // y que no este repetido sino daria error por primary key
+                        if (!_distribucionesRepositorio.ValidarCod_duplicado(TXTCod_Int.Text.ToString(), TXTCUIT.Text.ToString()))
                         {
-                            MessageBox.Show("Se registró distribución con Exito");
-                            ActualizarDistribuciones(distribucion.Cuit_dist);
-                            LimpiarCampos();
+                            if (_distribucionesRepositorio.Guardar(distribucion))
+                            {
+                                MessageBox.Show("Se registró distribución con Exito");
+                                ActualizarDistribuciones(distribucion.Cuit_dist);
+                                LimpiarCampos();
+                            }
                         }
+                        else
+                            MessageBox.Show($"Ya existe una distribucion con el Codigo = {TXTCod_Int.Text}");
                     }
                     else
-                        MessageBox.Show($"Ya existe una distribucion con el Codigo = {TXTCod_Int.Text}");
+                        MessageBox.Show($"No existe revista con el Codigo {TXTCod_Int.Text}.");
+
                 }
                 else
-                    MessageBox.Show($"No existe revista con el Codigo {TXTCod_Int.Text}.");
+                    MessageBox.Show($"Ya existe un Id de una distribucion con ID = {TxtidDistribucion.Text}");
+
 
             }
-            else
-                MessageBox.Show($"Ya existe un Id de una distribucion con ID = {TxtidDistribucion.Text}");
 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -226,5 +230,21 @@ namespace TP_PAV_3K02.Modulos
 
             }
         }
+
+        private Distribucion prepararDist()
+        {
+
+            var distribucion = new Distribucion();
+            distribucion.id = int.Parse(TxtidDistribucion.Text);
+            distribucion.Cod_Interno = int.Parse(TXTCod_Int.Text);
+            distribucion.nro_ejemplares = long.Parse(TXTtotal.Text);
+            distribucion.nro_ejemplares_pagos = long.Parse(TXTpagados.Text);
+            distribucion.fecha_Entrega = DTPfechaEntrega.Value;
+
+            return distribucion;
+
+        }
+
     }
+    
 }

@@ -17,13 +17,34 @@ namespace TP_PAV_3K02.Repositorios
         {
             _BD = new Editorial_BD();
         }
-        public bool Guardar(Distribucion distribucion)
+        public void Guardar(Distribucion distribucion)
         {
-            string sqltxt = $"INSERT [dbo].[Distribuciones] ([Id],[Cuit_dist],[Cod_Interno],[nro_ejemplares],[nro_ejemplares_pagos],[fecha_Entrega]) " +
-                $"VALUES ('{distribucion.id}','{distribucion.Cuit_dist}','{distribucion.Cod_Interno}', " +
-                $"'{distribucion.nro_ejemplares}', '{distribucion.nro_ejemplares_pagos}', '{distribucion.fecha_Entrega.ToString("yyyy-MM-dd")}')";
+            using ( var tx = _BD.IniciarTransaccion() )
+            {
+                StringBuilder mensaje = new StringBuilder("La operación se realizo con exito ");
+                try
+                {
+                    string sqltxt = $"INSERT [dbo].[Distribuciones] ([Id],[Cuit_dist],[Cod_Interno],[nro_ejemplares],[nro_ejemplares_pagos],[fecha_Entrega]) " +
+                                    $"VALUES ('{distribucion.id}','{distribucion.Cuit_dist}','{distribucion.Cod_Interno}', " +
+                                    $"'{distribucion.nro_ejemplares}', '{distribucion.nro_ejemplares_pagos}', '{distribucion.fecha_Entrega.ToString("yyyy-MM-dd")}')";
 
-            return _BD.EjecutarSQL(sqltxt);
+                    distribucion.id=_BD.EjecutarTransaccion(sqltxt);
+                    if(distribucion.id == 0)
+                        throw new ApplicationException();
+                    tx.Commit();
+                }
+                catch (InvalidOperationException ex)
+                {
+
+                    mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
+                    tx.Rollback();
+                }
+                finally
+                {
+                    _BD.cerrar();
+                }
+
+            }
         }
 
         

@@ -171,7 +171,7 @@ namespace TP_PAV_3K02
                     MessageBox.Show("Se registro con éxito");
                     ActualizarSuscriptores();
                     LimpiarCampos();
-
+                    this.Dispose();
 
                 }
             }

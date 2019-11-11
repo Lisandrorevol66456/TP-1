@@ -102,7 +102,9 @@ namespace TP_PAV_3K02.Repositorios
         public DataTable obtenerSuscripcionesPorDoc(long doc)
         {
             
-            string sqlTxt = "SELECT S.* , P.precio FROM Suscripcion S JOIN Planes P ON S.cod_Plan = P.cod_Plan WHERE nro_doc = "+ doc;
+            string sqlTxt = "SELECT S.* , P.precio FROM Suscripcion S " +
+                "JOIN Planes P ON S.cod_Plan = P.cod_Plan " +
+                "WHERE nro_doc = "+ doc;
 
             return _BD.consulta(sqlTxt);
         }
