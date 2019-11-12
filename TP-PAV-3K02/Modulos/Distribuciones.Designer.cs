@@ -53,8 +53,11 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblIdDist = new System.Windows.Forms.Label();
             this.TxtidDistribucion = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Distribuciones)).BeginInit();
             this.GRBejemplares.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -286,6 +289,23 @@
             this.TxtidDistribucion.Size = new System.Drawing.Size(129, 20);
             this.TxtidDistribucion.TabIndex = 42;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(896, 24);
+            this.menuStrip1.TabIndex = 43;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // informesToolStripMenuItem
+            // 
+            this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
+            this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.informesToolStripMenuItem.Text = "&Informes";
+            this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
+            // 
             // Distribuciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,12 +322,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_Distribuciones);
             this.Controls.Add(this.TXTCUIT);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Distribuciones";
             this.Text = "Distribucion";
             this.Load += new System.EventHandler(this.Distribuciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Distribuciones)).EndInit();
             this.GRBejemplares.ResumeLayout(false);
             this.GRBejemplares.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +363,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_ejemplares_pagos;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_Entrega;
         private System.Windows.Forms.TextBox TxtidDistribucion;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
     }
 }

@@ -43,6 +43,11 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.DvgDistribuidores = new System.Windows.Forms.DataGridView();
+            this.cuit_dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
             this.btnCancelarBusqueda = new System.Windows.Forms.Button();
             this.BtnBuscarCuit = new System.Windows.Forms.Button();
@@ -50,11 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.BTNAgregarDistribucion = new System.Windows.Forms.Button();
-            this.cuit_dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DvgDistribuidores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -212,6 +212,36 @@
             this.DvgDistribuidores.TabIndex = 28;
             this.DvgDistribuidores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgDistribuidores_CellContentClick);
             // 
+            // cuit_dist
+            // 
+            this.cuit_dist.HeaderText = "Cuit";
+            this.cuit_dist.Name = "cuit_dist";
+            this.cuit_dist.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            this.domicilio.ReadOnly = true;
+            // 
+            // fecha_inicio
+            // 
+            this.fecha_inicio.HeaderText = "Fecha Inicio";
+            this.fecha_inicio.Name = "fecha_inicio";
+            this.fecha_inicio.ReadOnly = true;
+            // 
             // gbBuscar
             // 
             this.gbBuscar.Controls.Add(this.btnCancelarBusqueda);
@@ -280,39 +310,9 @@
             this.BTNAgregarDistribucion.Name = "BTNAgregarDistribucion";
             this.BTNAgregarDistribucion.Size = new System.Drawing.Size(139, 35);
             this.BTNAgregarDistribucion.TabIndex = 37;
-            this.BTNAgregarDistribucion.Text = "Agregar distribucion";
+            this.BTNAgregarDistribucion.Text = "Ver distribuciones";
             this.BTNAgregarDistribucion.UseVisualStyleBackColor = true;
             this.BTNAgregarDistribucion.Click += new System.EventHandler(this.BTNAgregarDistribucion_Click);
-            // 
-            // cuit_dist
-            // 
-            this.cuit_dist.HeaderText = "Cuit";
-            this.cuit_dist.Name = "cuit_dist";
-            this.cuit_dist.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // domicilio
-            // 
-            this.domicilio.HeaderText = "Domicilio";
-            this.domicilio.Name = "domicilio";
-            this.domicilio.ReadOnly = true;
-            // 
-            // fecha_inicio
-            // 
-            this.fecha_inicio.HeaderText = "Fecha Inicio";
-            this.fecha_inicio.Name = "fecha_inicio";
-            this.fecha_inicio.ReadOnly = true;
             // 
             // FormDistribuidores
             // 

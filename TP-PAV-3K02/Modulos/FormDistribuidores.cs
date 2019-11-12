@@ -299,20 +299,11 @@ namespace TP_PAV_3K02
 
                 if (cuit != null)
                 {
-                    //pregunto confirmación
-                    var confirmacion = MessageBox.Show($"Desea agregar una distribucion a {nombre}, {apellido}, {cuit}?",
-                    "Confirmar operación",
-                    MessageBoxButtons.YesNo);
-
-                    if (confirmacion.Equals(DialogResult.No))
-                        return;
-                    else
-                    {
-
+                    
                         var distribuir = new Distribuciones(cuit.ToString());
                         distribuir.ShowDialog();
                         ActualizarDistribuidores();
-                    }
+                    
                 }
                 else
                     MessageBox.Show("Debe seleccionar una fila no vacia para poder editar");
@@ -330,6 +321,13 @@ namespace TP_PAV_3K02
                 btnEliminar.Enabled = true;
                 BTNAgregarDistribucion.Enabled = true;
             }
+        }
+
+        private void distribucionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            var distrib = new Distribuciones();
+            distrib.ShowDialog();
         }
     }
 }

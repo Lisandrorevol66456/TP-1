@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV_3K02.BaseDatos;
 using TP_PAV_3K02.Modelos;
+using TP_PAV_3K02.REPORTES.rep_distri;
 using TP_PAV_3K02.Repositorios;
 using TP_PAV_3K02.Utils;
 
@@ -41,8 +42,6 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            try
-            {
                 var distribucion = prepararDist();
                 
                 if (!distribucion.idValido(TxtidDistribucion.Text.ToString()))
@@ -87,12 +86,9 @@ namespace TP_PAV_3K02.Modulos
                     MessageBox.Show($"Ya existe un Id de una distribucion con ID = {TxtidDistribucion.Text}");
 
 
-            }
+            
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
 
         }
 
@@ -245,6 +241,12 @@ namespace TP_PAV_3K02.Modulos
 
         }
 
+        private void informesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var infor = new INFOdistribucion();
+            infor.ShowDialog();
+
+        }
     }
     
 }

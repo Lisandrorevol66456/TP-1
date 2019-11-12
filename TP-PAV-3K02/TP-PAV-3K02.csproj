@@ -191,6 +191,17 @@
     <Compile Include="REPORTES\fORMULARIOREPORTES.Designer.cs">
       <DependentUpon>fORMULARIOREPORTES.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORTES\rep_distri\dsitribuciones_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsitribuciones_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_distri\INFOdistribucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\rep_distri\INFOdistribucion.Designer.cs">
+      <DependentUpon>INFOdistribucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorios\CalificacionesRepositorio.cs" />
     <Compile Include="Repositorios\DistribucionesRepositorio.cs" />
     <Compile Include="Repositorios\DistribuidoresRepositorio.cs" />
@@ -262,6 +273,10 @@
       <DependentUpon>fORMULARIOREPORTES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTES\Reporteinforme.rdlc" />
+    <EmbeddedResource Include="REPORTES\rep_distri\INFOdistribucion.resx">
+      <DependentUpon>INFOdistribucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\rep_distri\Reportdistribucion.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -315,6 +330,17 @@
     </None>
     <None Include="REPORTES\datasetConjuntoDeDatos.xss">
       <DependentUpon>datasetConjuntoDeDatos.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_distri\dsitribuciones_DataSet.xsc">
+      <DependentUpon>dsitribuciones_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_distri\dsitribuciones_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsitribuciones_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTES\rep_distri\dsitribuciones_DataSet.xss">
+      <DependentUpon>dsitribuciones_DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

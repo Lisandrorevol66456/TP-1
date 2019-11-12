@@ -11,40 +11,21 @@ namespace TP_PAV_3K02.Repositorios
 {
     class DistribucionesRepositorio
     {
-        private int _codigo ;
+        
         private Editorial_BD _BD;
         public DistribucionesRepositorio()
         {
             _BD = new Editorial_BD();
         }
-        public void Guardar(Distribucion distribucion)
+        public bool Guardar(Distribucion distribucion)
         {
-            using ( var tx = _BD.IniciarTransaccion() )
-            {
-                StringBuilder mensaje = new StringBuilder("La operación se realizo con exito ");
-                try
-                {
+           
                     string sqltxt = $"INSERT [dbo].[Distribuciones] ([Id],[Cuit_dist],[Cod_Interno],[nro_ejemplares],[nro_ejemplares_pagos],[fecha_Entrega]) " +
                                     $"VALUES ('{distribucion.id}','{distribucion.Cuit_dist}','{distribucion.Cod_Interno}', " +
                                     $"'{distribucion.nro_ejemplares}', '{distribucion.nro_ejemplares_pagos}', '{distribucion.fecha_Entrega.ToString("yyyy-MM-dd")}')";
 
-                    distribucion.id=_BD.EjecutarTransaccion(sqltxt);
-                    if(distribucion.id == 0)
-                        throw new ApplicationException();
-                    tx.Commit();
-                }
-                catch (InvalidOperationException ex)
-                {
-
-                    mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
-                    tx.Rollback();
-                }
-                finally
-                {
-                    _BD.cerrar();
-                }
-
-            }
+                    return _BD.EjecutarSQL(sqltxt);
+                    
         }
 
         
