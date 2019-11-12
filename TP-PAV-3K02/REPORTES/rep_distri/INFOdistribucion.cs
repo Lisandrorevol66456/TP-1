@@ -31,8 +31,7 @@ namespace TP_PAV_3K02.REPORTES.rep_distri
 
             var adapter = new dsitribuciones_DataSetTableAdapters.DataTable1TableAdapter();
             var d = new dsitribuciones_DataSet.DataTable1DataTable();
-           
-            adapter.Fill(d);
+            //d = adapter.GetData(decimal.Parse(TXTcuit.Text));
 
             var ds = new ReportDataSource("tabla_distribucion", (DataTable)d);
             RV_distribuciones.LocalReport.DataSources.Clear();
@@ -44,6 +43,24 @@ namespace TP_PAV_3K02.REPORTES.rep_distri
         private void RV_distribuciones_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+            this.RV_distribuciones.RefreshReport();
+            var adapter = new dsitribuciones_DataSetTableAdapters.DataTable1TableAdapter();
+            var data = new dsitribuciones_DataSet.DataTable1DataTable();
+            ////// obtengo datos a mostrar  
+            data = adapter.GetData(decimal.Parse(TXTcuit.Text));
+            var ds = new ReportDataSource("tabla_distribucion", (DataTable)data);
+
+            RV_distribuciones.LocalReport.DataSources.Clear();
+            ////// envio este parametro al reporte
+            RV_distribuciones.LocalReport.DataSources.Add(ds);
+
+            this.RV_distribuciones.RefreshReport();
         }
     }
 }

@@ -12,6 +12,7 @@ using TP_PAV_3K02.BaseDatos;
 using TP_PAV_3K02.Modelos;
 using TP_PAV_3K02.Repositorios;
 using TP_PAV_3K02.Utils;
+using TP_PAV_3K02.REPORTES.rep_empresas;
 
 namespace TP_PAV_3K02.Modulos
 {
@@ -317,6 +318,12 @@ namespace TP_PAV_3K02.Modulos
                     MessageBox.Show("Debe Seleccionar una fila que no este Vacia.....");
 
             }
+        }
+
+        private void informesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var infor = new INFO_empresas();
+            infor.ShowDialog();
         }
     }
 }

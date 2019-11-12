@@ -13,6 +13,7 @@ using TP_PAV_3K02.BaseDatos;
 using TP_PAV_3K02.Modulos;
 using TP_PAV_3K02.Utils;
 using TP_PAV_3K02.REPORTES;
+using TP_PAV_3K02.REPORTES.rep_suscriptores;
 
 namespace TP_PAV_3K02
 {
@@ -388,7 +389,7 @@ namespace TP_PAV_3K02
 
         private void informesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var info = new fORMULARIOREPORTES();
+            var info = new INFO_suscriptores();
             info.ShowDialog();
             
         }

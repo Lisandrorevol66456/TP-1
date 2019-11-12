@@ -9,29 +9,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TP_PAV_3K02.REPORTES
+namespace TP_PAV_3K02.REPORTES.rep_suscriptores
 {
-    public partial class fORMULARIOREPORTES : Form
+    public partial class INFO_suscriptores : Form
     {
-        public fORMULARIOREPORTES()
+        public INFO_suscriptores()
         {
             InitializeComponent();
         }
 
-        private void fORMULARIOREPORTES_Load(object sender, EventArgs e)
+        private void INFO_suscriptores_Load(object sender, EventArgs e)
         {
-            this.rvFORMREPOR.RefreshReport();
-
+            this.RV_suscrip.RefreshReport();
             var adapter = new datasetConjuntoDeDatosTableAdapters.DataTable1TableAdapter();
             var d = new datasetConjuntoDeDatos.DataTable1DataTable();
             adapter.Fill(d);
 
-            var ds = new ReportDataSource("TABLA", (DataTable) d);
-            rvFORMREPOR.LocalReport.DataSources.Clear();
-            rvFORMREPOR.LocalReport.DataSources.Add(ds);
+            var ds = new ReportDataSource("TABLA", (DataTable)d);
 
-            this.rvFORMREPOR.RefreshReport();
-            //this.reportViewer1.RefreshReport();
+            RV_suscrip.LocalReport.DataSources.Clear();
+            RV_suscrip.LocalReport.DataSources.Add(ds);
+            
+            this.RV_suscrip.RefreshReport();
         }
     }
 }

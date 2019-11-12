@@ -1,4 +1,4 @@
-﻿namespace TP_PAV_3K02.REPORTES
+﻿namespace TP_PAV_3K02.REPORTES.rep_suscriptores
 {
 
 

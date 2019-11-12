@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvEmpresas = new System.Windows.Forms.DataGridView();
+            this.cuit_Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_calificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_cal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new TP_PAV_3K02.DataSet1();
             this.empresasTableAdapter = new TP_PAV_3K02.DataSet1TableAdapters.EmpresasTableAdapter();
@@ -55,17 +62,13 @@
             this.btnCalificar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.BTNactualizar = new System.Windows.Forms.Button();
-            this.cuit_Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_calificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_cal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.gbBuscar.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvEmpresas
@@ -83,6 +86,41 @@
             this.dgvEmpresas.Name = "dgvEmpresas";
             this.dgvEmpresas.Size = new System.Drawing.Size(745, 267);
             this.dgvEmpresas.TabIndex = 0;
+            // 
+            // cuit_Empresa
+            // 
+            this.cuit_Empresa.HeaderText = "Cuit Empresa";
+            this.cuit_Empresa.Name = "cuit_Empresa";
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            // 
+            // fechaInicio
+            // 
+            this.fechaInicio.HeaderText = "Fecha Inicio";
+            this.fechaInicio.Name = "fechaInicio";
+            // 
+            // cod_calificacion
+            // 
+            this.cod_calificacion.HeaderText = "Cod Calif.";
+            this.cod_calificacion.Name = "cod_calificacion";
+            // 
+            // fecha_cal
+            // 
+            this.fecha_cal.HeaderText = "Fecha Calif";
+            this.fecha_cal.Name = "fecha_cal";
             // 
             // empresasBindingSource
             // 
@@ -316,40 +354,22 @@
             this.BTNactualizar.UseVisualStyleBackColor = true;
             this.BTNactualizar.Click += new System.EventHandler(this.BTNactualizar_Click);
             // 
-            // cuit_Empresa
+            // menuStrip1
             // 
-            this.cuit_Empresa.HeaderText = "Cuit Empresa";
-            this.cuit_Empresa.Name = "cuit_Empresa";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1095, 24);
+            this.menuStrip1.TabIndex = 40;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // nombre
+            // informesToolStripMenuItem
             // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            // 
-            // domicilio
-            // 
-            this.domicilio.HeaderText = "Domicilio";
-            this.domicilio.Name = "domicilio";
-            // 
-            // fechaInicio
-            // 
-            this.fechaInicio.HeaderText = "Fecha Inicio";
-            this.fechaInicio.Name = "fechaInicio";
-            // 
-            // cod_calificacion
-            // 
-            this.cod_calificacion.HeaderText = "Cod Calif.";
-            this.cod_calificacion.Name = "cod_calificacion";
-            // 
-            // fecha_cal
-            // 
-            this.fecha_cal.HeaderText = "Fecha Calif";
-            this.fecha_cal.Name = "fecha_cal";
+            this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
+            this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.informesToolStripMenuItem.Text = "Informes";
+            this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
             // 
             // Empresas
             // 
@@ -375,6 +395,8 @@
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.dgvEmpresas);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Empresas";
             this.Text = "Empresas";
             this.Load += new System.EventHandler(this.Peliculas_Load);
@@ -383,6 +405,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,5 +447,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_calificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_cal;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
     }
 }

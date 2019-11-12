@@ -177,19 +177,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="REPORTES\datasetConjuntoDeDatos.cs">
+    <Compile Include="REPORTES\rep_revista\INFO_revistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\rep_revista\INFO_revistas.Designer.cs">
+      <DependentUpon>INFO_revistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_revista\Revistas_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Revistas_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_suscriptores\datasetConjuntoDeDatos.cs">
       <DependentUpon>datasetConjuntoDeDatos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="REPORTES\datasetConjuntoDeDatos.Designer.cs">
+    <Compile Include="REPORTES\rep_suscriptores\datasetConjuntoDeDatos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>datasetConjuntoDeDatos.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="REPORTES\fORMULARIOREPORTES.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="REPORTES\fORMULARIOREPORTES.Designer.cs">
-      <DependentUpon>fORMULARIOREPORTES.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORTES\rep_distri\dsitribuciones_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -201,6 +206,23 @@
     </Compile>
     <Compile Include="REPORTES\rep_distri\INFOdistribucion.Designer.cs">
       <DependentUpon>INFOdistribucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_empresas\Empresas_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Empresas_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_empresas\INFO_empresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\rep_empresas\INFO_empresas.Designer.cs">
+      <DependentUpon>INFO_empresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_suscriptores\INFO_suscriptores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\rep_suscriptores\INFO_suscriptores.Designer.cs">
+      <DependentUpon>INFO_suscriptores.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositorios\CalificacionesRepositorio.cs" />
     <Compile Include="Repositorios\DistribucionesRepositorio.cs" />
@@ -218,6 +240,11 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utils\ValidarFechas.cs" />
     <Compile Include="Utils\ValidateTextBox.cs" />
+    <Compile Include="_Editorial_PAVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Editorial_PAVDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,14 +296,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="REPORTES\fORMULARIOREPORTES.resx">
-      <DependentUpon>fORMULARIOREPORTES.cs</DependentUpon>
+    <EmbeddedResource Include="REPORTES\rep_revista\INFO_revistas.resx">
+      <DependentUpon>INFO_revistas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="REPORTES\Reporteinforme.rdlc" />
+    <EmbeddedResource Include="REPORTES\rep_revista\Report_revistas.rdlc" />
+    <EmbeddedResource Include="REPORTES\rep_suscriptores\INFO_suscriptores.resx">
+      <DependentUpon>INFO_suscriptores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\rep_suscriptores\Reporteinforme.rdlc" />
     <EmbeddedResource Include="REPORTES\rep_distri\INFOdistribucion.resx">
       <DependentUpon>INFOdistribucion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTES\rep_distri\Reportdistribucion.rdlc" />
+    <EmbeddedResource Include="REPORTES\rep_empresas\INFO_empresas.resx">
+      <DependentUpon>INFO_empresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\rep_empresas\Report_Empresa.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -320,15 +355,26 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="REPORTES\datasetConjuntoDeDatos.xsc">
+    <None Include="REPORTES\rep_revista\Revistas_DataSet.xsc">
+      <DependentUpon>Revistas_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_revista\Revistas_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Revistas_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTES\rep_revista\Revistas_DataSet.xss">
+      <DependentUpon>Revistas_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_suscriptores\datasetConjuntoDeDatos.xsc">
       <DependentUpon>datasetConjuntoDeDatos.xsd</DependentUpon>
     </None>
-    <None Include="REPORTES\datasetConjuntoDeDatos.xsd">
+    <None Include="REPORTES\rep_suscriptores\datasetConjuntoDeDatos.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>datasetConjuntoDeDatos.Designer.cs</LastGenOutput>
     </None>
-    <None Include="REPORTES\datasetConjuntoDeDatos.xss">
+    <None Include="REPORTES\rep_suscriptores\datasetConjuntoDeDatos.xss">
       <DependentUpon>datasetConjuntoDeDatos.xsd</DependentUpon>
     </None>
     <None Include="REPORTES\rep_distri\dsitribuciones_DataSet.xsc">
@@ -341,6 +387,28 @@
     </None>
     <None Include="REPORTES\rep_distri\dsitribuciones_DataSet.xss">
       <DependentUpon>dsitribuciones_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_empresas\Empresas_DataSet.xsc">
+      <DependentUpon>Empresas_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_empresas\Empresas_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Empresas_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTES\rep_empresas\Empresas_DataSet.xss">
+      <DependentUpon>Empresas_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_Editorial_PAVDataSet.xsc">
+      <DependentUpon>_Editorial_PAVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_Editorial_PAVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_Editorial_PAVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_Editorial_PAVDataSet.xss">
+      <DependentUpon>_Editorial_PAVDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

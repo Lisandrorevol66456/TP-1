@@ -11,6 +11,7 @@ using TP_PAV_3K02.BaseDatos;
 using TP_PAV_3K02.Utils;
 using TP_PAV_3K02.Repositorios;
 using TP_PAV_3K02.Modelos;
+using TP_PAV_3K02.REPORTES.rep_revista;
 
 namespace TP_PAV_3K02.Modulos
 {
@@ -188,6 +189,12 @@ namespace TP_PAV_3K02.Modulos
         private void validarNum(object sender, KeyPressEventArgs e)
         {
             v.ValidateSoloNumeros(sender, e);
+        }
+
+        private void informesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var infor = new INFO_revistas();
+            infor.ShowDialog();
         }
     }
 }

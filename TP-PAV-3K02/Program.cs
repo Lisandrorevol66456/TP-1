@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV_3K02.Modulos;
 using TP_PAV_3K02.REPORTES;
+using TP_PAV_3K02.REPORTES.rep_distri;
 
 namespace TP_PAV_3K02
 {
@@ -18,7 +19,7 @@ namespace TP_PAV_3K02
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NuevoSuscriptor());
+            Application.Run(new Menu());
         }
     }
 }
