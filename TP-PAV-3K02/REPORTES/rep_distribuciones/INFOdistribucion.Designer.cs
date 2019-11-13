@@ -36,7 +36,7 @@
             // 
             // RV_distribuciones
             // 
-            this.RV_distribuciones.LocalReport.ReportEmbeddedResource = "TP_PAV_3K02.REPORTES.rep_distri.Reportdistribucion.rdlc";
+            this.RV_distribuciones.LocalReport.ReportEmbeddedResource = "TP_PAV_3K02.REPORTES.rep_distribuciones.Reportdistribucion.rdlc";
             this.RV_distribuciones.Location = new System.Drawing.Point(0, 43);
             this.RV_distribuciones.Name = "RV_distribuciones";
             this.RV_distribuciones.ServerReport.BearerToken = null;
@@ -50,6 +50,7 @@
             this.TXTcuit.Name = "TXTcuit";
             this.TXTcuit.Size = new System.Drawing.Size(100, 20);
             this.TXTcuit.TabIndex = 1;
+            this.TXTcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarsolonumeros);
             // 
             // label1
             // 

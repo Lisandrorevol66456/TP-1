@@ -20,17 +20,20 @@ namespace TP_PAV_3K02.REPORTES.rep_empresas
 
         private void INFO_empresas_Load(object sender, EventArgs e)
         {
+            
+        this.RV_empresas.RefreshReport();
+        var adapter = new Empresas_DataSetTableAdapters.EmpresasTableAdapter();
+        var d = new Empresas_DataSet.EmpresasDataTable();
+            
+        adapter.Fill(d);
+            
+        var ds = new ReportDataSource("tabla_empresas", (DataTable)d);
 
-            this.RV_empresas.RefreshReport();
-            var adapter = new Empresas_DataSetTableAdapters.EmpresasTableAdapter();
-            var d = new Empresas_DataSet.EmpresasDataTable();
-            adapter.Fill(d);
-
-            var ds = new ReportDataSource("tabla_empresas", (DataTable)d);
-
-            RV_empresas.LocalReport.DataSources.Clear();
-            RV_empresas.LocalReport.DataSources.Add(ds);
-            this.RV_empresas.RefreshReport();
+        RV_empresas.LocalReport.DataSources.Clear();
+        RV_empresas.LocalReport.DataSources.Add(ds);
+        this.RV_empresas.RefreshReport();
+            
+            
         }
     }
 }

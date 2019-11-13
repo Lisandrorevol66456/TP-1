@@ -11,29 +11,49 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV_3K02.Modelos;
 using TP_PAV_3K02.Repositorios;
+using TP_PAV_3K02.Utils;
 
 namespace TP_PAV_3K02.REPORTES.rep_distri
 {
     public partial class INFOdistribucion : Form
     {
+        DistribuidoresRepositorio _distribuidoresRepositorio;
+        DistribucionesRepositorio _distribucionesRepositorio;
         
+        
+        Distribucion distribucion;
+        ValidateTextBox v;
+
+
         public INFOdistribucion()
         {
             InitializeComponent();
             
+            
         }
-       
+        public INFOdistribucion(string cuit)
+        {
+            InitializeComponent();
+            v = new ValidateTextBox();
+            _distribuidoresRepositorio = new DistribuidoresRepositorio();
+            _distribucionesRepositorio = new DistribucionesRepositorio();
+            distribucion = _distribucionesRepositorio.ObtenerdistPorcuit(cuit);
+
+        }
+
         private void INFOdistribucion_Load(object sender, EventArgs e)
         {
-           
-            
+            TXTcuit.Text = distribucion.Cuit_dist.ToString();
+
+
             this.RV_distribuciones.RefreshReport();
 
-            var adapter = new dsitribuciones_DataSetTableAdapters.DataTable1TableAdapter();
-            var d = new dsitribuciones_DataSet.DataTable1DataTable();
-            //d = adapter.GetData(decimal.Parse(TXTcuit.Text));
+            var adapter = new rep_distribuciones.dsitribuciones_DataSetTableAdapters.DataTable1TableAdapter();
+            var data = new rep_distribuciones.dsitribuciones_DataSet.DataTable1DataTable();
+            ////// obtengo datos a mostrar  
 
-            var ds = new ReportDataSource("tabla_distribucion", (DataTable)d);
+            data = adapter.GetData(decimal.Parse(distribucion.Cuit_dist.ToString()));
+            var ds = new ReportDataSource("tabla_distribucion", (DataTable)data);
             RV_distribuciones.LocalReport.DataSources.Clear();
             RV_distribuciones.LocalReport.DataSources.Add(ds);
             this.RV_distribuciones.RefreshReport();
@@ -50,9 +70,10 @@ namespace TP_PAV_3K02.REPORTES.rep_distri
             
 
             this.RV_distribuciones.RefreshReport();
-            var adapter = new dsitribuciones_DataSetTableAdapters.DataTable1TableAdapter();
-            var data = new dsitribuciones_DataSet.DataTable1DataTable();
+            var adapter = new rep_distribuciones.dsitribuciones_DataSetTableAdapters.DataTable1TableAdapter();
+            var data = new rep_distribuciones.dsitribuciones_DataSet.DataTable1DataTable();
             ////// obtengo datos a mostrar  
+            
             data = adapter.GetData(decimal.Parse(TXTcuit.Text));
             var ds = new ReportDataSource("tabla_distribucion", (DataTable)data);
 
@@ -61,6 +82,11 @@ namespace TP_PAV_3K02.REPORTES.rep_distri
             RV_distribuciones.LocalReport.DataSources.Add(ds);
 
             this.RV_distribuciones.RefreshReport();
+        }
+
+        private void validarsolonumeros(object sender, KeyPressEventArgs e)
+        {
+            v.ValidateSoloNumeros(sender, e);
         }
     }
 }

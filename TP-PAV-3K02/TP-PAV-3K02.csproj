@@ -75,16 +75,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetgrafico.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetgrafico.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="FormINICIO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="FormINICIO.Designer.cs">
+      <DependentUpon>FormINICIO.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Calificacion.cs" />
     <Compile Include="Modelos\Distribucion.cs" />
@@ -177,6 +172,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REPORTES\rep_distribuidores\distribuidores_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>distribuidores_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_distribuidores\INFO_distribuidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\rep_distribuidores\INFO_distribuidores.Designer.cs">
+      <DependentUpon>INFO_distribuidores.cs</DependentUpon>
+    </Compile>
     <Compile Include="REPORTES\rep_revista\INFO_revistas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,15 +202,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>datasetConjuntoDeDatos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="REPORTES\rep_distri\dsitribuciones_DataSet.Designer.cs">
+    <Compile Include="REPORTES\rep_distribuciones\dsitribuciones_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsitribuciones_DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="REPORTES\rep_distri\INFOdistribucion.cs">
+    <Compile Include="REPORTES\rep_distribuciones\INFOdistribucion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="REPORTES\rep_distri\INFOdistribucion.Designer.cs">
+    <Compile Include="REPORTES\rep_distribuciones\INFOdistribucion.Designer.cs">
       <DependentUpon>INFOdistribucion.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORTES\rep_empresas\Empresas_DataSet.Designer.cs">
@@ -245,8 +251,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_Editorial_PAVDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="FormINICIO.resx">
+      <DependentUpon>FormINICIO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Calificacion.resx">
       <DependentUpon>Calificacion.cs</DependentUpon>
@@ -296,6 +302,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="REPORTES\rep_distribuidores\INFO_distribuidores.resx">
+      <DependentUpon>INFO_distribuidores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\rep_distribuidores\Report_distribuidores.rdlc" />
     <EmbeddedResource Include="REPORTES\rep_revista\INFO_revistas.resx">
       <DependentUpon>INFO_revistas.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,10 +314,10 @@
       <DependentUpon>INFO_suscriptores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTES\rep_suscriptores\Reporteinforme.rdlc" />
-    <EmbeddedResource Include="REPORTES\rep_distri\INFOdistribucion.resx">
+    <EmbeddedResource Include="REPORTES\rep_distribuciones\INFOdistribucion.resx">
       <DependentUpon>INFOdistribucion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="REPORTES\rep_distri\Reportdistribucion.rdlc" />
+    <EmbeddedResource Include="REPORTES\rep_distribuciones\Reportdistribucion.rdlc" />
     <EmbeddedResource Include="REPORTES\rep_empresas\INFO_empresas.resx">
       <DependentUpon>INFO_empresas.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,17 +344,6 @@
     <None Include="DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
-    <None Include="DataSetgrafico.xsc">
-      <DependentUpon>DataSetgrafico.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetgrafico.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetgrafico.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSetgrafico.xss">
-      <DependentUpon>DataSetgrafico.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -355,6 +354,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="REPORTES\rep_distribuidores\distribuidores_DataSet.xsc">
+      <DependentUpon>distribuidores_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_distribuidores\distribuidores_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>distribuidores_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTES\rep_distribuidores\distribuidores_DataSet.xss">
+      <DependentUpon>distribuidores_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="REPORTES\rep_revista\Revistas_DataSet.xsc">
       <DependentUpon>Revistas_DataSet.xsd</DependentUpon>
     </None>
@@ -377,15 +387,15 @@
     <None Include="REPORTES\rep_suscriptores\datasetConjuntoDeDatos.xss">
       <DependentUpon>datasetConjuntoDeDatos.xsd</DependentUpon>
     </None>
-    <None Include="REPORTES\rep_distri\dsitribuciones_DataSet.xsc">
+    <None Include="REPORTES\rep_distribuciones\dsitribuciones_DataSet.xsc">
       <DependentUpon>dsitribuciones_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="REPORTES\rep_distri\dsitribuciones_DataSet.xsd">
+    <None Include="REPORTES\rep_distribuciones\dsitribuciones_DataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsitribuciones_DataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="REPORTES\rep_distri\dsitribuciones_DataSet.xss">
+    <None Include="REPORTES\rep_distribuciones\dsitribuciones_DataSet.xss">
       <DependentUpon>dsitribuciones_DataSet.xsd</DependentUpon>
     </None>
     <None Include="REPORTES\rep_empresas\Empresas_DataSet.xsc">
@@ -429,5 +439,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

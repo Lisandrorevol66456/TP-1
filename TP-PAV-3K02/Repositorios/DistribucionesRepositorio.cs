@@ -60,6 +60,31 @@ namespace TP_PAV_3K02.Repositorios
             return distribuc;
 
         }
+        public Distribucion ObtenerdistPorcuit(string cuit)
+        {
+            string sqltxt = $"SELECT * FROM Distribuciones Where Cuit_dist = '{cuit}'";
+            var tablaTemporal = _BD.consulta(sqltxt);
+            if (tablaTemporal.Rows.Count == 0)
+                return null;
+
+            var distribuc = new Distribucion();
+            foreach (DataRow fila in tablaTemporal.Rows)
+            {
+                if (fila.HasErrors)
+                    continue; // no corto el ciclo
+
+                distribuc.id = int.Parse(fila.ItemArray[0].ToString());
+                distribuc.Cuit_dist = long.Parse(fila.ItemArray[1].ToString());
+                distribuc.Cod_Interno = int.Parse(fila.ItemArray[2].ToString());
+                distribuc.nro_ejemplares = long.Parse(fila.ItemArray[3].ToString());
+                distribuc.nro_ejemplares_pagos = long.Parse(fila.ItemArray[4].ToString());
+                //distribuc.fecha_Entrega =DateTime.Parse(fila.ItemArray[5].ToString());
+
+
+            }
+            return distribuc;
+
+        }
 
         public bool Editar(Distribucion d, string Id)
         {

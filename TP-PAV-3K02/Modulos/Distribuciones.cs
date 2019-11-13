@@ -236,6 +236,7 @@ namespace TP_PAV_3K02.Modulos
             distribucion.nro_ejemplares = long.Parse(TXTtotal.Text);
             distribucion.nro_ejemplares_pagos = long.Parse(TXTpagados.Text);
             distribucion.fecha_Entrega = DTPfechaEntrega.Value;
+            distribucion.Cuit_dist = long.Parse(TXTCUIT.Text);
 
             return distribucion;
 
@@ -243,7 +244,7 @@ namespace TP_PAV_3K02.Modulos
 
         private void informesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var infor = new INFOdistribucion();
+            var infor = new INFOdistribucion(distribuidor.cuit_dist.ToString());
             infor.ShowDialog();
 
         }

@@ -55,7 +55,6 @@
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFormDistribuidores = new System.Windows.Forms.Button();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbProvincias = new System.Windows.Forms.ComboBox();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
@@ -65,7 +64,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BTNeditar = new System.Windows.Forms.Button();
             this.BTNactualizar = new System.Windows.Forms.Button();
-            this.btnEmpresa = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BTNSuscripciones = new System.Windows.Forms.Button();
@@ -241,7 +239,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(364, 403);
+            this.btnEliminar.Location = new System.Drawing.Point(318, 406);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 35);
             this.btnEliminar.TabIndex = 23;
@@ -262,7 +260,7 @@
             this.Numero,
             this.CodLocalidad,
             this.codProvincia});
-            this.DvgSuscriptores.Location = new System.Drawing.Point(364, 130);
+            this.DvgSuscriptores.Location = new System.Drawing.Point(318, 133);
             this.DvgSuscriptores.Name = "DvgSuscriptores";
             this.DvgSuscriptores.Size = new System.Drawing.Size(717, 267);
             this.DvgSuscriptores.TabIndex = 24;
@@ -308,16 +306,6 @@
             this.codProvincia.HeaderText = "Provincia";
             this.codProvincia.Name = "codProvincia";
             // 
-            // btnFormDistribuidores
-            // 
-            this.btnFormDistribuidores.Location = new System.Drawing.Point(817, 403);
-            this.btnFormDistribuidores.Name = "btnFormDistribuidores";
-            this.btnFormDistribuidores.Size = new System.Drawing.Size(124, 35);
-            this.btnFormDistribuidores.TabIndex = 31;
-            this.btnFormDistribuidores.Text = "Distribuidores";
-            this.btnFormDistribuidores.UseVisualStyleBackColor = true;
-            this.btnFormDistribuidores.Click += new System.EventHandler(this.btnFormDistribuidores_Click);
-            // 
             // cmbLocalidad
             // 
             this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -345,7 +333,7 @@
             this.gbBuscar.Controls.Add(this.BtnBuscar);
             this.gbBuscar.Controls.Add(this.TXTbuscarDNI);
             this.gbBuscar.Controls.Add(this.label2);
-            this.gbBuscar.Location = new System.Drawing.Point(383, 19);
+            this.gbBuscar.Location = new System.Drawing.Point(337, 22);
             this.gbBuscar.Name = "gbBuscar";
             this.gbBuscar.Size = new System.Drawing.Size(366, 100);
             this.gbBuscar.TabIndex = 34;
@@ -393,7 +381,7 @@
             // 
             // BTNeditar
             // 
-            this.BTNeditar.Location = new System.Drawing.Point(461, 403);
+            this.BTNeditar.Location = new System.Drawing.Point(415, 406);
             this.BTNeditar.Name = "BTNeditar";
             this.BTNeditar.Size = new System.Drawing.Size(75, 35);
             this.BTNeditar.TabIndex = 35;
@@ -403,7 +391,7 @@
             // 
             // BTNactualizar
             // 
-            this.BTNactualizar.Location = new System.Drawing.Point(1006, 89);
+            this.BTNactualizar.Location = new System.Drawing.Point(960, 92);
             this.BTNactualizar.Name = "BTNactualizar";
             this.BTNactualizar.Size = new System.Drawing.Size(75, 35);
             this.BTNactualizar.TabIndex = 36;
@@ -411,23 +399,13 @@
             this.BTNactualizar.UseVisualStyleBackColor = true;
             this.BTNactualizar.Click += new System.EventHandler(this.BTNactualizar_Click);
             // 
-            // btnEmpresa
-            // 
-            this.btnEmpresa.Location = new System.Drawing.Point(957, 403);
-            this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.Size = new System.Drawing.Size(124, 35);
-            this.btnEmpresa.TabIndex = 37;
-            this.btnEmpresa.Text = "Empresas";
-            this.btnEmpresa.UseVisualStyleBackColor = true;
-            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1095, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1058, 24);
             this.menuStrip1.TabIndex = 38;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -440,9 +418,9 @@
             // 
             // BTNSuscripciones
             // 
-            this.BTNSuscripciones.Location = new System.Drawing.Point(776, 84);
+            this.BTNSuscripciones.Location = new System.Drawing.Point(552, 406);
             this.BTNSuscripciones.Name = "BTNSuscripciones";
-            this.BTNSuscripciones.Size = new System.Drawing.Size(75, 35);
+            this.BTNSuscripciones.Size = new System.Drawing.Size(107, 35);
             this.BTNSuscripciones.TabIndex = 39;
             this.BTNSuscripciones.Text = "Suscripciones";
             this.BTNSuscripciones.UseVisualStyleBackColor = true;
@@ -452,15 +430,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 450);
+            this.ClientSize = new System.Drawing.Size(1058, 450);
             this.Controls.Add(this.BTNSuscripciones);
-            this.Controls.Add(this.btnEmpresa);
             this.Controls.Add(this.BTNactualizar);
             this.Controls.Add(this.BTNeditar);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.cmbProvincias);
             this.Controls.Add(this.cmbLocalidad);
-            this.Controls.Add(this.btnFormDistribuidores);
             this.Controls.Add(this.DvgSuscriptores);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
@@ -516,7 +492,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView DvgSuscriptores;
-        private System.Windows.Forms.Button btnFormDistribuidores;
         private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.ComboBox cmbProvincias;
         private System.Windows.Forms.GroupBox gbBuscar;
@@ -534,7 +509,6 @@
         private System.Windows.Forms.Button btnCancelarBusqueda;
         private System.Windows.Forms.Button BTNeditar;
         private System.Windows.Forms.Button BTNactualizar;
-        private System.Windows.Forms.Button btnEmpresa;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.Button BTNSuscripciones;
