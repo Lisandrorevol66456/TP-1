@@ -145,9 +145,10 @@
             // 
             // dtpFechaInicio
             // 
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaInicio.Location = new System.Drawing.Point(114, 276);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(123, 20);
             this.dtpFechaInicio.TabIndex = 12;
             // 
             // btnagregar

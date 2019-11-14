@@ -38,7 +38,8 @@ namespace TP_PAV_3K02
         }
 
         //METODO PARA CARGAR LA GRILLA DE SUSCRIPTORES EXISTENTES
-        private void ActualizarSuscriptores() {
+        private void ActualizarSuscriptores()
+        {
 
             DvgSuscriptores.Rows.Clear();
 
@@ -57,7 +58,7 @@ namespace TP_PAV_3K02
                     suscriptor.ItemArray[3].ToString(),
                     suscriptor.ItemArray[4].ToString(),
                     suscriptor.ItemArray[5].ToString(),
-                    
+
                 };
 
                 DvgSuscriptores.Rows.Add(fila);
@@ -112,7 +113,7 @@ namespace TP_PAV_3K02
             txtCalle.Clear();
             txtNumero.Clear();
             txtNroDoc.Clear();
-           
+
         }
         //Agregar un suscriptor
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -166,7 +167,8 @@ namespace TP_PAV_3K02
             suscriptor.numero = long.Parse(txtNumero.Text);
 
 
-            if (!_suscriptoresRepositorio.Validar(txtNroDoc.Text.ToString())) {
+            if (!_suscriptoresRepositorio.Validar(txtNroDoc.Text.ToString()))
+            {
                 if (_suscriptoresRepositorio.Guardar(suscriptor))
                 {
                     MessageBox.Show("Se registro con éxito");
@@ -181,7 +183,7 @@ namespace TP_PAV_3K02
 
         }
 
-     
+
 
         private void suscriptores_Load(object sender, EventArgs e)
         {
@@ -238,8 +240,8 @@ namespace TP_PAV_3K02
             // cancela la carga del suscriptor y limpialos textbox
             LimpiarCampos();
         }
-       
-      
+
+
 
         // boton buscar por documento, filtra la grilla segun el valor ingresado
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -276,9 +278,9 @@ namespace TP_PAV_3K02
 
 
                 }
-            } 
-                
-            
+            }
+
+
         }
 
         //segun el valor seleccionado del cmbprovincias actualiza el cmblocalidades
@@ -300,10 +302,10 @@ namespace TP_PAV_3K02
         private void ValidarTxtLetras(object sender, KeyPressEventArgs e)
         {
             v.validateSoloLetras(sender, e);
-           
+
         }
 
-        
+
 
         //editar un suscriptor
         private void BTNeditar_Click(object sender, EventArgs e)
@@ -321,8 +323,8 @@ namespace TP_PAV_3K02
                 var documento = fila.Cells[0].Value;
                 var prov = fila.Cells[7].Value;
                 var loc = fila.Cells[6].Value;
-               
-               
+
+
 
 
                 if (documento != null)
@@ -336,8 +338,8 @@ namespace TP_PAV_3K02
                         return;
                     else
                     {
-                       
-                        var editar = new EditarSuscriptor(documento.ToString(),prov.ToString(),loc.ToString());
+
+                        var editar = new EditarSuscriptor(documento.ToString(), prov.ToString(), loc.ToString());
                         editar.ShowDialog();
                         ActualizarSuscriptores();
                     }
@@ -378,8 +380,8 @@ namespace TP_PAV_3K02
 
         private void ValidateSoloNumeros(object sender, KeyPressEventArgs e)
         {
-           v.ValidateSoloNumeros(sender, e);  
-          
+            v.ValidateSoloNumeros(sender, e);
+
         }
 
         private void validateLetrasYnumeros(object sender, KeyPressEventArgs e)
@@ -391,7 +393,7 @@ namespace TP_PAV_3K02
         {
             var info = new INFO_suscriptores();
             info.ShowDialog();
-            
+
         }
 
         private void BTNSuscripciones_Click(object sender, EventArgs e)
@@ -399,7 +401,33 @@ namespace TP_PAV_3K02
             var suscri = new Suscripciones();
             suscri.ShowDialog();
         }
-    }
 
+        private void btn_suscr_Click(object sender, EventArgs e)
+        {
+            var seleccionadas = DvgSuscriptores.SelectedRows;
+            if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
+            {
+                MessageBox.Show("Debe seleccionar una fila");
+                return;
+            }
+            foreach (DataGridViewRow fila in seleccionadas)
+            {
+                var doc = fila.Cells[0].Value;
+
+
+                if (doc != null)
+                {
+
+                    var sus = new Formsuscripcion(doc.ToString());
+                    sus.ShowDialog();
+                   // ActualizarSuscriptores();
+
+                }
+                else
+                    MessageBox.Show("Debe seleccionar una fila no vacia para poder editar");
+            }
+        }
+
+    }
 } 
 

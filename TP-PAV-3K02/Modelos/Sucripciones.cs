@@ -17,5 +17,12 @@ namespace TP_PAV_3K02.Modelos
         public DateTime fecha_fin { get; set; }
         public int doc_plan { get; set; }
         public IList<Suscriptor> Suscriptors { get; set; }
+        public bool fechavalida()
+        {
+            if (fecha_inicio != DateTime.MinValue && fecha_inicio < DateTime.Today)
+                return true;
+            return false;
+
+        }
     }
 }

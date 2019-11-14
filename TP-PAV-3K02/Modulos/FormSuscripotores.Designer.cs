@@ -66,7 +66,7 @@
             this.BTNactualizar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BTNSuscripciones = new System.Windows.Forms.Button();
+            this.btn_suscr = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -416,22 +416,23 @@
             this.informesToolStripMenuItem.Text = "&Informes";
             this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
             // 
-            // BTNSuscripciones
+            // btn_suscr
             // 
-            this.BTNSuscripciones.Location = new System.Drawing.Point(552, 406);
-            this.BTNSuscripciones.Name = "BTNSuscripciones";
-            this.BTNSuscripciones.Size = new System.Drawing.Size(107, 35);
-            this.BTNSuscripciones.TabIndex = 39;
-            this.BTNSuscripciones.Text = "Suscripciones";
-            this.BTNSuscripciones.UseVisualStyleBackColor = true;
-            this.BTNSuscripciones.Click += new System.EventHandler(this.BTNSuscripciones_Click);
+            this.btn_suscr.Location = new System.Drawing.Point(561, 406);
+            this.btn_suscr.Name = "btn_suscr";
+            this.btn_suscr.Size = new System.Drawing.Size(107, 35);
+            this.btn_suscr.TabIndex = 40;
+            this.btn_suscr.Text = "ver suscripciones";
+            this.btn_suscr.UseVisualStyleBackColor = true;
+            this.btn_suscr.Click += new System.EventHandler(this.btn_suscr_Click);
             // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1058, 450);
-            this.Controls.Add(this.BTNSuscripciones);
+            this.Controls.Add(this.btn_suscr);
             this.Controls.Add(this.BTNactualizar);
             this.Controls.Add(this.BTNeditar);
             this.Controls.Add(this.gbBuscar);
@@ -458,6 +459,8 @@
             this.Controls.Add(this.lblsuscriptores);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NuevoSuscriptor";
             this.Text = "Suscriptores";
             this.Load += new System.EventHandler(this.suscriptores_Load);
@@ -511,7 +514,7 @@
         private System.Windows.Forms.Button BTNactualizar;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
-        private System.Windows.Forms.Button BTNSuscripciones;
+        private System.Windows.Forms.Button btn_suscr;
     }
 }
 

@@ -23,7 +23,7 @@ namespace TP_PAV_3K02.REPORTES.rep_revista
         private void INFO_revistas_Load(object sender, EventArgs e)
         {
             //this.RV_revistas.RefreshReport();
-            var adapter = new rep_revista.Revistas_DataSetTableAdapters.DataTable1TableAdapter();
+            var adapter = new Revistas_DataSetTableAdapters.DataTable1TableAdapter();
             var d = new Revistas_DataSet.DataTable1DataTable();
             adapter.Fill(d);
 

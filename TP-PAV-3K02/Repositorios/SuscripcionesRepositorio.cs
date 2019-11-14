@@ -50,12 +50,13 @@ namespace TP_PAV_3K02.Repositorios
             return subs;
         }
 
-        public bool Actualizar(Suscripcion sus,string doc)
+        public bool Actualizar(Suscripcion sus,string cod)
         {
-            string sqltext = $"UPDATE [dbo].[Suscripcion] SET doc_plan = {sus.doc_plan}  where nro_doc = {doc} ";
+            string sqltext = $"UPDATE [dbo].[Suscripcion] SET cod_plan = '{sus.doc_plan}', " +
+                $" fecha_inicio = '{sus.fecha_inicio.ToString("yyyy-MM-dd")}' , " +
+                $" fecha_fin = '{sus.fecha_fin.ToString("yyyy-MM-dd")}' where cod_int = '{cod}' ";
 
             return _BD.EjecutarSQL(sqltext);
-
 
         }
 
@@ -65,7 +66,7 @@ namespace TP_PAV_3K02.Repositorios
             
             using (var tx = _BD.IniciarTransaccion())
             {
-                StringBuilder mensaje = new StringBuilder("La operación se realizo con exito ");
+                StringBuilder mensaje = new StringBuilder("La operación ");
                 try
                 {
                         string sqlTxt = $"INSERT [dbo].[Suscripcion] ([cod_TipoDoc], [nro_doc], [fecha_inicio], [fecha_fin], [cod_Plan]) " +
@@ -76,11 +77,12 @@ namespace TP_PAV_3K02.Repositorios
                         throw new ApplicationException();
                     
                     tx.Commit();
+                    mensaje.Append("se realizó con éxito");
                 }
                 catch (InvalidOperationException ex)
                 {
                      
-                    mensaje.Append("no se realizó. Hubo un problema en la conexión a la BD");
+                    mensaje.Append("no se realizó. Error inesperado");
                     tx.Rollback();
                 }
                 finally
@@ -98,7 +100,13 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.EjecutarSQL(sqltxt);
         }
+        public DataTable ObtenerPorDNI(long dni)
+        {
+            string sqltxt = "SELECT * FROM Suscripcion Where nro_doc =" + dni;
 
+            return _BD.consulta(sqltxt);
+
+        }
         public DataTable obtenerSuscripcionesPorDoc(long doc)
         {
             
@@ -116,6 +124,33 @@ namespace TP_PAV_3K02.Repositorios
 
         }
         
+        public Suscripcion Obtenerporcodint(string codint)
+        {
+            string sqltxt = $"SELECT * FROM [dbo].[Suscripcion] WHERE cod_int = {codint}";
+            var tablaTemporal = _BD.consulta(sqltxt);
+
+
+            if (tablaTemporal.Rows.Count == 0)
+                return null;
+
+            var suscri = new Suscripcion();
+            foreach (DataRow fila in tablaTemporal.Rows)
+            {
+                if (fila.HasErrors)
+                    continue; // no corto el ciclo
+
+                suscri.cod_int = int.Parse(fila.ItemArray[0].ToString()); // numero documento
+                suscri.cod_TipoDoc = int.Parse(fila.ItemArray[1].ToString()); // codigo tipo documento
+                suscri.nro_doc = long.Parse(fila.ItemArray[2].ToString()); // Nombre
+                suscri.fecha_inicio = DateTime.Parse(fila.ItemArray[3].ToString()); // apellido
+                suscri.fecha_fin = DateTime.Parse(fila.ItemArray[4].ToString()); // calle
+                suscri.doc_plan = int.Parse(fila.ItemArray[5].ToString());
+
+
+            }
+
+            return suscri;
+        }
     }
  
 }

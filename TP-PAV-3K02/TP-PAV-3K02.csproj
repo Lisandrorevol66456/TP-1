@@ -117,17 +117,17 @@
     <Compile Include="Modulos\EditarEmpresa.Designer.cs">
       <DependentUpon>EditarEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\EditarSuscripcion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos\EditarSuscripcion.Designer.cs">
-      <DependentUpon>EditarSuscripcion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulos\EditarSuscriptor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\EditarSuscriptor.Designer.cs">
       <DependentUpon>EditarSuscriptor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Formsuscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Formsuscripcion.Designer.cs">
+      <DependentUpon>Formsuscripcion.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\FormSuscripotores.cs">
       <SubType>Form</SubType>
@@ -152,11 +152,11 @@
     <Compile Include="Modulos\Empresas.Designer.cs">
       <DependentUpon>Empresas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\Form3.cs">
+    <Compile Include="Modulos\Form_Editarsuscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="Modulos\Form_Editarsuscripcion.Designer.cs">
+      <DependentUpon>Form_Editarsuscripcion.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Publicidad.cs">
       <SubType>Form</SubType>
@@ -269,11 +269,11 @@
     <EmbeddedResource Include="Modulos\EditarEmpresa.resx">
       <DependentUpon>EditarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\EditarSuscripcion.resx">
-      <DependentUpon>EditarSuscripcion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\EditarSuscriptor.resx">
       <DependentUpon>EditarSuscriptor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Formsuscripcion.resx">
+      <DependentUpon>Formsuscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\FormSuscripotores.resx">
       <DependentUpon>FormSuscripotores.cs</DependentUpon>
@@ -284,8 +284,8 @@
     <EmbeddedResource Include="Modulos\Empresas.resx">
       <DependentUpon>Empresas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="Modulos\Form_Editarsuscripcion.resx">
+      <DependentUpon>Form_Editarsuscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Publicidad.resx">
       <DependentUpon>Publicidad.cs</DependentUpon>
@@ -439,6 +439,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
