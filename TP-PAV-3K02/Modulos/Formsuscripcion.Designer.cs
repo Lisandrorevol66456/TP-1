@@ -38,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSuscripciones = new System.Windows.Forms.DataGridView();
+            this.DTPfechainicio = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,15 +48,13 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DTPfechainicio = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.NOMBREPLAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(662, 302);
+            this.btnDelete.Location = new System.Drawing.Point(754, 302);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(78, 40);
             this.btnDelete.TabIndex = 25;
@@ -63,7 +64,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(662, 399);
+            this.btnClose.Location = new System.Drawing.Point(754, 399);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(78, 25);
             this.btnClose.TabIndex = 24;
@@ -73,7 +74,7 @@
             // 
             // tnAdd
             // 
-            this.tnAdd.Location = new System.Drawing.Point(662, 178);
+            this.tnAdd.Location = new System.Drawing.Point(754, 178);
             this.tnAdd.Name = "tnAdd";
             this.tnAdd.Size = new System.Drawing.Size(78, 40);
             this.tnAdd.TabIndex = 23;
@@ -83,7 +84,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(662, 234);
+            this.btnEdit.Location = new System.Drawing.Point(754, 234);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(78, 40);
             this.btnEdit.TabIndex = 22;
@@ -153,11 +154,40 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7});
+            this.Column7,
+            this.NOMBREPLAN});
             this.dgvSuscripciones.Location = new System.Drawing.Point(12, 178);
             this.dgvSuscripciones.Name = "dgvSuscripciones";
-            this.dgvSuscripciones.Size = new System.Drawing.Size(644, 219);
+            this.dgvSuscripciones.Size = new System.Drawing.Size(727, 219);
             this.dgvSuscripciones.TabIndex = 14;
+            // 
+            // DTPfechainicio
+            // 
+            this.DTPfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DTPfechainicio.Location = new System.Drawing.Point(173, 135);
+            this.DTPfechainicio.Name = "DTPfechainicio";
+            this.DTPfechainicio.Size = new System.Drawing.Size(131, 20);
+            this.DTPfechainicio.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(104, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Feca desde";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(664, 399);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 25);
+            this.btnCancelar.TabIndex = 41;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // Column8
             // 
@@ -195,40 +225,18 @@
             this.Column7.HeaderText = "Precio";
             this.Column7.Name = "Column7";
             // 
-            // DTPfechainicio
+            // NOMBREPLAN
             // 
-            this.DTPfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTPfechainicio.Location = new System.Drawing.Point(173, 135);
-            this.DTPfechainicio.Name = "DTPfechainicio";
-            this.DTPfechainicio.Size = new System.Drawing.Size(131, 20);
-            this.DTPfechainicio.TabIndex = 27;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(104, 141);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Feca desde";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(568, 399);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 25);
-            this.btnCancelar.TabIndex = 41;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.NOMBREPLAN.HeaderText = "NOMBRE PLAN";
+            this.NOMBREPLAN.Name = "NOMBREPLAN";
+            this.NOMBREPLAN.ReadOnly = true;
             // 
             // Formsuscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(754, 436);
+            this.ClientSize = new System.Drawing.Size(844, 436);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label4);
@@ -275,5 +283,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBREPLAN;
     }
 }

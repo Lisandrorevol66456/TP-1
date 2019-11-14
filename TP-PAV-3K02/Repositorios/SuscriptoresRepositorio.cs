@@ -21,7 +21,10 @@ namespace TP_PAV_3K02.Repositorios
 
         public DataTable ObtenerSuscriptoresDT()
         {
-            string sqltxt = "SELECT * FROM Suscriptores ";
+            string sqltxt = "SELECT s.nroDoc, d.nombre AS TIPO, s.nombre AS NOMBRE, s.apellido, " +
+                "s.calle, s.numero, l.nombre AS LOCALIDAD, p.nombre AS PROVINCIA FROM Suscriptores AS s " +
+                "INNER JOIN Localidades AS l ON s.cod_Localidad = l.cod_Localidad INNER JOIN Provincias AS p " +
+                "ON s.cod_Provincia = p.cod_provincia INNER JOIN TipoDocumento AS d ON s.cod_TipoDoc = d.cod_TipoDoc ";
             
             return _BD.consulta(sqltxt);
 

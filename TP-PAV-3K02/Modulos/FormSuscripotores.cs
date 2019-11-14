@@ -52,20 +52,24 @@ namespace TP_PAV_3K02
                     continue;//no corto el ciclo
                 var fila = new string[]
                 {
+                //    "SELECT s.nroDoc, d.nombre AS TIPO, s.nombre AS NOMBRE, s.apellido, " +
+                //"s.calle, s.numero, l.nombre AS LOCALIDAD, p.nombre AS PROVINCIA FROM Suscriptores AS s " +
+                //"INNER JOIN Localidades AS l ON s.cod_Localidad = l.cod_Localidad INNER JOIN Provincias AS p " +
+                //"ON s.cod_Provincia = p.cod_provincia INNER JOIN TipoDocumento AS d ON s.cod_TipoDoc = d.cod_TipoDoc ";
                     suscriptor.ItemArray[0].ToString(),
                     suscriptor.ItemArray[1].ToString(),
                     suscriptor.ItemArray[2].ToString(),
                     suscriptor.ItemArray[3].ToString(),
                     suscriptor.ItemArray[4].ToString(),
                     suscriptor.ItemArray[5].ToString(),
+                    suscriptor.ItemArray[6].ToString(),
+                    suscriptor.ItemArray[7].ToString(),
+
 
                 };
 
                 DvgSuscriptores.Rows.Add(fila);
-                TipoDoc.Visible = false; // la columna tipo doc se hace invisible al usuario, ya que no es un dato
-                                         // relevante para él.
-
-
+                
             }
 
         }
@@ -174,7 +178,7 @@ namespace TP_PAV_3K02
                     MessageBox.Show("Se registro con éxito");
                     ActualizarSuscriptores();
                     LimpiarCampos();
-                    this.Dispose();
+                    
 
                 }
             }
@@ -224,7 +228,7 @@ namespace TP_PAV_3K02
 
                     if (_suscriptoresRepositorio.Eliminar(documento.ToString()))
                     {
-                        MessageBox.Show("Se eliminó exitosamente");
+                        MessageBox.Show("Se eliminó exitosamente. Oprima Boton Actualizar");
 
                     }
                 }
@@ -396,11 +400,7 @@ namespace TP_PAV_3K02
 
         }
 
-        private void BTNSuscripciones_Click(object sender, EventArgs e)
-        {
-            var suscri = new Suscripciones();
-            suscri.ShowDialog();
-        }
+       
 
         private void btn_suscr_Click(object sender, EventArgs e)
         {

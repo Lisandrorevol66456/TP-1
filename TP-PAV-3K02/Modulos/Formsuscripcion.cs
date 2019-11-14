@@ -56,13 +56,15 @@ namespace TP_PAV_3K02.Modulos
                     continue;
                 var fila = new string[]
                 {
+                    
+
                     suscripcion.ItemArray[0].ToString(),
                     suscripcion.ItemArray[1].ToString(),
                     suscripcion.ItemArray[2].ToString(),
                     suscripcion.ItemArray[3].ToString(),
                     suscripcion.ItemArray[4].ToString(),
                     suscripcion.ItemArray[5].ToString(),
-
+                    suscripcion.ItemArray[6].ToString(),
                 };
 
                 dgvSuscripciones.Rows.Add(fila);

@@ -102,7 +102,9 @@ namespace TP_PAV_3K02.Repositorios
         }
         public DataTable ObtenerPorDNI(long dni)
         {
-            string sqltxt = "SELECT * FROM Suscripcion Where nro_doc =" + dni;
+            string sqltxt = "SELECT s.cod_int, s.cod_TipoDoc, s.nro_doc, s.fecha_inicio, s.fecha_fin, s.cod_Plan," +
+                " p.precio, p.nombre FROM Suscripcion AS s INNER JOIN Planes AS p ON s.cod_Plan = p.cod_Plan" +
+                " Where nro_doc =" + dni;
 
             return _BD.consulta(sqltxt);
 
