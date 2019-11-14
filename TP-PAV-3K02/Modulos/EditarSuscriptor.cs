@@ -86,8 +86,8 @@ namespace TP_PAV_3K02
             ActualizarCombo();
             comboTipodoc.SelectedIndex = 0;
             ActualizarProvi();
-            comboProvincias.SelectedValue = int.Parse(suscriptorPROV);
-            ComboLocalidades.SelectedValue = int.Parse(suscriptorLOC);
+            //comboProvincias.SelectedValue = int.Parse(suscriptorPROV);
+            //ComboLocalidades.SelectedValue = int.Parse(suscriptorLOC);
             TXTnombre.Text = suscrip.nombre;
             TXTapellido.Text = suscrip.apellido;
             TXTcalle.Text = suscrip.calle;
