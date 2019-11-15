@@ -22,11 +22,11 @@ namespace TP_PAV_3K02.Repositorios
         
         public DataTable ObtenerRevistasDT()
         {
-            string sqltext = "SELECT * FROM Revistas ";
+            string sqltext = "SELECT  r.cod_Interno, r.nombre, ru.nombre AS Rubro, fp.nombre AS FRECUENCIA, r.fechaInicio AS FECHA" +
+                " FROM Revistas AS r INNER JOIN Rubro AS ru ON r.cod_rubro = ru.cod_Rubro" +
+                " INNER JOIN FrecuenciaPublicacion AS fp ON r.cod_frecPublic = fp.cod_Frecuencia ";
 
             return _BD.consulta(sqltext);
-
-
 
         }
 

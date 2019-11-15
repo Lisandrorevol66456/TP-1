@@ -69,6 +69,7 @@ namespace TP_PAV_3K02.Modulos
                     revista.ItemArray[2].ToString(),
                     revista.ItemArray[3].ToString(),
                     revista.ItemArray[4].ToString(),
+                    //revista.ItemArray[5].ToString(),
                 };
 
                 dgvRevistas.Rows.Add(fila);
