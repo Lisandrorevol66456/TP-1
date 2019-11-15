@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TP_PAV_3K02.BaseDatos;
 using TP_PAV_3K02.Modelos;
+using TP_PAV_3K02.Modulos;
 
 namespace TP_PAV_3K02.Repositorios
 {
@@ -48,7 +49,35 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.consulta(sqltext);
         }
-        
+
+        public  Revista ObtenerRevistas(string codRevista)
+        {
+            string sqltxt = $"SELECT * FROM [dbo].[Revistas] WHERE cod_Interno = {codRevista}";
+            var tablaTemporal = _BD.consulta(sqltxt);
+
+
+            if (tablaTemporal.Rows.Count == 0)
+                return null;
+
+            var rev = new Revista();
+            foreach (DataRow fila in tablaTemporal.Rows)
+            {
+                if (fila.HasErrors)
+                    continue; // no corto el ciclo
+
+                rev.cod_Interno = int.Parse(fila.ItemArray[0].ToString());
+                rev.nombre = fila.ItemArray[1].ToString();
+                rev.cod_frecPublic = int.Parse(fila.ItemArray[2].ToString());
+                rev.cod_rubro = int.Parse(fila.ItemArray[3].ToString());
+               
+
+
+            }
+
+            return rev;
+
+        }
+
         public bool ValidarCod(string cod)
         {
             string sqltxt = $"SELECT * FROM Revistas where cod_Interno ={cod}";
@@ -74,6 +103,18 @@ namespace TP_PAV_3K02.Repositorios
 
         }
 
+        public bool Actualizar(Revista revista, string cod)
+        {
+            string sqltext = $"UPDATE [dbo].[Revistas] SET cod_Interno = '{revista.cod_Interno}' , " +
+                $" nombre = '{revista.nombre}' , " +
+                $" cod_frecPublic = '{revista.cod_frecPublic}', " +
+                $" cod_rubro = '{revista.cod_rubro}' ," +
+                $" fechaInicio = '{revista.fechaInicio.ToString("yyyy-MM-dd")}' where cod_Interno = {cod}";
+
+            return _BD.EjecutarSQL(sqltext);
+
+
+        }
 
 
 

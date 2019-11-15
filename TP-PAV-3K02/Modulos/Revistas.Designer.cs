@@ -55,6 +55,7 @@
             this.txtCodigoBuscar = new System.Windows.Forms.TextBox();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gbBuscar.SuspendLayout();
@@ -268,6 +269,7 @@
             this.txtCodigoBuscar.Name = "txtCodigoBuscar";
             this.txtCodigoBuscar.Size = new System.Drawing.Size(134, 20);
             this.txtCodigoBuscar.TabIndex = 22;
+            this.txtCodigoBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNum);
             // 
             // gbBuscar
             // 
@@ -292,11 +294,22 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(751, 31);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 54);
+            this.btnEditar.TabIndex = 24;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // Revistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 450);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.gbBuscar);
             this.Controls.Add(this.dgvRevistas);
             this.Controls.Add(this.btneliminar);
@@ -356,5 +369,6 @@
         private System.Windows.Forms.TextBox txtCodigoBuscar;
         private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

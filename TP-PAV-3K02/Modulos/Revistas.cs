@@ -238,5 +238,45 @@ namespace TP_PAV_3K02.Modulos
             txtCodigoBuscar.Clear();
             ActualizarRevista();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            var seleccionadas = dgvRevistas.SelectedRows;
+            if (seleccionadas.Count == 0 || seleccionadas.Count > 1)
+            {
+                MessageBox.Show("Debe seleccionar una fila");
+                return;
+            }
+            foreach (DataGridViewRow fila in seleccionadas)
+            {
+                var nombre  = fila.Cells[1].Value;
+                var cod = fila.Cells[0].Value;
+                var frec =  fila.Cells[2].Value;
+                var rub = fila.Cells[3].Value;
+                var fecha = fila.Cells[4].Value;
+
+                if (cod != null)
+                {
+                    //pregunto confirmación
+                    var confirmacion = MessageBox.Show($"Desea editar a la Revista {nombre}, con cogido = {cod}?",
+                    "Confirmar operación",
+                    MessageBoxButtons.YesNo);
+
+                    if (confirmacion.Equals(DialogResult.No))
+                        return;
+                    else
+                    {
+
+                        var editar = new EditarRevista(cod.ToString(), frec.ToString(), rub.ToString(),fecha.ToString());
+                        editar.ShowDialog();
+                        ActualizarRevista();
+                    }
+                }
+                else
+                    MessageBox.Show("Debe seleccionar una fila no vacia para poder editar");
+
+
+            }
+        }
     }
 }
