@@ -50,23 +50,17 @@
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblcodigo = new System.Windows.Forms.Label();
-            this.btnCancelarBusqueda = new System.Windows.Forms.Button();
-            this.txtCodigoBuscar = new System.Windows.Forms.TextBox();
-            this.gbBuscar = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRevista
             // 
             this.lblRevista.AutoSize = true;
-            this.lblRevista.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRevista.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRevista.Location = new System.Drawing.Point(23, 31);
             this.lblRevista.Name = "lblRevista";
-            this.lblRevista.Size = new System.Drawing.Size(87, 24);
+            this.lblRevista.Size = new System.Drawing.Size(75, 23);
             this.lblRevista.TabIndex = 1;
             this.lblRevista.Text = "Revistas";
             // 
@@ -159,7 +153,7 @@
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(13, 340);
+            this.btnagregar.Location = new System.Drawing.Point(27, 357);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(82, 40);
             this.btnagregar.TabIndex = 15;
@@ -169,7 +163,7 @@
             // 
             // btncancelar
             // 
-            this.btncancelar.Location = new System.Drawing.Point(114, 340);
+            this.btncancelar.Location = new System.Drawing.Point(155, 357);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(82, 40);
             this.btncancelar.TabIndex = 16;
@@ -179,7 +173,7 @@
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(220, 340);
+            this.btneliminar.Location = new System.Drawing.Point(279, 357);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(82, 40);
             this.btneliminar.TabIndex = 17;
@@ -196,9 +190,9 @@
             this.cod_frecPublic,
             this.cod_Rubro,
             this.FechaInicio});
-            this.dgvRevistas.Location = new System.Drawing.Point(346, 97);
+            this.dgvRevistas.Location = new System.Drawing.Point(367, 31);
             this.dgvRevistas.Name = "dgvRevistas";
-            this.dgvRevistas.Size = new System.Drawing.Size(489, 283);
+            this.dgvRevistas.Size = new System.Drawing.Size(421, 349);
             this.dgvRevistas.TabIndex = 18;
             // 
             // Cod_Interno
@@ -232,7 +226,7 @@
             this.informesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -243,61 +237,11 @@
             this.informesToolStripMenuItem.Text = "Informes";
             this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
             // 
-            // lblcodigo
-            // 
-            this.lblcodigo.AutoSize = true;
-            this.lblcodigo.Location = new System.Drawing.Point(62, 30);
-            this.lblcodigo.Name = "lblcodigo";
-            this.lblcodigo.Size = new System.Drawing.Size(46, 13);
-            this.lblcodigo.TabIndex = 20;
-            this.lblcodigo.Text = "Codigo :";
-            // 
-            // btnCancelarBusqueda
-            // 
-            this.btnCancelarBusqueda.Location = new System.Drawing.Point(278, 50);
-            this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
-            this.btnCancelarBusqueda.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarBusqueda.TabIndex = 21;
-            this.btnCancelarBusqueda.Text = "Cancelar";
-            this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
-            this.btnCancelarBusqueda.Click += new System.EventHandler(this.btnCancelarBusqueda_Click);
-            // 
-            // txtCodigoBuscar
-            // 
-            this.txtCodigoBuscar.Location = new System.Drawing.Point(123, 27);
-            this.txtCodigoBuscar.Name = "txtCodigoBuscar";
-            this.txtCodigoBuscar.Size = new System.Drawing.Size(134, 20);
-            this.txtCodigoBuscar.TabIndex = 22;
-            // 
-            // gbBuscar
-            // 
-            this.gbBuscar.Controls.Add(this.btnBuscar);
-            this.gbBuscar.Controls.Add(this.txtCodigoBuscar);
-            this.gbBuscar.Controls.Add(this.lblcodigo);
-            this.gbBuscar.Controls.Add(this.btnCancelarBusqueda);
-            this.gbBuscar.Location = new System.Drawing.Point(346, 12);
-            this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Size = new System.Drawing.Size(377, 79);
-            this.gbBuscar.TabIndex = 23;
-            this.gbBuscar.TabStop = false;
-            this.gbBuscar.Text = "Buscar";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(278, 21);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 23;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // Revistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 450);
-            this.Controls.Add(this.gbBuscar);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvRevistas);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btncancelar);
@@ -321,8 +265,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.gbBuscar.ResumeLayout(false);
-            this.gbBuscar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,10 +293,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
-        private System.Windows.Forms.Label lblcodigo;
-        private System.Windows.Forms.Button btnCancelarBusqueda;
-        private System.Windows.Forms.TextBox txtCodigoBuscar;
-        private System.Windows.Forms.GroupBox gbBuscar;
-        private System.Windows.Forms.Button btnBuscar;
     }
 }

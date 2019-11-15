@@ -39,14 +39,7 @@ namespace TP_PAV_3K02.Repositorios
                 return _BD.EjecutarSQL(sqltext);
             
             
-         
-        }
-
-        public DataTable ObtenerPorCodigo(int cod)
-        {
-            string sqltext = $"SELECT * FROM Revistas where cod_Interno = {cod}";
-
-            return _BD.consulta(sqltext);
+           
         }
         
         public bool ValidarCod(string cod)
