@@ -119,6 +119,7 @@
             // 
             this.txtcodigoInterno.Location = new System.Drawing.Point(121, 91);
             this.txtcodigoInterno.Name = "txtcodigoInterno";
+            this.txtcodigoInterno.ReadOnly = true;
             this.txtcodigoInterno.Size = new System.Drawing.Size(172, 20);
             this.txtcodigoInterno.TabIndex = 14;
             // 

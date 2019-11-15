@@ -100,30 +100,30 @@ namespace TP_PAV_3K02.Modulos
                 return;
             }
 
-            if (!revista.CodValido(txtcodigoInterno.Text.ToString()))
+            /*if (!revista.CodValido(txtcodigoInterno.Text.ToString()))
             {
                 MessageBox.Show("Codigo Interno Invalido");
                 return;
             }
 
-            revista.cod_Interno = int.Parse(txtcodigoInterno.Text);
+            revista.cod_Interno = int.Parse(txtcodigoInterno.Text);*/
 
             if (!revista.fechavalida())
             {
                 MessageBox.Show("Fecha de inicio invalida");
                 return;
             }
-            if (!_revistasRepositorio.ValidarCod(txtcodigoInterno.Text.ToString()))
-            {
-                if (_revistasRepositorio.Guardar(revista))
+
+            //if (!_revistasRepositorio.ValidarCod(txtcodigoInterno.Text.ToString()))
+            
+            if (_revistasRepositorio.Guardar(revista))
                 {
                     MessageBox.Show("Se Registro con Exito !!");
                     ActualizarRevista();
                     LimpiarCampos();
                 }
-            }
-            else
-                MessageBox.Show("El codigo de esa revista ya existe");
+            
+            
 
         }
 

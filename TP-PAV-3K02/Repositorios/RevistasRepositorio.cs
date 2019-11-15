@@ -33,8 +33,8 @@ namespace TP_PAV_3K02.Repositorios
         public bool Guardar(Revista revista)
         {
             
-                string sqltext = $"INSERT [dbo].[Revistas] ([cod_Interno],[nombre],[cod_frecPublic],[cod_rubro],[fechaInicio])" +
-                $"VALUES('{revista.cod_Interno}','{revista.nombre}','{revista.cod_frecPublic}','{revista.cod_rubro}'," +
+                string sqltext = $"INSERT [dbo].[Revistas] ([nombre],[cod_frecPublic],[cod_rubro],[fechaInicio])" +
+                $"VALUES('{revista.nombre}','{revista.cod_frecPublic}','{revista.cod_rubro}'," +
                 $"'{revista.fechaInicio.ToString("yyyy-MM-dd")}') ";
 
                 return _BD.EjecutarSQL(sqltext);
@@ -105,8 +105,7 @@ namespace TP_PAV_3K02.Repositorios
 
         public bool Actualizar(Revista revista, string cod)
         {
-            string sqltext = $"UPDATE [dbo].[Revistas] SET cod_Interno = '{revista.cod_Interno}' , " +
-                $" nombre = '{revista.nombre}' , " +
+            string sqltext = $"UPDATE [dbo].[Revistas] SET  nombre = '{revista.nombre}' , " +
                 $" cod_frecPublic = '{revista.cod_frecPublic}', " +
                 $" cod_rubro = '{revista.cod_rubro}' ," +
                 $" fechaInicio = '{revista.fechaInicio.ToString("yyyy-MM-dd")}' where cod_Interno = {cod}";

@@ -31,8 +31,6 @@
             this.lblRevista = new System.Windows.Forms.Label();
             this.lblnombre = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
-            this.lblCodigoInterno = new System.Windows.Forms.Label();
-            this.txtcodigoInterno = new System.Windows.Forms.TextBox();
             this.lblfrecuenciaPublicacion = new System.Windows.Forms.Label();
             this.lblRubro = new System.Windows.Forms.Label();
             this.lblFechaIncio = new System.Windows.Forms.Label();
@@ -43,11 +41,6 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.dgvRevistas = new System.Windows.Forms.DataGridView();
-            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_frecPublic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblcodigo = new System.Windows.Forms.Label();
@@ -56,6 +49,13 @@
             this.gbBuscar = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.lblCodigoInterno = new System.Windows.Forms.Label();
+            this.txtcodigoInterno = new System.Windows.Forms.TextBox();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_frecPublic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gbBuscar.SuspendLayout();
@@ -74,7 +74,7 @@
             // lblnombre
             // 
             this.lblnombre.AutoSize = true;
-            this.lblnombre.Location = new System.Drawing.Point(24, 93);
+            this.lblnombre.Location = new System.Drawing.Point(24, 104);
             this.lblnombre.Name = "lblnombre";
             this.lblnombre.Size = new System.Drawing.Size(50, 13);
             this.lblnombre.TabIndex = 2;
@@ -82,33 +82,16 @@
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(130, 90);
+            this.txtnombre.Location = new System.Drawing.Point(130, 97);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(172, 20);
             this.txtnombre.TabIndex = 3;
             this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarLetras);
             // 
-            // lblCodigoInterno
-            // 
-            this.lblCodigoInterno.AutoSize = true;
-            this.lblCodigoInterno.Location = new System.Drawing.Point(24, 136);
-            this.lblCodigoInterno.Name = "lblCodigoInterno";
-            this.lblCodigoInterno.Size = new System.Drawing.Size(85, 13);
-            this.lblCodigoInterno.TabIndex = 4;
-            this.lblCodigoInterno.Text = "Codigo Interno : ";
-            // 
-            // txtcodigoInterno
-            // 
-            this.txtcodigoInterno.Location = new System.Drawing.Point(130, 129);
-            this.txtcodigoInterno.Name = "txtcodigoInterno";
-            this.txtcodigoInterno.Size = new System.Drawing.Size(172, 20);
-            this.txtcodigoInterno.TabIndex = 5;
-            this.txtcodigoInterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNum);
-            // 
             // lblfrecuenciaPublicacion
             // 
             this.lblfrecuenciaPublicacion.AutoSize = true;
-            this.lblfrecuenciaPublicacion.Location = new System.Drawing.Point(24, 186);
+            this.lblfrecuenciaPublicacion.Location = new System.Drawing.Point(24, 159);
             this.lblfrecuenciaPublicacion.Name = "lblfrecuenciaPublicacion";
             this.lblfrecuenciaPublicacion.Size = new System.Drawing.Size(139, 13);
             this.lblfrecuenciaPublicacion.TabIndex = 6;
@@ -117,7 +100,7 @@
             // lblRubro
             // 
             this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(24, 239);
+            this.lblRubro.Location = new System.Drawing.Point(24, 209);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(42, 13);
             this.lblRubro.TabIndex = 8;
@@ -126,7 +109,7 @@
             // lblFechaIncio
             // 
             this.lblFechaIncio.AutoSize = true;
-            this.lblFechaIncio.Location = new System.Drawing.Point(24, 283);
+            this.lblFechaIncio.Location = new System.Drawing.Point(24, 255);
             this.lblFechaIncio.Name = "lblFechaIncio";
             this.lblFechaIncio.Size = new System.Drawing.Size(71, 13);
             this.lblFechaIncio.TabIndex = 9;
@@ -136,7 +119,7 @@
             // 
             this.cmbFrecuencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFrecuencia.FormattingEnabled = true;
-            this.cmbFrecuencia.Location = new System.Drawing.Point(181, 178);
+            this.cmbFrecuencia.Location = new System.Drawing.Point(181, 151);
             this.cmbFrecuencia.Name = "cmbFrecuencia";
             this.cmbFrecuencia.Size = new System.Drawing.Size(121, 21);
             this.cmbFrecuencia.TabIndex = 10;
@@ -145,7 +128,7 @@
             // 
             this.cmbRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRubro.FormattingEnabled = true;
-            this.cmbRubro.Location = new System.Drawing.Point(130, 231);
+            this.cmbRubro.Location = new System.Drawing.Point(130, 201);
             this.cmbRubro.Name = "cmbRubro";
             this.cmbRubro.Size = new System.Drawing.Size(172, 21);
             this.cmbRubro.TabIndex = 11;
@@ -153,7 +136,7 @@
             // dtpFechaInicio
             // 
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(114, 276);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(163, 255);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(123, 20);
             this.dtpFechaInicio.TabIndex = 12;
@@ -201,31 +184,6 @@
             this.dgvRevistas.Name = "dgvRevistas";
             this.dgvRevistas.Size = new System.Drawing.Size(489, 283);
             this.dgvRevistas.TabIndex = 18;
-            // 
-            // Cod_Interno
-            // 
-            this.Cod_Interno.HeaderText = "Codigo Interno";
-            this.Cod_Interno.Name = "Cod_Interno";
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nombre";
-            this.nom.Name = "nom";
-            // 
-            // cod_frecPublic
-            // 
-            this.cod_frecPublic.HeaderText = "Frec. Public";
-            this.cod_frecPublic.Name = "cod_frecPublic";
-            // 
-            // cod_Rubro
-            // 
-            this.cod_Rubro.HeaderText = "Rubro";
-            this.cod_Rubro.Name = "cod_Rubro";
-            // 
-            // FechaInicio
-            // 
-            this.FechaInicio.HeaderText = "Fecha Inicio";
-            this.FechaInicio.Name = "FechaInicio";
             // 
             // menuStrip1
             // 
@@ -304,6 +262,50 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // lblCodigoInterno
+            // 
+            this.lblCodigoInterno.AutoSize = true;
+            this.lblCodigoInterno.Location = new System.Drawing.Point(24, 123);
+            this.lblCodigoInterno.Name = "lblCodigoInterno";
+            this.lblCodigoInterno.Size = new System.Drawing.Size(85, 13);
+            this.lblCodigoInterno.TabIndex = 4;
+            this.lblCodigoInterno.Text = "Codigo Interno : ";
+            this.lblCodigoInterno.Visible = false;
+            // 
+            // txtcodigoInterno
+            // 
+            this.txtcodigoInterno.Location = new System.Drawing.Point(130, 116);
+            this.txtcodigoInterno.Name = "txtcodigoInterno";
+            this.txtcodigoInterno.Size = new System.Drawing.Size(172, 20);
+            this.txtcodigoInterno.TabIndex = 5;
+            this.txtcodigoInterno.Visible = false;
+            this.txtcodigoInterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNum);
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.HeaderText = "Fecha Inicio";
+            this.FechaInicio.Name = "FechaInicio";
+            // 
+            // cod_Rubro
+            // 
+            this.cod_Rubro.HeaderText = "Rubro";
+            this.cod_Rubro.Name = "cod_Rubro";
+            // 
+            // cod_frecPublic
+            // 
+            this.cod_frecPublic.HeaderText = "Frec. Public";
+            this.cod_frecPublic.Name = "cod_frecPublic";
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nombre";
+            this.nom.Name = "nom";
+            // 
+            // Cod_Interno
+            // 
+            this.Cod_Interno.HeaderText = "Codigo Interno";
+            this.Cod_Interno.Name = "Cod_Interno";
+            // 
             // Revistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,8 +347,6 @@
         private System.Windows.Forms.Label lblRevista;
         private System.Windows.Forms.Label lblnombre;
         private System.Windows.Forms.TextBox txtnombre;
-        private System.Windows.Forms.Label lblCodigoInterno;
-        private System.Windows.Forms.TextBox txtcodigoInterno;
         private System.Windows.Forms.Label lblfrecuenciaPublicacion;
         private System.Windows.Forms.Label lblRubro;
         private System.Windows.Forms.Label lblFechaIncio;
@@ -357,11 +357,6 @@
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.DataGridView dgvRevistas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Interno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_frecPublic;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_Rubro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.Label lblcodigo;
@@ -370,5 +365,12 @@
         private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Interno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_frecPublic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_Rubro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
+        private System.Windows.Forms.Label lblCodigoInterno;
+        private System.Windows.Forms.TextBox txtcodigoInterno;
     }
 }
