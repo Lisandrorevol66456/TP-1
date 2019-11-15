@@ -196,5 +196,47 @@ namespace TP_PAV_3K02.Modulos
             var infor = new INFO_revistas();
             infor.ShowDialog();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var rev = new Revista();
+            if (rev.CodValido(txtCodigoBuscar.Text.ToString()))
+            {
+                dgvRevistas.Rows.Clear();
+                var  codInt = int.Parse(txtCodigoBuscar.Text);
+                var revistas = _revistasRepositorio.ObtenerPorCodigo(codInt).Rows;
+                var filas = new List<DataGridViewRow>();
+
+                foreach (DataRow revista in revistas)
+                {
+                    if (revista.HasErrors)
+                        continue;//no corto el ciclo
+
+
+                    var fila = new string[]
+                    {
+                            revista.ItemArray[0].ToString(),
+                            revista.ItemArray[1].ToString(),
+                            revista.ItemArray[2].ToString(),
+                            revista.ItemArray[3].ToString(),
+                            revista.ItemArray[4].ToString(),
+                           
+
+
+                    };
+
+                    dgvRevistas.Rows.Add(fila);
+
+
+                }
+
+            }
+        }
+
+        private void btnCancelarBusqueda_Click(object sender, EventArgs e)
+        {
+            txtCodigoBuscar.Clear();
+            ActualizarRevista();
+        }
     }
 }
