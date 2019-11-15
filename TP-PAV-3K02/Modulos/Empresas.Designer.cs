@@ -235,10 +235,10 @@
             // lblsuscriptores
             // 
             this.lblsuscriptores.AutoSize = true;
-            this.lblsuscriptores.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsuscriptores.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsuscriptores.Location = new System.Drawing.Point(32, 25);
             this.lblsuscriptores.Name = "lblsuscriptores";
-            this.lblsuscriptores.Size = new System.Drawing.Size(86, 23);
+            this.lblsuscriptores.Size = new System.Drawing.Size(103, 24);
             this.lblsuscriptores.TabIndex = 30;
             this.lblsuscriptores.Text = "Empresas";
             // 
@@ -369,7 +369,6 @@
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.informesToolStripMenuItem.Text = "Informes";
-            this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
             // 
             // Empresas
             // 
