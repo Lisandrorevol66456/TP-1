@@ -50,7 +50,7 @@
             this.TXTcuit.Name = "TXTcuit";
             this.TXTcuit.Size = new System.Drawing.Size(100, 20);
             this.TXTcuit.TabIndex = 1;
-            this.TXTcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarsolonumeros);
+            this.TXTcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validanumeros);
             // 
             // label1
             // 

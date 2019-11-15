@@ -886,7 +886,7 @@ SELECT cuit_dist, nombre, apellido, domicilio, fecha_inicio FROM Distribuidores 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TP_PAV_3K02.Properties.Settings.Default.Editorial_PAVConnectionString;
+            this._connection.ConnectionString = global::TP_PAV_3K02.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

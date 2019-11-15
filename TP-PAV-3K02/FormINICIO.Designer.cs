@@ -41,6 +41,7 @@
             this.empresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.distribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distribucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -160,10 +161,19 @@
             // 
             // distribuidoresToolStripMenuItem
             // 
+            this.distribuidoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.distribucionesToolStripMenuItem});
             this.distribuidoresToolStripMenuItem.Name = "distribuidoresToolStripMenuItem";
             this.distribuidoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.distribuidoresToolStripMenuItem.Text = "&Distribuidores";
             this.distribuidoresToolStripMenuItem.Click += new System.EventHandler(this.distribuidoresToolStripMenuItem_Click);
+            // 
+            // distribucionesToolStripMenuItem
+            // 
+            this.distribucionesToolStripMenuItem.Name = "distribucionesToolStripMenuItem";
+            this.distribucionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.distribucionesToolStripMenuItem.Text = "&Distribuciones";
+            this.distribucionesToolStripMenuItem.Click += new System.EventHandler(this.distribucionesToolStripMenuItem_Click);
             // 
             // FormINICIO
             // 
@@ -208,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem empresasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem revistasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem distribuidoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem distribucionesToolStripMenuItem;
     }
 }

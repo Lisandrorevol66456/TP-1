@@ -22,17 +22,18 @@ namespace TP_PAV_3K02.REPORTES.rep_revista
 
         private void INFO_revistas_Load(object sender, EventArgs e)
         {
-            //this.RV_revistas.RefreshReport();
-            var adapter = new Revistas_DataSetTableAdapters.DataTable1TableAdapter();
-            var d = new Revistas_DataSet.DataTable1DataTable();
-            adapter.Fill(d);
+            this.RV_revistas.RefreshReport();
+            
+            var adapt = new Revistas_DataSetTableAdapters.DataTable1TableAdapter();
+            var da = new Revistas_DataSet.DataTable1DataTable();
+            adapt.Fill(da);
 
-            var ds = new ReportDataSource("tabla_revistas", (DataTable)d);
+            var ds = new ReportDataSource("tabla_revistas", (DataTable) da);
 
             RV_revistas.LocalReport.DataSources.Clear();
             RV_revistas.LocalReport.DataSources.Add(ds);
             this.RV_revistas.RefreshReport();
-        
+            
         }
     }
 }

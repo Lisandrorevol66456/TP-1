@@ -28,8 +28,8 @@ namespace TP_PAV_3K02.REPORTES.rep_distri
         public INFOdistribucion()
         {
             InitializeComponent();
-            
-            
+            v = new ValidateTextBox();
+
         }
         public INFOdistribucion(string cuit)
         {
@@ -43,20 +43,20 @@ namespace TP_PAV_3K02.REPORTES.rep_distri
 
         private void INFOdistribucion_Load(object sender, EventArgs e)
         {
-            TXTcuit.Text = distribucion.Cuit_dist.ToString();
+            //TXTcuit.Text = distribucion.Cuit_dist.ToString();
 
 
-            this.RV_distribuciones.RefreshReport();
+            //this.RV_distribuciones.RefreshReport();
 
-            var adapter = new rep_distribuciones.dsitribuciones_DataSetTableAdapters.DataTable1TableAdapter();
-            var data = new rep_distribuciones.dsitribuciones_DataSet.DataTable1DataTable();
-            ////// obtengo datos a mostrar  
+            //var adapter = new rep_distribuciones.dsitribuciones_DataSetTableAdapters.DataTable1TableAdapter();
+            //var data = new rep_distribuciones.dsitribuciones_DataSet.DataTable1DataTable();
+            //////// obtengo datos a mostrar  
 
-            data = adapter.GetData(decimal.Parse(distribucion.Cuit_dist.ToString()));
-            var ds = new ReportDataSource("tabla_distribucion", (DataTable)data);
-            RV_distribuciones.LocalReport.DataSources.Clear();
-            RV_distribuciones.LocalReport.DataSources.Add(ds);
-            this.RV_distribuciones.RefreshReport();
+            //data = adapter.GetData(decimal.Parse(distribucion.Cuit_dist.ToString()));
+            //var ds = new ReportDataSource("tabla_distribucion", (DataTable)data);
+            //RV_distribuciones.LocalReport.DataSources.Clear();
+            //RV_distribuciones.LocalReport.DataSources.Add(ds);
+            //this.RV_distribuciones.RefreshReport();
 
         }
 
@@ -85,6 +85,11 @@ namespace TP_PAV_3K02.REPORTES.rep_distri
         }
 
         private void validarsolonumeros(object sender, KeyPressEventArgs e)
+        {
+            v.ValidateSoloNumeros(sender, e);
+        }
+
+        private void validanumeros(object sender, KeyPressEventArgs e)
         {
             v.ValidateSoloNumeros(sender, e);
         }

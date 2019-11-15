@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV_3K02.Modulos;
+using TP_PAV_3K02.REPORTES.rep_distri;
 using TP_PAV_3K02.REPORTES.rep_distribuidores;
 using TP_PAV_3K02.REPORTES.rep_empresas;
 using TP_PAV_3K02.REPORTES.rep_revista;
@@ -87,6 +88,12 @@ namespace TP_PAV_3K02
         {
             var dis = new INFO_distribuidores();
             dis.ShowDialog();
+        }
+
+        private void distribucionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var distri = new INFOdistribucion();
+            distri.ShowDialog();
         }
     }
 }

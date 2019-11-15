@@ -44,5 +44,27 @@ namespace TP_PAV_3K02.Properties {
                 return ((string)(this["Editorial_PAVConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Editorial-PAV.mssql.somee.com;Initial Catalog=Editorial-PAV;Persist S" +
+            "ecurity Info=True;User ID=hassanmafud_SQLLogin_1")]
+        public string pruebastring {
+            get {
+                return ((string)(this["pruebastring"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Reportes-PAV.mssql.somee.com;Initial Catalog=Reportes-PAV;Persist Sec" +
+            "urity Info=True;User ID=Revol66456_SQLLogin_1")]
+        public string Reportes_PAVConnectionString {
+            get {
+                return ((string)(this["Reportes_PAVConnectionString"]));
+            }
+        }
     }
 }
