@@ -46,8 +46,8 @@ namespace TP_PAV_3K02.Repositorios
                 return _BD.EjecutarSQL(sqltext);
             
             
-         
         }
+
 
         public DataTable ObtenerPorCodigo(int cod)
         {

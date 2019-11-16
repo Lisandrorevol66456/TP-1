@@ -17,14 +17,14 @@ namespace TP_PAV_3K02.Modelos
 
         public bool fechadesdevalida()
         {
-            if (fecha_desde != DateTime.MinValue && fecha_desde <= DateTime.Today)
+            if (fecha_desde != DateTime.MinValue )
                 return true;
             return false;
 
         }
         public bool fechahastavalida()
         {
-            if (fecha_hasta > fecha_desde && fecha_hasta > DateTime.Today)
+            if (fecha_hasta > fecha_desde && fecha_hasta >= DateTime.Today)
                 return true;
             return false;
 

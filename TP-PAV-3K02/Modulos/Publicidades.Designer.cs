@@ -43,16 +43,21 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.BTN_Cancelar = new System.Windows.Forms.Button();
             this.DGV_publicidades = new System.Windows.Forms.DataGridView();
-            this.TXT_buscar = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.BTN_filtrar = new System.Windows.Forms.Button();
             this.ID_publi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuit_empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_Revista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.BTN_filtrar = new System.Windows.Forms.Button();
+            this.BTN_ver = new System.Windows.Forms.Button();
+            this.dtpfiltrodesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpfiltrohasta = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labelMENSAJE = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_publicidades)).BeginInit();
             this.SuspendLayout();
@@ -110,11 +115,12 @@
             // 
             this.dtp_desde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_desde.Location = new System.Drawing.Point(33, 49);
-            this.dtp_desde.MaxDate = new System.DateTime(2019, 11, 15, 0, 0, 0, 0);
+            this.dtp_desde.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dtp_desde.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtp_desde.Name = "dtp_desde";
             this.dtp_desde.Size = new System.Drawing.Size(111, 26);
             this.dtp_desde.TabIndex = 13;
-            this.dtp_desde.Value = new System.DateTime(2019, 11, 15, 0, 0, 0, 0);
+            this.dtp_desde.Value = new System.DateTime(2019, 11, 15, 21, 36, 25, 0);
             // 
             // Desde
             // 
@@ -140,11 +146,12 @@
             // 
             this.dtp_hasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_hasta.Location = new System.Drawing.Point(33, 112);
-            this.dtp_hasta.MaxDate = new System.DateTime(2019, 11, 15, 0, 0, 0, 0);
+            this.dtp_hasta.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dtp_hasta.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtp_hasta.Name = "dtp_hasta";
             this.dtp_hasta.Size = new System.Drawing.Size(111, 26);
             this.dtp_hasta.TabIndex = 15;
-            this.dtp_hasta.Value = new System.DateTime(2019, 11, 15, 0, 0, 0, 0);
+            this.dtp_hasta.Value = new System.DateTime(2019, 11, 15, 21, 35, 38, 0);
             // 
             // groupBox1
             // 
@@ -197,6 +204,7 @@
             this.BTN_Cancelar.TabIndex = 21;
             this.BTN_Cancelar.Text = "&Cancelar";
             this.BTN_Cancelar.UseVisualStyleBackColor = true;
+            this.BTN_Cancelar.Click += new System.EventHandler(this.BTN_Cancelar_Click);
             // 
             // DGV_publicidades
             // 
@@ -208,46 +216,10 @@
             this.Fecha_desde,
             this.Fecha_hasta,
             this.Monto});
-            this.DGV_publicidades.Location = new System.Drawing.Point(33, 342);
+            this.DGV_publicidades.Location = new System.Drawing.Point(33, 365);
             this.DGV_publicidades.Name = "DGV_publicidades";
-            this.DGV_publicidades.Size = new System.Drawing.Size(643, 231);
+            this.DGV_publicidades.Size = new System.Drawing.Size(643, 208);
             this.DGV_publicidades.TabIndex = 22;
-            // 
-            // TXT_buscar
-            // 
-            this.TXT_buscar.Location = new System.Drawing.Point(478, 316);
-            this.TXT_buscar.Name = "TXT_buscar";
-            this.TXT_buscar.Size = new System.Drawing.Size(105, 20);
-            this.TXT_buscar.TabIndex = 23;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(29, 253);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(675, 19);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "__________________________________________________________________________";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(199, 281);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(315, 25);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Publicidades pactadas por la empresa";
-            // 
-            // BTN_filtrar
-            // 
-            this.BTN_filtrar.Location = new System.Drawing.Point(584, 316);
-            this.BTN_filtrar.Name = "BTN_filtrar";
-            this.BTN_filtrar.Size = new System.Drawing.Size(92, 20);
-            this.BTN_filtrar.TabIndex = 27;
-            this.BTN_filtrar.Text = "&Filtrar";
-            this.BTN_filtrar.UseVisualStyleBackColor = true;
             // 
             // ID_publi
             // 
@@ -291,16 +263,114 @@
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
             // 
-            // Publicidad
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(29, 253);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(675, 19);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "__________________________________________________________________________";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(199, 281);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(315, 25);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Publicidades pactadas por la empresa";
+            // 
+            // BTN_filtrar
+            // 
+            this.BTN_filtrar.Location = new System.Drawing.Point(633, 316);
+            this.BTN_filtrar.Name = "BTN_filtrar";
+            this.BTN_filtrar.Size = new System.Drawing.Size(43, 43);
+            this.BTN_filtrar.TabIndex = 27;
+            this.BTN_filtrar.Text = "&Filtrar";
+            this.BTN_filtrar.UseVisualStyleBackColor = true;
+            this.BTN_filtrar.Click += new System.EventHandler(this.BTN_filtrar_Click);
+            // 
+            // BTN_ver
+            // 
+            this.BTN_ver.Location = new System.Drawing.Point(33, 339);
+            this.BTN_ver.Name = "BTN_ver";
+            this.BTN_ver.Size = new System.Drawing.Size(92, 20);
+            this.BTN_ver.TabIndex = 28;
+            this.BTN_ver.Text = "&Ver todas";
+            this.BTN_ver.UseVisualStyleBackColor = true;
+            this.BTN_ver.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dtpfiltrodesde
+            // 
+            this.dtpfiltrodesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpfiltrodesde.Location = new System.Drawing.Point(447, 339);
+            this.dtpfiltrodesde.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dtpfiltrodesde.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtpfiltrodesde.Name = "dtpfiltrodesde";
+            this.dtpfiltrodesde.Size = new System.Drawing.Size(87, 20);
+            this.dtpfiltrodesde.TabIndex = 17;
+            this.dtpfiltrodesde.Value = new System.DateTime(2019, 11, 15, 21, 36, 25, 0);
+            // 
+            // dtpfiltrohasta
+            // 
+            this.dtpfiltrohasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpfiltrohasta.Location = new System.Drawing.Point(540, 339);
+            this.dtpfiltrohasta.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dtpfiltrohasta.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtpfiltrohasta.Name = "dtpfiltrohasta";
+            this.dtpfiltrohasta.Size = new System.Drawing.Size(87, 20);
+            this.dtpfiltrohasta.TabIndex = 17;
+            this.dtpfiltrohasta.Value = new System.DateTime(2019, 11, 15, 21, 35, 38, 0);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(443, 316);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 20);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Desde";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(536, 316);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 20);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Hasta";
+            // 
+            // labelMENSAJE
+            // 
+            this.labelMENSAJE.AutoSize = true;
+            this.labelMENSAJE.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMENSAJE.ForeColor = System.Drawing.Color.Red;
+            this.labelMENSAJE.Location = new System.Drawing.Point(97, 54);
+            this.labelMENSAJE.Name = "labelMENSAJE";
+            this.labelMENSAJE.Size = new System.Drawing.Size(128, 16);
+            this.labelMENSAJE.TabIndex = 17;
+            this.labelMENSAJE.Text = "*Seleccione una empresa";
+            // 
+            // Publicidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(715, 600);
+            this.Controls.Add(this.labelMENSAJE);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dtpfiltrohasta);
+            this.Controls.Add(this.dtpfiltrodesde);
+            this.Controls.Add(this.BTN_ver);
             this.Controls.Add(this.BTN_filtrar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.TXT_buscar);
             this.Controls.Add(this.DGV_publicidades);
             this.Controls.Add(this.BTN_Cancelar);
             this.Controls.Add(this.btnAceptar);
@@ -313,7 +383,7 @@
             this.Controls.Add(this.CMB_empresa);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.Name = "Publicidad";
+            this.Name = "Publicidades";
             this.Text = "Publicidad";
             this.Load += new System.EventHandler(this.Publicidad_Load);
             this.groupBox1.ResumeLayout(false);
@@ -346,9 +416,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_desde;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_hasta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private System.Windows.Forms.TextBox TXT_buscar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button BTN_filtrar;
+        private System.Windows.Forms.Button BTN_ver;
+        private System.Windows.Forms.DateTimePicker dtpfiltrodesde;
+        private System.Windows.Forms.DateTimePicker dtpfiltrohasta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelMENSAJE;
     }
 }

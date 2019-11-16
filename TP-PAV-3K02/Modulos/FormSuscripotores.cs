@@ -52,10 +52,7 @@ namespace TP_PAV_3K02
                     continue;//no corto el ciclo
                 var fila = new string[]
                 {
-                //    "SELECT s.nroDoc, d.nombre AS TIPO, s.nombre AS NOMBRE, s.apellido, " +
-                //"s.calle, s.numero, l.nombre AS LOCALIDAD, p.nombre AS PROVINCIA FROM Suscriptores AS s " +
-                //"INNER JOIN Localidades AS l ON s.cod_Localidad = l.cod_Localidad INNER JOIN Provincias AS p " +
-                //"ON s.cod_Provincia = p.cod_provincia INNER JOIN TipoDocumento AS d ON s.cod_TipoDoc = d.cod_TipoDoc ";
+                
                     suscriptor.ItemArray[0].ToString(),
                     suscriptor.ItemArray[1].ToString(),
                     suscriptor.ItemArray[2].ToString(),

@@ -35,7 +35,13 @@ namespace TP_PAV_3K02.Modulos
             CargarEmpresas();
             CargarMontos();
             ActualizarPublicidades(CMB_empresa.SelectedValue.ToString());
-
+            CMB_monto.SelectedIndex = -1;
+            CMB_Revista.SelectedIndex = -1;
+            CMB_empresa.SelectedIndex = -1;
+            btnAceptar.Enabled = false;
+            BTN_ver.Enabled = false;
+            BTN_filtrar.Enabled = false;
+            labelMENSAJE.Visible = true;
         }
 
         private void CargarEmpresas()
@@ -57,7 +63,7 @@ namespace TP_PAV_3K02.Modulos
         private void CargarMontos()
         {
             var monto = _revistaRepo.ObtenerMontosDT();
-            CMB_monto.ValueMember = "ID_precio";
+            CMB_monto.ValueMember = "valor_precio";
             CMB_monto.DisplayMember = "valor_precio";
             CMB_monto.DataSource = monto;
         }
@@ -97,13 +103,17 @@ namespace TP_PAV_3K02.Modulos
             if (CMB_empresa.Items.Count != 0)
             {
                 ActualizarPublicidades(CMB_empresa.SelectedIndex.ToString());
+                btnAceptar.Enabled = true;
+                BTN_ver.Enabled = true;
+                BTN_filtrar.Enabled = true;
+                labelMENSAJE.Visible = false;
 
 
             }
             else
             {
                
-                DGV_publicidades.DataSource = null;
+                //DGV_publicidades.DataSource = null;
             }
         }
 
@@ -113,17 +123,32 @@ namespace TP_PAV_3K02.Modulos
             publi.cuit_Empresa = long.Parse(CMB_empresa.SelectedValue.ToString());
             publi.fecha_desde = dtp_desde.Value;
             publi.fecha_hasta = dtp_hasta.Value;
-            publi.ID_revista = int.Parse(CMB_Revista.SelectedValue.ToString());
-            publi.monto = int.Parse(CMB_monto.SelectedValue.ToString());
+
 
             if (!publi.fechadesdevalida())
             {
+                MessageBox.Show("Fecha invalida");
+                return; }
+
                 if (!publi.fechahastavalida())
                 {
                     MessageBox.Show("Fecha invalida");
+                    return;
                 }
 
+            
+            if(CMB_Revista.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar una revista");
+                return;
             }
+            if (CMB_monto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar el monto de la publicidad");
+                return;
+            }
+            publi.ID_revista = int.Parse(CMB_Revista.SelectedValue.ToString());
+            publi.monto = int.Parse(CMB_monto.SelectedValue.ToString());
             if (_publicidadRepo.Guardar(publi))
             {
                 MessageBox.Show("Se registro con exito");
@@ -131,5 +156,53 @@ namespace TP_PAV_3K02.Modulos
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ActualizarPublicidades(CMB_empresa.SelectedValue.ToString());
+        }
+
+        private void BTN_Cancelar_Click(object sender, EventArgs e)
+        {
+            dtp_desde.Value = DateTime.Today;
+            dtp_hasta.Value = DateTime.Today;
+            CMB_empresa.SelectedIndex = -1;
+            CMB_monto.SelectedIndex = -1;
+            CMB_Revista.SelectedIndex = -1;
+            btnAceptar.Enabled = false;
+            BTN_ver.Enabled = false;
+            BTN_filtrar.Enabled = false;
+            labelMENSAJE.Visible = true;
+
+        }
+
+        private void BTN_filtrar_Click(object sender, EventArgs e)
+        {
+            DGV_publicidades.Rows.Clear();
+            var cuit = CMB_empresa.SelectedValue;
+            var publicidad = _publicidadRepo.ObtenerPublicidadporcuityfechaDT(cuit.ToString(),dtpfiltrodesde.Value.ToString("yyyy-MM-dd"),dtpfiltrohasta.Value.ToString("yyyy-MM-dd")).Rows;
+            var filas = new List<DataGridViewRow>();
+
+            foreach (DataRow publi in publicidad)
+            {
+                if (publi.HasErrors)
+                    continue;
+
+                var fila = new string[]
+                {
+                    publi.ItemArray[0].ToString(),
+                    publi.ItemArray[1].ToString(),
+                    publi.ItemArray[2].ToString(),
+                    publi.ItemArray[3].ToString(),
+                    publi.ItemArray[4].ToString(),
+                    publi.ItemArray[5].ToString(),
+
+                };
+
+                DGV_publicidades.Rows.Add(fila);
+
+            }
+        }
     }
+    
 }

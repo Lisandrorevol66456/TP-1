@@ -325,5 +325,11 @@ namespace TP_PAV_3K02.Modulos
             var infor = new INFO_empresas();
             infor.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var pub = new Publicidades();
+            pub.ShowDialog();
+        }
     }
 }
