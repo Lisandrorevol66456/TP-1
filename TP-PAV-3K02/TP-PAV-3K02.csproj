@@ -79,6 +79,7 @@
     <Compile Include="Modelos\Distribucion.cs" />
     <Compile Include="Modelos\Empresa.cs" />
     <Compile Include="Modelos\Plan.cs" />
+    <Compile Include="Modelos\Publicidad.cs" />
     <Compile Include="Modelos\Revista.cs" />
     <Compile Include="Modelos\Sucripciones.cs" />
     <Compile Include="Modulos\Calificacion.cs">
@@ -158,11 +159,11 @@
     <Compile Include="Modulos\Form_Editarsuscripcion.Designer.cs">
       <DependentUpon>Form_Editarsuscripcion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\Publicidad.cs">
+    <Compile Include="Modulos\Publicidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\Publicidad.Designer.cs">
-      <DependentUpon>Publicidad.cs</DependentUpon>
+    <Compile Include="Modulos\Publicidades.Designer.cs">
+      <DependentUpon>Publicidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Revistas.cs">
       <SubType>Form</SubType>
@@ -244,6 +245,7 @@
     <Compile Include="Repositorios\LocalidadesRepositorio.cs" />
     <Compile Include="Repositorios\PlanesRepositorio.cs" />
     <Compile Include="Repositorios\ProvinciasRepositorio.cs" />
+    <Compile Include="Repositorios\PublicidadRepositorio.cs" />
     <Compile Include="Repositorios\RevistasRepositorio.cs" />
     <Compile Include="Repositorios\RubrosRepositorio.cs" />
     <Compile Include="Repositorios\SuscripcionesRepositorio.cs" />
@@ -296,8 +298,8 @@
     <EmbeddedResource Include="Modulos\Form_Editarsuscripcion.resx">
       <DependentUpon>Form_Editarsuscripcion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Publicidad.resx">
-      <DependentUpon>Publicidad.cs</DependentUpon>
+    <EmbeddedResource Include="Modulos\Publicidades.resx">
+      <DependentUpon>Publicidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Revistas.resx">
       <DependentUpon>Revistas.cs</DependentUpon>

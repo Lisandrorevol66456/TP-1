@@ -30,6 +30,12 @@ namespace TP_PAV_3K02.Repositorios
 
         }
 
+        public DataTable ObtenerMontosDT()
+        {
+            string sqltext = "SELECT * FROM Precios";
+
+            return _BD.consulta(sqltext);
+        }
         public bool Guardar(Revista revista)
         {
             

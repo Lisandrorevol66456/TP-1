@@ -19,7 +19,7 @@ namespace TP_PAV_3K02.Modelos
         public IList<Suscriptor> Suscriptors { get; set; }
         public bool fechavalida()
         {
-            if (fecha_inicio != DateTime.MinValue && fecha_inicio < DateTime.Today)
+            if (fecha_inicio != DateTime.MinValue && fecha_inicio <= DateTime.Today)
                 return true;
             return false;
 
