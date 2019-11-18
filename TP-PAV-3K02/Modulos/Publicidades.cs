@@ -42,6 +42,10 @@ namespace TP_PAV_3K02.Modulos
             BTN_ver.Enabled = false;
             BTN_filtrar.Enabled = false;
             labelMENSAJE.Visible = true;
+            dtp_desde.Value = DateTime.Today;
+            dtp_hasta.Value = DateTime.Today;
+            dtpfiltrodesde.Value = DateTime.Today;
+            dtpfiltrohasta.Value = DateTime.Today;
         }
 
         private void CargarEmpresas()
@@ -160,12 +164,16 @@ namespace TP_PAV_3K02.Modulos
         private void button1_Click(object sender, EventArgs e)
         {
             ActualizarPublicidades(CMB_empresa.SelectedValue.ToString());
+            dtpfiltrodesde.Value = DateTime.Today;
+            dtpfiltrohasta.Value = DateTime.Today;
         }
 
         private void BTN_Cancelar_Click(object sender, EventArgs e)
         {
             dtp_desde.Value = DateTime.Today;
             dtp_hasta.Value = DateTime.Today;
+            dtpfiltrodesde.Value = DateTime.Today;
+            dtpfiltrohasta.Value = DateTime.Today;
             CMB_empresa.SelectedIndex = -1;
             CMB_monto.SelectedIndex = -1;
             CMB_Revista.SelectedIndex = -1;

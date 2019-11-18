@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarRevista));
             this.lblnombre = new System.Windows.Forms.Label();
             this.lblCodigoInterno = new System.Windows.Forms.Label();
             this.lblfrecuenciaPublicacion = new System.Windows.Forms.Label();
@@ -177,6 +178,7 @@
             this.Controls.Add(this.lblfrecuenciaPublicacion);
             this.Controls.Add(this.lblCodigoInterno);
             this.Controls.Add(this.lblnombre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditarRevista";
             this.Text = "EditarRevista";
             this.Load += new System.EventHandler(this.EditarRevista_Load);

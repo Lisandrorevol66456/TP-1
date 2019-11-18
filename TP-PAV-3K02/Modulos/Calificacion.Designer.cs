@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calificacion));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCodCal = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,13 +71,14 @@
             // DTPfechacal
             // 
             this.DTPfechacal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTPfechacal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPfechacal.Location = new System.Drawing.Point(156, 98);
-            this.DTPfechacal.MaxDate = new System.DateTime(2019, 10, 4, 19, 0, 53, 0);
+            this.DTPfechacal.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.DTPfechacal.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.DTPfechacal.Name = "DTPfechacal";
-            this.DTPfechacal.Size = new System.Drawing.Size(200, 20);
+            this.DTPfechacal.Size = new System.Drawing.Size(112, 20);
             this.DTPfechacal.TabIndex = 42;
-            this.DTPfechacal.Value = new System.DateTime(2019, 10, 3, 0, 0, 0, 0);
+            this.DTPfechacal.Value = new System.DateTime(2019, 11, 17, 0, 0, 0, 0);
             // 
             // label3
             // 
@@ -100,7 +102,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(143, 151);
+            this.btnAceptar.Location = new System.Drawing.Point(55, 147);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(95, 35);
             this.btnAceptar.TabIndex = 45;
@@ -110,7 +112,7 @@
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(261, 151);
+            this.BtnCancelar.Location = new System.Drawing.Point(173, 147);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(95, 35);
             this.BtnCancelar.TabIndex = 46;
@@ -122,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 234);
+            this.ClientSize = new System.Drawing.Size(315, 234);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.TxtCuit);
@@ -131,6 +133,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbCodCal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Calificacion";
             this.Text = "Calificacion";
             this.Load += new System.EventHandler(this.Calificacion_Load);

@@ -1,6 +1,6 @@
-﻿namespace TP_PAV_3K02
+﻿namespace TP_PAV_3K02.REPORTES.rep_publicidad
 {
-    partial class prueba
+    partial class INFO_publicidadVigente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rv_prueba = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.RV_publicidades = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // rv_prueba
+            // RV_publicidades
             // 
-            this.rv_prueba.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rv_prueba.LocalReport.ReportEmbeddedResource = "TP_PAV_3K02.Report_prueba.rdlc";
-            this.rv_prueba.Location = new System.Drawing.Point(0, 0);
-            this.rv_prueba.Name = "rv_prueba";
-            this.rv_prueba.ServerReport.BearerToken = null;
-            this.rv_prueba.Size = new System.Drawing.Size(800, 450);
-            this.rv_prueba.TabIndex = 0;
+            this.RV_publicidades.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RV_publicidades.Location = new System.Drawing.Point(0, 0);
+            this.RV_publicidades.Name = "RV_publicidades";
+            this.RV_publicidades.ServerReport.BearerToken = null;
+            this.RV_publicidades.Size = new System.Drawing.Size(800, 450);
+            this.RV_publicidades.TabIndex = 0;
             // 
-            // prueba
+            // INFO_publicidadVigente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rv_prueba);
-            this.Name = "prueba";
-            this.Text = "prueba";
-            this.Load += new System.EventHandler(this.prueba_Load);
+            this.Controls.Add(this.RV_publicidades);
+            this.Name = "INFO_publicidadVigente";
+            this.Text = "Publicidades vigentes";
+            this.Load += new System.EventHandler(this.INFO_publicidad_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rv_prueba;
+        private Microsoft.Reporting.WinForms.ReportViewer RV_publicidades;
     }
 }

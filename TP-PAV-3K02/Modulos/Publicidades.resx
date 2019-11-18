@@ -135,22 +135,47 @@
   <metadata name="Monto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ID_publi.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Cuit_empresa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="id_Revista.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Fecha_desde.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Fecha_hasta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Monto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEACACoCAAAFgAAACgAAAAgAAAAQAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAWoqrAFyMrQBOjbQAWY6zAF+OsABYkrkAXZa8AFmYvgBtjaQAcY6lAHOQowB5kqMAfJKjAGib
+        vgB2n70Aa6C/AHOhvwA+kssAL5TcADeX3gA9l90AN5nfADub3gAvnOQAKpjoABO1+gAVtvoAGrP6AB2y
+        +gAZtPoAE7j6ABW4+gAZuvoAHbv6ACig6AAmqu8AMafvACen+gArpvoALab6ACWp+gAhr/oAJa36ACqq
+        +gAtq/oAKaz6ADKg+gA2ofoAMaX6ADak+QA5ovoAPaT6ADCo+gAxrPoAOKn5AD6p+gA/r/oAJ7HzACCx
+        +gAlsPoAKbL6ACyz+gAhu/oAJrz6ACu4+gAqvfoALL76ADGz+gA9svoAML76ADm7+gA7vvgARpLIAF6a
+        wwBdm8UAU5jIAF6dzQBBlNcAQ5/VAEyd3gBRn9AAYp7BAGSdxQBZoc4ARKDbAFOh3QBbp9oAY6XLAGWh
+        zABxoMIAeqfJAH+ryABjpNAAYafWAG6s0wBqrdQAc7PeAEKr7wBMsOcATrnrAFuw7ABCq/oAQq36AEWt
+        +gBKrvoASbL6AEy2+gBLuvoATrr6AFCx8wBRs/kAW7f6AFa5+QBiruEAZ7DgAHW65QB4u+sAYr7zAGG9
+        +gAqwvoANsH6ADjB+gA9wvoAQsL6AEXD+gBOxvoAUsj6AF3K+gBlwvoAb8r6AGrO+gB1yPQAfMr1AHjG
+        +gBxzvoAfMj6AG/W+gB20foAeNL6AIGUowCHmKMAiZikAI2gsACGpr0Aiqm8AI2swQCBrs0AhbXaAIu3
+        2gCFud4Alr3bAIfH6gCSxekAg9L6AIHU+gCF1foAiNb6AJPa+gCW2voAmtz6AJzd+QChxeMAqcvmAKXO
+        6gCx1O8ArNr3AKLe+gCl3/oArt/4ALna8QCY4/oAoeP6AKXg+gCq4PoAreH6AK7m+gCz5PoAteT6ALzg
+        +AC55foAve/6AMbm+QDA6PoAxur6AMjq+gDN7PoA0e36ANXu+gDY7/oAzfH6ANXy+gDa8foA3fH6ANr3
+        +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
+        P////j////5////+f///////
+</value>
+  </data>
 </root>

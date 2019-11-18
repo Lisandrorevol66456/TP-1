@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Revistas));
             this.lblRevista = new System.Windows.Forms.Label();
             this.lblnombre = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
@@ -41,6 +42,11 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.dgvRevistas = new System.Windows.Forms.DataGridView();
+            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_frecPublic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblcodigo = new System.Windows.Forms.Label();
@@ -51,11 +57,6 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.lblCodigoInterno = new System.Windows.Forms.Label();
             this.txtcodigoInterno = new System.Windows.Forms.TextBox();
-            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_frecPublic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gbBuscar.SuspendLayout();
@@ -185,6 +186,31 @@
             this.dgvRevistas.Size = new System.Drawing.Size(489, 283);
             this.dgvRevistas.TabIndex = 18;
             // 
+            // Cod_Interno
+            // 
+            this.Cod_Interno.HeaderText = "Codigo Interno";
+            this.Cod_Interno.Name = "Cod_Interno";
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nombre";
+            this.nom.Name = "nom";
+            // 
+            // cod_frecPublic
+            // 
+            this.cod_frecPublic.HeaderText = "Frec. Public";
+            this.cod_frecPublic.Name = "cod_frecPublic";
+            // 
+            // cod_Rubro
+            // 
+            this.cod_Rubro.HeaderText = "Rubro";
+            this.cod_Rubro.Name = "cod_Rubro";
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.HeaderText = "Fecha Inicio";
+            this.FechaInicio.Name = "FechaInicio";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -281,31 +307,6 @@
             this.txtcodigoInterno.Visible = false;
             this.txtcodigoInterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNum);
             // 
-            // FechaInicio
-            // 
-            this.FechaInicio.HeaderText = "Fecha Inicio";
-            this.FechaInicio.Name = "FechaInicio";
-            // 
-            // cod_Rubro
-            // 
-            this.cod_Rubro.HeaderText = "Rubro";
-            this.cod_Rubro.Name = "cod_Rubro";
-            // 
-            // cod_frecPublic
-            // 
-            this.cod_frecPublic.HeaderText = "Frec. Public";
-            this.cod_frecPublic.Name = "cod_frecPublic";
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nombre";
-            this.nom.Name = "nom";
-            // 
-            // Cod_Interno
-            // 
-            this.Cod_Interno.HeaderText = "Codigo Interno";
-            this.Cod_Interno.Name = "Cod_Interno";
-            // 
             // Revistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +330,7 @@
             this.Controls.Add(this.lblnombre);
             this.Controls.Add(this.lblRevista);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Revistas";
             this.Text = "Revista";

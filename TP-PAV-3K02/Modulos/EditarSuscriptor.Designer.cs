@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarSuscriptor));
             this.comboProvincias = new System.Windows.Forms.ComboBox();
             this.ComboLocalidades = new System.Windows.Forms.ComboBox();
             this.lblProvincia = new System.Windows.Forms.Label();
@@ -248,8 +249,9 @@
             this.Controls.Add(this.lblLocalidad);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.lblApellido);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditarSuscriptor";
-            this.Text = "EditarSuscriptor";
+            this.Text = "Editar Suscriptor";
             this.Load += new System.EventHandler(this.EditarSuscriptor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

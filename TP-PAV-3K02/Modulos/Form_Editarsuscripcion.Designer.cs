@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Editarsuscripcion));
             this.label4 = new System.Windows.Forms.Label();
             this.DTPfechainicio = new System.Windows.Forms.DateTimePicker();
             this.cmbPlanes = new System.Windows.Forms.ComboBox();
@@ -127,7 +128,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(204, 25);
             this.label3.TabIndex = 46;
-            this.label3.Text = "Editar Suscripcion";
+            this.label3.Text = "Editar Suscripción";
             // 
             // Form_Editarsuscripcion
             // 
@@ -143,8 +144,9 @@
             this.Controls.Add(this.DTPfechainicio);
             this.Controls.Add(this.cmbPlanes);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Editarsuscripcion";
-            this.Text = "Form_Editarsuscripcion";
+            this.Text = "Editar suscripción";
             this.Load += new System.EventHandler(this.Form_Editarsuscripcion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

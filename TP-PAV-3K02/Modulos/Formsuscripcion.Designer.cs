@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formsuscripcion));
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.tnAdd = new System.Windows.Forms.Button();
@@ -38,9 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSuscripciones = new System.Windows.Forms.DataGridView();
-            this.DTPfechainicio = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +47,9 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBREPLAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DTPfechainicio = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuscripciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,34 +162,6 @@
             this.dgvSuscripciones.Size = new System.Drawing.Size(727, 219);
             this.dgvSuscripciones.TabIndex = 14;
             // 
-            // DTPfechainicio
-            // 
-            this.DTPfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTPfechainicio.Location = new System.Drawing.Point(173, 135);
-            this.DTPfechainicio.Name = "DTPfechainicio";
-            this.DTPfechainicio.Size = new System.Drawing.Size(131, 20);
-            this.DTPfechainicio.TabIndex = 27;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(104, 141);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Feca desde";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(664, 399);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 25);
-            this.btnCancelar.TabIndex = 41;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // Column8
             // 
             this.Column8.HeaderText = "Codigo Interno";
@@ -231,13 +204,40 @@
             this.NOMBREPLAN.Name = "NOMBREPLAN";
             this.NOMBREPLAN.ReadOnly = true;
             // 
+            // DTPfechainicio
+            // 
+            this.DTPfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DTPfechainicio.Location = new System.Drawing.Point(173, 135);
+            this.DTPfechainicio.Name = "DTPfechainicio";
+            this.DTPfechainicio.Size = new System.Drawing.Size(131, 20);
+            this.DTPfechainicio.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(104, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Feca desde";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(664, 399);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 25);
+            this.btnCancelar.TabIndex = 41;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // Formsuscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(844, 436);
-            this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DTPfechainicio);
@@ -251,6 +251,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvSuscripciones);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Formsuscripcion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

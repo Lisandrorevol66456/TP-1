@@ -23,10 +23,7 @@ namespace TP_PAV_3K02
             InitializeComponent();
         }
 
-        private void FormINICIO_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnEmpresa_Click(object sender, EventArgs e)
         {

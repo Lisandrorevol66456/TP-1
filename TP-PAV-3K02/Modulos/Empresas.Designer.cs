@@ -29,14 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresas));
             this.dgvEmpresas = new System.Windows.Forms.DataGridView();
-            this.cuit_Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_calificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_cal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new TP_PAV_3K02.DataSet1();
             this.empresasTableAdapter = new TP_PAV_3K02.DataSet1TableAdapters.EmpresasTableAdapter();
@@ -65,6 +59,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.cuit_Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_cal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_calificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -81,47 +82,12 @@
             this.apellido,
             this.domicilio,
             this.fechaInicio,
-            this.cod_calificacion,
-            this.fecha_cal});
-            this.dgvEmpresas.Location = new System.Drawing.Point(338, 118);
+            this.fecha_cal,
+            this.cod_calificacion});
+            this.dgvEmpresas.Location = new System.Drawing.Point(292, 118);
             this.dgvEmpresas.Name = "dgvEmpresas";
             this.dgvEmpresas.Size = new System.Drawing.Size(745, 267);
             this.dgvEmpresas.TabIndex = 0;
-            // 
-            // cuit_Empresa
-            // 
-            this.cuit_Empresa.HeaderText = "Cuit Empresa";
-            this.cuit_Empresa.Name = "cuit_Empresa";
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            // 
-            // domicilio
-            // 
-            this.domicilio.HeaderText = "Domicilio";
-            this.domicilio.Name = "domicilio";
-            // 
-            // fechaInicio
-            // 
-            this.fechaInicio.HeaderText = "Fecha Inicio";
-            this.fechaInicio.Name = "fechaInicio";
-            // 
-            // cod_calificacion
-            // 
-            this.cod_calificacion.HeaderText = "Cod Calif.";
-            this.cod_calificacion.Name = "cod_calificacion";
-            // 
-            // fecha_cal
-            // 
-            this.fecha_cal.HeaderText = "Fecha Calif";
-            this.fecha_cal.Name = "fecha_cal";
             // 
             // empresasBindingSource
             // 
@@ -142,7 +108,7 @@
             this.TxtCuit.Location = new System.Drawing.Point(144, 190);
             this.TxtCuit.MaxLength = 14;
             this.TxtCuit.Name = "TxtCuit";
-            this.TxtCuit.Size = new System.Drawing.Size(163, 20);
+            this.TxtCuit.Size = new System.Drawing.Size(128, 20);
             this.TxtCuit.TabIndex = 29;
             this.TxtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateSoloNumeros);
             // 
@@ -168,11 +134,12 @@
             // 
             // DTPfechainicio
             // 
+            this.DTPfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPfechainicio.Location = new System.Drawing.Point(144, 283);
             this.DTPfechainicio.MaxDate = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
             this.DTPfechainicio.MinDate = new System.DateTime(1919, 12, 29, 0, 0, 0, 0);
             this.DTPfechainicio.Name = "DTPfechainicio";
-            this.DTPfechainicio.Size = new System.Drawing.Size(163, 20);
+            this.DTPfechainicio.Size = new System.Drawing.Size(128, 20);
             this.DTPfechainicio.TabIndex = 26;
             this.DTPfechainicio.Value = new System.DateTime(2019, 9, 13, 0, 0, 0, 0);
             // 
@@ -181,7 +148,7 @@
             this.TxtDomicilio.Location = new System.Drawing.Point(143, 237);
             this.TxtDomicilio.MaxLength = 20;
             this.TxtDomicilio.Name = "TxtDomicilio";
-            this.TxtDomicilio.Size = new System.Drawing.Size(164, 20);
+            this.TxtDomicilio.Size = new System.Drawing.Size(129, 20);
             this.TxtDomicilio.TabIndex = 25;
             this.TxtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetrayNumero);
             // 
@@ -200,7 +167,7 @@
             this.txtApellido.Location = new System.Drawing.Point(144, 146);
             this.txtApellido.MaxLength = 20;
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(163, 20);
+            this.txtApellido.Size = new System.Drawing.Size(128, 20);
             this.txtApellido.TabIndex = 23;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarletra);
             // 
@@ -209,7 +176,7 @@
             this.txtnombre.Location = new System.Drawing.Point(144, 102);
             this.txtnombre.MaxLength = 20;
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(163, 20);
+            this.txtnombre.Size = new System.Drawing.Size(128, 20);
             this.txtnombre.TabIndex = 22;
             this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarletra);
             // 
@@ -245,7 +212,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(444, 403);
+            this.btnEliminar.Location = new System.Drawing.Point(398, 403);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 35);
             this.btnEliminar.TabIndex = 33;
@@ -255,7 +222,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(525, 403);
+            this.btnEditar.Location = new System.Drawing.Point(479, 403);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 35);
             this.btnEditar.TabIndex = 32;
@@ -279,36 +246,36 @@
             this.gbBuscar.Controls.Add(this.BtnBuscar);
             this.gbBuscar.Controls.Add(this.TXTbuscarCUIT);
             this.gbBuscar.Controls.Add(this.label4);
-            this.gbBuscar.Location = new System.Drawing.Point(336, 12);
+            this.gbBuscar.Location = new System.Drawing.Point(290, 27);
             this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Size = new System.Drawing.Size(462, 100);
+            this.gbBuscar.Size = new System.Drawing.Size(394, 85);
             this.gbBuscar.TabIndex = 36;
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
             // 
             // btnCancelarBusqueda
             // 
-            this.btnCancelarBusqueda.Location = new System.Drawing.Point(271, 59);
+            this.btnCancelarBusqueda.Location = new System.Drawing.Point(268, 45);
             this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
             this.btnCancelarBusqueda.Size = new System.Drawing.Size(86, 21);
             this.btnCancelarBusqueda.TabIndex = 40;
-            this.btnCancelarBusqueda.Text = "cancelar";
+            this.btnCancelarBusqueda.Text = "Cancelar";
             this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
             this.btnCancelarBusqueda.Click += new System.EventHandler(this.btnCancelarBusqueda_Click);
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(271, 33);
+            this.BtnBuscar.Location = new System.Drawing.Point(268, 19);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(86, 20);
             this.BtnBuscar.TabIndex = 36;
-            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.Text = "&Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TXTbuscarCUIT
             // 
-            this.TXTbuscarCUIT.Location = new System.Drawing.Point(123, 47);
+            this.TXTbuscarCUIT.Location = new System.Drawing.Point(120, 33);
             this.TXTbuscarCUIT.MaxLength = 11;
             this.TXTbuscarCUIT.Name = "TXTbuscarCUIT";
             this.TXTbuscarCUIT.Size = new System.Drawing.Size(138, 20);
@@ -319,7 +286,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(47, 47);
+            this.label4.Location = new System.Drawing.Point(44, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 29;
@@ -327,7 +294,7 @@
             // 
             // btnCalificar
             // 
-            this.btnCalificar.Location = new System.Drawing.Point(336, 403);
+            this.btnCalificar.Location = new System.Drawing.Point(290, 403);
             this.btnCalificar.Name = "btnCalificar";
             this.btnCalificar.Size = new System.Drawing.Size(95, 35);
             this.btnCalificar.TabIndex = 37;
@@ -347,7 +314,7 @@
             // 
             // BTNactualizar
             // 
-            this.BTNactualizar.Location = new System.Drawing.Point(1008, 77);
+            this.BTNactualizar.Location = new System.Drawing.Point(962, 77);
             this.BTNactualizar.Name = "BTNactualizar";
             this.BTNactualizar.Size = new System.Drawing.Size(75, 35);
             this.BTNactualizar.TabIndex = 39;
@@ -361,7 +328,7 @@
             this.informesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1095, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1048, 24);
             this.menuStrip1.TabIndex = 40;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -373,7 +340,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(988, 391);
+            this.button1.Location = new System.Drawing.Point(942, 391);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 35);
             this.button1.TabIndex = 41;
@@ -381,11 +348,46 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cuit_Empresa
+            // 
+            this.cuit_Empresa.HeaderText = "Cuit de la empresa";
+            this.cuit_Empresa.Name = "cuit_Empresa";
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre del responsable";
+            this.nombre.Name = "nombre";
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido del responsable";
+            this.apellido.Name = "apellido";
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Domicilio de la empresa";
+            this.domicilio.Name = "domicilio";
+            // 
+            // fechaInicio
+            // 
+            this.fechaInicio.HeaderText = "Fecha de incripción en El Pórfido";
+            this.fechaInicio.Name = "fechaInicio";
+            // 
+            // fecha_cal
+            // 
+            this.fecha_cal.HeaderText = "Fecha de calificación";
+            this.fecha_cal.Name = "fecha_cal";
+            // 
+            // cod_calificacion
+            // 
+            this.cod_calificacion.HeaderText = "Calificación";
+            this.cod_calificacion.Name = "cod_calificacion";
+            // 
             // Empresas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1048, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BTNactualizar);
             this.Controls.Add(this.btnCancelar);
@@ -407,8 +409,12 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.dgvEmpresas);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Empresas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empresas";
             this.Load += new System.EventHandler(this.Peliculas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).EndInit();
@@ -451,15 +457,15 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button BTNactualizar;
         private System.Windows.Forms.Button btnCancelarBusqueda;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuit_Empresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_calificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_cal;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_calificacion;
     }
 }

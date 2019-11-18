@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarDistribucion));
             this.GRBejemplares = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TXTpagados = new System.Windows.Forms.TextBox();
@@ -213,6 +214,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.GRBejemplares);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditarDistribucion";
             this.Text = "EditarDistribucion";
             this.Load += new System.EventHandler(this.EditarDistribucion_Load);

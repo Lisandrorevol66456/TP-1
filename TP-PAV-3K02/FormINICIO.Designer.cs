@@ -61,7 +61,7 @@
             // 
             this.btnCerrarSesion.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(687, 324);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(687, 343);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(149, 40);
             this.btnCerrarSesion.TabIndex = 9;
@@ -141,21 +141,21 @@
             // suscriptoresToolStripMenuItem
             // 
             this.suscriptoresToolStripMenuItem.Name = "suscriptoresToolStripMenuItem";
-            this.suscriptoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.suscriptoresToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.suscriptoresToolStripMenuItem.Text = "&Suscriptores";
             this.suscriptoresToolStripMenuItem.Click += new System.EventHandler(this.suscriptoresToolStripMenuItem_Click);
             // 
             // empresasToolStripMenuItem
             // 
             this.empresasToolStripMenuItem.Name = "empresasToolStripMenuItem";
-            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.empresasToolStripMenuItem.Text = "&Empresas";
             this.empresasToolStripMenuItem.Click += new System.EventHandler(this.empresasToolStripMenuItem_Click);
             // 
             // revistasToolStripMenuItem
             // 
             this.revistasToolStripMenuItem.Name = "revistasToolStripMenuItem";
-            this.revistasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.revistasToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.revistasToolStripMenuItem.Text = "&Revistas";
             this.revistasToolStripMenuItem.Click += new System.EventHandler(this.revistasToolStripMenuItem_Click);
             // 
@@ -164,14 +164,14 @@
             this.distribuidoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.distribucionesToolStripMenuItem});
             this.distribuidoresToolStripMenuItem.Name = "distribuidoresToolStripMenuItem";
-            this.distribuidoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.distribuidoresToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.distribuidoresToolStripMenuItem.Text = "&Distribuidores";
             this.distribuidoresToolStripMenuItem.Click += new System.EventHandler(this.distribuidoresToolStripMenuItem_Click);
             // 
             // distribucionesToolStripMenuItem
             // 
             this.distribucionesToolStripMenuItem.Name = "distribucionesToolStripMenuItem";
-            this.distribucionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.distribucionesToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.distribucionesToolStripMenuItem.Text = "&Distribuciones";
             this.distribucionesToolStripMenuItem.Click += new System.EventHandler(this.distribucionesToolStripMenuItem_Click);
             // 
@@ -189,13 +189,13 @@
             this.Controls.Add(this.btnEmpresa);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormINICIO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido a Editorial El Pórfido";
-            this.Load += new System.EventHandler(this.FormINICIO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

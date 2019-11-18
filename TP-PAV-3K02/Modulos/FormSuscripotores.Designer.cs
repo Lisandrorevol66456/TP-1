@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoSuscriptor));
             this.lblsuscriptores = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCalle = new System.Windows.Forms.Label();
@@ -47,6 +48,14 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.DvgSuscriptores = new System.Windows.Forms.DataGridView();
+            this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbProvincias = new System.Windows.Forms.ComboBox();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
@@ -59,14 +68,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_suscr = new System.Windows.Forms.Button();
-            this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -265,6 +266,54 @@
             this.DvgSuscriptores.Size = new System.Drawing.Size(717, 267);
             this.DvgSuscriptores.TabIndex = 24;
             // 
+            // NroDoc
+            // 
+            this.NroDoc.HeaderText = "Número Documento";
+            this.NroDoc.Name = "NroDoc";
+            this.NroDoc.ReadOnly = true;
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.HeaderText = "TipoDoc";
+            this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Calle
+            // 
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Número";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
+            // CodLocalidad
+            // 
+            this.CodLocalidad.HeaderText = "Localidad";
+            this.CodLocalidad.Name = "CodLocalidad";
+            this.CodLocalidad.ReadOnly = true;
+            // 
+            // codProvincia
+            // 
+            this.codProvincia.HeaderText = "Provincia";
+            this.codProvincia.Name = "codProvincia";
+            this.codProvincia.ReadOnly = true;
+            // 
             // cmbLocalidad
             // 
             this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -385,54 +434,6 @@
             this.btn_suscr.UseVisualStyleBackColor = true;
             this.btn_suscr.Click += new System.EventHandler(this.btn_suscr_Click);
             // 
-            // NroDoc
-            // 
-            this.NroDoc.HeaderText = "Número Documento";
-            this.NroDoc.Name = "NroDoc";
-            this.NroDoc.ReadOnly = true;
-            // 
-            // TipoDoc
-            // 
-            this.TipoDoc.HeaderText = "TipoDoc";
-            this.TipoDoc.Name = "TipoDoc";
-            this.TipoDoc.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Calle
-            // 
-            this.Calle.HeaderText = "Calle";
-            this.Calle.Name = "Calle";
-            this.Calle.ReadOnly = true;
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Número";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            // 
-            // CodLocalidad
-            // 
-            this.CodLocalidad.HeaderText = "Localidad";
-            this.CodLocalidad.Name = "CodLocalidad";
-            this.CodLocalidad.ReadOnly = true;
-            // 
-            // codProvincia
-            // 
-            this.codProvincia.HeaderText = "Provincia";
-            this.codProvincia.Name = "codProvincia";
-            this.codProvincia.ReadOnly = true;
-            // 
             // NuevoSuscriptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,6 +466,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblsuscriptores);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
