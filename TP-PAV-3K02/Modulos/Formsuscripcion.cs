@@ -114,11 +114,17 @@ namespace TP_PAV_3K02.Modulos
                 MessageBox.Show("La fecha ingresada no es valida");
                 return;
             }
+            if(!_suscripcionesrepo.ValidarDuplicado(suscripcion.Cod_revista.ToString(), suscripcion.doc_plan.ToString(), suscripcion.nro_doc.ToString()))
+            {
+                _suscripcionesrepo.guardar(suscripcion);
+                Mensaje();
 
-            _suscripcionesrepo.guardar(suscripcion);
-            Mensaje();
-
-            ActualizarSuscripciones(suscriptor.nroDoc);
+                ActualizarSuscripciones(suscriptor.nroDoc);
+            }
+            else
+            {
+                MessageBox.Show("Ya existe");
+            }
 
 
         }

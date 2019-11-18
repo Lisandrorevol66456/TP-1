@@ -59,11 +59,18 @@ namespace TP_PAV_3K02.Repositorios
             return _BD.EjecutarSQL(sqltext);
 
         }
-
+        public bool ValidarDuplicado(string codRevista, string codPlan,string nro_doc)
+        {
+            string sqltext = $"SELECT * From Suscripcion where Cod_revista = {codRevista} AND cod_Plan= {codPlan} AND nro_doc = {nro_doc}";
+            var tabla = _BD.consulta(sqltext);
+            var filas = tabla.Rows;
+            if (filas.Count > 0)
+                return true;
+            return false;
+        }
         public void guardar(Suscripcion s)
         {
            
-            
             using (var tx = _BD.IniciarTransaccion())
             {
                 StringBuilder mensaje = new StringBuilder("La operación ");

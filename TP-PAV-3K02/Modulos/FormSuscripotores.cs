@@ -421,7 +421,7 @@ namespace TP_PAV_3K02
 
                 }
                 else
-                    MessageBox.Show("Debe seleccionar una fila no vacia para poder editar");
+                    MessageBox.Show("Debe seleccionar una fila no vacia ");
             }
         }
 
