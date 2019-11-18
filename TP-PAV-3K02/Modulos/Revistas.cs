@@ -74,8 +74,6 @@ namespace TP_PAV_3K02.Modulos
 
                 dgvRevistas.Rows.Add(fila);
             }
-
-
         }
 
         private void Revista_Load(object sender, EventArgs e)

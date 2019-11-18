@@ -42,23 +42,18 @@
             this.nro_ejemplares = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nro_ejemplares_pagos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_Entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TXTCod_Int = new System.Windows.Forms.TextBox();
             this.TXTCUIT = new System.Windows.Forms.TextBox();
             this.TXTtotal = new System.Windows.Forms.TextBox();
             this.GRBejemplares = new System.Windows.Forms.GroupBox();
+            this.CMB_revistas = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TXTpagados = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.lblIdDist = new System.Windows.Forms.Label();
-            this.TxtidDistribucion = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Distribuciones)).BeginInit();
             this.GRBejemplares.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -84,9 +79,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(24, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Codigo interno";
+            this.label3.Text = "Revista";
             // 
             // label2
             // 
@@ -109,10 +104,12 @@
             // 
             // DTPfechaEntrega
             // 
+            this.DTPfechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPfechaEntrega.Location = new System.Drawing.Point(121, 111);
             this.DTPfechaEntrega.Name = "DTPfechaEntrega";
             this.DTPfechaEntrega.Size = new System.Drawing.Size(163, 20);
             this.DTPfechaEntrega.TabIndex = 16;
+            this.DTPfechaEntrega.Value = new System.DateTime(2019, 11, 18, 1, 5, 33, 0);
             // 
             // DGV_Distribuciones
             // 
@@ -132,52 +129,43 @@
             // IDDistribucion
             // 
             this.IDDistribucion.Frozen = true;
-            this.IDDistribucion.HeaderText = "ID Dist.";
+            this.IDDistribucion.HeaderText = "ID Distribución";
             this.IDDistribucion.Name = "IDDistribucion";
             // 
             // Cuit
             // 
             this.Cuit.Frozen = true;
-            this.Cuit.HeaderText = "CUIT";
+            this.Cuit.HeaderText = "CUIT distribuidor";
             this.Cuit.Name = "Cuit";
             this.Cuit.ReadOnly = true;
             // 
             // Cod_Interno
             // 
             this.Cod_Interno.Frozen = true;
-            this.Cod_Interno.HeaderText = "CODIGO INTERNO";
+            this.Cod_Interno.HeaderText = "Código interno de revista";
             this.Cod_Interno.Name = "Cod_Interno";
             this.Cod_Interno.ReadOnly = true;
             // 
             // nro_ejemplares
             // 
             this.nro_ejemplares.Frozen = true;
-            this.nro_ejemplares.HeaderText = "EJEMPLARES";
+            this.nro_ejemplares.HeaderText = "Total de ejemplares";
             this.nro_ejemplares.Name = "nro_ejemplares";
             this.nro_ejemplares.ReadOnly = true;
             // 
             // nro_ejemplares_pagos
             // 
             this.nro_ejemplares_pagos.Frozen = true;
-            this.nro_ejemplares_pagos.HeaderText = "EJEMPLARES PAGOS";
+            this.nro_ejemplares_pagos.HeaderText = "Ejemplares pagos";
             this.nro_ejemplares_pagos.Name = "nro_ejemplares_pagos";
             this.nro_ejemplares_pagos.ReadOnly = true;
             // 
             // fecha_Entrega
             // 
             this.fecha_Entrega.Frozen = true;
-            this.fecha_Entrega.HeaderText = "FECHA DE ENTREGA";
+            this.fecha_Entrega.HeaderText = "Fecha de entrega";
             this.fecha_Entrega.Name = "fecha_Entrega";
             this.fecha_Entrega.ReadOnly = true;
-            // 
-            // TXTCod_Int
-            // 
-            this.TXTCod_Int.Location = new System.Drawing.Point(121, 23);
-            this.TXTCod_Int.MaxLength = 18;
-            this.TXTCod_Int.Name = "TXTCod_Int";
-            this.TXTCod_Int.Size = new System.Drawing.Size(89, 20);
-            this.TXTCod_Int.TabIndex = 13;
-            this.TXTCod_Int.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarnumeros);
             // 
             // TXTCUIT
             // 
@@ -200,6 +188,7 @@
             // 
             // GRBejemplares
             // 
+            this.GRBejemplares.Controls.Add(this.CMB_revistas);
             this.GRBejemplares.Controls.Add(this.label7);
             this.GRBejemplares.Controls.Add(this.TXTpagados);
             this.GRBejemplares.Controls.Add(this.label3);
@@ -207,13 +196,22 @@
             this.GRBejemplares.Controls.Add(this.label4);
             this.GRBejemplares.Controls.Add(this.TXTtotal);
             this.GRBejemplares.Controls.Add(this.DTPfechaEntrega);
-            this.GRBejemplares.Controls.Add(this.TXTCod_Int);
             this.GRBejemplares.Location = new System.Drawing.Point(28, 131);
             this.GRBejemplares.Name = "GRBejemplares";
             this.GRBejemplares.Size = new System.Drawing.Size(304, 148);
             this.GRBejemplares.TabIndex = 25;
             this.GRBejemplares.TabStop = false;
             this.GRBejemplares.Text = "Ejemplares";
+            // 
+            // CMB_revistas
+            // 
+            this.CMB_revistas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMB_revistas.FormattingEnabled = true;
+            this.CMB_revistas.Location = new System.Drawing.Point(121, 19);
+            this.CMB_revistas.Name = "CMB_revistas";
+            this.CMB_revistas.Size = new System.Drawing.Size(111, 21);
+            this.CMB_revistas.TabIndex = 27;
+            this.CMB_revistas.SelectedIndexChanged += new System.EventHandler(this.CMB_revistas_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -273,47 +271,11 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // lblIdDist
-            // 
-            this.lblIdDist.AutoSize = true;
-            this.lblIdDist.Location = new System.Drawing.Point(39, 62);
-            this.lblIdDist.Name = "lblIdDist";
-            this.lblIdDist.Size = new System.Drawing.Size(104, 13);
-            this.lblIdDist.TabIndex = 41;
-            this.lblIdDist.Text = "ID DISTRIBUCION :";
-            // 
-            // TxtidDistribucion
-            // 
-            this.TxtidDistribucion.Location = new System.Drawing.Point(149, 55);
-            this.TxtidDistribucion.MaxLength = 18;
-            this.TxtidDistribucion.Name = "TxtidDistribucion";
-            this.TxtidDistribucion.Size = new System.Drawing.Size(129, 20);
-            this.TxtidDistribucion.TabIndex = 42;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(896, 24);
-            this.menuStrip1.TabIndex = 43;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // informesToolStripMenuItem
-            // 
-            this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
-            this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.informesToolStripMenuItem.Text = "&Informes";
-            this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
-            // 
             // Distribuciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 413);
-            this.Controls.Add(this.TxtidDistribucion);
-            this.Controls.Add(this.lblIdDist);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -323,17 +285,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_Distribuciones);
             this.Controls.Add(this.TXTCUIT);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Distribuciones";
             this.Text = "Distribucion";
             this.Load += new System.EventHandler(this.Distribuciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Distribuciones)).EndInit();
             this.GRBejemplares.ResumeLayout(false);
             this.GRBejemplares.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,7 +305,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker DTPfechaEntrega;
         private System.Windows.Forms.DataGridView DGV_Distribuciones;
-        private System.Windows.Forms.TextBox TXTCod_Int;
         private System.Windows.Forms.TextBox TXTCUIT;
         private System.Windows.Forms.TextBox TXTtotal;
         private System.Windows.Forms.GroupBox GRBejemplares;
@@ -357,15 +314,12 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label lblIdDist;
+        private System.Windows.Forms.ComboBox CMB_revistas;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDDistribucion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Interno;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_ejemplares;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_ejemplares_pagos;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_Entrega;
-        private System.Windows.Forms.TextBox TxtidDistribucion;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
     }
 }

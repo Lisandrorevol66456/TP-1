@@ -48,14 +48,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.DvgSuscriptores = new System.Windows.Forms.DataGridView();
-            this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbProvincias = new System.Windows.Forms.ComboBox();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
@@ -65,12 +57,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BTNeditar = new System.Windows.Forms.Button();
             this.BTNactualizar = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_suscr = new System.Windows.Forms.Button();
+            this.NroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).BeginInit();
             this.gbBuscar.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblsuscriptores
@@ -266,54 +263,6 @@
             this.DvgSuscriptores.Size = new System.Drawing.Size(717, 267);
             this.DvgSuscriptores.TabIndex = 24;
             // 
-            // NroDoc
-            // 
-            this.NroDoc.HeaderText = "Número Documento";
-            this.NroDoc.Name = "NroDoc";
-            this.NroDoc.ReadOnly = true;
-            // 
-            // TipoDoc
-            // 
-            this.TipoDoc.HeaderText = "TipoDoc";
-            this.TipoDoc.Name = "TipoDoc";
-            this.TipoDoc.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Calle
-            // 
-            this.Calle.HeaderText = "Calle";
-            this.Calle.Name = "Calle";
-            this.Calle.ReadOnly = true;
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Número";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            // 
-            // CodLocalidad
-            // 
-            this.CodLocalidad.HeaderText = "Localidad";
-            this.CodLocalidad.Name = "CodLocalidad";
-            this.CodLocalidad.ReadOnly = true;
-            // 
-            // codProvincia
-            // 
-            this.codProvincia.HeaderText = "Provincia";
-            this.codProvincia.Name = "codProvincia";
-            this.codProvincia.ReadOnly = true;
-            // 
             // cmbLocalidad
             // 
             this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -407,23 +356,6 @@
             this.BTNactualizar.UseVisualStyleBackColor = true;
             this.BTNactualizar.Click += new System.EventHandler(this.BTNactualizar_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1058, 24);
-            this.menuStrip1.TabIndex = 38;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // informesToolStripMenuItem
-            // 
-            this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
-            this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.informesToolStripMenuItem.Text = "&Informes";
-            this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
-            // 
             // btn_suscr
             // 
             this.btn_suscr.Location = new System.Drawing.Point(561, 406);
@@ -433,6 +365,54 @@
             this.btn_suscr.Text = "ver suscripciones";
             this.btn_suscr.UseVisualStyleBackColor = true;
             this.btn_suscr.Click += new System.EventHandler(this.btn_suscr_Click);
+            // 
+            // NroDoc
+            // 
+            this.NroDoc.HeaderText = "Número Documento";
+            this.NroDoc.Name = "NroDoc";
+            this.NroDoc.ReadOnly = true;
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.HeaderText = "Tipo documento";
+            this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Calle
+            // 
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Número";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
+            // CodLocalidad
+            // 
+            this.CodLocalidad.HeaderText = "Localidad";
+            this.CodLocalidad.Name = "CodLocalidad";
+            this.CodLocalidad.ReadOnly = true;
+            // 
+            // codProvincia
+            // 
+            this.codProvincia.HeaderText = "Provincia";
+            this.codProvincia.Name = "codProvincia";
+            this.codProvincia.ReadOnly = true;
             // 
             // NuevoSuscriptor
             // 
@@ -465,9 +445,7 @@
             this.Controls.Add(this.lblCalle);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblsuscriptores);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NuevoSuscriptor";
@@ -476,8 +454,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DvgSuscriptores)).EndInit();
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,8 +489,6 @@
         private System.Windows.Forms.Button btnCancelarBusqueda;
         private System.Windows.Forms.Button BTNeditar;
         private System.Windows.Forms.Button BTNactualizar;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.Button btn_suscr;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;

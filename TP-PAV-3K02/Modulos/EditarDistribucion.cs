@@ -18,6 +18,7 @@ namespace TP_PAV_3K02.Modulos
         ValidateTextBox v;
         Distribucion dist;
         DistribucionesRepositorio _distribRepos;
+        RevistasRepositorio _revistaRepo;
         public EditarDistribucion()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace TP_PAV_3K02.Modulos
         {
             InitializeComponent();
             _distribRepos = new DistribucionesRepositorio();
+            _revistaRepo = new RevistasRepositorio();
             v = new ValidateTextBox();
             dist = _distribRepos.ObtenerPorID(id_dist);
 
@@ -34,11 +36,18 @@ namespace TP_PAV_3K02.Modulos
         private void EditarDistribucion_Load(object sender, EventArgs e)
         {
             TXTCUIT.Text = dist.Cuit_dist.ToString();
-            TXTCod_Int.Text = dist.Cod_Interno.ToString();
+            CargarRevistas();
             TxtidDistribucion.Text = dist.id.ToString();
             TXTpagados.Text = dist.nro_ejemplares_pagos.ToString();
             TXTtotal.Text = dist.nro_ejemplares.ToString();
            
+        }
+        private void CargarRevistas()
+        {
+            var revista = _revistaRepo.ObtenerRevistasDT();
+            CMB_revistas.ValueMember = "cod_Interno";
+            CMB_revistas.DisplayMember = "nombre";
+            CMB_revistas.DataSource = revista;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -47,7 +56,7 @@ namespace TP_PAV_3K02.Modulos
             distribucion1.id = int.Parse(TxtidDistribucion.Text);
             distribucion1.nro_ejemplares = long.Parse(TXTtotal.Text);
             distribucion1.nro_ejemplares_pagos = long.Parse(TXTpagados.Text);
-            distribucion1.Cod_Interno = int.Parse(TXTCod_Int.Text);
+            distribucion1.Cod_Interno = int.Parse(CMB_revistas.SelectedValue.ToString());
             distribucion1.Cuit_dist = long.Parse(TXTCUIT.Text);
             distribucion1.fecha_Entrega = DTPfechaEntrega.Value;
 

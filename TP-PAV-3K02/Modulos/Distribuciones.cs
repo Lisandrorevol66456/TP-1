@@ -19,6 +19,7 @@ namespace TP_PAV_3K02.Modulos
     {
         DistribuidoresRepositorio _distribuidoresRepositorio;
         DistribucionesRepositorio _distribucionesRepositorio;
+        RevistasRepositorio _revistaRepo;
         Editorial_BD _BD;
         Distribuidor distribuidor;
         Distribucion distribucion;
@@ -33,6 +34,7 @@ namespace TP_PAV_3K02.Modulos
             InitializeComponent();
             _distribuidoresRepositorio = new DistribuidoresRepositorio();
             _distribucionesRepositorio = new DistribucionesRepositorio();
+            _revistaRepo = new RevistasRepositorio();
             v = new ValidateTextBox();
             _BD = new Editorial_BD();
             distribucion = new Distribucion();
@@ -42,53 +44,58 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-                var distribucion = prepararDist();
-                
-                if (!distribucion.idValido(TxtidDistribucion.Text.ToString()))
-                {
-                    MessageBox.Show("El ID ingresado no es valido");
-                    return;
-                }
-                if (!distribucion.CuitValido(TXTCUIT.Text.ToString()))
-                {
-                    MessageBox.Show("El CUIT que ingreso no es valido");
-                    return;
-                }
-                distribucion.Cuit_dist = long.Parse(TXTCUIT.Text);
-                if (!distribucion.fechavalida())
-                {
-                    MessageBox.Show("La fecha ingresada no es valida");
-                    return;
-                }
-                //valida que el id no se repita
-                if (!_distribucionesRepositorio.ValidarIDduplicadp(TxtidDistribucion.Text.ToString()))
-                {
-                    // valida que el codigo interno exista en la tabla revistas
-                    if (!_distribucionesRepositorio.ValidarCod(TXTCod_Int.Text.ToString()))
-                    { // y que no este repetido sino daria error por primary key
-                        if (!_distribucionesRepositorio.ValidarCod_duplicado(TXTCod_Int.Text.ToString(), TXTCUIT.Text.ToString()))
-                        {
-                            if (_distribucionesRepositorio.Guardar(distribucion))
-                            {
-                                MessageBox.Show("Se registró distribución con Exito");
-                                ActualizarDistribuciones(distribucion.Cuit_dist);
-                                LimpiarCampos();
-                            }
-                        }
-                        else
-                            MessageBox.Show($"Ya existe una distribucion con el Codigo = {TXTCod_Int.Text}");
-                    }
-                    else
-                        MessageBox.Show($"No existe revista con el Codigo {TXTCod_Int.Text}.");
 
+            //var distribucion = prepararDist();
+            var distribucion = new Distribucion();
+            distribucion.Cod_Interno = int.Parse(CMB_revistas.SelectedValue.ToString());
+            
+            distribucion.fecha_Entrega = DTPfechaEntrega.Value;
+            distribucion.Cuit_dist = long.Parse(TXTCUIT.Text);
+
+            if (!distribucion.NumeroValido(TXTtotal.Text.ToString()))
+            {
+                MessageBox.Show("cantidad de ejemplares invalida");
+                return;
+            }
+            if (!distribucion.NumeroValido(TXTpagados.Text.ToString()))
+            {
+                MessageBox.Show("cantidad de ejemplares pagos invalida");
+                return;
+            }
+            distribucion.nro_ejemplares = long.Parse(TXTtotal.Text);
+            distribucion.nro_ejemplares_pagos = long.Parse(TXTpagados.Text);
+
+
+            if (!distribucion.CuitValido(TXTCUIT.Text.ToString()))
+            {
+                MessageBox.Show("El CUIT que ingreso no es valido");
+                return;
+            }
+            distribucion.Cuit_dist = long.Parse(TXTCUIT.Text);
+            if (!distribucion.fechavalida())
+            {
+                MessageBox.Show("La fecha ingresada no es valida");
+                return;
+            }
+            //valida que el id no se repita
+
+            // valida que el codigo interno exista en la tabla revistas
+            if (!_distribucionesRepositorio.ValidarCod(CMB_revistas.SelectedValue.ToString()))
+            { // y que no este repetido sino daria error por primary key
+                if (!_distribucionesRepositorio.ValidarCod_duplicado(CMB_revistas.SelectedValue.ToString(), TXTCUIT.Text.ToString()))
+                {
+                    if (_distribucionesRepositorio.Guardar(distribucion))
+                    {
+                        MessageBox.Show("Se registró distribución con Exito");
+                        ActualizarDistribuciones(distribucion.Cuit_dist);
+                        LimpiarCampos();
+                    }
                 }
                 else
-                    MessageBox.Show($"Ya existe un Id de una distribucion con ID = {TxtidDistribucion.Text}");
-
-
-            
-
-           
+                    MessageBox.Show($"Ya existe una distribucion con el Codigo = {CMB_revistas.SelectedValue}");
+            }
+            else
+                MessageBox.Show($"No existe revista con el Codigo {CMB_revistas.SelectedValue}.");
 
         }
 
@@ -97,6 +104,17 @@ namespace TP_PAV_3K02.Modulos
             TXTCUIT.Text = distribuidor.cuit_dist.ToString(); //carga el form con el cuit del distribuidor al que se le asigna una distribucion
             ActualizarDistribuciones(distribuidor.cuit_dist); //actualiza el grid con las distribuciones de ese distribuidor
             LimpiarCampos();
+            CargarRevistas();
+            CMB_revistas.SelectedIndex = -1;
+            btnAceptar.Enabled = false;
+            
+        }
+        private void CargarRevistas()
+        {
+            var revista = _revistaRepo.ObtenerRevistasDT();
+            CMB_revistas.ValueMember = "cod_Interno";
+            CMB_revistas.DisplayMember = "nombre";
+            CMB_revistas.DataSource = revista;
         }
         private void ActualizarDistribuciones(long TXTCUIT)
         {
@@ -128,7 +146,7 @@ namespace TP_PAV_3K02.Modulos
         }
         private void LimpiarCampos()
         {
-            TXTCod_Int.Clear();
+
             TXTpagados.Clear();
             TXTtotal.Clear();
         }
@@ -137,6 +155,8 @@ namespace TP_PAV_3K02.Modulos
         {
             ActualizarDistribuciones(distribucion.Cuit_dist);
             LimpiarCampos();
+            CMB_revistas.SelectedIndex = -1;
+            btnAceptar.Enabled = false;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -195,9 +215,9 @@ namespace TP_PAV_3K02.Modulos
             }
             foreach (DataGridViewRow fila in seleccionadas)
             {
-                
+
                 var cuit_dist = fila.Cells[1].Value;
-                
+
                 var ejemplares = fila.Cells[3].Value;
                 var id_dist = fila.Cells[0].Value;
 
@@ -227,25 +247,40 @@ namespace TP_PAV_3K02.Modulos
             }
         }
 
-        private Distribucion prepararDist()
-        {
+        //private Distribucion prepararDist()
+        //{
 
-            var distribucion = new Distribucion();
-            distribucion.id = int.Parse(TxtidDistribucion.Text);
-            distribucion.Cod_Interno = int.Parse(TXTCod_Int.Text);
-            distribucion.nro_ejemplares = long.Parse(TXTtotal.Text);
-            distribucion.nro_ejemplares_pagos = long.Parse(TXTpagados.Text);
-            distribucion.fecha_Entrega = DTPfechaEntrega.Value;
-            distribucion.Cuit_dist = long.Parse(TXTCUIT.Text);
+        //    var distribucion = new Distribucion();
+        //    distribucion.Cod_Interno = int.Parse(CMB_revistas.SelectedValue.ToString());
 
-            return distribucion;
+        //    if (!distribucion.NumeroValido(nro_ejemplares.ToString()))
+        //    {
+        //        MessageBox.Show("cantidad de ejemplares invalida");
+        //        return;                    
+        //    }
+            
+        //    distribucion.nro_ejemplares = long.Parse(TXTtotal.Text);
+        //    distribucion.nro_ejemplares_pagos = long.Parse(TXTpagados.Text);
+        //    distribucion.fecha_Entrega = DTPfechaEntrega.Value;
+        //    distribucion.Cuit_dist = long.Parse(TXTCUIT.Text);
 
-        }
+        //    return distribucion;
+
+        //}
 
         private void informesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var infor = new INFOdistribucion(distribuidor.cuit_dist.ToString());
             infor.ShowDialog();
+
+        }
+
+        private void CMB_revistas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CMB_revistas.Items.Count != 0)
+            {
+                btnAceptar.Enabled = true;
+            }
 
         }
     }

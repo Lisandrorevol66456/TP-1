@@ -31,7 +31,7 @@ namespace TP_PAV_3K02.Modelos
 
         public bool fechavalida()
         {
-            if (fecha_Entrega != DateTime.MinValue && fecha_Entrega < DateTime.Today)
+            if (fecha_Entrega != DateTime.MinValue && fecha_Entrega <= DateTime.Today)
                 return true;
             return false;
 

@@ -69,8 +69,8 @@ namespace TP_PAV_3K02.Repositorios
                 StringBuilder mensaje = new StringBuilder("La operación ");
                 try
                 {
-                        string sqlTxt = $"INSERT [dbo].[Suscripcion] ([cod_TipoDoc], [nro_doc], [fecha_inicio], [fecha_fin], [cod_Plan]) " +
-                        $"VALUES ('{s.cod_TipoDoc}', '{s.nro_doc}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
+                        string sqlTxt = $"INSERT [dbo].[Suscripcion] ([cod_TipoDoc], [nro_doc],[Cod_revista], [fecha_inicio], [fecha_fin], [cod_Plan]) " +
+                        $"VALUES ('{s.cod_TipoDoc}', '{s.nro_doc}','{s.Cod_revista}', '{s.fecha_inicio.ToString("yyyy-MM-dd")}', '{s.fecha_fin.ToString("yyyy-MM-dd")}', '{s.doc_plan}')";
 
                     s.cod_int = _BD.EjecutarTransaccion(sqlTxt);
                     if(s.cod_int == 0)
@@ -102,8 +102,9 @@ namespace TP_PAV_3K02.Repositorios
         }
         public DataTable ObtenerPorDNI(long dni)
         {
-            string sqltxt = "SELECT s.cod_int, s.cod_TipoDoc, s.nro_doc, s.fecha_inicio, s.fecha_fin, s.cod_Plan," +
-                " p.precio, p.nombre FROM Suscripcion AS s INNER JOIN Planes AS p ON s.cod_Plan = p.cod_Plan" +
+            string sqltxt = "SELECT s.cod_int, s.cod_TipoDoc, s.nro_doc,s.Cod_revista, s.fecha_inicio, s.fecha_fin, s.cod_Plan," +
+                " p.precio, p.nombre" +
+                " FROM Suscripcion AS s INNER JOIN Planes AS p ON s.cod_Plan = p.cod_Plan" +
                 " Where nro_doc =" + dni;
 
             return _BD.consulta(sqltxt);

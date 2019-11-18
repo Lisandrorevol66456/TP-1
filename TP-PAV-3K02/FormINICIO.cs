@@ -11,6 +11,7 @@ using TP_PAV_3K02.Modulos;
 using TP_PAV_3K02.REPORTES.rep_distri;
 using TP_PAV_3K02.REPORTES.rep_distribuidores;
 using TP_PAV_3K02.REPORTES.rep_empresas;
+using TP_PAV_3K02.REPORTES.rep_publicidad;
 using TP_PAV_3K02.REPORTES.rep_revista;
 using TP_PAV_3K02.REPORTES.rep_suscriptores;
 
@@ -65,32 +66,70 @@ namespace TP_PAV_3K02
 
         private void suscriptoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var rep_susc = new INFO_suscriptores();
-            rep_susc.ShowDialog();
+            
         }
 
         private void empresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var rep_emp = new INFO_empresas();
-            rep_emp.ShowDialog();
+           
         }
 
         private void revistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var rep_rev = new INFO_revistas();
-            rep_rev.ShowDialog();
+            
         }
 
         private void distribuidoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var dis = new INFO_distribuidores();
-            dis.ShowDialog();
+            
         }
 
         private void distribucionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var distri = new INFOdistribucion();
             distri.ShowDialog();
+        }
+
+        private void vigentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var vigen = new INFO_publicidadVigente();
+            vigen.ShowDialog();
+        }
+
+        private void empresasConMasPublicidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var empre = new INFO_empresaConMasPublicidad();
+            empre.ShowDialog();
+        }
+
+        private void listadoDeEmpresasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var list = new INFO_empresas();
+            list.ShowDialog();
+        }
+
+        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var rep_susc = new INFO_suscriptores();
+            rep_susc.ShowDialog();
+        }
+
+        private void listadoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var rep_rev = new INFO_revistas();
+            rep_rev.ShowDialog();
+        }
+
+        private void másVendidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var masvend = new INFO_revistasMasVendidas();
+            masvend.ShowDialog();
+        }
+
+        private void listadoDeDistribuidoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dis = new INFO_distribuidores();
+            dis.ShowDialog();
         }
     }
 }

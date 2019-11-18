@@ -37,7 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.TXTtotal = new System.Windows.Forms.TextBox();
             this.DTPfechaEntrega = new System.Windows.Forms.DateTimePicker();
-            this.TXTCod_Int = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.TxtidDistribucion = new System.Windows.Forms.TextBox();
@@ -45,11 +44,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TXTCUIT = new System.Windows.Forms.TextBox();
+            this.CMB_revistas = new System.Windows.Forms.ComboBox();
             this.GRBejemplares.SuspendLayout();
             this.SuspendLayout();
             // 
             // GRBejemplares
             // 
+            this.GRBejemplares.Controls.Add(this.CMB_revistas);
             this.GRBejemplares.Controls.Add(this.label7);
             this.GRBejemplares.Controls.Add(this.TXTpagados);
             this.GRBejemplares.Controls.Add(this.label3);
@@ -57,7 +58,6 @@
             this.GRBejemplares.Controls.Add(this.label4);
             this.GRBejemplares.Controls.Add(this.TXTtotal);
             this.GRBejemplares.Controls.Add(this.DTPfechaEntrega);
-            this.GRBejemplares.Controls.Add(this.TXTCod_Int);
             this.GRBejemplares.Location = new System.Drawing.Point(28, 153);
             this.GRBejemplares.Name = "GRBejemplares";
             this.GRBejemplares.Size = new System.Drawing.Size(304, 158);
@@ -88,9 +88,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(24, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Codigo interno";
+            this.label3.Text = "Revista";
             // 
             // label5
             // 
@@ -125,15 +125,6 @@
             this.DTPfechaEntrega.Name = "DTPfechaEntrega";
             this.DTPfechaEntrega.Size = new System.Drawing.Size(163, 20);
             this.DTPfechaEntrega.TabIndex = 16;
-            // 
-            // TXTCod_Int
-            // 
-            this.TXTCod_Int.Location = new System.Drawing.Point(121, 23);
-            this.TXTCod_Int.MaxLength = 18;
-            this.TXTCod_Int.Name = "TXTCod_Int";
-            this.TXTCod_Int.Size = new System.Drawing.Size(89, 20);
-            this.TXTCod_Int.TabIndex = 13;
-            this.TXTCod_Int.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumero);
             // 
             // btnCancelar
             // 
@@ -201,6 +192,15 @@
             this.TXTCUIT.Size = new System.Drawing.Size(163, 20);
             this.TXTCUIT.TabIndex = 43;
             // 
+            // CMB_revistas
+            // 
+            this.CMB_revistas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMB_revistas.FormattingEnabled = true;
+            this.CMB_revistas.Location = new System.Drawing.Point(121, 18);
+            this.CMB_revistas.Name = "CMB_revistas";
+            this.CMB_revistas.Size = new System.Drawing.Size(111, 21);
+            this.CMB_revistas.TabIndex = 28;
+            // 
             // EditarDistribucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,7 +235,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TXTtotal;
         private System.Windows.Forms.DateTimePicker DTPfechaEntrega;
-        private System.Windows.Forms.TextBox TXTCod_Int;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox TxtidDistribucion;
@@ -243,5 +242,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TXTCUIT;
+        private System.Windows.Forms.ComboBox CMB_revistas;
     }
 }

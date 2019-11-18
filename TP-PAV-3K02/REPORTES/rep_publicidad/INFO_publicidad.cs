@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,14 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad
 
         private void INFO_publicidad_Load(object sender, EventArgs e)
         {
+            this.RV_publicidades.RefreshReport();
+            var adapter = new publicidades_DataSetTableAdapters.DataTable1TableAdapter();
+            var d = new publicidades_DataSet.DataTable1DataTable();
+            adapter.Fill(d);
+            var ds = new ReportDataSource("tabla_publicidad_vigente", (DataTable)d);
+            RV_publicidades.LocalReport.DataSources.Clear();
+            RV_publicidades.LocalReport.DataSources.Add(ds);
+
 
             this.RV_publicidades.RefreshReport();
         }

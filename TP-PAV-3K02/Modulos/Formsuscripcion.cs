@@ -18,6 +18,7 @@ namespace TP_PAV_3K02.Modulos
 
         SuscripcionesRepositorios _suscripcionesrepo;
         SuscriptoresRepositorio _suscriptoresrepo;
+        RevistasRepositorio _revistaRepo;
         PlanesRepositorio _planesrepo;
         Suscriptor suscriptor;
         Suscripcion suscripcion;
@@ -34,6 +35,7 @@ namespace TP_PAV_3K02.Modulos
             _suscriptoresrepo = new SuscriptoresRepositorio();
             _planesrepo = new PlanesRepositorio();
             suscripcion = new Suscripcion();
+            _revistaRepo = new RevistasRepositorio();
             suscriptor = _suscriptoresrepo.ObtenerSuscriptor(dni);
 
         }
@@ -42,6 +44,14 @@ namespace TP_PAV_3K02.Modulos
             txtDoc.Text = suscriptor.nroDoc.ToString(); // carga el form con el dni del suscriptor al qe se le va a ver las suscripciones
             ActualizarSuscripciones(suscriptor.nroDoc);
             CargarCombo();
+            CargarRevistas();
+        }
+        private void CargarRevistas()
+        {
+            var revista = _revistaRepo.ObtenerRevistasDT();
+            CMB_Revista.ValueMember = "cod_Interno";
+            CMB_Revista.DisplayMember = "nombre";
+            CMB_Revista.DataSource = revista;
         }
         private void ActualizarSuscripciones(long dni)
         {
@@ -65,6 +75,8 @@ namespace TP_PAV_3K02.Modulos
                     suscripcion.ItemArray[4].ToString(),
                     suscripcion.ItemArray[5].ToString(),
                     suscripcion.ItemArray[6].ToString(),
+                    suscripcion.ItemArray[7].ToString(),
+                    suscripcion.ItemArray[8].ToString(),
                 };
 
                 dgvSuscripciones.Rows.Add(fila);
@@ -95,6 +107,7 @@ namespace TP_PAV_3K02.Modulos
             suscripcion.fecha_inicio = DTPfechainicio.Value;
             suscripcion.fecha_fin = DTPfechainicio.Value.AddYears(1);
             suscripcion.doc_plan = int.Parse(cmbPlanes.SelectedValue.ToString());
+            suscripcion.Cod_revista = int.Parse(CMB_Revista.SelectedValue.ToString());
 
             if (!suscripcion.fechavalida())
             {

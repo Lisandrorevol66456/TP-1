@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EmpresaConMasPublicidad_DataSet" targetNamespace="http://tempuri.org/EmpresaConMasPublicidad_DataSet.xsd" xmlns:mstns="http://tempuri.org/EmpresaConMasPublicidad_DataSet.xsd" xmlns="http://tempuri.org/EmpresaConMasPublicidad_DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TP_PAV_3K02.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Detalle_PublicidadTableAdapter" GeneratorDataComponentClassName="Detalle_PublicidadTableAdapter" Name="Detalle_Publicidad" UserDataComponentName="Detalle_PublicidadTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="[Editorial-PAV].dbo.Detalle_Publicidad" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        cuit_Empresa, COUNT(cuit_Empresa) AS Cantidad, SUM(monto) AS MontoPublicitado
+FROM            Detalle_Publicidad AS dp
+GROUP BY cuit_Empresa</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cuit_Empresa" DataSetColumn="cuit_Empresa" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="MontoPublicitado" DataSetColumn="MontoPublicitado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EmpresaConMasPublicidad_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EmpresaConMasPublicidad_DataSet" msprop:Generator_UserDSName="EmpresaConMasPublicidad_DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Detalle_Publicidad" msprop:Generator_TableClassName="Detalle_PublicidadDataTable" msprop:Generator_TableVarName="tableDetalle_Publicidad" msprop:Generator_TablePropName="Detalle_Publicidad" msprop:Generator_RowDeletingName="Detalle_PublicidadRowDeleting" msprop:Generator_RowChangingName="Detalle_PublicidadRowChanging" msprop:Generator_RowEvHandlerName="Detalle_PublicidadRowChangeEventHandler" msprop:Generator_RowDeletedName="Detalle_PublicidadRowDeleted" msprop:Generator_UserTableName="Detalle_Publicidad" msprop:Generator_RowChangedName="Detalle_PublicidadRowChanged" msprop:Generator_RowEvArgName="Detalle_PublicidadRowChangeEvent" msprop:Generator_RowClassName="Detalle_PublicidadRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cuit_Empresa" msprop:Generator_ColumnVarNameInTable="columncuit_Empresa" msprop:Generator_ColumnPropNameInRow="cuit_Empresa" msprop:Generator_ColumnPropNameInTable="cuit_EmpresaColumn" msprop:Generator_UserColumnName="cuit_Empresa" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+              <xs:element name="MontoPublicitado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMontoPublicitado" msprop:Generator_ColumnPropNameInRow="MontoPublicitado" msprop:Generator_ColumnPropNameInTable="MontoPublicitadoColumn" msprop:Generator_UserColumnName="MontoPublicitado" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -42,6 +42,14 @@
             this.revistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.distribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.distribucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publicidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vigentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empresasConMasPublicidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.másVendidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeDistribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -133,38 +141,48 @@
             this.suscriptoresToolStripMenuItem,
             this.empresasToolStripMenuItem,
             this.revistasToolStripMenuItem,
-            this.distribuidoresToolStripMenuItem});
+            this.distribuidoresToolStripMenuItem,
+            this.publicidadesToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "&Reportes";
             // 
             // suscriptoresToolStripMenuItem
             // 
+            this.suscriptoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoToolStripMenuItem});
             this.suscriptoresToolStripMenuItem.Name = "suscriptoresToolStripMenuItem";
-            this.suscriptoresToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.suscriptoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.suscriptoresToolStripMenuItem.Text = "&Suscriptores";
             this.suscriptoresToolStripMenuItem.Click += new System.EventHandler(this.suscriptoresToolStripMenuItem_Click);
             // 
             // empresasToolStripMenuItem
             // 
+            this.empresasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.empresasConMasPublicidadToolStripMenuItem,
+            this.listadoDeEmpresasToolStripMenuItem});
             this.empresasToolStripMenuItem.Name = "empresasToolStripMenuItem";
-            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.empresasToolStripMenuItem.Text = "&Empresas";
             this.empresasToolStripMenuItem.Click += new System.EventHandler(this.empresasToolStripMenuItem_Click);
             // 
             // revistasToolStripMenuItem
             // 
+            this.revistasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoToolStripMenuItem1,
+            this.másVendidasToolStripMenuItem});
             this.revistasToolStripMenuItem.Name = "revistasToolStripMenuItem";
-            this.revistasToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.revistasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.revistasToolStripMenuItem.Text = "&Revistas";
             this.revistasToolStripMenuItem.Click += new System.EventHandler(this.revistasToolStripMenuItem_Click);
             // 
             // distribuidoresToolStripMenuItem
             // 
             this.distribuidoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.distribucionesToolStripMenuItem});
+            this.distribucionesToolStripMenuItem,
+            this.listadoDeDistribuidoresToolStripMenuItem});
             this.distribuidoresToolStripMenuItem.Name = "distribuidoresToolStripMenuItem";
-            this.distribuidoresToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.distribuidoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.distribuidoresToolStripMenuItem.Text = "&Distribuidores";
             this.distribuidoresToolStripMenuItem.Click += new System.EventHandler(this.distribuidoresToolStripMenuItem_Click);
             // 
@@ -174,6 +192,63 @@
             this.distribucionesToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.distribucionesToolStripMenuItem.Text = "&Distribuciones";
             this.distribucionesToolStripMenuItem.Click += new System.EventHandler(this.distribucionesToolStripMenuItem_Click);
+            // 
+            // publicidadesToolStripMenuItem
+            // 
+            this.publicidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vigentesToolStripMenuItem});
+            this.publicidadesToolStripMenuItem.Name = "publicidadesToolStripMenuItem";
+            this.publicidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.publicidadesToolStripMenuItem.Text = "Publicidades";
+            // 
+            // vigentesToolStripMenuItem
+            // 
+            this.vigentesToolStripMenuItem.Name = "vigentesToolStripMenuItem";
+            this.vigentesToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.vigentesToolStripMenuItem.Text = "Vigentes";
+            this.vigentesToolStripMenuItem.Click += new System.EventHandler(this.vigentesToolStripMenuItem_Click);
+            // 
+            // empresasConMasPublicidadToolStripMenuItem
+            // 
+            this.empresasConMasPublicidadToolStripMenuItem.Name = "empresasConMasPublicidadToolStripMenuItem";
+            this.empresasConMasPublicidadToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.empresasConMasPublicidadToolStripMenuItem.Text = "Empresas con mas publicidad";
+            this.empresasConMasPublicidadToolStripMenuItem.Click += new System.EventHandler(this.empresasConMasPublicidadToolStripMenuItem_Click);
+            // 
+            // listadoDeEmpresasToolStripMenuItem
+            // 
+            this.listadoDeEmpresasToolStripMenuItem.Name = "listadoDeEmpresasToolStripMenuItem";
+            this.listadoDeEmpresasToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.listadoDeEmpresasToolStripMenuItem.Text = "Listado de empresas";
+            this.listadoDeEmpresasToolStripMenuItem.Click += new System.EventHandler(this.listadoDeEmpresasToolStripMenuItem_Click);
+            // 
+            // listadoToolStripMenuItem
+            // 
+            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoToolStripMenuItem.Text = "Listado";
+            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
+            // 
+            // listadoToolStripMenuItem1
+            // 
+            this.listadoToolStripMenuItem1.Name = "listadoToolStripMenuItem1";
+            this.listadoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listadoToolStripMenuItem1.Text = "Listado";
+            this.listadoToolStripMenuItem1.Click += new System.EventHandler(this.listadoToolStripMenuItem1_Click);
+            // 
+            // másVendidasToolStripMenuItem
+            // 
+            this.másVendidasToolStripMenuItem.Name = "másVendidasToolStripMenuItem";
+            this.másVendidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.másVendidasToolStripMenuItem.Text = "Más vendidas";
+            this.másVendidasToolStripMenuItem.Click += new System.EventHandler(this.másVendidasToolStripMenuItem_Click);
+            // 
+            // listadoDeDistribuidoresToolStripMenuItem
+            // 
+            this.listadoDeDistribuidoresToolStripMenuItem.Name = "listadoDeDistribuidoresToolStripMenuItem";
+            this.listadoDeDistribuidoresToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.listadoDeDistribuidoresToolStripMenuItem.Text = "Listado de distribuidores";
+            this.listadoDeDistribuidoresToolStripMenuItem.Click += new System.EventHandler(this.listadoDeDistribuidoresToolStripMenuItem_Click);
             // 
             // FormINICIO
             // 
@@ -219,5 +294,13 @@
         private System.Windows.Forms.ToolStripMenuItem revistasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem distribuidoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem distribucionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem publicidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vigentesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem empresasConMasPublicidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeEmpresasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem másVendidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeDistribuidoresToolStripMenuItem;
     }
 }

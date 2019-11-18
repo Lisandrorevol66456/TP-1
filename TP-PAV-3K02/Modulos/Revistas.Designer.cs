@@ -47,8 +47,6 @@
             this.cod_frecPublic = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblcodigo = new System.Windows.Forms.Label();
             this.btnCancelarBusqueda = new System.Windows.Forms.Button();
             this.txtCodigoBuscar = new System.Windows.Forms.TextBox();
@@ -58,7 +56,6 @@
             this.lblCodigoInterno = new System.Windows.Forms.Label();
             this.txtcodigoInterno = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -211,23 +208,6 @@
             this.FechaInicio.HeaderText = "Fecha Inicio";
             this.FechaInicio.Name = "FechaInicio";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
-            this.menuStrip1.TabIndex = 19;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // informesToolStripMenuItem
-            // 
-            this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
-            this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.informesToolStripMenuItem.Text = "Informes";
-            this.informesToolStripMenuItem.Click += new System.EventHandler(this.informesToolStripMenuItem_Click);
-            // 
             // lblcodigo
             // 
             this.lblcodigo.AutoSize = true;
@@ -329,15 +309,11 @@
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.lblnombre);
             this.Controls.Add(this.lblRevista);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Revistas";
             this.Text = "Revista";
             this.Load += new System.EventHandler(this.Revista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
             this.ResumeLayout(false);
@@ -359,8 +335,6 @@
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.DataGridView dgvRevistas;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.Label lblcodigo;
         private System.Windows.Forms.Button btnCancelarBusqueda;
         private System.Windows.Forms.TextBox txtCodigoBuscar;

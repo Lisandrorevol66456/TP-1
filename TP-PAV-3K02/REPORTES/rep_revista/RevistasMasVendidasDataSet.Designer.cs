@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace TP_PAV_3K02.REPORTES.rep_publicidad {
+namespace TP_PAV_3K02.REPORTES.rep_revista {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("publicidades_DataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("RevistasMasVendidasDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class publicidades_DataSet : global::System.Data.DataSet {
+    public partial class RevistasMasVendidasDataSet : global::System.Data.DataSet {
         
-        private DataTable1DataTable tableDataTable1;
+        private RevistasDataTable tableRevistas;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public publicidades_DataSet() {
+        public RevistasMasVendidasDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected publicidades_DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected RevistasMasVendidasDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["Revistas"] != null)) {
+                    base.Tables.Add(new RevistasDataTable(ds.Tables["Revistas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable1DataTable DataTable1 {
+        public RevistasDataTable Revistas {
             get {
-                return this.tableDataTable1;
+                return this.tableRevistas;
             }
         }
         
@@ -127,7 +127,7 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            publicidades_DataSet cln = ((publicidades_DataSet)(base.Clone()));
+            RevistasMasVendidasDataSet cln = ((RevistasMasVendidasDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["Revistas"] != null)) {
+                    base.Tables.Add(new RevistasDataTable(ds.Tables["Revistas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
+            this.tableRevistas = ((RevistasDataTable)(base.Tables["Revistas"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable1 != null)) {
-                    this.tableDataTable1.InitVars();
+                if ((this.tableRevistas != null)) {
+                    this.tableRevistas.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "publicidades_DataSet";
+            this.DataSetName = "RevistasMasVendidasDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/publicidades_DataSet.xsd";
+            this.Namespace = "http://tempuri.org/RevistasMasVendidasDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDataTable1 = new DataTable1DataTable();
-            base.Tables.Add(this.tableDataTable1);
+            this.tableRevistas = new RevistasDataTable();
+            base.Tables.Add(this.tableRevistas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeDataTable1() {
+        private bool ShouldSerializeRevistas() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            publicidades_DataSet ds = new publicidades_DataSet();
+            RevistasMasVendidasDataSet ds = new RevistasMasVendidasDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,31 +270,23 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
+        public delegate void RevistasRowChangeEventHandler(object sender, RevistasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
+        public partial class RevistasDataTable : global::System.Data.TypedTableBase<RevistasRow> {
             
-            private global::System.Data.DataColumn columnID_publicidad;
+            private global::System.Data.DataColumn columnnombre;
             
-            private global::System.Data.DataColumn columnCUIT;
-            
-            private global::System.Data.DataColumn columnRevista;
-            
-            private global::System.Data.DataColumn columnDESDE;
-            
-            private global::System.Data.DataColumn columnHASTA;
-            
-            private global::System.Data.DataColumn columnmonto;
+            private global::System.Data.DataColumn columnCantidaddeejemplares;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1DataTable() {
-                this.TableName = "DataTable1";
+            public RevistasDataTable() {
+                this.TableName = "Revistas";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +294,7 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DataTable1DataTable(global::System.Data.DataTable table) {
+            internal RevistasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,56 +311,24 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected RevistasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ID_publicidadColumn {
+            public global::System.Data.DataColumn nombreColumn {
                 get {
-                    return this.columnID_publicidad;
+                    return this.columnnombre;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CUITColumn {
+            public global::System.Data.DataColumn CantidaddeejemplaresColumn {
                 get {
-                    return this.columnCUIT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn RevistaColumn {
-                get {
-                    return this.columnRevista;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DESDEColumn {
-                get {
-                    return this.columnDESDE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn HASTAColumn {
-                get {
-                    return this.columnHASTA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn montoColumn {
-                get {
-                    return this.columnmonto;
+                    return this.columnCantidaddeejemplares;
                 }
             }
             
@@ -383,57 +343,46 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row this[int index] {
+            public RevistasRow this[int index] {
                 get {
-                    return ((DataTable1Row)(this.Rows[index]));
+                    return ((RevistasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
+            public event RevistasRowChangeEventHandler RevistasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
+            public event RevistasRowChangeEventHandler RevistasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
+            public event RevistasRowChangeEventHandler RevistasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
+            public event RevistasRowChangeEventHandler RevistasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddDataTable1Row(DataTable1Row row) {
+            public void AddRevistasRow(RevistasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(decimal CUIT, string Revista, System.DateTime DESDE, System.DateTime HASTA, double monto) {
-                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
+            public RevistasRow AddRevistasRow(string nombre, decimal Cantidaddeejemplares) {
+                RevistasRow rowRevistasRow = ((RevistasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        CUIT,
-                        Revista,
-                        DESDE,
-                        HASTA,
-                        monto};
-                rowDataTable1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable1Row);
-                return rowDataTable1Row;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row FindByID_publicidad(int ID_publicidad) {
-                return ((DataTable1Row)(this.Rows.Find(new object[] {
-                            ID_publicidad})));
+                        nombre,
+                        Cantidaddeejemplares};
+                rowRevistasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRevistasRow);
+                return rowRevistasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
+                RevistasDataTable cln = ((RevistasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -441,71 +390,52 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable1DataTable();
+                return new RevistasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnID_publicidad = base.Columns["ID_publicidad"];
-                this.columnCUIT = base.Columns["CUIT"];
-                this.columnRevista = base.Columns["Revista"];
-                this.columnDESDE = base.Columns["DESDE"];
-                this.columnHASTA = base.Columns["HASTA"];
-                this.columnmonto = base.Columns["monto"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnCantidaddeejemplares = base.Columns["Cantidaddeejemplares"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnID_publicidad = new global::System.Data.DataColumn("ID_publicidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_publicidad);
-                this.columnCUIT = new global::System.Data.DataColumn("CUIT", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCUIT);
-                this.columnRevista = new global::System.Data.DataColumn("Revista", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRevista);
-                this.columnDESDE = new global::System.Data.DataColumn("DESDE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDESDE);
-                this.columnHASTA = new global::System.Data.DataColumn("HASTA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHASTA);
-                this.columnmonto = new global::System.Data.DataColumn("monto", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmonto);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID_publicidad}, true));
-                this.columnID_publicidad.AutoIncrement = true;
-                this.columnID_publicidad.AutoIncrementSeed = -1;
-                this.columnID_publicidad.AutoIncrementStep = -1;
-                this.columnID_publicidad.AllowDBNull = false;
-                this.columnID_publicidad.ReadOnly = true;
-                this.columnID_publicidad.Unique = true;
-                this.columnRevista.AllowDBNull = false;
-                this.columnRevista.MaxLength = 50;
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnCantidaddeejemplares = new global::System.Data.DataColumn("Cantidaddeejemplares", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidaddeejemplares);
+                this.columnnombre.AllowDBNull = false;
+                this.columnnombre.MaxLength = 50;
+                this.columnCantidaddeejemplares.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row NewDataTable1Row() {
-                return ((DataTable1Row)(this.NewRow()));
+            public RevistasRow NewRevistasRow() {
+                return ((RevistasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable1Row(builder);
+                return new RevistasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable1Row);
+                return typeof(RevistasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable1RowChanged != null)) {
-                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.RevistasRowChanged != null)) {
+                    this.RevistasRowChanged(this, new RevistasRowChangeEvent(((RevistasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -513,8 +443,8 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable1RowChanging != null)) {
-                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.RevistasRowChanging != null)) {
+                    this.RevistasRowChanging(this, new RevistasRowChangeEvent(((RevistasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -522,8 +452,8 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable1RowDeleted != null)) {
-                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.RevistasRowDeleted != null)) {
+                    this.RevistasRowDeleted(this, new RevistasRowChangeEvent(((RevistasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -531,14 +461,14 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable1RowDeleting != null)) {
-                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.RevistasRowDeleting != null)) {
+                    this.RevistasRowDeleting(this, new RevistasRowChangeEvent(((RevistasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveDataTable1Row(DataTable1Row row) {
+            public void RemoveRevistasRow(RevistasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -547,7 +477,7 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                publicidades_DataSet ds = new publicidades_DataSet();
+                RevistasMasVendidasDataSet ds = new RevistasMasVendidasDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -565,7 +495,7 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable1DataTable";
+                attribute2.FixedValue = "RevistasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -609,149 +539,54 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable1Row : global::System.Data.DataRow {
+        public partial class RevistasRow : global::System.Data.DataRow {
             
-            private DataTable1DataTable tableDataTable1;
+            private RevistasDataTable tableRevistas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
+            internal RevistasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+                this.tableRevistas = ((RevistasDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID_publicidad {
+            public string nombre {
                 get {
-                    return ((int)(this[this.tableDataTable1.ID_publicidadColumn]));
+                    return ((string)(this[this.tableRevistas.nombreColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.ID_publicidadColumn] = value;
+                    this[this.tableRevistas.nombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal CUIT {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableDataTable1.CUITColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CUIT\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.CUITColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Revista {
-                get {
-                    return ((string)(this[this.tableDataTable1.RevistaColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.RevistaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime DESDE {
+            public decimal Cantidaddeejemplares {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDataTable1.DESDEColumn]));
+                        return ((decimal)(this[this.tableRevistas.CantidaddeejemplaresColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DESDE\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidaddeejemplares\' de la tabla \'Revistas\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.DESDEColumn] = value;
+                    this[this.tableRevistas.CantidaddeejemplaresColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime HASTA {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableDataTable1.HASTAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'HASTA\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.HASTAColumn] = value;
-                }
+            public bool IsCantidaddeejemplaresNull() {
+                return this.IsNull(this.tableRevistas.CantidaddeejemplaresColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double monto {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable1.montoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'monto\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.montoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCUITNull() {
-                return this.IsNull(this.tableDataTable1.CUITColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCUITNull() {
-                this[this.tableDataTable1.CUITColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDESDENull() {
-                return this.IsNull(this.tableDataTable1.DESDEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDESDENull() {
-                this[this.tableDataTable1.DESDEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsHASTANull() {
-                return this.IsNull(this.tableDataTable1.HASTAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetHASTANull() {
-                this[this.tableDataTable1.HASTAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmontoNull() {
-                return this.IsNull(this.tableDataTable1.montoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmontoNull() {
-                this[this.tableDataTable1.montoColumn] = global::System.Convert.DBNull;
+            public void SetCantidaddeejemplaresNull() {
+                this[this.tableRevistas.CantidaddeejemplaresColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -759,22 +594,22 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class DataTable1RowChangeEvent : global::System.EventArgs {
+        public class RevistasRowChangeEvent : global::System.EventArgs {
             
-            private DataTable1Row eventRow;
+            private RevistasRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
+            public RevistasRowChangeEvent(RevistasRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row Row {
+            public RevistasRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -790,7 +625,7 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad {
         }
     }
 }
-namespace TP_PAV_3K02.REPORTES.rep_publicidad.publicidades_DataSetTableAdapters {
+namespace TP_PAV_3K02.REPORTES.rep_revista.RevistasMasVendidasDataSetTableAdapters {
     
     
     /// <summary>
@@ -802,7 +637,7 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad.publicidades_DataSetTableAdapters 
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DataTable1TableAdapter : global::System.ComponentModel.Component {
+    public partial class RevistasTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -816,7 +651,7 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad.publicidades_DataSetTableAdapters 
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public DataTable1TableAdapter() {
+        public RevistasTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -913,13 +748,9 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad.publicidades_DataSetTableAdapters 
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DataTable1";
-            tableMapping.ColumnMappings.Add("ID_publicidad", "ID_publicidad");
-            tableMapping.ColumnMappings.Add("CUIT", "CUIT");
-            tableMapping.ColumnMappings.Add("Revista", "Revista");
-            tableMapping.ColumnMappings.Add("DESDE", "DESDE");
-            tableMapping.ColumnMappings.Add("HASTA", "HASTA");
-            tableMapping.ColumnMappings.Add("monto", "monto");
+            tableMapping.DataSetTable = "Revistas";
+            tableMapping.ColumnMappings.Add("nombre", "nombre");
+            tableMapping.ColumnMappings.Add("Cantidaddeejemplares", "Cantidaddeejemplares");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -933,28 +764,21 @@ namespace TP_PAV_3K02.REPORTES.rep_publicidad.publicidades_DataSetTableAdapters 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        p.ID_publicidad, p.cuit_Empresa AS CUIT, r.nombre AS Revista, p.fecha_desde AS DESDE, p.fecha_hasta AS HASTA, p.monto
-FROM            Detalle_Publicidad AS p INNER JOIN
-                         Revistas AS r ON p.ID_revista = r.cod_Interno
-WHERE        (p.fecha_hasta >= GETDATE())";
+            this._commandCollection[0].CommandText = "SELECT        R.nombre, SUM(d.nro_ejemplares) AS Cantidaddeejemplares\r\nFROM      " +
+                "      Distribuciones AS d INNER JOIN\r\n                         Revistas AS R ON " +
+                "d.Cod_Interno = R.cod_Interno\r\nGROUP BY R.nombre\r\nORDER BY Cantidaddeejemplares " +
+                "DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        p.ID_publicidad, p.cuit_Empresa AS CUIT, r.nombre AS Revista, p.fecha_desde AS DESDE, p.fecha_hasta AS HASTA, p.monto
-FROM            Detalle_Publicidad AS p INNER JOIN
-                         Revistas AS r ON p.ID_revista = r.cod_Interno
-WHERE        (p.fecha_hasta >= GETDATE())";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(publicidades_DataSet.DataTable1DataTable dataTable) {
+        public virtual int Fill(RevistasMasVendidasDataSet.RevistasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -967,33 +791,9 @@ WHERE        (p.fecha_hasta >= GETDATE())";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual publicidades_DataSet.DataTable1DataTable GetData() {
+        public virtual RevistasMasVendidasDataSet.RevistasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            publicidades_DataSet.DataTable1DataTable dataTable = new publicidades_DataSet.DataTable1DataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(publicidades_DataSet.DataTable1DataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual publicidades_DataSet.DataTable1DataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            publicidades_DataSet.DataTable1DataTable dataTable = new publicidades_DataSet.DataTable1DataTable();
+            RevistasMasVendidasDataSet.RevistasDataTable dataTable = new RevistasMasVendidasDataSet.RevistasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1067,7 +867,7 @@ WHERE        (p.fecha_hasta >= GETDATE())";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(publicidades_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(RevistasMasVendidasDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1077,7 +877,7 @@ WHERE        (p.fecha_hasta >= GETDATE())";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(publicidades_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(RevistasMasVendidasDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1087,7 +887,7 @@ WHERE        (p.fecha_hasta >= GETDATE())";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(publicidades_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(RevistasMasVendidasDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1121,7 +921,7 @@ WHERE        (p.fecha_hasta >= GETDATE())";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(publicidades_DataSet dataSet) {
+        public virtual int UpdateAll(RevistasMasVendidasDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
