@@ -67,7 +67,11 @@ namespace TP_PAV_3K02.REPORTES.rep_distri
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if (TXTcuit.Text == "")
+            {
+                MessageBox.Show("Deberia Ingresar CUIT");
+                return;
+            }
 
             this.RV_distribuciones.RefreshReport();
             var adapter = new rep_distribuciones.dsitribuciones_DataSetTableAdapters.DataTable1TableAdapter();

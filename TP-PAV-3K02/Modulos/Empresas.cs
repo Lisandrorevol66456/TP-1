@@ -70,6 +70,14 @@ namespace TP_PAV_3K02.Modulos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (TxtCuit.Text == "")
+            { 
+                MessageBox.Show("Cuit Invalido");
+                return;
+            }
+
+            
+
             var empresa = new Empresa();
             empresa.nombre = txtnombre.Text;
             empresa.apellido = txtApellido.Text;
@@ -77,6 +85,7 @@ namespace TP_PAV_3K02.Modulos
             empresa.domicilio = TxtDomicilio.Text;
             empresa.fecha_Inicio = DTPfechainicio.Value.Date;
       
+
 
             if (!empresa.NombreValido())
             {
