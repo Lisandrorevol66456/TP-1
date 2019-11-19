@@ -40,9 +40,15 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.EjecutarSQL(sqltxt);
         }
-        public bool Eliminar(string distribuidornrocuit)
+        public bool EliminarDistribuidor(string distribuidornrocuit)
         {
-            string sqltxt = $"DELETE FROM [dbo].[Distribuidores] WHERE cuit_dist= {distribuidornrocuit}";
+            string sqltxt = $"DELETE FROM Distribuidores WHERE cuit_dist={distribuidornrocuit}";
+
+            return _BD.EjecutarSQL(sqltxt);
+        }
+        public bool EliminarDistribucion(string distribuidornrocuit)
+        {
+            string sqltxt = $"DELETE FROM Distribuciones WHERE Cuit_dist={distribuidornrocuit}";
 
             return _BD.EjecutarSQL(sqltxt);
         }

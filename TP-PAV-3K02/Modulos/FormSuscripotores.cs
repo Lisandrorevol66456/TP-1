@@ -215,7 +215,7 @@ namespace TP_PAV_3K02
                 if (documento != null)
                 {
                     //pregunto confirmación
-                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido}, {documento}?",
+                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido}, dni:{documento}? Esto provocará la eliminación también de sus suscripciones",
                     "Confirmar operación",
                     MessageBoxButtons.YesNo);
 
@@ -223,9 +223,10 @@ namespace TP_PAV_3K02
                         return;
 
 
-                    if (_suscriptoresRepositorio.Eliminar(documento.ToString()))
+                    if (_suscriptoresRepositorio.EliminarSuscriptor(documento.ToString()))
                     {
                         MessageBox.Show("Se eliminó exitosamente. Oprima Boton Actualizar");
+                        _suscriptoresRepositorio.EliminarSuscripcion(documento.ToString());
 
                     }
                 }

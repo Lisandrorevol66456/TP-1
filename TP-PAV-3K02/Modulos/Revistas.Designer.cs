@@ -42,11 +42,6 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.dgvRevistas = new System.Windows.Forms.DataGridView();
-            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_frecPublic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblcodigo = new System.Windows.Forms.Label();
             this.btnCancelarBusqueda = new System.Windows.Forms.Button();
             this.txtCodigoBuscar = new System.Windows.Forms.TextBox();
@@ -55,6 +50,11 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.lblCodigoInterno = new System.Windows.Forms.Label();
             this.txtcodigoInterno = new System.Windows.Forms.TextBox();
+            this.Cod_Interno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_frecPublic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevistas)).BeginInit();
             this.gbBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             this.txtnombre.Location = new System.Drawing.Point(130, 97);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(172, 20);
+            this.txtnombre.Size = new System.Drawing.Size(146, 20);
             this.txtnombre.TabIndex = 3;
             this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarLetras);
             // 
@@ -119,7 +119,7 @@
             this.cmbFrecuencia.FormattingEnabled = true;
             this.cmbFrecuencia.Location = new System.Drawing.Point(181, 151);
             this.cmbFrecuencia.Name = "cmbFrecuencia";
-            this.cmbFrecuencia.Size = new System.Drawing.Size(121, 21);
+            this.cmbFrecuencia.Size = new System.Drawing.Size(95, 21);
             this.cmbFrecuencia.TabIndex = 10;
             // 
             // cmbRubro
@@ -128,7 +128,7 @@
             this.cmbRubro.FormattingEnabled = true;
             this.cmbRubro.Location = new System.Drawing.Point(130, 201);
             this.cmbRubro.Name = "cmbRubro";
-            this.cmbRubro.Size = new System.Drawing.Size(172, 21);
+            this.cmbRubro.Size = new System.Drawing.Size(146, 21);
             this.cmbRubro.TabIndex = 11;
             // 
             // dtpFechaInicio
@@ -136,7 +136,7 @@
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaInicio.Location = new System.Drawing.Point(163, 255);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(123, 20);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaInicio.TabIndex = 12;
             // 
             // btnagregar
@@ -175,38 +175,13 @@
             this.dgvRevistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cod_Interno,
             this.nom,
-            this.cod_frecPublic,
             this.cod_Rubro,
+            this.cod_frecPublic,
             this.FechaInicio});
-            this.dgvRevistas.Location = new System.Drawing.Point(346, 97);
+            this.dgvRevistas.Location = new System.Drawing.Point(320, 104);
             this.dgvRevistas.Name = "dgvRevistas";
-            this.dgvRevistas.Size = new System.Drawing.Size(489, 283);
+            this.dgvRevistas.Size = new System.Drawing.Size(524, 283);
             this.dgvRevistas.TabIndex = 18;
-            // 
-            // Cod_Interno
-            // 
-            this.Cod_Interno.HeaderText = "Codigo Interno";
-            this.Cod_Interno.Name = "Cod_Interno";
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nombre";
-            this.nom.Name = "nom";
-            // 
-            // cod_frecPublic
-            // 
-            this.cod_frecPublic.HeaderText = "Frec. Public";
-            this.cod_frecPublic.Name = "cod_frecPublic";
-            // 
-            // cod_Rubro
-            // 
-            this.cod_Rubro.HeaderText = "Rubro";
-            this.cod_Rubro.Name = "cod_Rubro";
-            // 
-            // FechaInicio
-            // 
-            this.FechaInicio.HeaderText = "Fecha Inicio";
-            this.FechaInicio.Name = "FechaInicio";
             // 
             // lblcodigo
             // 
@@ -241,9 +216,9 @@
             this.gbBuscar.Controls.Add(this.txtCodigoBuscar);
             this.gbBuscar.Controls.Add(this.lblcodigo);
             this.gbBuscar.Controls.Add(this.btnCancelarBusqueda);
-            this.gbBuscar.Location = new System.Drawing.Point(346, 12);
+            this.gbBuscar.Location = new System.Drawing.Point(320, 19);
             this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Size = new System.Drawing.Size(377, 79);
+            this.gbBuscar.Size = new System.Drawing.Size(412, 79);
             this.gbBuscar.TabIndex = 23;
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
@@ -282,10 +257,35 @@
             // 
             this.txtcodigoInterno.Location = new System.Drawing.Point(130, 116);
             this.txtcodigoInterno.Name = "txtcodigoInterno";
-            this.txtcodigoInterno.Size = new System.Drawing.Size(172, 20);
+            this.txtcodigoInterno.Size = new System.Drawing.Size(146, 20);
             this.txtcodigoInterno.TabIndex = 5;
             this.txtcodigoInterno.Visible = false;
             this.txtcodigoInterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNum);
+            // 
+            // Cod_Interno
+            // 
+            this.Cod_Interno.HeaderText = "Codigo Interno";
+            this.Cod_Interno.Name = "Cod_Interno";
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nombre";
+            this.nom.Name = "nom";
+            // 
+            // cod_Rubro
+            // 
+            this.cod_Rubro.HeaderText = "Rubro";
+            this.cod_Rubro.Name = "cod_Rubro";
+            // 
+            // cod_frecPublic
+            // 
+            this.cod_frecPublic.HeaderText = "Frec. Public";
+            this.cod_frecPublic.Name = "cod_frecPublic";
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.HeaderText = "Fecha Inicio";
+            this.FechaInicio.Name = "FechaInicio";
             // 
             // Revistas
             // 
@@ -341,12 +341,12 @@
         private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Interno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_frecPublic;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_Rubro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.Label lblCodigoInterno;
         private System.Windows.Forms.TextBox txtcodigoInterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Interno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_Rubro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_frecPublic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
     }
 }

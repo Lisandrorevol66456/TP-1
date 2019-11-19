@@ -38,18 +38,22 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suscriptoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planesMásElegidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revistaConMásSuscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.revistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.distribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.distribucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.publicidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vigentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresasConMasPublicidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.másVendidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distribucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeDistribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mayoresDistribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publicidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vigentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -150,11 +154,41 @@
             // suscriptoresToolStripMenuItem
             // 
             this.suscriptoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listadoToolStripMenuItem});
+            this.listadoToolStripMenuItem,
+            this.suscripcionesToolStripMenuItem});
             this.suscriptoresToolStripMenuItem.Name = "suscriptoresToolStripMenuItem";
             this.suscriptoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.suscriptoresToolStripMenuItem.Text = "&Suscriptores";
-            this.suscriptoresToolStripMenuItem.Click += new System.EventHandler(this.suscriptoresToolStripMenuItem_Click);
+            // 
+            // listadoToolStripMenuItem
+            // 
+            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.listadoToolStripMenuItem.Text = "Listado";
+            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
+            // 
+            // suscripcionesToolStripMenuItem
+            // 
+            this.suscripcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.planesMásElegidosToolStripMenuItem,
+            this.revistaConMásSuscripcionesToolStripMenuItem});
+            this.suscripcionesToolStripMenuItem.Name = "suscripcionesToolStripMenuItem";
+            this.suscripcionesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.suscripcionesToolStripMenuItem.Text = "Suscripciones";
+            // 
+            // planesMásElegidosToolStripMenuItem
+            // 
+            this.planesMásElegidosToolStripMenuItem.Name = "planesMásElegidosToolStripMenuItem";
+            this.planesMásElegidosToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.planesMásElegidosToolStripMenuItem.Text = "Planes más elegidos";
+            this.planesMásElegidosToolStripMenuItem.Click += new System.EventHandler(this.planesMásElegidosToolStripMenuItem_Click);
+            // 
+            // revistaConMásSuscripcionesToolStripMenuItem
+            // 
+            this.revistaConMásSuscripcionesToolStripMenuItem.Name = "revistaConMásSuscripcionesToolStripMenuItem";
+            this.revistaConMásSuscripcionesToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.revistaConMásSuscripcionesToolStripMenuItem.Text = "Revista con más suscripciones";
+            this.revistaConMásSuscripcionesToolStripMenuItem.Click += new System.EventHandler(this.revistaConMásSuscripcionesToolStripMenuItem_Click);
             // 
             // empresasToolStripMenuItem
             // 
@@ -164,7 +198,20 @@
             this.empresasToolStripMenuItem.Name = "empresasToolStripMenuItem";
             this.empresasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.empresasToolStripMenuItem.Text = "&Empresas";
-            this.empresasToolStripMenuItem.Click += new System.EventHandler(this.empresasToolStripMenuItem_Click);
+            // 
+            // empresasConMasPublicidadToolStripMenuItem
+            // 
+            this.empresasConMasPublicidadToolStripMenuItem.Name = "empresasConMasPublicidadToolStripMenuItem";
+            this.empresasConMasPublicidadToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.empresasConMasPublicidadToolStripMenuItem.Text = "Empresas con más publicidad";
+            this.empresasConMasPublicidadToolStripMenuItem.Click += new System.EventHandler(this.empresasConMasPublicidadToolStripMenuItem_Click);
+            // 
+            // listadoDeEmpresasToolStripMenuItem
+            // 
+            this.listadoDeEmpresasToolStripMenuItem.Name = "listadoDeEmpresasToolStripMenuItem";
+            this.listadoDeEmpresasToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.listadoDeEmpresasToolStripMenuItem.Text = "Listado de empresas";
+            this.listadoDeEmpresasToolStripMenuItem.Click += new System.EventHandler(this.listadoDeEmpresasToolStripMenuItem_Click);
             // 
             // revistasToolStripMenuItem
             // 
@@ -174,24 +221,51 @@
             this.revistasToolStripMenuItem.Name = "revistasToolStripMenuItem";
             this.revistasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.revistasToolStripMenuItem.Text = "&Revistas";
-            this.revistasToolStripMenuItem.Click += new System.EventHandler(this.revistasToolStripMenuItem_Click);
+            // 
+            // listadoToolStripMenuItem1
+            // 
+            this.listadoToolStripMenuItem1.Name = "listadoToolStripMenuItem1";
+            this.listadoToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
+            this.listadoToolStripMenuItem1.Text = "Listado";
+            this.listadoToolStripMenuItem1.Click += new System.EventHandler(this.listadoToolStripMenuItem1_Click);
+            // 
+            // másVendidasToolStripMenuItem
+            // 
+            this.másVendidasToolStripMenuItem.Name = "másVendidasToolStripMenuItem";
+            this.másVendidasToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.másVendidasToolStripMenuItem.Text = "Más vendidas";
+            this.másVendidasToolStripMenuItem.Click += new System.EventHandler(this.másVendidasToolStripMenuItem_Click);
             // 
             // distribuidoresToolStripMenuItem
             // 
             this.distribuidoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.distribucionesToolStripMenuItem,
-            this.listadoDeDistribuidoresToolStripMenuItem});
+            this.listadoDeDistribuidoresToolStripMenuItem,
+            this.mayoresDistribuidoresToolStripMenuItem});
             this.distribuidoresToolStripMenuItem.Name = "distribuidoresToolStripMenuItem";
             this.distribuidoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.distribuidoresToolStripMenuItem.Text = "&Distribuidores";
-            this.distribuidoresToolStripMenuItem.Click += new System.EventHandler(this.distribuidoresToolStripMenuItem_Click);
             // 
             // distribucionesToolStripMenuItem
             // 
             this.distribucionesToolStripMenuItem.Name = "distribucionesToolStripMenuItem";
-            this.distribucionesToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.distribucionesToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.distribucionesToolStripMenuItem.Text = "&Distribuciones";
             this.distribucionesToolStripMenuItem.Click += new System.EventHandler(this.distribucionesToolStripMenuItem_Click);
+            // 
+            // listadoDeDistribuidoresToolStripMenuItem
+            // 
+            this.listadoDeDistribuidoresToolStripMenuItem.Name = "listadoDeDistribuidoresToolStripMenuItem";
+            this.listadoDeDistribuidoresToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.listadoDeDistribuidoresToolStripMenuItem.Text = "Listado de distribuidores";
+            this.listadoDeDistribuidoresToolStripMenuItem.Click += new System.EventHandler(this.listadoDeDistribuidoresToolStripMenuItem_Click);
+            // 
+            // mayoresDistribuidoresToolStripMenuItem
+            // 
+            this.mayoresDistribuidoresToolStripMenuItem.Name = "mayoresDistribuidoresToolStripMenuItem";
+            this.mayoresDistribuidoresToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.mayoresDistribuidoresToolStripMenuItem.Text = "Mayores distribuidores";
+            this.mayoresDistribuidoresToolStripMenuItem.Click += new System.EventHandler(this.mayoresDistribuidoresToolStripMenuItem_Click);
             // 
             // publicidadesToolStripMenuItem
             // 
@@ -207,48 +281,6 @@
             this.vigentesToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.vigentesToolStripMenuItem.Text = "Vigentes";
             this.vigentesToolStripMenuItem.Click += new System.EventHandler(this.vigentesToolStripMenuItem_Click);
-            // 
-            // empresasConMasPublicidadToolStripMenuItem
-            // 
-            this.empresasConMasPublicidadToolStripMenuItem.Name = "empresasConMasPublicidadToolStripMenuItem";
-            this.empresasConMasPublicidadToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.empresasConMasPublicidadToolStripMenuItem.Text = "Empresas con mas publicidad";
-            this.empresasConMasPublicidadToolStripMenuItem.Click += new System.EventHandler(this.empresasConMasPublicidadToolStripMenuItem_Click);
-            // 
-            // listadoDeEmpresasToolStripMenuItem
-            // 
-            this.listadoDeEmpresasToolStripMenuItem.Name = "listadoDeEmpresasToolStripMenuItem";
-            this.listadoDeEmpresasToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.listadoDeEmpresasToolStripMenuItem.Text = "Listado de empresas";
-            this.listadoDeEmpresasToolStripMenuItem.Click += new System.EventHandler(this.listadoDeEmpresasToolStripMenuItem_Click);
-            // 
-            // listadoToolStripMenuItem
-            // 
-            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listadoToolStripMenuItem.Text = "Listado";
-            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
-            // 
-            // listadoToolStripMenuItem1
-            // 
-            this.listadoToolStripMenuItem1.Name = "listadoToolStripMenuItem1";
-            this.listadoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.listadoToolStripMenuItem1.Text = "Listado";
-            this.listadoToolStripMenuItem1.Click += new System.EventHandler(this.listadoToolStripMenuItem1_Click);
-            // 
-            // másVendidasToolStripMenuItem
-            // 
-            this.másVendidasToolStripMenuItem.Name = "másVendidasToolStripMenuItem";
-            this.másVendidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.másVendidasToolStripMenuItem.Text = "Más vendidas";
-            this.másVendidasToolStripMenuItem.Click += new System.EventHandler(this.másVendidasToolStripMenuItem_Click);
-            // 
-            // listadoDeDistribuidoresToolStripMenuItem
-            // 
-            this.listadoDeDistribuidoresToolStripMenuItem.Name = "listadoDeDistribuidoresToolStripMenuItem";
-            this.listadoDeDistribuidoresToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.listadoDeDistribuidoresToolStripMenuItem.Text = "Listado de distribuidores";
-            this.listadoDeDistribuidoresToolStripMenuItem.Click += new System.EventHandler(this.listadoDeDistribuidoresToolStripMenuItem_Click);
             // 
             // FormINICIO
             // 
@@ -302,5 +334,9 @@
         private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem másVendidasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeDistribuidoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suscripcionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planesMásElegidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem revistaConMásSuscripcionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mayoresDistribuidoresToolStripMenuItem;
     }
 }

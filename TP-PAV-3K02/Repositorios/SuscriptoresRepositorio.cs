@@ -44,13 +44,19 @@ namespace TP_PAV_3K02.Repositorios
 
             return _BD.EjecutarSQL(sqltxt);
         }
-        public bool Eliminar(string suscriptornroDoc)
+        public bool EliminarSuscriptor(string suscriptornroDoc)
         {
             string sqltxt = $"DELETE FROM [dbo].[Suscriptores] WHERE nroDoc ='{suscriptornroDoc}'";
 
             return _BD.EjecutarSQL(sqltxt);
         }
-        
+        public bool EliminarSuscripcion(string suscriptornroDoc)
+        {
+            string sqltxt = $"DELETE FROM [dbo].[Suscripcion] WHERE nro_doc ='{suscriptornroDoc}'";
+
+            return _BD.EjecutarSQL(sqltxt);
+        }
+
         public Suscriptor ObtenerSuscriptor(string suscriptorDOC)
         {
             string sqltxt = $"SELECT * FROM [dbo].[Suscriptores] WHERE nroDoc = {suscriptorDOC}";

@@ -97,26 +97,26 @@ namespace TP_PAV_3K02
             }
             foreach (DataGridViewRow fila in seleccionadas)
             {
-                var nombre = fila.Cells[2].Value;
-                var apellido = fila.Cells[3].Value;
+                var nombre = fila.Cells[1].Value;
+                var apellido = fila.Cells[2].Value;
                 var cuit_dist = fila.Cells[0].Value;
 
 
                 //pregunto confirmación
                 if (cuit_dist != null)
                 {
-                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido}, {cuit_dist}?",
+                    var confirmacion = MessageBox.Show($"Esta seguro que desea eliminar a {nombre}, {apellido},cuit {cuit_dist}? Esto provocará la eliminación también de sus distribuciones",
                    "Confirmar operación",
                    MessageBoxButtons.YesNo);
 
                     if (confirmacion.Equals(DialogResult.No))
                         return;
 
-                    if (_distribuidoresRepositorio.Eliminar(cuit_dist.ToString()))
+                    if (_distribuidoresRepositorio.EliminarDistribuidor(cuit_dist.ToString()))
                     {
                         MessageBox.Show("Se eliminó exitosamente");
                         ActualizarDistribuidores();
-
+                        _distribuidoresRepositorio.EliminarDistribucion(cuit_dist.ToString());
                     }
 
                 }

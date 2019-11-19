@@ -73,8 +73,7 @@ namespace TP_PAV_3K02.Modulos
             txtcodigoInterno.Text = revist.cod_Interno.ToString();
             txtnombre.Text = revist.nombre;
             dtpFechaInicio.Text = fechaRev;
-            cmbFrecuencia.SelectedValue = int.Parse(revistaFrec);
-            cmbRubro.SelectedValue = int.Parse(revistaRub);
+            
 
 
         }
@@ -88,8 +87,8 @@ namespace TP_PAV_3K02.Modulos
         {
             var revist = new Revista();
             revist.nombre = txtnombre.Text;
-            revist.cod_frecPublic = int.Parse(cmbRubro.SelectedValue.ToString());
-            revist.cod_rubro = int.Parse(cmbFrecuencia.SelectedValue.ToString());
+            revist.cod_frecPublic = int.Parse(cmbFrecuencia.SelectedValue.ToString());
+            revist.cod_rubro = int.Parse(cmbRubro.SelectedValue.ToString());
             revist.fechaInicio = dtpFechaInicio.Value;
 
 

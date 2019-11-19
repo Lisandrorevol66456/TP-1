@@ -13,6 +13,7 @@ using TP_PAV_3K02.REPORTES.rep_distribuidores;
 using TP_PAV_3K02.REPORTES.rep_empresas;
 using TP_PAV_3K02.REPORTES.rep_publicidad;
 using TP_PAV_3K02.REPORTES.rep_revista;
+using TP_PAV_3K02.REPORTES.rep_suscripcion;
 using TP_PAV_3K02.REPORTES.rep_suscriptores;
 
 namespace TP_PAV_3K02
@@ -64,25 +65,7 @@ namespace TP_PAV_3K02
             this.Close();
         }
 
-        private void suscriptoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void empresasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void revistasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void distribuidoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void distribucionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -130,6 +113,24 @@ namespace TP_PAV_3K02
         {
             var dis = new INFO_distribuidores();
             dis.ShowDialog();
+        }
+
+        private void revistaConMásSuscripcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var revi = new INFO_revistaConMasSuscriptores();
+            revi.ShowDialog();
+        }
+
+        private void planesMásElegidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var planes = new INFO_planesMasElegidos();
+            planes.ShowDialog();
+        }
+
+        private void mayoresDistribuidoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mayores = new INFO_MayoresDistribuidores();
+            mayores.ShowDialog();
         }
     }
 }

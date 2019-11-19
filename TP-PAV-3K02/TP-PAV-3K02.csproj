@@ -184,6 +184,17 @@
     <Compile Include="REPORTES\rep_distribuidores\INFO_distribuidores.Designer.cs">
       <DependentUpon>INFO_distribuidores.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORTES\rep_distribuidores\INFO_MayoresDistribuidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\rep_distribuidores\INFO_MayoresDistribuidores.Designer.cs">
+      <DependentUpon>INFO_MayoresDistribuidores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_distribuidores\MayoresDistribuidores_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MayoresDistribuidores_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="REPORTES\rep_empresas\EmpresaConMasPublicidad_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -206,6 +217,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>publicidades_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="REPORTES\rep_revista\INFO_revistaConMasSuscriptores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\rep_revista\INFO_revistaConMasSuscriptores.Designer.cs">
+      <DependentUpon>INFO_revistaConMasSuscriptores.cs</DependentUpon>
+    </Compile>
     <Compile Include="REPORTES\rep_revista\INFO_revistas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +235,11 @@
     <Compile Include="REPORTES\rep_revista\INFO_revistasMasVendidas.Designer.cs">
       <DependentUpon>INFO_revistasMasVendidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORTES\rep_revista\revistaConMasSuscriptoresDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>revistaConMasSuscriptoresDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="REPORTES\rep_revista\RevistasMasVendidasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -227,6 +249,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Revistas_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_suscripcion\INFO_planesMasElegidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\rep_suscripcion\INFO_planesMasElegidos.Designer.cs">
+      <DependentUpon>INFO_planesMasElegidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\rep_suscripcion\PlanesMasElegidos_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanesMasElegidos_DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="REPORTES\rep_suscriptores\datasetConjuntoDeDatos.cs">
       <DependentUpon>datasetConjuntoDeDatos.xsd</DependentUpon>
@@ -343,7 +376,11 @@
     <EmbeddedResource Include="REPORTES\rep_distribuidores\INFO_distribuidores.resx">
       <DependentUpon>INFO_distribuidores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\rep_distribuidores\INFO_MayoresDistribuidores.resx">
+      <DependentUpon>INFO_MayoresDistribuidores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORTES\rep_distribuidores\Report_distribuidores.rdlc" />
+    <EmbeddedResource Include="REPORTES\rep_distribuidores\Report_mayorDistribuidor.rdlc" />
     <EmbeddedResource Include="REPORTES\rep_empresas\INFO_empresaConMasPublicidad.resx">
       <DependentUpon>INFO_empresaConMasPublicidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,14 +389,22 @@
       <DependentUpon>INFO_publicidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTES\rep_publicidad\Report_publicidadvigente.rdlc" />
+    <EmbeddedResource Include="REPORTES\rep_revista\INFO_revistaConMasSuscriptores.resx">
+      <DependentUpon>INFO_revistaConMasSuscriptores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORTES\rep_revista\INFO_revistas.resx">
       <DependentUpon>INFO_revistas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTES\rep_revista\INFO_revistasMasVendidas.resx">
       <DependentUpon>INFO_revistasMasVendidas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\rep_revista\Report_revistaConMasSuscriptores.rdlc" />
     <EmbeddedResource Include="REPORTES\rep_revista\Report_revistaMasVendida.rdlc" />
     <EmbeddedResource Include="REPORTES\rep_revista\Report_revistas.rdlc" />
+    <EmbeddedResource Include="REPORTES\rep_suscripcion\INFO_planesMasElegidos.resx">
+      <DependentUpon>INFO_planesMasElegidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\rep_suscripcion\Report_planesMasElegidos.rdlc" />
     <EmbeddedResource Include="REPORTES\rep_suscriptores\INFO_suscriptores.resx">
       <DependentUpon>INFO_suscriptores.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,6 +460,17 @@
     <None Include="REPORTES\rep_distribuidores\distribuidores_DataSet.xss">
       <DependentUpon>distribuidores_DataSet.xsd</DependentUpon>
     </None>
+    <None Include="REPORTES\rep_distribuidores\MayoresDistribuidores_DataSet.xsc">
+      <DependentUpon>MayoresDistribuidores_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_distribuidores\MayoresDistribuidores_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MayoresDistribuidores_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTES\rep_distribuidores\MayoresDistribuidores_DataSet.xss">
+      <DependentUpon>MayoresDistribuidores_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="REPORTES\rep_empresas\EmpresaConMasPublicidad_DataSet.xsc">
       <DependentUpon>EmpresaConMasPublicidad_DataSet.xsd</DependentUpon>
     </None>
@@ -437,6 +493,17 @@
     <None Include="REPORTES\rep_publicidad\publicidades_DataSet.xss">
       <DependentUpon>publicidades_DataSet.xsd</DependentUpon>
     </None>
+    <None Include="REPORTES\rep_revista\revistaConMasSuscriptoresDataSet.xsc">
+      <DependentUpon>revistaConMasSuscriptoresDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_revista\revistaConMasSuscriptoresDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>revistaConMasSuscriptoresDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTES\rep_revista\revistaConMasSuscriptoresDataSet.xss">
+      <DependentUpon>revistaConMasSuscriptoresDataSet.xsd</DependentUpon>
+    </None>
     <None Include="REPORTES\rep_revista\RevistasMasVendidasDataSet.xsc">
       <DependentUpon>RevistasMasVendidasDataSet.xsd</DependentUpon>
     </None>
@@ -458,6 +525,17 @@
     </None>
     <None Include="REPORTES\rep_revista\Revistas_DataSet.xss">
       <DependentUpon>Revistas_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_suscripcion\PlanesMasElegidos_DataSet.xsc">
+      <DependentUpon>PlanesMasElegidos_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\rep_suscripcion\PlanesMasElegidos_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PlanesMasElegidos_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTES\rep_suscripcion\PlanesMasElegidos_DataSet.xss">
+      <DependentUpon>PlanesMasElegidos_DataSet.xsd</DependentUpon>
     </None>
     <None Include="REPORTES\rep_suscriptores\datasetConjuntoDeDatos.xsc">
       <DependentUpon>datasetConjuntoDeDatos.xsd</DependentUpon>
